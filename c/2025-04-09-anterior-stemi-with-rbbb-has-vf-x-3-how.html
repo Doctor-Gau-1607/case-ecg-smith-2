@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>09/04/2025 — OMI thành trước kèm RBBB bị rung thất 3 lần: làm sao ngăn các cơn rung thất tiếp theo?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1856 · DR. SMITH’S ECG BLOG</div>
+   <h1>09/04/2025 — OMI thành trước kèm RBBB bị rung thất 3 lần: làm sao ngăn các cơn rung thất tiếp theo?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/anterior-stemi-with-rbbb-has-vf-x-3-how/" target="_blank" rel="noopener">"Anterior OMI with RBBB has VF x 3: how to prevent further episodes of VF?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 7 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Một phụ nữ trung niên không có tiền sử bệnh tim gọi 911 vì đau ngực.</p>
+<p>Thêm ca bệnh nhân 28 tuổi có RBBB và OMI thành trước từ slide 78 của bài PowerPoint nội dung cốt lõi về nhịp nhanh QRS rộng. Bệnh nhân 28 tuổi, đau ngực 8 giờ.</p>
+<p>5372839, 7-22-2017</p>
+<p>Đây là điện tâm đồ trước viện của bà:</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_RBBB20OMI20prehospital-1.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_RBBB20OMI20prehospital-1.jpg" alt="" width="1244" height="324" loading="lazy" decoding="async"></a></figure>
+<p>Bạn nghĩ gì?</p>
+<p>Có nhịp xoang kèm RBBB và OMI LAD rõ ràng (tắc LAD đoạn gần): sóng T tối cấp ở I, aVL và ST chênh lên (STE) tối thiểu ở V1, V2.</p>
+<div class="note"><p><strong>Hình ảnh này có giá trị chẩn đoán OMI LAD cấp</strong></p></div>
+<p>Nếu bạn đang thắc mắc <strong>Queen</strong> nghĩ gì, đây là kết quả của cô ấy:</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Queen20with20RBBB.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Queen20with20RBBB.jpg" alt="" width="1600" height="573" loading="lazy" decoding="async"></a></figure>
+<p><strong>Lưu ý rằng cô ấy còn chẩn đoán <u>phân suất tống máu thấp</u>.</strong></p>
+<p>Chẩn đoán của nhân viên cấp cứu ngoài viện là “Có thể STEMI trước bên.” Tôi không biết thuật toán của máy đọc ra kết quả gì.</p>
+<p>Tôi không chắc đã có kích hoạt phòng thông tim (cath lab) từ trước viện hay chưa, nhưng lẽ ra phải có.</p>
+<p>Khi đến khoa cấp cứu (ED), <strong>siêu âm tại giường cho thấy chức năng thất trái kém</strong> (đúng như Queen of Hearts dự đoán) với đường B lan tỏa.</p>
+<p>Huyết áp ban đầu 120/96, nhịp tim 102, SpO2 98%. và bản ghi này được ghi lại:</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_RBBB20obvious20LAD20OMI.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_RBBB20obvious20LAD20OMI.jpg" alt="" width="1600" height="748" loading="lazy" decoding="async"></a></figure>
+<p>RBBB kèm tắc LAD đoạn gần có nguy cơ rất cao.</p>
+<p>Khi bản ghi này vừa ra khỏi máy, tôi quay sang bác sĩ nội trú phụ trách và thì thầm <strong>“Ca này rất tệ.”</strong></p>
+<p><strong>3 giây sau, bà rơi vào rung thất (VF).</strong></p>
+<p>Chúng tôi nhanh chóng khử rung cho bà, và nhịp xoang bình thường trở lại.</p>
+<p>Vài phút sau bệnh nhân lại rung thất &gt; khử rung 200J, trở về nhịp xoang bình thường (NSR).</p>
+<p>Đặt nội khí quản nhanh (rapid sequence intubation) được tiến hành để bảo vệ đường thở trong bối cảnh rung thất tái phát và nhiều lần khử rung.</p>
+<p>X-quang ngực cũng cho thấy phù phổi.</p>
+<p><strong>Sau đó bệnh nhân có thêm 2 cơn rung thất phải khử rung, rồi trở về NSR.</strong></p>
+<p>Bà được cho 2 mg magnesi. Kali là 4.5 mEq/L</p>
+<p><span class="c-do">Trong khi chờ kíp thông tim, và để phòng các cơn VF tiếp theo, <strong>l</strong><strong>idocaine 100 mg được tiêm, sau đó 50 mg mỗi 5 phút x 3 lần (tổng cộng 250 mg trong 15 phút), tiếp theo là truyền lidocaine 3 mg/phút</strong></span></p>
+<p><strong>Liều lidocaine: </strong>Lidocaine phân bố lại nhanh từ khoang ngoại bào vào khoang nội bào. Nồng độ ngoại bào (huyết thanh) cao thì gây độc. Phải tiêm thành nhiều liều bolus nối tiếp để thuốc có thời gian phân bố lại. Vì vậy chúng tôi đã cho 1.5 mg/kg, tiếp theo 0.75, rồi 0.75, rồi 0,75, cách nhau 5 phút. <strong>Hơn nữa</strong>, thuốc được chuyển hóa nhanh, do đó cần truyền liên tục để duy trì nồng độ điều trị thích hợp.</p>
+<p>Bệnh nhân được chuyển tới phòng thông tim cùng bác sĩ nội trú; huyết áp 50/30 trên đường đi đã cải thiện với một liều bơm nhanh (push dose) 100 mcg epinephrine.</p>
+<p><strong>Bà không có thêm cơn VF nào nữa.</strong></p>
+<h3 id="chup-mach-vanh">Chụp mạch vành:</h3>
+<p>2. LAD: mạch típ III-IV với tắc do huyết khối hoặc thuyên tắc ở đoạn gần</p>
+<p>(dòng chảy TIMI 0). Kết quả chụp mạch cuối cùng rất tốt.</p>
+<h3 id="troponin">Troponin</h3>
+<p>Troponin ban đầu là 24 ng/L (chỉ vừa vượt giới hạn trên tham chiếu (URL)). Thêm một bằng chứng rằng một STEMI rất lớn có thể có troponin ban đầu bình thường hoặc gần bình thường. <a href="https://jamanetwork.com/journals/jamacardiology/fullarticle/2769178" rel="noopener" target="_blank">Chúng tôi đã chứng minh điều này trong bài báo này trên JAMA Cardiology</a>.</p>
+<p>Troponin đỉnh lớn hơn 60,000 ng/L — quá cao để đo được.</p>
+<h3 id="sieu-am-tim-9-thang-sau">Siêu âm tim 9 tháng sau:</h3>
+<p>Buồng thất trái giãn (LVEDD 6.2 cm) với chức năng tâm thu giảm vừa. Buồng thất trái nhìn bằng mắt có vẻ tái cấu trúc dạng hình cầu. Phân suất tống máu thất trái ước tính là 32%. Vô động thành trước từ đoạn giữa đến đoạn xa và các thành trước mỏm, bên mỏm, dưới mỏm và vách mỏm.</p>
+<p>Điện tâm đồ nhiều tháng sau:</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Many20months20later.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Many20months20later.jpg" alt="" width="1600" height="727" loading="lazy" decoding="async"></a></figure>
+<p>RBBB với sóng Q hình thành rõ ở V1-V6, cả ở I, aVL. Nhồi máu cũ trước bên rất lớn.</p>
+<p>Mặc dù được tái tưới máu nhanh, vẫn có rất nhiều tổn thương cơ tim.</p>
+<p>Giờ đây, nhiều tháng sau, Queen chẩn đoán đúng OMI đã tái tưới máu và<strong> EF thấp</strong> (và dĩ nhiên cả RBBB và LAFB)</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Screenshot202025-04-0820at2012.41.2320PM.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Screenshot202025-04-0820at2012.41.2320PM.jpg" alt="" width="1600" height="883" loading="lazy" decoding="async"></a></figure>
+<h3 id="vi-sao-toi-dung-lidocaine">Vì sao tôi dùng lidocaine?</h3>
+<p><strong>Xem tài liệu tham khảo bên dưới. </strong> Lidocaine có hiệu quả ngăn ngừa ngay cả cơn VF đầu tiên trong nhồi máu cơ tim cấp. Tuy vậy, tôi không dùng cho tất cả bệnh nhân. Tôi dùng khi đã có một hoặc nhiều cơn VF. Tại sao không dùng amiodarone? 1) theo những gì tôi biết, có rất ít dữ liệu về amiodarone cho chỉ định này 2) amiodarone có tác dụng chẹn beta, điều này có thể gây hại ở bệnh nhân nhồi máu thành trước diện rộng kèm phù phổi và có nguy cơ sốc tim (và bà ấy đã thực sự rơi vào sốc.</p>
+<p>Lidocaine không có tác dụng giảm co bóp (inotrope âm) hay giảm tần số tim (chronotrope âm).</p>
+<p>_________________</p>
+<h3 id="lidocaine-de-phong-ngua-cac-con-rung-that-tiep-theo">Lidocaine để phòng ngừa các cơn rung thất tiếp theo.</h3>
+<h3 id="tai-lieu-tham-khao">TÀI LIỆU THAM KHẢO</h3>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0002914904007799" rel="noopener" target="_blank">Prevention of primary ventricular fibrillation in acute myocardial infarction with prophylactic <em>lidocaine</em></a> (Phòng ngừa rung thất nguyên phát trong nhồi máu cơ tim cấp bằng lidocaine dự phòng)</p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0002914904007799" rel="noopener" target="_blank">https://www.sciencedirect.com/science/article/abs/pii/S0002914904007799</a> (bài báo về phòng ngừa rung thất nguyên phát bằng lidocaine dự phòng trên ScienceDirect)</p>
+<p>Rung thất (VF) nguyên phát trong nhồi máu cơ tim cấp (AMI) xảy ra với tỷ lệ mắc và<br>tỷ lệ tử vong cao, dù có hay không có tiêu sợi huyết. Tỷ lệ mắc dao động từ 2% đến 19% tùy theo định nghĩa “nguyên phát.” <strong>VF nguyên phát trong nghiên cứu này là<br>rung thất xảy ra khi không có sốc hay phù phổi. </strong>Tỷ lệ tử vong khi có VF nguyên phát<br>cao gấp 2 đến 4 lần so với khi không có.</p>
+<p>Lidocaine đã được dùng để phòng ngừa VF từ thập niên 1960, sau khi<br>các đơn vị chăm sóc mạch vành (CCU) trở thành môi trường chuẩn để điều trị AMI.<a href="https://www-sciencedirect-com.ezp3.lib.umn.edu/science/article/pii/S0002914904007799?via%3Dihub#bib7" rel="noopener" target="_blank"><sup>7</sup></a></p>
+<p><strong>Bình luận của Smith: </strong>Vâng, tin hay không thì tùy, khi tôi mới vào nghề giữa thập niên 1980, mọi bệnh nhân nhồi máu cơ tim cấp đều được truyền lidocaine! Tôi sẽ không bao giờ quên lần tôi chỉ định truyền như vậy vào năm 1991, rồi bệnh nhân của tôi bắt đầu co giật, tôi ngước lên thì thấy điều dưỡng đã mở khóa dịch truyền lidocaine hết cỡ!</p>
+<p>Tuy nhiên, hướng dẫn năm 1996 của Hội Tim Hoa Kỳ và<br>Trường Môn Tim Hoa Kỳ (AHA/ACC) về điều trị AMI<br>đã xếp lidocaine dự phòng vào chỉ định nhóm III.<a href="https://www-sciencedirect-com.ezp3.lib.umn.edu/science/article/pii/S0002914904007799?via%3Dihub#bib8" rel="noopener" target="_blank"><sup>8</sup></a><br>Khuyến cáo này dựa trên 4 phân tích gộp đưa ra giả thuyết rằng<br>tỷ lệ tử vong tăng ở bệnh nhân dùng lidocaine là<br>do vô tâm thu hoặc blốc nhĩ thất hay blốc xoang nhĩ, mặc dù<br>không có dữ liệu chứng minh.</p>
+<p>Việc phòng ngừa<br>VF đã bị cản trở bởi việc công bố khuyến cáo năm 1996<br>của Hội Tim Hoa Kỳ<br>và Trường Môn Tim Hoa Kỳ phản đối việc dùng<br>lidocaine dự phòng, dựa trên các nghiên cứu phân tích gộp<br>ngụ ý độc tính. Nghiên cứu quan sát này trên 4,254 bệnh nhân AMI báo cáo tỷ lệ mắc và tỷ lệ tử vong<br>của VF nguyên phát trong 32 năm. Trong 4,254 bệnh nhân,<br><strong>4,150 người được dùng lidocaine dự phòng, và 104 bệnh nhân<br>không được dùng lidocaine dự phòng do hướng dẫn năm 1996,<br>sau thời điểm đó việc dùng lidocaine dự phòng<br>tùy theo lựa chọn của bác sĩ.</strong> <strong>Tỷ lệ mắc VF nguyên phát là 0.5% trong 4,150 người<br>được dùng lidocaine dự phòng và 10% trong 104 người<br>không được dùng do lựa chọn của bác sĩ (p &lt;0.0001).</strong></p>
+<p>Sau năm 1996, 104 bệnh nhân không được dùng lidocaine dự phòng theo quyết định của bác sĩ điều trị sau khi hướng dẫn AHA/ACC năm 1996 được công bố.<a href="https://www-sciencedirect-com.ezp3.lib.umn.edu/science/article/pii/S0002914904007799?via%3Dihub#bib8" rel="noopener" target="_blank"><sup>8</sup></a> Trong giai đoạn 6 năm này, 798 bệnh nhân AMI được điều trị, 13% trong số đó không được dùng lidocaine dự phòng.</p>
+<p>Trong 4,150 người được dùng<br>lidocaine dự phòng, blốc xoang nhĩ xảy ra ở 0.5%<br>và blốc nhĩ thất hoàn toàn dưới nút xảy ra ở 0.2%, tất cả đều thứ phát do vị trí nhồi máu<br>(nồng độ lidocaine huyết thanh đồng thời là &lt;4g/ml).<br>Vô tâm thu là nhịp hấp hối (agonal) ở 4%; những bệnh nhân này<br>đã ngưng lidocaine được 48 giờ. Tỷ lệ tử vong là<br>10.5% ở bệnh nhân không có VF nguyên phát và 25% ở bệnh nhân có VF (p &lt;0.001). Như vậy, lidocaine dự phòng<br>đã làm giảm rõ rệt tỷ lệ mắc VF ở 4,150 bệnh nhân AMI xuống 0.5% so với các thử nghiệm trước và<br>sau thời kỳ tiêu sợi huyết (2% đến 19%) và so với 104 bệnh nhân trong nghiên cứu này không được dùng lidocaine<br>dự phòng (10%). Không</p>
+<p>Lidocaine được tiêm bolus 75 mg trong khoảng 90 giây, tiếp theo<br>là truyền liên tục 2 mg/phút. Liều bolus thứ hai 50 mg được tiêm sau 5<br>phút. Ngừng truyền sau 24 giờ nếu không<br>ghi nhận nhát ngoại vị thất. Nếu xảy ra rối loạn nhịp thất<br>bùng phát (breakthrough), tiêm thêm các liều bolus 50 mg mỗi 5<br>phút, khi cần, tối đa 325 mg.</p>
+<h3 id="ban-luan">Bàn luận</h3>
+<p>Năm<br>kết luận được rút ra từ kết quả của nghiên cứu này và các nghiên cứu khác:<br>(1) tỷ lệ mắc VF nguyên phát trước và trong kỷ nguyên tiêu sợi huyết<br>không thay đổi và vẫn còn quá cao; (2) VF nguyên phát<br>không thể dự đoán; (3) khi VF nguyên phát xảy ra, nó báo trước kết cục xấu về<br>tỷ lệ bệnh tật và tử vong; (4) lidocaine có hiệu quả phòng ngừa<br>VF nguyên phát; và (5) lidocaine không liên quan đến tăng<br>tỷ lệ rối loạn dẫn truyền khi được dùng đúng cách.</p>
+<p>__________________________</p>
+<h3 id="mot-nghien-cuu-khac-it-lien-quan-hon">Một nghiên cứu khác ít liên quan hơn</h3>
+<p>Đây là một nghiên cứu gần đây đã loại trừ những bệnh nhân chỉ được dùng thuốc chống loạn nhịp <strong>sau </strong>khi tái lập tuần hoàn tự nhiên (ROSC), nên mức độ liên quan kém hơn nhiều. Nhưng nó cho thấy mối liên quan mạnh giữa kết cục tốt hơn với lidocaine so với amiodarone.</p>
+<h2 id="smida-t-va-cs-a-retrospective-target-trial-emulation-comparing-amiodarone-and-lidocaine-for-adult-out-of-hospital-cardiac-arrest-resuscitation-mo-phong-thu-nghiem-muc-tieu-hoi-cuu-so-sanh-amiodarone-va-lidocaine-trong-hoi-suc-ngung-tim-ngoai-benh-vien-o-nguoi-lon-doi-10-1016-j-resuscitation-2025-110515">Smida T và cs. A retrospective ‘target trial emulation’ comparing amiodarone and lidocaine for adult out-of-hospital cardiac arrest resuscitation (Mô phỏng thử nghiệm mục tiêu hồi cứu so sánh amiodarone và lidocaine trong hồi sức ngừng tim ngoài bệnh viện ở người lớn). DOI: 10.1016/j.resuscitation.2025.110515</h2>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/39863130/" rel="noopener" target="_blank">https://pubmed.ncbi.nlm.nih.gov/39863130/</a> (tóm tắt bài báo trên PubMed)</p>
+<p>Tóm tắt</p>
+<p><strong>Mục tiêu: </strong>Việc dùng amiodarone hoặc lidocaine được khuyến cáo trong hồi sức bệnh nhân ngừng tim ngoài bệnh viện (OHCA) biểu hiện rung thất hoặc nhịp nhanh thất kháng khử rung hoặc tái phát. Mục tiêu của chúng tôi là sử dụng phương pháp ‘mô phỏng thử nghiệm mục tiêu’ (target trial emulation) để so sánh kết cục của bệnh nhân được dùng amiodarone hoặc lidocaine trong hồi sức.</p>
+<p><strong>Phương pháp: </strong>Bệnh nhân OHCA người lớn, không do chấn thương, trong bộ dữ liệu ESO Data Collaborative 2018-2023, bị OHCA trước khi đội cấp cứu ngoài viện (EMS) đến, biểu hiện nhịp có thể sốc điện, và được dùng amiodarone hoặc lidocaine trong hồi sức, được đánh giá để đưa vào nghiên cứu. Chúng tôi sử dụng ghép cặp điểm xu hướng (PSM) để khảo sát mối liên quan giữa thuốc chống loạn nhịp và kết cục. Tái lập tuần hoàn tự nhiên (ROSC) là kết cục chính. Kết cục phụ gồm số lần khử rung sau khi dùng thuốc và sống sót đến khi xuất viện.</p>
+<p><strong>Kết quả: </strong>Sau khi áp dụng tiêu chí loại trừ, 23,263 bệnh nhân từ 1,707 đơn vị EMS đủ điều kiện phân tích. Trước PSM, 6,010/20,284 (29.6%) bệnh nhân dùng amiodarone và 1,071/2,979 (35.9%) bệnh nhân dùng lidocaine đạt ROSC trước viện. Sau PSM, dùng lidocaine liên quan với odds ROSC trước viện cao hơn (36.0 so với 30.4%; aOR: 1.29 [1.16, 1.44], n = 2,976 cặp ghép). Dùng lidocaine cũng liên quan với số lần khử rung sau dùng thuốc ít hơn (trung vị: 2 [0-4] so với 2 [0-6], trung bình: 3.3 so với 3.9, p &lt; 0.01, n = 2,976 cặp), và odds sống sót đến xuất viện cao hơn (35.1 so với 25.7%; OR: 1.54 [1.19, 2.00], n = 538 cặp).</p>
+<p><strong>Kết luận: </strong>‘Mô phỏng thử nghiệm mục tiêu’ của chúng tôi gợi ý rằng lidocaine liên quan với odds ROSC trước viện cao hơn so với amiodarone khi được dùng trong hồi sức rung thất/nhịp nhanh thất (VF/VT) kháng sốc điện hoặc tái phát.</p>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_0-Figure-6-REDLINE-UseinBlogs-8.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_0-Figure-6-REDLINE-UseinBlogs-8.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-4-9-2025">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (4/9/2025):</h2>
+<p><span class="c-do">===================================</span></p>
+<p>Bác sĩ Smith đã nhận xét sâu sắc khi nhìn thấy <strong>điện tâm đồ <u>đầu tiên</u> tại ED</strong> trong ca hôm nay, <em>“Ca này rất tệ …”. </em> Tôi tập trung bình luận của mình vào việc giải thích thêm vì sao lại như vậy.</p>
+<ul><li>Để rõ ràng, trong <u>Hình 1</u> — tôi đã sao lại và đánh dấu điện tâm đồ đầu tiên tại ED này.</li></ul>
+<h3 id="cac-dau-hieu-tren-dien-tam-do-dau-tien-tai-ed">Các dấu hiệu trên điện tâm đồ đầu tiên tại ED:</h3>
+<p>Điểm khác biệt chính giữa điện tâm đồ trước viện <strong>(</strong><em>trình bày ở trên trong phần bàn luận của Bác sĩ Smith</em><strong>)</strong> — và <strong>điện tâm đồ <u>đầu tiên</u> tại ED</strong> này trong <u>Hình 1</u> — là sự hiện diện của <strong>2 PVC</strong> trên dải nhịp chuyển đạo dài.</p>
+<ul><li><strong><u>Thú nhận</u></strong>: Tôi vẫn còn bối rối với y văn tôi đã đọc về việc liệu (<em>và nếu có thì tăng bao nhiêu</em>) nguy cơ có tăng lên do <strong>hiện tượng R trên T (R-on-T) (</strong>tức là, <em>khi sóng R của một PVC rơi vào cái gọi là “thời kỳ dễ tổn thương” — tương ứng với phần đi lên của sóng T đứng trước</em><strong>)</strong> hay không. Được ghi nhận lần đầu cách đây gần 100 năm — ngày nay chúng ta nhận thấy rằng mặc dù PVC R trên T không phải là hiện tượng thường gặp — sự xuất hiện của nó đã được chứng minh là đi trước VT/rung thất (VFib) trong nhiều tình huống khác nhau, bao gồm tắc mạch vành cấp.</li>
+<li>Để rõ ràng — tôi đã đánh dấu đỉnh sóng T bằng <em>các mũi tên MÀU XANH LÁ</em> cho một số nhát dẫn truyền từ xoang trên dải nhịp chuyển đạo II dài của <u>Hình 1</u>. Lưu ý rằng PVC thứ 1 trên dải nhịp này rõ ràng rơi vào đỉnh của sóng T đứng trước <strong>(</strong><em> = </em><strong><em>hiện tượng R trên T</em>)</strong>, do đó <strong>làm tăng nguy cơ tiềm tàng <em>khởi phát</em> VT/VFib</strong> ở bệnh nhân hôm nay <strong>(</strong><em>Ngược lại — PVC thứ 2 = nhát #11, xảy ra muộn hơn trong chu kỳ, và không phải là R trên T</em><strong>)</strong>.</li></ul>
+<h3 id="co-dien-the-thap">Có điện thế thấp:</h3>
+<p>Như trong <em>Bình luận của tôi</em> ở <strong>bài đăng <a href="https://drsmithsecgblog.com/2023/12/proportionality-is-major-element-in-ecg.html" rel="noopener" target="_blank">ngày 13 tháng Mười Hai năm 2023</a></strong> — việc nhận ra <strong>điện thế <u>thấp</u> (</strong><em>hoặc chỉ khu trú ở chuyển đạo chi — hoặc ở cả chuyển đạo chi và chuyển đạo trước tim</em><strong>)</strong> — nên gợi ý cân nhắc một chẩn đoán phân biệt.</p>
+<ul><li>Mặc dù có RBBB — điện tâm đồ đầu tiên tại ED hôm nay rõ ràng cho thấy biên độ QRS giảm ở từng chuyển đạo chi <strong>(</strong>tức là,<em> &lt;5 mm ở cả 6 chuyển đạo chi</em><strong>)</strong> — cũng như điện thế thấp ở tất cả chuyển đạo trước tim trừ chuyển đạo V3.</li>
+<li>Trong số các nguyên nhân gây <em>điện thế thấp</em> mà tôi liệt kê trong bài đăng ngày 13 tháng Mười Hai năm 2023 này có <strong>choáng</strong> <em>cơ tim</em> (myocardial stunning) = sự suy giảm rõ rệt <em>thoáng qua</em> sức co bóp của tim, xảy ra để đáp ứng với một tổn thương cấp tính lớn như ngừng tim, sau một rối loạn nhịp nhanh kéo dài — hoặc một nhồi máu cơ tim cấp diện rộng.</li></ul>
+<h3 id="tac-lad-cap">Tắc LAD cấp:</h3>
+<p>Như Bác sĩ Smith đã nêu — các bản ghi ban đầu của bệnh nhân có giá trị <em><u>chẩn đoán</u></em> <strong>OMI LAD</strong> <strong><em>cấp</em></strong>.</p>
+<ul><li>Ngoài nhịp xoang với 2 PVC mà chúng ta thấy trên <u>điện tâm đồ #2</u> — còn có <strong>RBBB (</strong><em>dưới dạng rSR’ hoặc QR ở chuyển đạo V1 — với QRS chủ yếu dương tiếp tục ở các chuyển đạo V2,V3</em><strong>)</strong>.</li>
+<li>Mặc dù khó xác định có sóng Q hay sóng r khởi đầu ở chuyển đạo V1 — một <strong>sóng q</strong> nhỏ chắc chắn thấy ở <strong>chuyển đạo V2</strong>, với <strong>sóng Q</strong> <strong><em>nhồi máu</em></strong> tiếp tục ở các chuyển đạo trước tim còn lại. Sóng q nhỏ có lẽ cũng hiện diện ở các chuyển đạo I,II,aVL.</li>
+<li>Xét đến kích thước nhỏ của các phức bộ QRS — có <strong>ST chênh lên <em>rõ rệt</em></strong> ở <strong>các chuyển đạo I,aVL; </strong>và ở <strong>các chuyển đạo V1</strong>,<strong>V2 </strong>— với ST dạng vòm (coving) ở <strong>chuyển đạo V3</strong> — và ST chênh lên <em>và/hoặc</em> sóng T tối cấp ở V4,V5,V6. <strong>(</strong><em>Hãy nhớ rằng sóng ST-T ở các chuyển đạo trước tim phải V1,V2 lẽ ra phải âm khi có RBBB — nhưng thay vào đó sóng ST-T lại chênh lên rõ rệt ở các chuyển đạo này</em><strong>)</strong>.</li>
+<li>Có <strong>ST chênh xuống </strong><em><u><strong>soi gương</strong></u></em><strong> rõ rệt</strong> ở từng <strong>chuyển đạo <em>dưới</em></strong>.</li></ul>
+<h3 id="2-dau-hieu-dien-tam-do-thu-vi-khac">2 dấu hiệu điện tâm đồ thú vị khác:</h3>
+<ul><li><strong>T-QRS-D (</strong><em>biến dạng phần cuối QRS — <u>T</u>erminal <u>QRS</u> <u>D</u>istortion</em><strong>)</strong> thấy ở <strong>chuyển đạo V2 (</strong><em>để xem minh họa T-QRS-D — Xem Bình luận của tôi trong </em><strong>bài đăng <a href="https://drsmithsecgblog.com/2019/11/a-50-something-with-left-shoulder-pain.html" rel="noopener" target="_blank">ngày 14 tháng Mười Một năm 2019</a>)</strong>.</li>
+<li>Cuối cùng — <u>điện tâm đồ #2</u> là một ví dụ hay cho thấy <strong>PVC</strong> đôi khi có thể biểu hiện <strong>ST chênh lên (</strong><em>thấy ở chuyển đạo aVL ở nhát #5</em><strong>)</strong> có giá trị <strong><em>chẩn đoán</em></strong>. Đây là một ĐIỂM THEN CHỐT (PEARL) hữu ích cần biết — vì đôi khi, các thay đổi sóng ST-T cấp của nhồi máu cơ tim cấp có thể <u>chỉ</u> thấy ở các PVC, và <u>không</u> thấy ở phần còn lại của bản ghi (<em>Xem Bình luận của tôi trong </em><strong>bài đăng <a href="https://drsmithsecgblog.com/2018/10/hyperacute-t-waves-and-concordant-st.html" rel="noopener" target="_blank">ngày 8 tháng Mười năm 2018</a>)</strong>.</li></ul>
+<p><strong><u>Nhận định:</u></strong> Tổng hợp các quan sát trên — các dấu hiệu điện tâm đồ gợi ý <strong>nguy cơ</strong> <strong><u>cao hơn</u></strong> trên bản ghi đầu tiên tại ED này gồm:</p>
+<ul><li><strong>Hiện tượng R trên T</strong> (<em>ở nhát #4</em>).</li>
+<li><strong>Điện thế</strong> <strong><em>thấp</em></strong> lan tỏa, mà trong bối cảnh lâm sàng này gợi ý choáng cơ tim.</li>
+<li>Một điện tâm đồ ban đầu có <strong>RBBB</strong> và bất thường sóng ST-T ở hầu như cả 12 chuyển đạo, trong đó có ST chênh lên rõ rệt và ST chênh xuống soi gương — và trong đó sóng Q nhồi máu đã xuất hiện ở ít nhất 8 chuyển đạo. Gộp lại, các dấu hiệu này gợi ý một <strong>STEMI <em>trước-bên</em> diện rộng <em>đang diễn ra</em></strong>. </li></ul>
+<figure><a class="o-anh" href="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Figure-12020ECG-2204-7.25-2025-USE.jpg"><img src="2025-04-09-anterior-stemi-with-rbbb-has-vf-x-3-how_anh/2025_04_Figure-12020ECG-2204-7.25-2025-USE.jpg" alt="" width="1600" height="851" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> <strong>Điện tâm đồ <u>đầu tiên</u></strong> ghi tại ED <strong>(</strong><em>đây là bản ghi thứ 2 trong ca hôm nay — ghi sau điện tâm đồ trước viện mà Bác sĩ Smith trình bày ở trên</em><strong>)</strong>.</figcaption></figure>
+<p>===========================</p>
+<h3 id="suy-ngam-ve-lidocaine">Suy ngẫm về Lidocaine:</h3>
+<p>Một trong những công trình học thuật đầu tiên của tôi là một bản thảo trong đó tôi đặt câu hỏi lâm sàng, <em>“Có nên dùng Lidocaine dự phòng thường quy ở bệnh nhân nghi nhồi máu cơ tim cấp không?”</em> <strong>(</strong>J Fla Med Assoc 69:377-379, 1982<strong>)</strong>.</p>
+<ul><li>Đó là thời điểm trước khi thuốc tiêu sợi huyết được sử dụng đầy đủ tại bệnh viện nơi chúng tôi nhận bệnh. Nhờ vậy — tôi đã được tận mắt chứng kiến tỷ lệ rung thất <em>nguyên phát</em> dường như giảm mạnh tại ICU của chúng tôi nhờ thực hành mới vào thời điểm đó là dùng Lidocaine <em>dự phòng</em> cho bệnh nhân nhồi máu cơ tim cấp.</li>
+<li>Sau này tôi được theo dõi sự thay đổi trong cách dùng Lidocaine qua bộ sách ACLS mà tôi viết — trong đó tôi dành trọn một chương về dược động học của Lidocaine ở lần xuất bản thứ 1 (<em>1984</em>) — và tiếp tục nhấn mạnh thuốc này trong vài lần xuất bản kế tiếp, cho đến khi có sự chuyển dần sang ưu tiên Amiodarone tĩnh mạch — đến mức ở lần xuất bản cuối cùng tôi viết (<em>năm 2013</em>), Lidocaine về cơ bản bị đẩy xuống làm thuốc hàng thứ 3 cho VT/VFib.</li>
+<li><u>Xin nhấn mạnh:</u> Ngay cả khi Hướng dẫn ACLS đã được áp dụng rộng rãi trong những năm trước đây — thực hành lâm sàng về sử dụng thuốc chống loạn nhịp trong cấp cứu vẫn có sự khác biệt, tùy theo kinh nghiệm và thói quen của bác sĩ, cũng như cách dùng theo từng vùng. Thêm vào đó là thực tế lâm sàng đáng suy ngẫm về việc <em>khó khăn đến mức nào</em> để có được dữ liệu khách quan, có đối chứng, tiến cứu trong tình huống cấp cứu ngừng tim và rối loạn nhịp đe dọa tính mạng.</li></ul>
+<p>Dù vậy — ca hôm nay như Bác sĩ Smith mô tả minh họa việc dùng các liều bolus Lidocaine tĩnh mạch rất hiệu quả, tiếp theo là truyền Lidocaine tĩnh mạch, đã ngăn chặn thành công điều mà nếu không có lẽ đã tiến triển thành rung thất kháng trị.</p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
