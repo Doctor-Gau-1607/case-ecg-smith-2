@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08/03/2025 — Bệnh nhân nữ được báo tin chồng qua đời: đây là OMI hay bệnh cơ tim do stress?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1839 · DR. SMITH’S ECG BLOG</div>
+   <h1>08/03/2025 — Bệnh nhân nữ được báo tin chồng qua đời: đây là OMI hay bệnh cơ tim do stress?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/patient-is-informed-of-her-husbands-2/" target="_blank" rel="noopener">"Patient is informed of her husband’s death: is it OMI or it stress cardiomyopathy?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 13 hình ảnh và 3 video của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Tác giả: <a href="https://bsky.app/profile/willyhfrick.bsky.social" rel="noopener" target="_blank">Willy Frick</a></p>
+<p><em>Xin nói rõ ngay từ đầu: Một số khía cạnh của ca này tôi chưa hoàn toàn rõ, và cách tiếp cận thì không thể biết chắc. Tôi đã trình bày ca bệnh theo cách tôi hiểu rõ nhất, nhưng tôi thấy cũng có những lập luận vững cho các cách diễn giải khác.</em></p>
+<p>Một phụ nữ cuối độ tuổi 60 nhập viện sau một vụ tai nạn ô tô. Chồng bà lái xe và bà ngồi ghế hành khách. Xe của họ bị đâm ở tốc độ cao. Bà bị một khối máu tụ lớn ở da đầu cùng với gãy nhiều xương sườn và đốt sống, nhưng chụp CT ngực/bụng/chậu/cột sống cổ-ngực-thắt lưng và sọ não không phát hiện tổn thương nào đe dọa tính mạng. Bà than đau do các chấn thương. Điện tâm đồ đầu tiên của bà được trình bày dưới đây.</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at207.58.29E280AFPM-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at207.58.29E280AFPM-1.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async"></a></figure>
+<p>Nhìn chung không có gì đặc biệt. Nhịp xoang bình thường với bất thường ST không đặc hiệu. Sau khi ghi điện tâm đồ này, bác sĩ cấp cứu nhận được tin chồng bệnh nhân đã tử vong trong vụ tai nạn. Ông báo cho bệnh nhân tin dữ khủng khiếp này. Trong vòng mười phút, bà xuất hiện nhịp chậm, tụt huyết áp và thay đổi ST trên monitor. Dưới đây là hình ảnh trình bày một vài đoạn trích kèm mốc thời gian:</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1820at2010.48.17E280AFPM-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1820at2010.48.17E280AFPM-1.jpg" alt="" width="1600" height="711" loading="lazy" decoding="async"></a></figure>
+<p>Nếu bạn muốn xem quá trình chuyển biến, tôi có đưa vào một video khi tôi cuộn qua bản ghi theo dõi từ xa (telemetry). Các thay đổi bắt đầu thấy rõ vào khoảng giây thứ 25 của video.</p>
+<figure><div class="yt" data-id="IqaafQ0JsQk" data-n="Video"></div></figure>
+<p>Điện tâm đồ ghi lại được thực hiện ngay lập tức, chỉ 24 phút sau điện tâm đồ trước:</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at208.03.40E280AFPM-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at208.03.40E280AFPM-1.jpg" alt="" width="1600" height="739" loading="lazy" decoding="async"></a></figure>
+<p>Trong bối cảnh này, chẩn đoán phân biệt hàng đầu của tôi sẽ là bệnh cơ tim do stress, còn gọi là takotsubo. Nhưng đó là một chẩn đoán loại trừ, và hiển nhiên phải loại trừ OMI với điện tâm đồ ấn tượng như thế này. Nếu đây là OMI, tôi sẽ nghiêng về thủ phạm là RCA đoạn gần (vì tổn thương này thường gây thay đổi ở thành dưới-bên và <a href="https://drsmithsecgblog.com/2024/08/anterior-omi-what-does-angiogram-show.html" rel="noopener" target="_blank">đôi khi gây sóng T tối cấp (HATW) ở thành trước do nhồi máu thất phải</a>), nhưng LAD cũng có thể. Một điểm khác ủng hộ RCA là nhịp bộ nối. Nhịp chậm và blốc tim rất thường gặp trong OMI do RCA.</p>
+<p>Bác sĩ cấp cứu lập tức kích hoạt phòng thông tim (cath lab). Trong phòng thông tim, bệnh nhân được theo dõi liên tục bằng điện tâm đồ rút gọn với 5 điện cực. Trong lúc nong bóng, chúng tôi thường thấy ngay sóng T tối cấp. Sau khi bung stent, chúng tôi thường thấy ST-T cải thiện trong vòng vài giây hoặc vài phút. Điện tâm đồ của bệnh nhân lúc bắt đầu thủ thuật được trình bày dưới đây.</p>
+<p>1:45, bắt đầu thủ thuật</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_unnamed-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_unnamed-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Để giúp bạn định hướng trên màn hình này, phần trên hiển nhiên là các dạng sóng điện tâm đồ. Bạn có thể thấy nhãn chuyển đạo ở bên trái, theo thứ tự từ trên xuống là I, II, aVF và V (một chuyển đạo trước tim duy nhất). Nửa dưới màn hình hiển thị áp lực động mạch. Lúc này nó chưa được nối, nên chỉ hiển thị một dạng sóng nhiễu sát mức không.</p>
+<p>Để bàn luận chi tiết hơn về kết quả chụp mạch của bệnh nhân này và về chụp mạch nói chung, xin xem <a href="https://www.notion.so/intuitivecardiology/67-year-old-woman-with-ECG-changes-after-learning-of-the-death-of-her-husband-17fa6ed7d54c80c6a87bfed5a8edb519?pvs=4" rel="noopener" target="_blank">hướng dẫn chụp mạch của tôi</a>. Các động mạch bên trái của bệnh nhân chỉ có bệnh lý nhẹ. Phim chụp RCA được trình bày dưới đây. Bạn sẽ thấy những điều sau:</p>
+<p>Thứ nhất, thuốc cản quang làm đầy RCA và hệ nhánh sau-bên. Thứ hai, một khung hình dừng khi toàn bộ mạch đã cản quang, nhưng chưa thấy PDA. Thứ ba, một đoạn quay chậm cho thấy PDA được làm đầy muộn nhưng nhanh do một cục huyết khối bị bật ra khi bơm thuốc cản quang và trôi xuống gây thuyên tắc đoạn xa. Thứ tư, cùng đoạn phim đó được chiếu lại ở tốc độ bình thường.</p>
+<figure><div class="yt" data-id="nSgZcUsvdWE" data-n="Video"></div></figure>
+<p>Phim chụp mạch vành tư thế LAO chếch đầu (cranial) này cho thấy ít nhất ba dấu hiệu, được chú thích dưới đây:</p>
+<ul><li>Một tổn thương ở lỗ xuất phát (ostial) (<span class="c-do">mũi tên đỏ</span>), sẽ nói thêm ở phần dưới.</li></ul>
+<ul><li>Một tổn thương ở RCA đoạn xa (<span class="c-xanh">mũi tên xanh</span>),</li></ul>
+<ul><li>PDA ban đầu bị tắc được làm đầy muộn nhưng nhanh do một cục huyết khối bị bật ra trong lúc bơm thuốc và trôi xuống gây thuyên tắc đoạn xa. Mũi tên <span class="c-luc">vàng</span> chỉ vào mỏm cụt của PDA trước khi cục huyết khối trôi đi, cho phép thuốc cản quang làm đầy mạch.</li></ul>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at208.47.08E280AFPM-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Screenshot202025-01-1720at208.47.08E280AFPM-1.jpg" alt="" width="1600" height="1059" loading="lazy" decoding="async"></a></figure>
+<p>Mặc dù tổn thương ở lỗ xuất phát có thể trông không quá ấn tượng trên phim chụp mạch, vẫn có lý do để tin rằng nó nặng, dựa trên một quan sát trong phòng thông tim gọi là “giảm áp lực đầu ống thông” (pressure damping). Điều này cần giải thích một chút. Dạng sóng áp lực động mạch được ghi qua bộ chuyển đổi nhờ ống thông mạch vành. Bình thường, đường kính lỗ xuất phát động mạch vành lớn hơn nhiều so với đường kính ống thông, nên việc cài ống thông không làm giảm đáng kể tưới máu xuôi dòng của động mạch vành. Nhưng trong trường hợp có tổn thương ở lỗ xuất phát, gần như không còn khoảng trống giữa mặt ngoài ống thông và thành động mạch vành. Điều này cản trở dòng chảy xuôi dòng vào động mạch vành trong lúc cài ống thông, và hậu quả là áp lực ghi được giảm đáng kể so với huyết áp động mạch hệ thống.</p>
+<p>Đây là điện tâm đồ và dạng sóng động mạch trong lúc chụp RCA. Lưu ý áp lực trên đường động mạch, ước tính 45/25 mm Hg.</p>
+<p>1:51, chụp RCA chẩn đoán</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_151-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_151-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Đến thời điểm này, bệnh nhân rõ ràng đã có chẩn đoán OMI, đặc biệt vì chúng tôi đã thấy được thuyên tắc trong PDA. Nhưng liệu bệnh lý mạch vành có đủ để giải thích các thay đổi điện tâm đồ dai dẳng không? Đây là phim chụp mạch cuối cùng sau khi đặt stent ở lỗ xuất phát RCA.</p>
+<figure><div class="yt" data-id="5Uanhrokg_s" data-n="Video"></div></figure>
+<p>2:04 chiều, sau khi bung stent</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_204-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_204-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Bạn có thể thấy rằng ngay cả sau khi dòng chảy đã được khôi phục hoàn toàn, điện tâm đồ vẫn trông rất tệ, nhất là chuyển đạo V. Có thể có rối loạn chức năng vi mạch gây thiếu máu cục bộ xuyên thành còn sót lại. Nhưng điều này thường gặp nhất khi thiếu máu cục bộ kéo dài, còn bệnh nhân này được tái tưới máu nhanh nhất có thể tưởng tượng! Theo ý kiến của tôi, lời giải thích có khả năng hơn là các thay đổi ST-T chủ yếu do bệnh cơ tim do stress chi phối.</p>
+<p>Đến lúc này, với dòng chảy TIMI 3 ở tất cả các mạch, bác sĩ tim mạch can thiệp tiến hành thông tim phải. Áp lực mao mạch phổi bít (wedge) của bệnh nhân là 18 mm Hg, với cung lượng tim và chỉ số tim bình thường theo phương pháp Fick ước tính. Sau khi hoàn tất thông tim phải, đoạn ST trên điện tâm đồ của bệnh nhân xấu đi. Ống thông đã được rút ra khỏi cơ thể và vị trí mở động mạch đã được đóng, nên không có dạng sóng áp lực.</p>
+<p>2:34 chiều, sau thông tim phải</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_234-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_234-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Sau đó bà chuyển sang rung nhĩ kèm blốc tim hoàn toàn và nhịp thoát bộ nối, buộc phải đặt máy tạo nhịp tạm thời qua đường tĩnh mạch.</p>
+<p>2:38, rung nhĩ kèm blốc tim hoàn toàn</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_238-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_238-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Do huyết động không ổn định, bác sĩ tim mạch đã đặt Impella và chuẩn bị chụp mạch lại. Giữa lúc đó, bà rơi vào rung thất (VF). Nhiều cú sốc 200 J không cắt được rung thất, nên một máy khử rung thứ hai được áp vào để <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2207304" rel="noopener" target="_blank">khử rung kép liên tiếp (double sequential defibrillation)</a> với 400 J. Bệnh nhân rơi vào bão điện (electrical storm) với rung thất tái phát. Trong quá trình hồi sức, bà được dùng amiodarone 450 mg tĩnh mạch, lidocaine 100 mg tĩnh mạch và magnesi 6 g tĩnh mạch. Bà đã được khử rung có lẽ tới 25 lần.</p>
+<p>Việc chụp mạch gặp khó khăn về kỹ thuật vì bệnh nhân đang được hồi sinh tim phổi, nhưng bác sĩ tim mạch nghi ngờ huyết khối stent cấp và đã bắt đầu dùng cangrelor, dù không thể chụp mạch lại được. Đáng tiếc là ngay cả khi đã có Impella và khi bệnh nhân ở nhịp rung nhĩ đã được kiểm soát tần số, bà vẫn mất mạch.</p>
+<p>3:07 chiều, rung nhĩ chậm kèm phân ly điện-cơ</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_307-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_307-1.jpg" alt="" width="1600" height="1012" loading="lazy" decoding="async"></a></figure>
+<p>Lúc này, gia đình bệnh nhân quyết định dừng các nỗ lực hồi sức và bệnh nhân được tuyên bố tử vong.</p>
+<h2 id="ban-luan-ca-benh">Bàn luận ca bệnh:</h2>
+<p>Đây là một ca bệnh bi thảm. Bệnh nhân đã sống sót qua vụ tai nạn ô tô, nhưng khi biết tin chồng qua đời, tình trạng của bà xấu đi. Dù được tái thông mạch gần như ngay lập tức, bà vẫn có các bất thường ST-T dai dẳng và rõ rệt. Bác sĩ tim mạch cho rằng bà bị huyết khối stent, điều đó là có thể, nhưng tôi không nhất thiết cho rằng nó đủ để giải thích tình trạng suy sụp huyết động hoàn toàn của bà.</p>
+<p>Chỉ vài tuần trước, tôi đã điều trị một bệnh nhân bị OMI do tắc lỗ xuất phát RCA (TIMI 0 khi thông tim) và than phiền duy nhất của ông ấy là ngất! Ông ấy không đau ngực, không khó thở hay bất kỳ triệu chứng tương đương đau thắt ngực nào khác, và các dấu hiệu sinh tồn bình thường.</p>
+<p>Theo ý kiến của tôi, các thay đổi điện tâm đồ và tình trạng suy sụp huyết động dường như không tương xứng với bệnh lý mạch vành quan sát được/nghi ngờ. Ngoài ra, mốc thời gian gợi ý mạnh mẽ nguyên nhân do stress. Takotsubo <a href="https://www.ahajournals.org/doi/full/10.1161/CIRCULATIONAHA.121.055854" rel="noopener" target="_blank">điển hình xảy ra</a> ở phụ nữ trong độ tuổi 60. Hiện nay đã được công nhận rộng rãi rằng <a href="https://academic.oup.com/eurheartj/article/39/22/2032/5025412" rel="noopener" target="_blank">nhồi máu cơ tim cấp có thể khởi phát takotsubo</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/35845159/" rel="noopener" target="_blank">Đây</a> là một báo cáo ca bệnh kèm tổng quan y văn. Các tác giả mô tả một ca bệnh có một số đặc điểm chung với bệnh nhân của chúng tôi — một biến cố gây stress, sau đó là hội chứng chồng lấp giữa bệnh cơ tim do stress và nhồi máu cơ tim cấp. Bệnh nhân này không được chụp buồng thất trái (LVgram), nhưng ngay cả kết quả đó cũng có thể khó diễn giải nếu bệnh nhân có một trong các kiểu hình đã được công nhận khác với dạng mỏm tim phình dạng bóng kinh điển (<em>ví dụ</em> giữa thất, đáy, khu trú).</p>
+<p>Khi tổng quan y văn, tôi thấy có nhiều bài báo cho rằng chứng minh được nguy cơ nứt vỡ mảng xơ vữa tăng cấp tính do stress cảm xúc, nhưng tôi không tìm được báo cáo ca bệnh đáng tin cậy nào mà khả năng là takotsubo không ít nhất là ngang bằng. Xin nhắn cho tôi trên <a href="https://bsky.app/profile/willyhfrick.bsky.social" rel="noopener" target="_blank">Bluesky</a> hoặc <a href="https://x.com/willyhfrick" rel="noopener" target="_blank">Twitter</a> nếu bạn biết báo cáo ca bệnh nào như vậy. Dưới đây là một phần những gì tôi tìm được:</p>
+<ul><li>Một <a href="https://pubmed.ncbi.nlm.nih.gov/1590252/" rel="noopener" target="_blank">báo cáo ca bệnh</a> mô tả nhồi máu cơ tim cấp do stress nhưng theo ý kiến của tôi thì nhiều khả năng là takotsubo hơn (kể cả các thay đổi điện tâm đồ đặc trưng)</li>
+<li>Một <a href="https://www.ahajournals.org/doi/10.1161/01.cir.92.3.657" rel="noopener" target="_blank">bài tổng quan</a> khẳng định vai trò của stress cảm xúc trong nứt vỡ mảng xơ vữa, và trích dẫn báo cáo ca bệnh nói trên cùng một vài nghiên cứu quần thể khó rút ra kết luận chắc chắn</li>
+<li><a href="https://www.ahajournals.org/doi/10.1161/circresaha.114.302721" rel="noopener" target="_blank">Một bài tổng quan </a>khác với các trích dẫn tương tự</li>
+<li>Một <a href="http://10.1161/CIRCULATIONAHA.111.061770" rel="noopener" target="_blank">nghiên cứu bệnh-chứng</a> bề ngoài cho thấy nguy cơ nhồi máu cơ tim tăng sau khi người thân qua đời, nhưng không có dữ liệu chụp mạch và chính các tác giả cũng thừa nhận rằng có thể đã có takotsubo</li>
+<li>Một <a href="http://10.1136/hrt.37.11.1133" rel="noopener" target="_blank">nghiên cứu tử thiết</a> cho rằng stress có vai trò trong đột tử do tim do bệnh mạch vành, nhưng không chứng minh được rõ ràng</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/23362002/" rel="noopener" target="_blank">Các tác giả này</a> mô tả một ca hội chứng takotsubo biến chứng nghi huyết khối thất trái và OMI do huyết khối từ tim</li></ul>
+<p>Rốt cuộc, phần lớn cuộc bàn luận này không có ý nghĩa lâm sàng. Bệnh nhân chắc chắn đã bị OMI và đã được điều trị OMI. Không có điều trị đặc hiệu cho bệnh cơ tim do stress, chỉ có điều trị hỗ trợ. Liệu kết cục của bà có phải là điều có thể dự đoán với OMI do tắc lỗ xuất phát RCA? Hay nó không tương xứng, có lẽ bị làm nặng thêm bởi cơn bùng phát giao cảm? Chúng ta sẽ không bao giờ biết chắc.</p>
+<p>Ngoài suy tim cấp nặng nề, bệnh nhân còn bị bão điện. Sau khi đã hoàn tất phác đồ ACS với amiodarone và lidocaine, các điều trị tiếp theo mang lại hiệu quả ngày càng giảm. Nếu có thể duy trì tạm thời cho bệnh nhân bằng VA ECMO, hãy cân nhắc <a href="https://pubmed.ncbi.nlm.nih.gov/29699616/" rel="noopener" target="_blank">propranolol</a> hoặc <a href="https://www.jacc.org/doi/10.1016/j.jacc.2023.03.424" rel="noopener" target="_blank">phong bế hạch sao</a>. Cả hai đều điều trị cơn bùng phát giao cảm, vốn là yếu tố thúc đẩy bão điện.</p>
+<h3 id="nhung-diem-can-hoc">Những điểm cần học:</h3>
+<ul><li>Takotsubo và OMI có thể cùng tồn tại</li></ul>
+<ul><li>Nếu mức năng lượng tối đa của máy khử rung không cắt được VT, hãy thêm một máy khử rung khác</li></ul>
+<ul><li>Nếu amiodarone, lidocaine và magnesi không hiệu quả trong việc ức chế VT/VF, hãy cân nhắc VA ECMO hoặc propranolol</li></ul>
+<h3 id="tai-lieu-tham-khao">Tài liệu tham khảo:</h3>
+<p>Angulo‐Llanos, R., Sanz‐Ruiz, R., Solis, J., và Fernández‐Avilés, F. (2013). Acute myocardial infarction: an uncommon complication of takotsubo cardiomyopathy. Tạp chí <em>Catheterization and Cardiovascular Interventions</em>, <em>82</em>(6), 909–913. https://doi.org/10.1002/ccd.24846</p>
+<p>Bai, J., Xiang, W., Kong, L.-Y., Zhao, L.-T., Liu, F., Liu, L.-F., Tang, Z., và Zhang, P. (2022). Acute myocardial infarction complicated with takotsubo syndrome in an elderly patient: case report and literature review. Tạp chí <em>Journal of Geriatric Cardiology</em>, <em>19</em>(6). https://doi.org/10.11909/j.issn.1671-5411.2022.06.007</p>
+<p>Bentzon, J. F., Otsuka, F., Virmani, R., và Falk, E. (2014). Mechanisms of plaque formation and rupture. Tạp chí <em>Circulation Research</em>, <em>114</em>(12), 1852–1866. https://doi.org/10.1161/circresaha.114.302721</p>
+<p>Chatzidou, S., Kontogiannis, C., Tsilimigras, D. I., Georgiopoulos, G., Kosmopoulos, M., Papadopoulou, E., Vasilopoulos, G., và Rokas, S. (2018). Propranolol versus Metoprolol for treatment of electrical storm in patients with implantable cardioverter-defibrillator. Tạp chí <em>Journal of the American College of Cardiology</em>, <em>71</em>(17), 1897–1906. https://doi.org/10.1016/j.jacc.2018.02.056</p>
+<p>Cheskes, S., Verbeek, P. R., Drennan, I. R., McLeod, S. L., Turner, L., Pinto, R., Feldman, M., Davis, M., Vaillancourt, C., Morrison, L. J., Dorian, P., và Scales, D. C. (2022). Defibrillation strategies for refractory ventricular fibrillation. Tạp chí <em>New England Journal of Medicine</em>, <em>387</em>(21), 1947–1956. https://doi.org/10.1056/nejmoa2207304</p>
+<p>Falk, E., Shah, P. K., và Fuster, V. (1995). Coronary plaque disruption. Tạp chí <em>Circulation</em>, <em>92</em>(3), 657–671. https://doi.org/10.1161/01.cir.92.3.657</p>
+<p>Gelernt, M. D., và Hochman, J. S. (1992). Acute myocardial infarction triggered by emotional stress. Tạp chí <em>The American Journal of Cardiology</em>, <em>69</em>(17), 1512–1513. https://doi.org/10.1016/0002-9149(92)90918-o</p>
+<p>Ghadri, J.-R., Wittstein, I. S., Prasad, A., Sharkey, S., Dote, K., Akashi, Y. J., Cammann, V. L., Crea, F., Galiuto, L., Desmet, W., Yoshida, T., Manfredini, R., Eitel, I., Kosuge, M., Nef, H. M., Deshmukh, A., Lerman, A., Bossone, E., Citro, R., … Templin, C. (2018). International expert consensus document on takotsubo syndrome (part I): Clinical characteristics, diagnostic criteria, and pathophysiology. Tạp chí <em>European Heart Journal</em>, <em>39</em>(22), 2032–2046. https://doi.org/10.1093/eurheartj/ehy076</p>
+<p>Jentzer, J. C., Noseworthy, P. A., Kashou, A. H., May, A. M., Chrispin, J., Kabra, R., Arps, K., Blumer, V., Tisdale, J. E., và Solomon, M. A. (2023). Multidisciplinary critical care management of electrical storm. Tạp chí <em>Journal of the American College of Cardiology</em>, <em>81</em>(22), 2189–2206. https://doi.org/10.1016/j.jacc.2023.03.424</p>
+<p>Mostofsky, E., Maclure, M., Sherwood, J. B., Tofler, G. H., Muller, J. E., và Mittleman, M. A. (2012). Risk of acute myocardial infarction after the death of a significant person in one’s life. Tạp chí <em>Circulation</em>, <em>125</em>(3), 491–496. https://doi.org/10.1161/circulationaha.111.061770</p>
+<p>Myers, A., và Dewar, H. A. (1975). Circumstances attending 100 sudden deaths from coronary artery disease with coroner’s necropsies. Tạp chí <em>Heart</em>, <em>37</em>(11), 1133–1143. https://doi.org/10.1136/hrt.37.11.1133</p>
+<p>Park, J., Choi, K. H., Lee, J. M., Kim, H. K., Hwang, D., Rhee, T., Kim, J., Park, T. K., Yang, J. H., Song, Y. B., Choi, J., Hahn, J., Choi, S., Koo, B., Chae, S. C., Cho, M. C., Kim, C. J., Kim, J. H., Jeong, M. H., … Kim, H. (2019). Prognostic implications of Door‐to‐balloon time and onset‐to‐door time on mortality in patients with st‐segment–elevation myocardial infarction treated with primary percutaneous coronary intervention. Tạp chí <em>Journal of the American Heart Association</em>, <em>8</em>(9). https://doi.org/10.1161/jaha.119.012188</p>
+<p>Singh, T., Khan, H., Gamble, D. T., Scally, C., Newby, D. E., và Dawson, D. (2022). Takotsubo syndrome: Pathophysiology, emerging concepts, and clinical implications. Tạp chí <em>Circulation</em>, <em>145</em>(13), 1002–1019. https://doi.org/10.1161/circulationaha.121.055854</p>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_0-Figure-6-REDLINE-UseinBlogs-6.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_0-Figure-6-REDLINE-UseinBlogs-6.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-8-3-2025">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (8/3/2025):</h2>
+<p><span class="c-do">===================================</span></p>
+<p>Nếu bạn tìm trên Google cụm từ <strong>“<a href="https://www.google.com/search?q=broken+heart+syndrome&amp;ie=UTF-8&amp;oe=UTF-8&amp;hl=en-us&amp;client=safari" rel="noopener" target="_blank">Broken Heart Syndrome</a>” (hội chứng trái tim tan vỡ)</strong> — bạn sẽ ngay lập tức thấy dẫn chiếu tới nhiều trang tin vắn và tài liệu thông tin “Giáo dục bệnh nhân”, trong đó các câu hỏi được đặt ra là: <em><strong>“Có thật sự có thể chết vì trái tim tan vỡ không?” </strong></em>— và nếu có, thì <em>“Điều này có thể xảy ra như thế nào?”</em>.</p>
+<ul><li>Câu trả lời là <strong>CÓ, </strong>bạn <em>có thể</em> chết vì “hội chứng trái tim tan vỡ” — như được minh chứng một cách bi thảm trong ca bệnh hôm nay do bác sĩ Frick trình bày.</li></ul>
+<p>Hội chứng này được xác định lần đầu tiên vào năm 1990 — và ban đầu được gọi là <strong>bệnh cơ tim “Takotsubo” (</strong><em>TCM</em><strong>) </strong>vì hình dạng của tim trên phim chụp buồng thất giống với hình dạng chiếc bình mà ngư dân Nhật Bản dùng để bẫy bạch tuộc.</p>
+<ul><li>Như minh họa trong <u>Hình 1</u> — thiết kế đáy tròn và cổ hẹp khác thường của chiếc bình takotsubo tương tự với các dấu hiệu trên phim thông tim, biểu hiện bằng mỏm tim phình dạng bóng kèm tăng co bóp ở vùng đáy.</li>
+<li>Sau đó hội chứng này có thêm nhiều tên gọi khác — bao gồm <strong>bệnh cơ tim <em>“do stress” </em>(</strong><em>Stress CM</em><strong>)</strong> — “hội chứng mỏm tim phình dạng bóng” (Apical Ballooning Syndrome) — và tên gọi trên báo chí phổ thông là hội chứng <em>“trái tim tan vỡ” </em>(Broken Heart Syndrome).</li>
+<li>Kể từ đó, nhiều biến thể về vị trí tổn thương của tim đã được mô tả. Thay vì rối loạn chức năng thất trái khu trú ở mỏm — rối loạn chức năng có thể ở vùng đáy = <strong>Takotsubo <em>“đảo ngược” </em></strong>, khi đó sẽ không có hình ảnh mỏm tim phình dạng bóng. Hoặc có thể có <strong>Takotsubo <em>giữa thất </em></strong>, trong đó vùng giữa thất trái co bóp kém (<em>và phình dạng bóng</em>), còn cả vùng đáy lẫn mỏm vẫn co bóp tốt — và còn những khả năng giải phẫu khác nữa <strong>(</strong><em>Xem </em><strong>bài ngày <a href="https://drsmithsecgblog.com/2014/06/respiratory-failure-and-st-depression.html" rel="noopener" target="_blank">24 tháng Sáu năm 2014</a></strong> — <em>và Bình luận của tôi trong </em><strong>bài ngày <a href="https://drsmithsecgblog.com/2022/07/a-woman-in-her-40s-with-intractable.html" rel="noopener" target="_blank">21 tháng Bảy năm 2022</a> </strong>trên Dr. Smith’s ECG Blog<strong> </strong><em>về các kiểu hình biến thể của Takotsubo</em><strong>)</strong>.</li>
+<li>Và, như thường xảy ra với các hội chứng lâm sàng “mới được mô tả” — một khi chúng xuất hiện trong y văn, hội chứng ngày càng được nhận biết nhiều hơn (<em>trong khi có lẽ nó vẫn luôn tồn tại với một tần suất chưa xác định</em>). Vì vậy, thực thể <strong>CM <em>do stress </em><u>không</u> phải là “một cỡ vừa cho tất cả”</strong> — mà bao gồm cả một phổ các biểu hiện về giải phẫu (<em>và do đó cả về điện tâm đồ</em>).</li>
+<li>Mặc dù cơ chế chính xác của thực thể này vẫn chưa rõ — mẫu số chung dường như là <strong>tình trạng <em>giao cảm </em>hoạt động quá mức (</strong><em>dư thừa catecholamine</em><strong>)</strong>, với ưu thế rõ rệt ở <strong>phụ nữ <em>sau mãn kinh</em></strong> — trong đó thực thể này <strong><em>thường</em> <em>được khởi phát </em>bởi stress cảm xúc hoặc thể chất mạnh. </strong>Dù vậy — nhiều ca <u>không</u> đơn giản như thế, và tôi thấy mình vừa xúc động về mặt cảm xúc — vừa bị cuốn hút về mặt trí tuệ bởi chuỗi diễn biến trong ca bệnh hôm nay.</li></ul>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Figure-12020Takotsubo20picture-Japanese20Octopus20catch201-18.23-2025-USE-1.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Figure-12020Takotsubo20picture-Japanese20Octopus20catch201-18.23-2025-USE-1.jpg" alt="" width="1600" height="977" loading="lazy" decoding="async"></a></figure>
+<p>==================================</p>
+<h3 id="suy-nghi-cua-toi-ve-ca-benh-hom-nay">SUY NGHĨ CỦA TÔI về CA BỆNH hôm nay:</h3>
+<p>Mặc dù chúng ta không biết chi tiết về mối quan hệ giữa bệnh nhân hôm nay (<em>một phụ nữ cuối độ tuổi 60</em>) và chồng bà — tôi dễ dàng hình dung ra một cuộc hôn nhân kéo dài nhiều thập kỷ, trong đó bệnh nhân, khi chính bà đang được điều trị các chấn thương nặng nhưng không đe dọa tính mạng — đột nhiên biết tin người bạn đời trọn kiếp của mình đã qua đời trong vụ tai nạn ô tô.</p>
+<ul><li>Xét đến “phản ứng dây chuyền” sinh lý tức thì của tình trạng rối loạn thần kinh tự chủ dữ dội xảy ra sau khi bà biết tin chồng qua đời (<em>và cuối cùng đã dẫn đến cái chết của bệnh nhân này</em>) — tôi không khỏi tự hỏi <em>KHI NÀO </em>(<em>và Bằng cách nào?</em><strong>) là tốt nhất để báo tin khủng khiếp rằng một người thân yêu vừa qua đời trong chính vụ tai nạn vừa xảy ra?</strong></li>
+<li>Rõ ràng — “phản ứng dây chuyền” sinh lý của rối loạn thần kinh tự chủ thấy trong ca hôm nay <u>không</u> thường dẫn đến tử vong ở người nhận tin này. Nhưng nếu phải đối mặt với một quyết định tương tự trong tương lai — tôi tự hỏi,<em> liệu vì lợi ích của tình trạng y khoa của bệnh nhân —</em> có lẽ tốt hơn là<em> <u>không</u> </em>báo ngay tin người thân qua đời trong cùng vụ tai nạn <em>cho đến khi</em> bệnh nhân ở trạng thái có khả năng tiếp nhận điều đã xảy ra tốt hơn. <em>Tôi không biết câu trả lời cho điều này.</em></li></ul>
+<p>Liên quan đến <strong><em>“Phản ứng dây chuyền” sinh lý …</em></strong></p>
+<ul><li>Như bác sĩ Frick đã nói — Chúng ta <u>không</u> có tất cả các câu trả lời. Thông tim có vẻ cho thấy một mức độ rối loạn chức năng thất, dù không phải là các dấu hiệu điển hình của bệnh cơ tim Takotsubo <strong>(</strong><em>rất khó làm thủ thuật trong khi bệnh nhân đang được hồi sinh tim phổi …</em><strong>)</strong>.</li>
+<li>Điều <u>đã</u> biết — là điện tâm đồ <u>ghi lại</u> trong ca hôm nay <strong>(</strong><em>trình bày trong </em><strong><u>Hình 2</u>)</strong> — gợi ý <strong>tình trạng <u>phó giao cảm</u> hoạt động quá mức nghiêm trọng</strong>.</li></ul>
+<ul><li>Trong khi điện tâm đồ <em><u>ban đầu</u></em> của bệnh nhân cho thấy nhịp xoang và bất thường ST-T không đặc hiệu — chỉ <strong>24 phút sau</strong>, giờ đây đã có nhịp chậm <em>nghiêm trọng</em> với nhịp thoát bộ nối <strong>(</strong><em>các mũi tên VÀNG chỉ ra sóng P ngược dòng</em><strong>)</strong> — và các dấu hiệu rõ ràng của STEMI thành dưới cấp.</li>
+<li>ST chênh lên rõ rệt ở các chuyển đạo thành dưới (<em>ở chuyển đạo III lớn hơn ở chuyển đạo II</em>) — cùng với ST chênh xuống soi gương rõ rệt tương đương ở chuyển đạo aVL gợi ý <strong>“thủ phạm” là RCA</strong> — dù các đoạn ST dẹt bất thường ở V1,V2 (<em>tổn thương thất phải và thành sau triệt tiêu lẫn nhau?</em>) cùng ST chênh lên từ V3-đến-V6 cho thấy một bức tranh phức tạp.</li></ul>
+<p>Tình trạng bệnh nhân xấu đi. Như bác sĩ Frick đã nói — các thay đổi điện tâm đồ tiếp diễn đi kèm với suy sụp huyết động dường như không tương xứng với bệnh lý mạch vành biểu hiện ra.</p>
+<ul><li>Đã có dấu hiệu của tình trạng phó giao cảm hoạt động quá mức <strong>(</strong><em>STEMI thành dưới cấp với nhịp chậm nghiêm trọng và nhịp thoát bộ nối</em><strong>)</strong>.</li>
+<li>Tình trạng này sau đó bị lấn át bởi ưu thế của cơn bùng phát giao cảm <strong>(</strong><em>nhịp nhanh, ST chênh lên dai dẳng — xuất hiện “bão” điện không đáp ứng với khử rung lặp lại</em><strong>)</strong>.</li>
+<li>Có lẽ tóm lại tốt nhất là một ca bi thảm của rối loạn thần kinh tự chủ cực độ, được khởi phát bởi stress tâm lý quá sức chịu đựng, vượt quá cả những nỗ lực điều trị tích cực nhất.</li></ul>
+<figure><a class="o-anh" href="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Figure-22020ECGs-1220201-19.23-2025-USE.jpg"><img src="2025-03-08-patient-is-informed-of-her-husbands-2_anh/2025_03_Figure-22020ECGs-1220201-19.23-2025-USE.jpg" alt="" width="1600" height="1511" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 2:</u></strong> So sánh giữa <strong>điện tâm đồ 12 chuyển đạo <u>ban đầu</u></strong> trong ca hôm nay — với <strong>điện tâm đồ <u>ghi lại</u></strong> chỉ 24 phút sau, sau khi bệnh nhân biết tin chồng đã qua đời.</figcaption></figure>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
