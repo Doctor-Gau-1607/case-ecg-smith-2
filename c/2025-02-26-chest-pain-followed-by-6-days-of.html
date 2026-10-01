@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>26/02/2025 — Đau ngực, sau đó khó thở tăng dần trong 6 ngày — chuyện gì đã xảy ra?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1834 · DR. SMITH’S ECG BLOG</div>
+   <h1>26/02/2025 — Đau ngực, sau đó khó thở tăng dần trong 6 ngày — chuyện gì đã xảy ra?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/chest-pain-followed-by-6-days-of/" target="_blank" rel="noopener">"Chest pain followed by 6 days of increasing dyspnea — what happened?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 4 hình ảnh và 2 video của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<hr>
+<p>Tác giả: Magnus Nossen, Smith biên tập</p>
+<p>Bệnh nhân trong ca hôm nay là một nam giới 85 tuổi có tiền sử COPD và sa sút trí tuệ. Ông đến khoa cấp cứu để được đánh giá. Chúng ta hãy xem xét hai bệnh cảnh lâm sàng khác nhau. Bạn sẽ xử trí bệnh nhân này thế nào trong mỗi tình huống?</p>
+<ul><li><strong>Tình huống 1</strong>: Bệnh nhân đến viện với đau ngực sau xương ức kéo dài 24 giờ.</li>
+<li><strong>Tình huống 2:</strong> Bệnh nhân đến viện với khó thở 6 ngày.</li></ul>
+<p><em>Dưới đây là điện tâm đồ lúc nhập viện của ông. </em><em>Bạn nghĩ gì? Bạn giải thích thế nào về ST chênh lên ở các chuyển đạo trước tim và chuyển đạo chi?</em></p>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p><strong>Điện tâm đồ <em>ban đầu</em></strong> trong ca hôm nay. <strong>(</strong>LƯU Ý: <em>Điện tâm đồ này ban đầu được ghi với tốc độ giấy 50mm/giây. Nó đã được “nén” theo trục X để trông như được ghi với tốc độ giấy 25mm/giây</em>.<strong>)</strong>.</p>
+<figure><a class="o-anh" href="2025-02-26-chest-pain-followed-by-6-days-of_anh/2025_02_54A6A163-C75C-4AF0-81CA-4F4E410D65F8.jpg"><img src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2025_02_54A6A163-C75C-4AF0-81CA-4F4E410D65F8.jpg" alt="" width="876" height="490" loading="lazy" decoding="async"></a></figure>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<p><strong>Diễn giải:</strong> Điện tâm đồ trên cho thấy nhịp xoang tần số 94 nhát/phút. Phức bộ QRS hẹp, trục QRS trên mặt phẳng trán gần thẳng đứng, khoảng 90 độ. Các chuyển đạo trước tim và các chuyển đạo dưới có ST chênh lên. Trước tiên, hãy xem các chuyển đạo trước tim:</p>
+<ul><li>Các chuyển đạo trước tim đầu tiên V2 và V3 có sóng R rất nhỏ, theo sau là sóng S sâu và ST chênh lên. </li>
+<li>Chuyển đạo V4 không có sóng R mà thay vào đó là phức bộ QS, theo sau là ST chênh lên. </li>
+<li>Có một ít sóng R ở các chuyển đạo trước tim bên. </li>
+<li>Cả V3 và V4 đều có ST chênh lên 6mm. Khi có sóng QS, luôn phải nghĩ đến phình thất trái, nhưng tỷ lệ ST/QRS và tỷ lệ sóng T/QRS quá lớn, không phù hợp với phình thất trái. </li>
+<li>Nhận định: Điện tâm đồ này cho thấy rất nhiều “tính cấp” (acuity). Có diện tích đáng kể dưới đoạn ST và dưới sóng T. Điều này tương ứng với vùng cơ tim có khả năng cứu vớt được. </li></ul>
+<p><strong>Smith:</strong> Sóng T rất tối cấp: đây là dấu hiệu của nhồi máu CẤP, ngay cả khi có sóng Q.  <strong>Xem Raitt và cs.:</strong> 50% STEMI do LAD có sóng Q trong vòng một giờ.  Dù phần lớn trong số này là sóng QR (không phải sóng QS), sóng QS vẫn có thể gặp trong nhồi máu cơ tim cấp; đó là lý do tôi cần xây dựng một quy tắc để phân biệt ST chênh lên và sóng QS của nhồi máu cơ tim thành trước cấp với ST chênh lên và sóng QS của phình thất trái.  Vì vậy, nó không nhất thiết là bán cấp. <strong>Ngoại lệ</strong> là <strong>viêm màng ngoài tim sau nhồi máu</strong>, trong đó một nhồi máu xuyên thành đã hoàn tất gây viêm lớp cơ tim dưới thượng tâm mạc và ST chênh lên theo vùng phân bố của nhồi máu, dẫn đến ST chênh lên tăng thêm và sóng T dương lớn. Nếu chỉ xét riêng, các dấu hiệu điện tâm đồ phải được coi là nhồi máu cơ tim cấp cho đến khi chứng minh được điều ngược lại.  Sự hiện diện của sóng Q KHÔNG hề loại trừ OMI cấp.  Thậm chí đó có thể là một OMI cấp chồng lên một OMI cũ có sóng Q.  Vì vậy, phải kích hoạt phòng thông tim để đánh giá.  Nhiều khả năng sẽ thấy tắc LAD, và có thể khó biết chỗ tắc đã có từ bao lâu và cơ tim còn sống đến mức nào, nhưng cần phải mở thông nó.</p>
+<p><span class="c-nhat">= = =</span></p>
+<p><strong>Như vậy, chúng ta đã xem các chuyển đạo trước tim, chúng cho thấy các dấu hiệu phù hợp với OMI cấp hoặc bán cấp. Giờ hãy xem các thay đổi ST-T ở chuyển đạo chi. </strong></p>
+<ul><li><em>Bạn nghĩ gì về ST chênh lên ở các chuyển đạo dưới? ST chênh lên này có bản chất thiếu máu cục bộ không? ST chênh lên ở các chuyển đạo dưới có thể do một LAD “vòng qua mỏm” (wrap around) cấp máu cho thành dưới không? Và nếu vậy, bệnh nhân có thể hưởng lợi từ tái thông mạch không?</em></li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p>ST chênh lên ở các chuyển đạo dưới không có hình dạng thiếu máu cục bộ điển hình. Các đoạn ST lõm hướng lên (concave-up) với sóng J rõ ở chuyển đạo II và aVF. Cũng có đoạn PR chênh xuống nhẹ. Gộp lại, các dấu hiệu này thường gặp hơn trong viêm màng ngoài tim.</p>
+<ul><li><strong>Smith</strong>: Ở các chuyển đạo chi, véc-tơ ST hướng về chuyển đạo II (STE ở II ＞ STE ở III, điều này gợi ý viêm màng ngoài tim nhiều hơn là STEMI). Tuy nhiên, viêm màng ngoài tim sau nhồi máu <strong><em>thường</em></strong> giới hạn ở vùng nhồi máu (khác với viêm màng ngoài tim vô căn, vốn ảnh hưởng toàn bộ màng ngoài tim và có ST chênh lên lan tỏa với véc-tơ ST hướng về chuyển đạo II và V5).  Đây là lý do viêm màng ngoài tim sau nhồi máu được gọi là “viêm màng ngoài tim <strong><u>khu trú</u></strong> sau nhồi máu” (postinfarction regional pericarditis)</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><strong>Kết luận:</strong> Tóm lại, các thay đổi trên điện tâm đồ ban đầu của ca hôm nay có thể phù hợp với nhồi máu cơ tim thành trước cấp kèm sóng Q xuất hiện sớm. Trong một bối cảnh lâm sàng khác, chúng cũng có thể phù hợp với nhồi máu cơ tim bán cấp biến chứng viêm màng ngoài tim khu trú sau nhồi máu. Đối chiếu lâm sàng là chìa khóa để xử trí bệnh nhân theo cách tốt nhất có thể.</p>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="quay-lai-ca-benh">Quay lại ca bệnh …</h2>
+<p><strong>Tình huống 2</strong> là bệnh cảnh thực tế của người đàn ông 80 tuổi này. Do sa sút trí tuệ rất nặng, không thể khai thác bệnh sử chi tiết. Vợ ông cho biết 6 ngày trước ông có một đợt khó chịu ở ngực ngắn, sau đó than khó thở từng lúc. Ông đã được một nhân viên y tế khám vì khó thở 4 ngày trước khi nhập viện và được bắt đầu dùng kháng sinh đường uống do nghi viêm phổi. Ông không cải thiện.</p>
+<p>Điện tâm đồ và bệnh sử lâm sàng phù hợp với nhồi máu xuyên thành bán cấp vùng LAD. Sóng T lớn và dương kéo dài ở thành trước cùng ST chênh lên ở thành dưới nhiều khả năng là kết quả của sự kết hợp giữa nhồi máu cơ tim bán cấp và viêm màng ngoài tim sau nhồi máu. Như bình luận của Dr. Smith ở trên — viêm màng ngoài tim sau nhồi máu nhìn chung không lan tỏa như viêm màng ngoài tim thông thường. Nó thường khu trú ở vùng nhồi máu; <strong>do đó, có thể có một LAD vòng qua mỏm cấp máu cho thành dưới.</strong></p>
+<ul><li>Như Dr Smith đã nhiều lần chỉ ra trên blog này, điện tâm đồ là một công cụ tuyệt vời để đánh giá khả năng sống của cơ tim. Từ chối cho bệnh nhân lợi ích tiềm năng của tái thông mạch chỉ vì triệu chứng đã kéo dài một khoảng thời gian nhất định cho thấy sự hiểu biết kém về sinh lý bệnh của thiếu máu cục bộ cơ tim.   </li>
+<li>Bệnh nhân có thể có những đợt tái tưới máu thoáng qua lặp lại, giúp cơ tim không bị hoại tử. Ngoài ra, một số bệnh nhân có đủ dòng máu bàng hệ để giữ cho cơ tim còn sống.   </li>
+<li>Điện tâm đồ, bệnh sử lâm sàng và siêu âm tim cùng nhau sẽ định hướng quyết định có đưa bệnh nhân vào phòng thông tim hay không. </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="bien-chung-cua-nhoi-mau-xuyen-thanh">Biến chứng của nhồi máu xuyên thành:</h2>
+<p>Trong số các biến chứng của nhồi máu xuyên thành có <strong>viêm màng ngoài tim</strong> <strong><em>sau nhồi máu</em> (</strong><em>PIRP</em><strong>)</strong>. Biến chứng này dễ xảy ra hơn nhiều ở những bệnh nhân được tái thông mạch muộn hoặc không được tái thông. Một nghiên cứu đánh giá các bệnh nhân nhồi máu cơ tim ST chênh lên trong giai đoạn 13 năm cho thấy chỉ 1.2% bệnh nhân bị PIRP [<a href="https://pubmed.ncbi.nlm.nih.gov/29370922/" rel="noopener" target="_blank">1</a>]. Tỷ lệ xuất hiện PIRP đã giảm mạnh trong kỷ nguyên can thiệp mạch vành qua da. Dù tỷ lệ mắc thấp trong những năm gần đây, vẫn cần nghĩ đến PIRP ở bệnh nhân mới bị nhồi máu cơ tim.</p>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="dieu-gi-nen-khien-ban-nghi-ngo-pirp">Điều gì nên khiến bạn nghi ngờ PIRP?</h3>
+<p>Oliva và cs. [<a href="https://pubmed.ncbi.nlm.nih.gov/8353916/" rel="noopener" target="_blank">2</a>] đã liên hệ chặt chẽ vỡ cơ tim với viêm màng ngoài tim khu trú sau nhồi máu (postinfarction regional pericarditis – PIRP), và liên hệ PIRP với sóng T dương kéo dài. Ông nhận thấy 2 kiểu hình điện tâm đồ của diễn tiến sóng T không điển hình trong PIRP:</p>
+<ul><li><strong>Sóng T dương (<em>hướng lên</em>) kéo dài sau 48 giờ kể từ khi khởi phát nhồi máu cơ tim cấp</strong>.   </li>
+<li><strong>Sóng T đảo ngược chuyển dần sang dương (<em>hướng lên</em>) sớm bất thường trong khoảng 48 đến 72 giờ sau khởi phát nhồi máu cơ tim, khi đã có sóng Q rõ.</strong></li></ul>
+<p>Các quá trình duy nhất khác được xác định là gây ra kiểu diễn tiến sóng T sau nhồi máu này là hồi sinh tim phổi, tái nhồi máu và nhồi máu rất nhỏ. Cả tái tưới máu (<em>đánh giá qua đường cong dấu ấn sinh học</em>) — lẫn sự thông thoáng của động mạch (<em>đánh giá qua chụp mạch</em>) — đều tương quan với tốc độ và độ sâu của sóng T đảo ngược. Chín mươi phần trăm bệnh nhân có tái tưới máu đạt mức âm tối đa của sóng T từ 3 mm trở lên trong vòng <strong>48</strong> giờ sau khởi phát đau ngực, ở chuyển đạo ban đầu có ST chênh lên nhiều nhất. Bảy mươi sáu phần trăm bệnh nhân không có tái tưới máu đạt mức âm tối đa từ 2 mm trở xuống trong vòng <strong>72</strong> giờ. Do đó, sóng T dương sau 72 giờ kể từ nhồi máu cơ tim cấp nên khiến bạn nghĩ đến khả năng PIRP.</p>
+<p>Khi một bệnh nhân ban đầu có sóng T đảo ngược do tái tưới máu hoặc do diễn tiến tự nhiên của nhồi máu cơ tim không được điều trị lại xuất hiện sóng T dương, chúng ta gọi đó là <a href="https://drsmithsecgblog.com/search/label/pseudonormalization" rel="noopener" target="_blank">giả bình thường hóa</a> sóng T (pseudonormalization). Trong tình huống này, có hai nguyên nhân chính cần xem xét:</p>
+<ul><li><strong>1) Tắc lại</strong> động mạch liên quan đến nhồi máu. (Nguyên nhân thường gặp nhất)</li>
+<li><strong>2) Viêm màng ngoài tim khu trú sau nhồi máu</strong>. ( = <em>nguyên nhân thường gặp thứ 2</em>).</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="dien-bien-lam-sang">Diễn biến lâm sàng:</h2>
+<p>Bệnh nhân trong ca hôm nay không được tái thông mạch. Do triệu chứng không điển hình và mơ hồ, nhồi máu cơ tim ban đầu không được chẩn đoán. Lúc nhập viện, ông có tiền sử khó thở 6 ngày. Không có nguyên nhân gây khó thở nào khác rõ ràng, vì vậy có thể giả định rằng thiếu máu cục bộ cơ tim đã bắt đầu từ 6 ngày trước. Nếu đây là một nhồi máu cơ tim xuyên thành thành trước không biến chứng thì sóng T lẽ ra đã đảo ngược vào thời điểm nhập viện. Việc sóng T không đảo ngược khiến viêm màng ngoài tim khu trú sau nhồi máu nhiều khả năng là nguyên nhân của sóng T dương kéo dài.</p>
+<p>Bệnh nhân nghi hội chứng vành cấp (ACS) nên được đánh giá bằng siêu âm tim. Ngày nay, các thiết bị bỏ túi giúp nhanh chóng có cái nhìn tổng quan về chức năng tim của bệnh nhân ngay tại giường. Có lẽ không phải mọi độc giả của blog này đều có kinh nghiệm đánh giá hình ảnh siêu âm tim.</p>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p>Dưới đây tôi đưa lại một ảnh tĩnh từ <strong>siêu âm tim</strong> <strong><em>tại giường</em></strong> của bệnh nhân hôm nay. Phía trên ảnh là phần gần đầu dò siêu âm nhất. Mỏm tim nằm ở phía trên ảnh, đáy tim ở phía dưới. Các buồng tim đã được chú thích. <strong>(</strong>RA = nhĩ phải. RV = thất phải. LA = nhĩ trái. LV = thất trái. IVS = vách liên thất.<strong>)</strong></p>
+<figure><a class="o-anh" href="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-1-4-Chamber-View-from-2-26-2025.jpg"><img src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-1-4-Chamber-View-from-2-26-2025.jpg" alt="" width="1600" height="1201" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<figure><video controls preload="metadata" playsinline src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-Magnus-80yo-CP-1-USE.mov"></video></figure>
+<p>Video này cho thấy rối loạn vận động thành khu trú ở vách đoạn xa và vùng mỏm thất trái. Vách đoạn xa trông dày lên. Điều này không phải do phì đại. Cơ tim trông dày lên (giả phì đại – pseudohypertrophied) do phù nề cơ tim. Phù nề cũng làm cho vùng cơ tim hoại tử giảm hồi âm, trông ít “trắng” hơn.</p>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<figure><video controls preload="metadata" playsinline src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-Magnus-80yo-CP-2-USE.mov"></video></figure>
+<p>Vòng lặp siêu âm tim ở trên cho thấy một dòng chảy rối mạnh đi xuyên qua vách liên thất đoạn xa. Điều này phù hợp với thủng vách liên thất (ventricular septal rupture – VSR). Các biến chứng cơ học như VSR và vỡ thành tự do có liên quan với viêm màng ngoài tim khu trú sau nhồi máu. Đúng như dự đoán, bệnh nhân này đến viện với một tiếng thổi toàn tâm thu thô ráp mới xuất hiện.</p>
+<p><span class="c-nhat">= = =</span></p>
+<figure><a class="o-anh" href="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-2-Echo-Septal-Perf-from-2-26-2025.jpg"><img src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2026_02_Echo-2-Echo-Septal-Perf-from-2-26-2025.jpg" alt="" width="1564" height="1054" loading="lazy" decoding="async"></a></figure>
+<p>Hình này cho thấy hướng dòng máu từ thất trái (hệ thống áp lực cao) qua lỗ thủng vách liên thất sang thất phải (hệ thống áp lực thấp). Nếu lỗ thủng lớn, áp lực hai bên lỗ thủng sẽ nhanh chóng cân bằng và chênh áp sẽ thấp. Ngược lại, nếu lỗ thủng nhỏ, áp lực sẽ không cân bằng và có thể đo được chênh áp bằng Doppler. Chênh áp trong ca này đáng kể, cho thấy lỗ thủng khá nhỏ. Lỗ thủng càng lớn thì luồng thông càng lớn. Thể tích luồng thông lớn hơn đồng nghĩa với lượng máu được tống ra khỏi thất trái qua van động mạch chủ ít hơn và cung lượng tim thấp hơn.</p>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="vsr-thung-vach-lien-that">VSR (Thủng vách liên thất)</h3>
+<p>Khi có nhồi máu toàn bộ bề dày thành tim, sẽ có viêm thượng tâm mạc = <strong>PIRP</strong> <strong>(</strong><em>viêm màng ngoài tim khu trú sau nhồi máu</em><strong>)</strong> — và <strong>cơ tim có nguy cơ bị “vỡ.”</strong>  Thuật ngữ “vỡ” nghe như một vụ nổ hay một chỗ toác lớn — nhưng thường đó chỉ là một chỗ rò nhỏ, chậm, theo thời gian có thể gây chèn ép tim và tử vong.  Vỡ có thể là vỡ thành tự do (<em>gây chèn ép tim</em>) hoặc vỡ vách, gây thông liên thất với dòng chảy trái sang phải, dẫn đến phù phổi và sốc.</p>
+<p><strong>VSR</strong> sau nhồi máu cơ tim có tiên lượng rất nặng, với tỷ lệ tử vong một năm gần như 100% nếu không phẫu thuật sửa chữa. Bệnh nhân trong ca hôm nay có <strong>2 biến chứng</strong> <strong>(</strong> = <em>PIRP và VSR</em><strong>)</strong> sau một nhồi máu cơ tim thành trước không được chẩn đoán. Bệnh nhân không được coi là ứng viên phẫu thuật. Các biến chứng cơ học như vỡ thành tự do, VSR và đứt cơ nhú dễ xảy ra hơn ở bệnh nhân lớn tuổi, nữ giới, tăng huyết áp, có bệnh thận mạn và không có tiền sử hút thuốc. Biến chứng này thường xảy ra trong bối cảnh nhồi máu cơ tim (MI) lần đầu, trên nền điều trị tái tưới máu muộn hoặc không được tái tưới máu. Chụp mạch thường cho thấy không có tuần hoàn bàng hệ đến vùng nhồi máu.</p>
+<p>Vì <strong>thiếu máu cục bộ</strong> <strong><em>trước đó</em></strong> tạo ra tiền thích nghi cơ tim (preconditioning) (<em>làm giảm khả năng hoại tử cơ tim xuyên thành và vỡ cơ tim</em>) — những bệnh nhân có bằng chứng đái tháo đường, đau thắt ngực mạn tính hoặc nhồi máu cơ tim trước đó sẽ <em>ít</em> có khả năng bị vỡ hơn.</p>
+<ul><li>VSR có thể xuất hiện trong vòng 1-14 ngày sau nhồi máu cơ tim, tuy nhiên tỷ lệ mắc thường có hai đỉnh <strong>(</strong><em>trong vòng 24 giờ đầu — hoặc sau 3-5 ngày kể từ nhồi máu cơ tim</em><strong>)</strong>. </li>
+<li>Với những bệnh nhân được coi là ứng viên phẫu thuật — thời điểm phẫu thuật là yếu tố then chốt. Cơ tim hoại tử rất mỏng manh. Sau nhồi máu, hoạt tính metalloproteinase và sự phân hủy mô đạt đỉnh vào ngày thứ 7, trong khi sự lắng đọng collagen mới bắt đầu từ ngày thứ 2-4. Các tế bào cơ tim hoại tử được thay thế hoàn toàn bởi collagen sau 28 ngày, do đó trì hoãn phẫu thuật sửa chữa có thể giúp sửa chữa thành công nhờ cho mô bở có thời gian tổ chức hóa, vững chắc lên và phân biệt rõ với mô lành xung quanh.</li></ul>
+<p>Từ các điểm trên suy ra rằng <strong>điều quan trọng là ổn định bệnh nhân đủ để có thể lên kế hoạch phẫu thuật và chọn thời điểm phẫu thuật tối ưu</strong>.</p>
+<ul><li>Để biết thêm về các ảnh hưởng huyết động và cách xử trí bệnh nhân bị VSR, xem <strong>bài đăng <a href="https://drsmithsecgblog.com/why-sudden-shock/" rel="noopener" target="_blank">ngày 5 tháng Chín năm 2024</a></strong>.</li>
+<li>Để xem một ví dụ khác về PIRP và VSR, xem <strong>bài đăng <a href="https://drsmithsecgblog.com/subacute-anteroseptal-stemi-with/" rel="noopener" target="_blank">ngày 18 tháng Bảy năm 2014</a></strong>.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<ul><li>Sóng QS kèm ST chênh lên kéo dài và/hoặc sóng T tối cấp có thể do <strong>nhồi máu cơ tim</strong> <strong><em>cấp</em></strong> — hoặc — do <strong>nhồi máu cơ tim</strong> <strong><em>bán cấp đã hoàn tất</em></strong> kèm <strong>viêm màng ngoài tim</strong> <strong><em>sau nhồi máu</em></strong>.</li>
+<li>Viêm màng ngoài tim sau nhồi máu hàm ý nhồi máu xuyên thành hoàn toàn và khiến bệnh nhân có nguy cơ thủng vách liên thất, thậm chí vỡ thành tự do cơ tim.  </li>
+<li>May mắn là các biến chứng cơ học của nhồi máu xuyên thành hiếm gặp. Dù vậy, chúng là biến chứng đáng sợ với tỷ lệ bệnh tật và tử vong cao. </li>
+<li>Một <strong>tiếng thổi tâm thu thô ráp</strong> <strong><em>mới xuất hiện</em></strong> ở bệnh nhân <em>nhồi máu cơ tim bán cấp đã hoàn tất</em> — là <strong>VSR</strong> hoặc <strong>đứt cơ nhú (</strong><em>kèm hở van hai lá cấp</em><strong>)</strong> <em>cho đến khi</em> chứng minh được điều ngược lại.</li>
+<li><strong>PIRP (</strong><em>viêm màng ngoài tim khu trú sau nhồi máu</em>) có thể được nghi ngờ từ điện tâm đồ — và có liên quan với tăng nguy cơ vỡ cơ tim.</li>
+<li>Luôn phải đối chiếu lâm sàng trước khi ra quyết định. </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="tai-lieu-tham-khao">Tài liệu tham khảo:</h2>
+<p>[1] <a href="https://pubmed.ncbi.nlm.nih.gov/29370922/" rel="noopener" target="_blank">Lador, A. và cs. (2017).</a> Incidence and Prognosis of Pericarditis After ST-Elevation Myocardial Infarction (<em>from the Acute Coronary Syndrome Israeli Survey 2000 to 2013 Registry Database</em>). Tạp chí The American Journal of Cardiology, 121(6), 690–694. https://doi.org/10.1016/j.amjcard.2017.12.006.</p>
+<p>[2] <a href="https://pubmed.ncbi.nlm.nih.gov/8353916/" rel="noopener" target="_blank">Oliva, P. B., Hammill, S. C., &amp; Edwards, W. D. (1993). </a>Electrocardiographic diagnosis of postinfarction regional pericarditis. Ancillary observations regarding the effect of reperfusion on the rapidity and amplitude of T wave inversion after acute myocardial infarction. Tạp chí Circulation, 88(3), 896–904. https://doi.org/10.1161/01.cir.88.3.896.</p>
+<p>[3] <a href="https://pubmed.ncbi.nlm.nih.gov/8354804/" rel="noopener" target="_blank">Oliva PB, Hammill SC, Edwards WD.</a> Cardiac rupture, a clinically predictable complication of acute myocardial infarction: report of 70 cases with clinicopathologic correlations. Tạp chí J Am Coll Cardiol 1993; 22:720-726.</p>
+<p>[4] <a href="https://pubmed.ncbi.nlm.nih.gov/38643761/#:~:text=For%20patients%20with%20stable%20blood%20flow%2C%20it%20is,blood%20flow%20is%20still%20a%20topic%20of%20debate." rel="noopener" target="_blank">Wang, S., Liu, H., Yang, P., Wang, Z., &amp; Chen, S. (2024)</a>. Current Understanding of Timing of Surgical Repair for Ventricular Septal Rupture following Acute Myocardial Infarction. Tạp chí Cardiology, 1–14. https://doi.org/10.1159/000538967.</p>
+<p>[5] <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9550323/" rel="noopener" target="_blank">Vega, J. D. S., Salinas, G. L. A., và cs. (2022)</a>. Optimal surgical timing after post-infarction ventricular septal rupture. Tạp chí Cardiology Journal, 29(5), 773–781. https://doi.org/10.5603/cj.a2022.0035.</p>
+<p>[6] <a href="https://www.acc.org/latest-in-cardiology/articles/2018/07/30/06/58/contemporary-management-of-post-mi-ventricular-septal-rupture" rel="noopener" target="_blank">Contemporary Management of Post-MI Ventricular Septal Rupture – American College of Cardiology. (2018, ngày 30 tháng Bảy)</a> (Quản lý hiện đại thủng vách liên thất sau nhồi máu cơ tim). American College of Cardiology. https://www.acc.org/latest-in-cardiology/articles/2018/07/30/06/58/contemporary-management-of-post-mi-ventricular-septal-rupture.</p>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p><span class="c-do">======================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-26-2-2025-cap-nhat-cho-wordpress-ngay-31-1-2026">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (26/2/2025 — Cập nhật cho WordPress ngày 31/1/2026):</h2>
+<hr>
+<p>Tôi thấy ca hôm nay rất giàu tính gợi mở ở nhiều khía cạnh. Những khía cạnh đó gồm:</p>
+<ul><li>Thực tế là dù các biến chứng<em> nghiêm trọng</em> của <strong>MI</strong> <strong><em>cấp</em></strong> ngày nay ít gặp hơn nhiều so với những năm trước — ca hôm nay lại biểu hiện một <strong><em>“sự kết hợp”</em></strong> các <strong><u>biến chứng</u> <em>sau nhồi máu </em>(</strong>tức là <em>viêm màng ngoài tim sau MI — </em>và<em> — <strong>VSR</strong> sau MI = thủng vách liên thất (<u>V</u>entricular <u>S</u>eptal <u>R</u>upture)</em><strong>)</strong>. Nắm được diễn tiến của các biến chứng này là điều quan trọng để giúp phát hiện sớm hơn.</li>
+<li><strong>MI</strong> của bệnh nhân này phần lớn là <strong><em>“<u>thầm lặng</u>“</em></strong> — ở chỗ<strong> đau ngực CP (</strong><em><u>C</u>hest <u>P</u>ain</em><strong>)</strong> không phải là than phiền nổi bật. Thay vào đó, triệu chứng chính của bệnh nhân là khó thở nặng <strong>(</strong><em>Xem bài </em><strong><a href="https://drsmithsecgblog.com/2024/09/why-sudden-shock.html" rel="noopener" target="_blank">ngày 5 tháng Chín năm 2024</a></strong><em> trên Dr. Smith’s ECG Blog về tần suất của MI “thầm lặng”, nhất là ở bệnh nhân lớn tuổi đến viện vì khó thở cấp — ca ngày 5 tháng Chín đó cũng của Dr. Nossen, và cũng kèm VSR sau MI</em><strong>)</strong>.</li>
+<li><strong><u>Khám</u> <em>thực thể</em></strong> đã cho nhiều thông tin. Phần lớn các trường hợp MI cấp — khám thực thể cung cấp thêm rất ít thông tin <strong>(</strong><em>ngoại trừ những bệnh nhân MI cấp đến viện trong tình trạng suy tim hoặc sốc</em><strong>)</strong>. Bệnh nhân hôm nay có <strong>âm thổi <em>toàn tâm thu</em>, thô ráp</strong>, phù hợp với VSR cấp. Âm thổi này được phát hiện lúc nhập viện qua khoa cấp cứu ED (<em><u>E</u>mergency <u>D</u>epartment</em>) — nhưng chúng ta không được biết liệu đã nghe thấy âm thổi hay chưa vào 4 ngày trước đó, khi bệnh nhân được khám ở một cơ sở chăm sóc ngoại trú và được điều trị kháng sinh vì viêm phổi. Điều này có ý nghĩa — vì biết âm thổi xuất hiện <em>khi nào</em> có thể đã giúp nhận ra VSR nhanh hơn ở bệnh nhân cao tuổi bị sa sút trí tuệ và khó thở nặng này.</li>
+<li>Chúng ta không được biết liệu có ai đã nghe tìm <strong>tiếng <em>cọ</em> màng ngoài tim</strong> hay không. Đây có thể đã là một manh mối khác giúp nhận ra sớm hơn tình trạng viêm màng ngoài tim sau biến cố của bệnh nhân này.</li>
+<li><strong><u>Siêu âm tim</u></strong> <strong><em>tại giường</em></strong> đã có giá trị <em>chẩn đoán </em>— cho thấy rõ rối loạn vận động thành khu trú ở phần xa vách liên thất và mỏm thất. Một lần nữa, dùng siêu âm tim sớm hơn hẳn đã giúp nhận ra nhanh hơn nguyên nhân gây khó thở của bệnh nhân này, vốn đã bắt đầu từ 6 ngày trước.</li>
+<li>Cuối cùng — <strong>dường như <em><u>không</u></em> có điện tâm đồ nào được ghi vào 4 ngày trước, lúc khám ở tuyến chăm sóc ban đầu.</strong> Qua hỏi bệnh sử sau đó, tôi được biết lần tiếp xúc đầu tiên này là một lần khám tại nhà của nhân viên y tế chăm sóc ban đầu — và việc đánh giá rõ ràng là khó khăn vì bệnh nhân bị sa sút trí tuệ. Nhưng qua “kính nhìn hồi cứu” (retrospectoscope) — tôi thấy việc nhìn lại và cân nhắc liệu lúc đó có nên chuyển bệnh nhân đến ED để đánh giá hay không là điều rất bổ ích. <em>Đây <u>hoàn toàn không</u> phải là một lời chỉ trích — vì rõ ràng chúng ta thiếu thông tin chi tiết để đưa ra bất kỳ phán xét nào.</em> Nhưng chúng ta học được từ những ca không diễn ra như dự kiến <strong>(</strong>tức là <em>có vẻ bệnh nhân chưa bao giờ bị viêm phổi</em><strong>)</strong> — và làm “việc khó” là cân nhắc xem chúng ta có thể làm khác đi điều gì <em>vào lần tới </em>khi gặp tình huống tương tự, chính là cách chúng ta tiến bộ với tư cách người thầy thuốc lâm sàng.</li>
+<li> </li>
+<li><strong>T.B. (P.S.):</strong> Ca hôm nay không hề nhắc đến một <strong>điện tâm đồ <em><u>trước đó</u> </em></strong>. Hiểu rằng chúng ta không được biết nhiều chi tiết của ca hôm nay — việc tìm một bản ghi trước đó để so sánh có thể đã làm sáng tỏ một số dấu hiệu mâu thuẫn trên điện tâm đồ hôm nay <strong>(</strong><em>mà tôi đã sao lại và đánh dấu trong </em><strong><u>Hình 1</u>)</strong>.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="cau-hoi">CÂU HỎI:</h3>
+<ul><li><em>Bạn sẽ diễn giải thế nào</em> điện tâm đồ trong Hình 1?</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p><strong><u>Hình 1:</u></strong> Tôi đã đánh dấu <strong>điện tâm đồ</strong> <strong><em><u>ban đầu</u></em></strong> của ca hôm nay.</p>
+<figure><a class="o-anh" href="2025-02-26-chest-pain-followed-by-6-days-of_anh/2025_02_Figure-12020ECG-120201-13.25-2025-USE.jpg"><img src="2025-02-26-chest-pain-followed-by-6-days-of_anh/2025_02_Figure-12020ECG-120201-13.25-2025-USE.jpg" alt="" width="1600" height="1325" loading="lazy" decoding="async"></a></figure>
+<p><strong><u>LƯU Ý:</u></strong>  Điện tâm đồ ở Hình 1 trên đây ban đầu được ghi theo <strong>định dạng <u>Cabrera</u> </strong>— trong đó cả tốc độ ghi lẫn thứ tự các chuyển đạo chi đều đã thay đổi <strong>(</strong>tức là <em>Thay vì +aVR — dùng cách hiển thị âm của chuyển đạo aVR = </em><strong><em>-aVR</em>)</strong>.</p>
+<ul><li>Vì “bộ não điện tâm đồ” của tôi đã quen đọc điện tâm đồ ở <strong>tốc độ 25 mm/giây (</strong><em>là chuẩn ở Mỹ và ở phần lớn thế giới</em><strong>)</strong> — thói quen của tôi là <em>chủ động</em> thu hẹp bề rộng của những bản ghi như vậy đi 50% để bù cho <strong>tốc độ 50 mm/giây</strong> vẫn thường dùng với định dạng Cabrera. Điều này đã được thực hiện ở Hình 1. </li>
+<li>Được viền <em>XANH</em> ngay phía trên chuyển đạo V1 — là vài ô lưới điện tâm đồ giúp nhận ra rằng khoảng R-R trên điện tâm đồ #1 dài hơn 3 ô lớn một chút — tương ứng với <strong>nhịp <em>xoang </em></strong> tần số <strong>~90-95/phút</strong>.</li>
+<li>Trong bối cảnh thế giới toàn cầu hóa — chúng tôi khuyến khích làm quen với các định dạng ghi khác nhau <strong>(</strong><em>Để xem ôn tập chi tiết về </em><strong>định dạng <em>Cabrera </em></strong><em> — Hãy xem Bình luận của tôi ở cuối trang trong </em><strong>bài <a href="https://drsmithsecgblog.com/2020/10/fascinating-case-of-dynamic-shark-fin.html" rel="noopener" target="_blank">ngày 26 tháng Mười năm 2020</a></strong><em> trên Dr. Smith’s ECG Blog</em><strong>)</strong>.</li></ul>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="dien-tam-do-o-hinh-1">Điện tâm đồ ở Hình 1:</h3>
+<p>Như đã nêu — có nhịp xoang ~90-95/phút. Khoảng PR bình thường. QRS không rộng.</p>
+<ul><li><strong>QTc </strong>có vẻ ở giới hạn trên của bình thường, hoặc kéo dài ở mức ranh giới <strong>(</strong><em>Dùng </em><strong>Công cụ tính QTc</strong><em> của chúng tôi được mô tả trong </em><strong>bài <a href="https://drsmithsecgblog.com/2025/01/online-qt-calculator-for-wide-qrs-lbbb.html" rel="noopener" target="_blank">ngày 12 tháng Một năm 2025</a></strong><em> — và nhập tần số ~95/phút cùng QT đo được = 370 msec, như thấy ở chuyển đạo V3,V4 — chúng tôi có QTc ước tính rõ ràng dưới 450 msec., tức là vẫn bình thường</em><strong>)</strong>.</li>
+<li>Dù sóng S ở các chuyển đạo trước tim giữa khá sâu — vẫn chưa đạt hẳn tiêu chuẩn điện thế của LVH <strong>(</strong><em>Xem Bình luận của tôi trong<a href="https://drsmithsecgblog.com/2020/06/syncope-and-st-elevation.html" rel="noopener" target="_blank"> </a></em><strong>bài <a href="https://drsmithsecgblog.com/2020/06/syncope-and-st-elevation.html" rel="noopener" target="_blank">ngày 20 tháng Sáu năm 2020</a>)</strong>. Thay vào đó, sóng S sâu ở các chuyển đạo ngực nhiều khả năng là hệ quả của việc thiếu các lực đối kháng do nhồi máu vùng trước lan rộng.</li></ul>
+<p>Có <strong>sóng Q:</strong></p>
+<ul><li>Thấy <strong>sóng Q</strong> <strong><em>ở nhiều chuyển đạo</em></strong>. Dù hẹp — sóng Q khá sâu ở các chuyển đạo -aVR,II,aVF,III; và ở chuyển đạo V5,V6 <strong>(</strong><em>các mũi tên XANH ở những chuyển đạo này</em><strong>)</strong>.</li>
+<li>Có <strong><em><u>mất</u> </em>sóng r</strong> từ chuyển đạo V2 đến V3 <strong>(</strong><em>các mũi tên ĐỎ ở những chuyển đạo này</em><strong>)</strong>.</li>
+<li>Tiếp theo là một <strong>sóng QS <em>sâu</em></strong> ở <strong>chuyển đạo V4</strong>. Có phân mảnh gần đầu sườn xuống của sóng S <strong>(</strong><em>trong hình bầu dục chấm chấm màu XANH ở chuyển đạo V4 này</em><strong>)</strong>.</li>
+<li>Trong khi khó biết nên hiểu thế nào về các sóng Q tương đối hẹp, lan tỏa ở chuyển đạo chi — thì các dấu hiệu ở chuyển đạo ngực gồm “mất sóng r” <strong>+</strong> QS phân mảnh ở V4 <strong>+</strong> sóng Q ở V5,V6 <em>sâu hơn nhiều so với dự kiến</em> cho thấy <strong>MI <em><u>vùng trước</u></em> lan rộng</strong> vào <em>một</em> thời điểm nào đó.</li>
+<li>Viêm màng ngoài tim đơn thuần không biểu hiện sóng Q nhồi máu. Nhưng sóng Q thường gặp trong <strong>viêm màng ngoài tim <em>sau nhồi máu</em></strong>.</li></ul>
+<p>Có ST chênh lên <strong><em>rõ rệt</em></strong> và <strong><em>lan tỏa</em>:</strong></p>
+<ul><li>Đáng chú ý vì sự giống nhau của chúng — <strong>4 chuyển đạo chi <em>liên tiếp</em></strong> <strong>(</strong><em> = các chuyển đạo -aVR,II,aVF,III </em><strong>)</strong> đều cho thấy sóng Q, theo sau là <strong>ST chênh lên</strong> đáng kể tại điểm J. Đoạn ST thẳng đuỗn ở mỗi chuyển đạo này, theo “con mắt của tôi”, gợi ý tính cấp tính.</li>
+<li>Trước 4 chuyển đạo chi liên tiếp có ST chênh lên này — “con mắt” của tôi bị thu hút bởi <strong>ST chênh xuống <em>đối xứng như ảnh soi gương</em></strong> ở<strong> chuyển đạo aVL</strong> và đoạn ST dẹt rõ ở <strong>chuyển đạo I (</strong><em>trong 2 hình chữ nhật XANH</em><strong>)</strong> kế bên.</li>
+<li><strong>ST chênh lên</strong> rõ rệt ở <strong>chuyển đạo V3</strong>,<strong>V4 (</strong><em>hơn 4 mm.</em><strong>)</strong>. Các chuyển đạo kế bên V5,V6 có ST chênh lên ở mức độ nhẹ hơn.</li>
+<li>Viêm màng ngoài tim đơn thuần không biểu hiện kiểu thay đổi ST-T soi gương như thấy ở các chuyển đạo <em>bên cao</em> I,aVL. Nhưng dấu hiệu ST chênh lên ở 8/12 chuyển đạo, đi kèm với các sóng Q nêu trên, có lẽ phù hợp nhất với <strong>MI <em>dưới-trước-bên</em> lan rộng <em>gần đây</em></strong>, nay kèm <strong>viêm màng ngoài tim</strong> <strong><em>sau nhồi máu</em></strong>.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="suy-nghi-cuoi-cung">SUY NGHĨ CUỐI CÙNG:</h3>
+<p>Tôi ước gì chúng ta biết thêm về một số chi tiết của ca hôm nay. <em>MI bắt đầu khi nào? VSR xảy ra khi nào? Bệnh tim của bệnh nhân này lan rộng đến mức nào <u>trước</u> biến cố gần đây?</em></p>
+<ul><li>Dù vậy — xét tuổi của bệnh nhân, các bệnh đồng mắc, và quyết định rằng ông không phải là ứng viên phẫu thuật, thì về mặt lâm sàng có rất ít điều có thể làm để thay đổi tiên lượng dè dặt của bệnh nhân này. </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = =</span></p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
