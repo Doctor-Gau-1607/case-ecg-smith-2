@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02/04/2022 — Một người đàn ông 50 mấy tuổi không triệu chứng với tần số tim 160 mấy – chẩn đoán là gì? Bạn sẽ xử trí thế nào?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1399 · DR. SMITH’S ECG BLOG</div>
+   <h1>02/04/2022 — Một người đàn ông 50 mấy tuổi không triệu chứng với tần số tim 160 mấy – chẩn đoán là gì? Bạn sẽ xử trí thế nào?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/an-asymptomatic-man-in-his-50s-with/" target="_blank" rel="noopener">"An asymptomatic man in his 50s with heart rate in the 160s – what is the diagnosis? How will you manage this?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 9 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Tác giả: Pendell Meyers</p>
+<p>Một người đàn ông cuối độ tuổi 50 có tiền sử bệnh động mạch vành (CAD) đã phẫu thuật bắc cầu chủ vành (CABG), bệnh phổi tắc nghẽn mạn tính (COPD), hút thuốc lá, xơ gan và các bệnh đồng mắc khác, đến khám ngoại trú theo lịch hẹn làm nghiệm pháp gắng sức; nghiệm pháp này được chỉ định vì vài tháng gần đây ông có khó thở khi gắng sức, hồi hộp đánh trống ngực và các cơn tiền ngất. Khi ông đến phòng khám để làm nghiệm pháp gắng sức, các dấu hiệu sinh tồn sàng lọc trước khi làm bất kỳ xét nghiệm hay can thiệp nào chỉ có một điểm đáng chú ý là tần số tim 160 lần/phút. Ông phủ nhận hoàn toàn mọi triệu chứng.</p>
+<p>Một điện tâm đồ 12 chuyển đạo được ghi tại phòng khám:</p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed1201542.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed1201542.jpg" alt="" width="1600" height="922" loading="lazy" decoding="async"></a><figcaption>Bạn nghĩ gì?</figcaption></figure>
+<p>Điện tâm đồ cho thấy nhịp nhanh QRS rộng, đều, đơn dạng. Tôi đo được khoảng 60-80 ms từ điểm khởi đầu QRS đến đỉnh sóng R ở một số chuyển đạo, với tổng thời gian QRS khoảng 170-180 ms (thời gian QRS do máy tính đo là 182 ms).</p>
+<p>Do đó, chẩn đoán phân biệt nhịp là VT với nhịp nhanh xoang (ST)/SVT/cuồng nhĩ kèm dẫn truyền lệch hướng. Ngay cả khi không cần thêm chuyên môn về điện tâm đồ, VT vẫn có khả năng cao hơn hẳn khi xét đến tuổi, tiền sử bệnh tim, các bệnh đồng mắc, độ rộng QRS rất lớn, và đơn giản là thực tế VT vốn đã phổ biến hơn SVT kèm dẫn truyền lệch hướng ngay cả trước khi xét đến thông tin bệnh sử.</p>
+<p>Hình dạng QRS có thể được xem là hình dạng RBBB và LAFB, điều có thể gặp trong SVT/ST/cuồng nhĩ kèm RBBB/LAFB, VT vô căn phân nhánh sau, v.v.</p>
+<p>Tôi sẽ coi đây là VT cho đến khi chứng minh được điều ngược lại. Adenosine hoàn toàn an toàn và hợp lý, nhưng ca này khó có khả năng là SVT, vì vậy tôi sẽ không bận tâm dùng nó. Nếu đang cân nhắc VT vô căn phân nhánh sau, có thể cân nhắc verapamil, nhưng thuốc này có thể bị chống chỉ định ở bệnh nhân này, người nhiều khả năng bị VT và đã biết có EF giảm.</p>
+<p>Nếu bạn chưa quen với các VT vô căn, hãy đọc bài này:</p>
+<h2 id="idiopathic-ventricular-tachycardias-for-the-em-physician-cac-nhip-nhanh-that-vo-can-danh-cho-bac-si-cap-cuu">Idiopathic Ventricular Tachycardias for the EM Physician (Các nhịp nhanh thất vô căn dành cho bác sĩ cấp cứu)</h2>
+<p><strong>Tôi sẽ coi đây là VT và điều trị như VT.  </strong>Các lựa chọn là:</p>
+<p><strong>1) Bằng thuốc</strong> (procainamide, amiodarone, v.v.) hoặc</p>
+<p><strong>2) Bằng điện</strong> (an thần và sốc điện chuyển nhịp đồng bộ).</p>
+<p>Ông được chuyển đến khoa cấp cứu (ED) để đánh giá.</p>
+<p>Nhân viên cấp cứu ngoài viện ghi nhận nhịp không hề thay đổi trong suốt quá trình vận chuyển. Bệnh nhân vẫn không có triệu chứng, các dấu hiệu sinh tồn khác bình thường.</p>
+<p>Điện tâm đồ của ông lúc đến viện như sau:</p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed22017000.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed22017000.jpg" alt="" width="1600" height="732" loading="lazy" decoding="async"></a><figcaption>Có ít nhất hai nhát bắt được/nhát hỗn hợp xen giữa nhịp QRS rộng đều, một nhát thấy ở các chuyển đạo I, II, III, một nhát khác thấy ở V1-V3.</figcaption></figure>
+<p>Chúng tôi vốn đã nghi ngờ đây là VT, và các nhát hỗn hợp này chỉ càng khẳng định thêm điều đó. Tuy nhiên, xin đừng tin rằng nhát hỗn hợp là chính xác tuyệt đối để chẩn đoán VT:</p>
+<h2 id="fusion-beat-during-supraventricular-tachycardia-no-criterion-is-absolutely-accurate-in-differentiating-wide-complex-tachycardia-nhat-hon-hop-trong-nhip-nhanh-tren-that-khong-co-tieu-chuan-nao-chinh-xac-tuyet-doi-trong-phan-biet-nhip-nhanh-qrs-rong">Fusion Beat During Supraventricular Tachycardia: No criterion is absolutely accurate in differentiating wide complex tachycardia (Nhát hỗn hợp trong nhịp nhanh trên thất: không có tiêu chuẩn nào chính xác tuyệt đối trong phân biệt nhịp nhanh QRS rộng)</h2>
+<p>Bác sĩ điện sinh lý được mời hội chẩn và khuyến nghị liều nạp procainamide 2 gam truyền trong 2 giờ, và y lệnh này đã được thực hiện (tức 12,5 mg/phút, với tổng liều 14 mg/kg ở bệnh nhân này).</p>
+<p>10 phút sau khi bắt đầu truyền procainamide (sau khoảng 125 mg procainamide), bệnh nhân vẫn không có triệu chứng nhưng đã chuyển nhịp thành như sau:</p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed3.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_ed3.jpg" alt="" width="1600" height="713" loading="lazy" decoding="async"></a><figcaption>Chuyển về nhịp xoang kèm RBBB (không có LAFB hay LPFB rõ ràng). QT do máy tính đo 498 ms, QTc 501. Thời gian QRS do máy tính đo 150 ms.</figcaption></figure>
+<p>Việc nhịp xoang có QRS chỉ với RBBB (không có LAFB) là một dấu hiệu mạnh khác cho thấy phức bộ QRS ban đầu trong cơn nhịp nhanh thực sự có nguồn gốc thất (VT).</p>
+<p>Bệnh nhân được nhập viện để thăm dò thêm.</p>
+<p>Siêu âm tim nhìn chung không thay đổi so với trước, với rối loạn vận động thành đã biết, EF 45%. Bác sĩ tim mạch đánh giá rằng khoảng QT khoảng 500 ms, sau khi hiệu chỉnh, gần với giới hạn bình thường khi xét đến RBBB với thời gian QRS 150 ms.</p>
+<p>Bác sĩ tim mạch diễn giải đây là “VT do sẹo (scar-mediated VT).”</p>
+<p>Sotalol được khởi trị để phòng ngừa rối loạn nhịp, với kế hoạch theo dõi sát tình trạng COPD nặng lên hoặc QT kéo dài. Sotalol có cả tác dụng chẹn beta và tác dụng nhóm III (chẹn kênh kali), nghĩa là nó trực tiếp kéo dài khoảng QT. Amiodarone được tránh dùng do COPD và xơ gan. Một máy khử rung tim cấy được (ICD) đã được cấy do VT kèm các cơn ngất. Không có thêm rối loạn nhịp nào xảy ra. Bệnh nhân được xuất viện.</p>
+<p><strong>Procainamide </strong>là thuốc chẹn kênh natri nhóm 1A, nghĩa là nó làm chậm sự lan truyền điện thế hoạt động từ tế bào này sang tế bào khác, làm giảm tốc độ dẫn truyền và kéo dài QRS và QT. Dù nền tảng y văn nói chung còn yếu, procainamide thường được xem là thuốc lựa chọn cho VT đơn dạng ổn định sau kết quả của <a href="https://pubmed.ncbi.nlm.nih.gov/27354046/" rel="noopener" target="_blank">nghiên cứu Procamio</a>, nghiên cứu so sánh procainamide với amiodarone trong bối cảnh VT đơn dạng ổn định và nghiêng về procainamide, cho thấy hiệu quả cao gần gấp đôi với tác dụng bất lợi chỉ bằng một nửa. Chống chỉ định tương đối của cả hai thuốc bao gồm QT kéo dài đã biết, đặc biệt nếu rối loạn nhịp được cho là do QT kéo dài gây ra.</p>
+<p><strong>Một lợi ích khác: </strong><a href="https://www.ahajournals.org/doi/pdf/10.1161/CIRCEP.109.901629?download=true#:~:text=Background%E2%80%94Intravenous%20amiodarone%20and%20procainamide,these%20agents%20in%20pediatric%20patients." rel="noopener" target="_blank">Procainamide rất hiệu quả trong cắt cơn SVT</a>.  Vì vậy nếu bạn chẩn đoán sai, nhịp vẫn có thể chuyển về bằng procainamide!</p>
+<p>Xem <a href="https://rebelem.com/rebelcast-procamio/" rel="noopener" target="_blank">bài viết và podcast của RebelEM về thử nghiệm PROCAMIO </a>để biết thêm:</p>
+<h3 id="lieu-procainamide">Liều procainamide:</h3>
+<p>Liều nạp tĩnh mạch là 10 đến 17 mg/kg, thường truyền với tốc độ 20-50 mg/phút.</p>
+<p>Cách dùng thay thế là 100 mg mỗi 5 phút ở bệnh nhân người lớn cho đến liều tối đa 17 mg/kg.</p>
+<p>Một phác đồ liều thay thế khác được dùng trong Phác đồ Tích cực Ottawa (Ottawa Aggressive Protocol, để chuyển nhịp bằng thuốc rung nhĩ): 1 g trong 60 phút.</p>
+<p>Liều nạp được truyền cho đến khi cắt được cơn rối loạn nhịp nhanh, hoặc bệnh nhân bị tụt huyết áp, hoặc QRS giãn rộng hơn 50% so với ban đầu, hoặc đã dùng đến liều tối đa 17 mg/kg.</p>
+<p>Sau khi đạt được hiệu quả lâm sàng mong muốn, liều duy trì thường được bắt đầu với tốc độ 1-4 mg/phút.</p>
+<h3 id="luyen-tap-voi-nhieu-bai-khac-ban-ve-vt-so-voi-svt">Luyện tập với nhiều bài khác bàn về VT so với SVT:</h3>
+<h2 id="wide-complex-tachycardia-lewis-leads-do-not-differentiate-vt-from-svt-with-aberrancy-nhip-nhanh-qrs-rong-chuyen-dao-lewis-khong-phan-biet-duoc-vt-voi-svt-kem-dan-truyen-lech-huong">Wide Complex Tachycardia: Lewis Leads Do Not Differentiate VT from SVT with Aberrancy (Nhịp nhanh QRS rộng: chuyển đạo Lewis không phân biệt được VT với SVT kèm dẫn truyền lệch hướng)</h2>
+<h2 id="wide-complex-tachycardia-and-cyanosis-nhip-nhanh-qrs-rong-va-tim-tai">Wide Complex Tachycardia and Cyanosis (Nhịp nhanh QRS rộng và tím tái)</h2>
+<h2 id="a-20-something-with-dka-and-a-regular-wide-complex-tachycardia-benh-nhan-20-may-tuoi-bi-dka-va-nhip-nhanh-qrs-rong-deu">A 20-something with DKA and a regular wide complex tachycardia (Bệnh nhân 20 mấy tuổi bị DKA và nhịp nhanh QRS rộng đều)</h2>
+<h2 id="ventricular-tachycardia-or-svt-with-aberrancy-nhip-nhanh-that-hay-svt-kem-dan-truyen-lech-huong">Ventricular Tachycardia? Or SVT with Aberrancy? (Nhịp nhanh thất? Hay SVT kèm dẫn truyền lệch hướng?)</h2>
+<h2 id="wide-complex-tachycardia-after-ingestion-and-seizure-nhip-nhanh-qrs-rong-sau-ngo-doc-duong-uong-va-co-giat">Wide Complex Tachycardia after Ingestion and Seizure (Nhịp nhanh QRS rộng sau ngộ độc đường uống và co giật)</h2>
+<h2 id="wide-complex-tachycardia-refractory-to-anti-dysrhythmics-and-cardioversion-nhip-nhanh-qrs-rong-khang-tri-voi-thuoc-chong-loan-nhip-va-soc-dien-chuyen-nhip">Wide Complex Tachycardia Refractory to Anti-dysrhythmics and Cardioversion. (Nhịp nhanh QRS rộng kháng trị với thuốc chống loạn nhịp và sốc điện chuyển nhịp.)</h2>
+<h2 id="very-wide-and-very-fast-what-is-it-how-would-you-treat-rat-rong-va-rat-nhanh-do-la-gi-ban-se-dieu-tri-the-nao">Very Wide and Very Fast, What is it? How would you treat? (Rất rộng và rất nhanh, đó là gì? Bạn sẽ điều trị thế nào?)</h2>
+<h2 id="a-40-something-without-past-history-presents-with-wide-complex-tachycardia-and-crushing-chest-pain-benh-nhan-40-may-tuoi-khong-co-tien-su-benh-den-vien-vi-nhip-nhanh-qrs-rong-va-dau-nguc-du-doi-nhu-bi-de-ep">A 40-something without past history presents with wide complex tachycardia and crushing chest pain (Bệnh nhân 40 mấy tuổi không có tiền sử bệnh, đến viện vì nhịp nhanh QRS rộng và đau ngực dữ dội như bị đè ép)</h2>
+<h2 id="toothache-incidental-wide-complex-tachycardia-dau-rang-tinh-co-phat-hien-nhip-nhanh-qrs-rong">Toothache, incidental Wide Complex Tachycardia (Đau răng, tình cờ phát hiện nhịp nhanh QRS rộng)</h2>
+<h2 id="wide-complex-tachycardia-vt-aberrant-or-other-nhip-nhanh-qrs-rong-vt-dan-truyen-lech-huong-hay-nguyen-nhan-khac">Wide-complex tachycardia: VT, aberrant, or “other?” (Nhịp nhanh QRS rộng: VT, dẫn truyền lệch hướng, hay “nguyên nhân khác?”)</h2>
+<h2 id="an-unstable-wide-complex-tachycardia-resistant-to-electrical-cardioversion-nhip-nhanh-qrs-rong-khong-on-dinh-khang-voi-soc-dien-chuyen-nhip">An unstable wide complex tachycardia resistant to electrical cardioversion (Nhịp nhanh QRS rộng không ổn định, kháng với sốc điện chuyển nhịp)</h2>
+<h2 id="is-it-vt-or-svt-with-aberrancy-day-la-vt-hay-svt-kem-dan-truyen-lech-huong">Is it VT or SVT with Aberrancy? (Đây là VT hay SVT kèm dẫn truyền lệch hướng?)</h2>
+<h2 id="regular-wide-complex-tachycardia-what-is-the-diagnosis-nhip-nhanh-qrs-rong-deu-chan-doan-la-gi">Regular Wide Complex Tachycardia. What is the Diagnosis? (Nhịp nhanh QRS rộng đều. Chẩn đoán là gì?)</h2>
+<h2 id="60-something-with-wide-complex-tachycardia-from-where-does-the-rhythm-originate-benh-nhan-60-may-tuoi-bi-nhip-nhanh-qrs-rong-nhip-xuat-phat-tu-dau">60-something with wide complex tachycardia: from where does the rhythm originate? (Bệnh nhân 60 mấy tuổi bị nhịp nhanh QRS rộng: nhịp xuất phát từ đâu?)</h2>
+<h2 id="a-young-woman-with-a-wide-complex-regular-tachycardia-mot-phu-nu-tre-bi-nhip-nhanh-qrs-rong-deu">A Young Woman with A Wide Complex Regular Tachycardia. (Một phụ nữ trẻ bị nhịp nhanh QRS rộng đều.)</h2>
+<h2 id="a-middle-aged-man-with-unwitnessed-cardiac-arrest-mot-nguoi-dan-ong-trung-nien-bi-ngung-tim-khong-co-nguoi-chung-kien">A middle aged man with unwitnessed cardiac arrest (Một người đàn ông trung niên bị ngừng tim không có người chứng kiến)</h2>
+<h2 id="sudden-chest-pain-and-sob-with-a-wide-complex-tachycardia-dau-nguc-va-kho-tho-dot-ngot-kem-nhip-nhanh-qrs-rong">Sudden Chest pain and SOB with a Wide Complex Tachycardia (Đau ngực và khó thở đột ngột kèm nhịp nhanh QRS rộng)</h2>
+<h2 id="several-wide-complex-rhythms-in-one-patient-test-yourself-will-you-see-what-i-did-not-see-nhieu-nhip-qrs-rong-o-cung-mot-benh-nhan-tu-kiem-tra-ban-co-thay-duoc-dieu-toi-da-khong-thay">Several Wide Complex Rhythms in One Patient. Test yourself: Will You See What I Did Not See? (Nhiều nhịp QRS rộng ở cùng một bệnh nhân. Tự kiểm tra: bạn có thấy được điều tôi đã không thấy?)</h2>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<p>Chẩn đoán phân biệt của nhịp nhanh QRS rộng đơn dạng gồm VT với nhịp nhanh xoang (ST)/SVT/cuồng nhĩ kèm dẫn truyền lệch hướng, tất cả đều có thể kèm hoặc không kèm tăng kali máu.</p>
+<p>VT đơn giản là phổ biến hơn SVT kèm dẫn truyền lệch hướng, và VT càng có khả năng cao hơn khi tuổi càng cao, tiền sử bệnh tim càng nặng, và thời gian QRS càng dài. Có nhiều phương pháp đã được mô tả nhằm phân biệt SVT với VT, nhưng cho đến nay chưa phương pháp nào cho thấy đủ hiệu quả và giá trị ngoại kiểm. Hãy coi là VT khi có bất kỳ nghi ngờ nào. Nếu quan tâm, hãy tìm hiểu thêm tại các đường link ở trên.</p>
+<p>Procainamide là lựa chọn tốt để chuyển nhịp bằng thuốc cho VT đơn dạng ổn định.</p>
+<h2 id="tai-lieu-tham-khao">Tài liệu tham khảo</h2>
+<div class="tk">
+<p>1. Steil IG, Clement CM, Perry JJ et al. Association of the Ottawa Aggressive Protocol with rapid discharge of emergency department patients with recent-onset atrial fibrillation or flutter. CJEM 2010;12(3):181-91.</p>
+<p>2. Komura S, Chinushi M, Furushima H. et al. Efficacy of Procainamide and Lidocaine in Terminating Sustained Monomorphic Ventricular Tachycardia. Circulation May 2010 Vol 72</p>
+<p>3. Ortiz M et al. Randomized Comparison of Intravenous Procainamide vs. Intravenous Amiodarone for the Acute Treatment of Tolerated Wide QRS Tachycardia: the PROCAMIO Study. Eur Heart J 2016. <a href="http://www.ncbi.nlm.nih.gov/pubmed/27354046" rel="noopener" target="_blank">PMID: 27354046</a></p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_an-asymptomatic-man-in-his-50s-with-1909814105.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_an-asymptomatic-man-in-his-50s-with-1909814105.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<p><strong>MY Comment by </strong><strong><span class="c-do">K</span></strong><strong>EN </strong><strong><span class="c-do">G</span></strong><strong>RAUER, MD (</strong><em>4/2/2022</em><strong>):</strong></p>
+<p><span class="c-do">===================================</span></p>
+<p>When Dr. Meyers showed me this case the other day — I literally begged him to post it as soon as possible. <strong><em>There are <u>many</u> </em><u>Lessons</u><em> to be learned!</em></strong></p>
+<p>For clarity — I’ll reproduce and label the ECGs in today’s case. <strong><u>ECG #1</u></strong> was obtained in the office on a man in his late 50s, with a <em><u>history</u></em> of <strong><em>significant</em> coronary disease</strong>.</p>
+<ul><li>The patient reported a recent symptoms dyspnea on exertion of dyspnea on exert, <em>palpitations</em> and <strong><em>presyncopal</em></strong> <strong>episodes</strong> in recent months. Despite this — He was hemodynamically stable and <em><u><strong>absolutely</strong></u></em> <strong>asymptomatic</strong> at the time the ECG in <strong><u>Figure-1</u></strong> was recorded.</li></ul>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-12020ECG-1203-27.2-2022-USE20copy.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-12020ECG-1203-27.2-2022-USE20copy.jpg" alt="" width="1600" height="831" loading="lazy" decoding="async"></a><figcaption><strong><u>Figure-1:</u></strong> The initial ECG in today’s case (<em>See text</em>).</figcaption></figure>
+<p><strong><u><em>MY Thoughts</em> on the <em>Initial</em> ECG:</u></strong></p>
+<p>The ECG in <u>Figure-1</u> has to be interpreted as <strong>VT (</strong><em><u>V</u>entricular <u>T</u>achycardia</em><strong>)</strong> — <em><u>until</u></em> proven otherwise! As I have discussed the <em>user-friendly</em> and <em>time-efficient</em> criteria I favor for distinction between VT <u>vs</u> SVT rhythms (<em>with either preexisting BBB or aberrant conduction</em>) — I’ll refer those interested in more detail to My Comments in the <strong><a href="https://drsmithsecgblog.com/2020/05/is-it-vt-or-svt-with-aberrancy.html" rel="noopener" target="_blank">May 5, 2020</a></strong> and <strong><a href="https://drsmithsecgblog.com/2022/02/a-40-something-without-past-history.html" rel="noopener" target="_blank">February 14, 2022</a></strong> <strong>posts</strong> in Dr. Smith’s Blog. Reasons why I’d estimate the likelihood of VT for the rhythm in <u>Figure-1</u> at <strong><em><u>over</u></em></strong> <strong>90% </strong>include the following.</p>
+<ul><li>The ECG in <u>Figure-1</u> is a <strong><em>regular</em></strong> <strong>WCT (</strong> = <em><u>W</u>ide-<u>C</u>omplex <u>T</u>achycardia</em><strong>)</strong> at <strong>~160/minute</strong>, without clear sign of atrial activity. Pre-Test Likelihood that a regular WCT without P waves will turn out to be VT is <strong>~80%</strong> in the literature. This figure goes up to <strong>~90%</strong> <strong><em>Pre-Test</em></strong> <strong>Likelihood</strong> — <u>IF</u> the patient is “older” (ie, <em>an adult of a “certain” age</em>) — and if the patient has underlying heart disease. <strong><u>Therefore</u></strong> <strong>—</strong> Statistical likelihood that the <em>regular</em> WCT without P waves in Figure-1 will turn out to be VT is <em>at least</em> 90% even <em><u>before</u></em> we look at the actual ECG!</li>
+<li>Because of this 1st bullet — We need to <em>always</em> assume VT for such rhythms <em><u>until</u></em> we prove otherwise, and treat accordingly. This does <em><u>not</u></em> mean that all patients need to be immediately shocked — but it <em><u>does</u></em> mean that since 90+% of such rhythms will turn out to be VT, that we need to <strong><em>assume VT <u>until</u> proven otherwise</em></strong>.</li>
+<li>
+</li>
+<li>Now that we are looking closer at <u>ECG #1</u> — reasons why statistical likelihood of VT goes up <em><u>over</u></em> 90% are:<strong> i<span class="c-do">)</span></strong> There is almost <em>extreme</em> axis deviation (ie, <em>the QRS is all negative in lead III — albeit not all negative in lead aVF</em>); <strong>ii<span class="c-do">)</span></strong> The QRS is very wide (ie, <em>~0.15 second</em>); <strong>iii<span class="c-do">)</span></strong> There is <em>delay</em> in initial activation (ie, <em>Note how wide the initial R waves are in leads V4, V5, V6</em>); <u>and</u>, <strong>iv<span class="c-do">)</span></strong> <strong>QRS morphology does <em><u>not</u></em> resemble any known form of conduction defect</strong>. </li>
+<li>It is this last criterion (ie, <em><u>not</u> resembling any known form of conduction defect</em>) — that is the most suggestive of VT to me in today’s case. Although there is superficial resemblance of QRS morphology to RBBB conduction (<em>because of the upright QRS in lead V1 and the wide terminal S wave in lead V6</em>) — the lack of any S wave at all in both high lateral leads (ie, <em>leads I and aVL</em>) — is distinctly <em><u>against</u></em> this representing RBBB conduction. The predominantly negative QRS in the inferior leads superficially resembles LAHB conduction — but most of the time (<em>unless there has been a large prior inferior infarction</em>) there will be more of an initial r wave in these inferior leads when the rhythm is supraventricular with LAHB conduction.</li>
+<li><strong><u>To Emphasize:</u></strong> Statistical odds of over 90% is <em><u>not</u></em> the same as 100% likelihood. There is almost always the possibility of exceptions (ie, <em>prior infarction or cardiomyopathy that might result in a very abnormal baseline tracing</em>). But <em><u>over</u></em> 90% likelihood <u>is</u> high enough to support the contention that the rhythm is VT <em><u>until</u></em> proven otherwise.</li>
+<li>
+</li>
+<li><strong><u>Lewis Leads:</u></strong> Use of another lead system is an <em>easy-to-do</em> but often forgotten application — that can be highly effective for <strong><em>revealing underlying atrial activity</em></strong> that was <em><u>not</u></em> evident on the standard ECG tracing <strong>(</strong><em>Please see my last Figure in the</em> <strong><a href="https://drsmithsecgblog.com/2019/11/what-is-this-regular-svt.html" rel="noopener" target="_blank">November 12, 2019</a> post</strong> <em>of Dr. Smith’s Blog for a reminder on how to apply Lewis Leads</em><strong>)</strong>.</li></ul>
+<p><strong><u><span class="c-do">L</span>esson <span class="c-do">#</span>1:</u> Some Patients <em><u>remain</u></em> in VT for Hours (<em>and even Days</em>)!</strong></p>
+<p>I am aware of <u><em>many</em></u> cases of <em>sustained</em> VT in which the patient remained awake and alert for hours. I’m also aware a number of cases (<em>including one at my former hospital</em>) — where <strong><em>the patient was awake and alert in sustained VT for several days!</em></strong> So — <u>Lesson #1</u> is that just because the patient is awake and alert with an excellent blood pressure does <em><u>not</u></em> mean that he/she is not in sustained VT. If the ventricular rate is not excessively fast — and the patient has preserved LV function — then <strong><em>it <u>is</u> possible possible to remain in sustained VT for hours, and even days</em></strong>.</p>
+<ul><li>The “good news” is that IF you patient is alert and stable in <em>sustained</em> VT — by definition this means that you <u><em>do</em></u> have time to try medical therapy (<em>without need for immediate cardioversion</em>) — as was successfully done in today’s case.</li>
+<li>The literature supports the premise that it <u><em>is</em></u> possible to remain in <em>sustained</em> VT for days <strong>(</strong><em>Symanski &amp; Marriott —</em> <strong><a href="https://www.dropbox.com/s/f19rcou6d6tltgn/VT-1%20week-Marriott-%289-10-2012%29-DO_NOT_CHANGE.pdf?dl=0" rel="noopener" target="_blank">Heart-Lung 24:121,123, 1995</a>)</strong>. In this case report — the 69-year old woman (<em>who incidently had a history of both coronary disease and cardiomyopathy</em>) — remained in <strong><em>sustained</em></strong> <strong>VT</strong> for <strong>5 days </strong><em><u>without</u></em> hemodynamic deterioration. During this time, she was treated in the hospital with multiple antiarrhythmic medications including Adenosine, Verapamil and Digoxin. On her 5th hospital day — she was given Amiodarone, which successfully converted the rhythm. Luckily — she “survived” the above treatment course (<em>as each of the first 3 drugs that were given could have been fatal, given their tendency to precipitate VT deterioration in the setting of severe underlying coronary disease</em>).</li>
+<li><strong><u>To Emphasize:</u></strong> This case study by Symanski and Marriott is from 1995. Many advances in treatment have occurred in the 27 years since this article was published. That said — <strong><em>misdiagnosis of WCT rhythms for the <u>same</u> reasons cited by the authors remains all-too-common</em></strong> — so the lessons put forth in this 1995 article remain relevant. As I’ll show in <strong><u>Figure-3</u></strong> below — ample clues were present in the ECG of this patient to have confirmed VT — but they were ignored because providers didn’t believe that anyone could remain alert and hemodynamically stable in <em>sustained</em> VT for as long as 5 days.</li>
+<li>
+</li>
+<li><strong><u>P.S.:</u></strong> One can only wonder for <em>HOW LONG</em> the patient in today’s case had been living in <em>sustained</em> VT — since he was entirely <em><u>unaware</u></em> of his tachycardia (<em>and his symptoms had been going on for some time!</em>).</li></ul>
+<p><strong><u><span class="c-do">L</span>esson <span class="c-do">#</span>2:</u> This statement is WRONG: <em>“Adenosine won’t work in VT”</em></strong>.<br>There <u><em>are</em></u> certain types of VT rhythms that are <strong><em>“adenosine-responsive”</em></strong>. These include certain forms of <strong><em>idiopathic</em></strong> <strong>VT (</strong>ie, <em>among the ~10% of patients with VT who do <u>not</u> have underlying heart disease</em><strong>)</strong>. In particular — <strong>RVOT VT (</strong><em><u>R</u>ight <u>V</u>entricular <u>O</u>utflow <u>T</u>rack <u>VT</u></em><strong>)</strong> — <u>is</u> responsive in some cases to Adenosine.</p>
+<ul><li>The above said — Adenosine is <em><u>highly</u></em> <u>unlikely</u> to work with <strong><em>ischemic</em></strong> <strong>VT</strong>. Although most of the time — the <em>ultra-short</em> half-life of Adenosine will prevent deterioration of ischemic VT, use of this drug is <em><u>not</u></em> entirely safe in this setting. <strong><u>BOTTOM LINE</u></strong> — It’s best <em><u>not</u></em> to use Adenosine if you suspect an <em>ischemic</em> form of VT.</li>
+<li>In today’s case — the patient has <em><u>documented</u></em> coronary disease <u>and</u> a QRS morphology that looks nothing like idiopathic VT. Adenosine should <em><u>not</u></em> be used in this situation. </li>
+<li><strong><u>NOTE:</u></strong> Please see <em>My Comment</em> at the <em><u>bottom</u></em> of the page in the <strong><a href="https://drsmithsecgblog.com/2022/02/a-40-something-without-past-history.html" rel="noopener" target="_blank">February 14, 2022</a> post</strong> in Dr. Smith’s Blog for more on the topic of <strong><em><u>Idiopathic</u></em></strong> <strong>VT</strong>. For convenience — I’ve reproduced in <strong><u>Figure-4</u></strong> in the Addendum below, a summary of this topic from this Feb. 14, 2022 post. </li></ul>
+<p><strong><u>The <em>Initial</em> ECG in the ED </u>(</strong><em>ECG #2 in Figure-2</em><strong>):<br></strong>I found ECG #2 to be fascinating (<em>Top tracing in</em> <strong><u>Figure-2</u></strong>).</p>
+<ul><li>QRS morphology for all but 2 of the beats in <u>Figure-2</u> are the same as in the Office tracing that we saw in Figure-1.</li>
+<li><strong>Beats #4</strong> and <strong>15</strong> look different! I Initially thought these beats represented ventricular “capture” and “fusion” respectively — which if true, would confirm the diagnosis of VT. <strong><em>And then I looked more closely</em>.</strong></li>
+<li>
+</li>
+<li>It turns out that <strong>beats #4</strong> and <strong>15</strong> are <em><u>unlikely</u></em> to be fusion beats! First — I see <em><u>no</u></em> indication of P waves anywhere in <u>ECG #2</u>. In addition, careful measurement (<em>when you take the true beginning of each of these 2 beats</em>) reveals that <u><em>neither</em></u> beat #4 <u><em>nor</em></u> beat #15 occur either early or late, as would be expected if there was ventricular “capture” or “fusion”. Instead, these beats occur <u><em>precisely</em></u> on time with the other 23 beats in this tracing.</li>
+<li>Support of my impression that beat #15 does <em><u>not</u></em> represent a fusion beat is forthcoming from: <strong>i<span class="c-do">)</span></strong> Cardiology assessment in this case that the rhythm in ECG #1 and ECG #2 represents <strong><em><u>scar</u>-mediated</em></strong> <strong>VT</strong>; <u>and</u>, <strong>ii<span class="c-do">)</span></strong> <u><strong>ECG #3</strong></u> — in which the QRS complex is virtually all <em>negative</em> for beat #15 in lead V3 of <u>ECG #2</u> — but virtually all <em>positive</em> in this same lead V3 <em><u>after</u></em> conversion to sinus rhythm in <u>ECG #3</u>. There is <em>no way</em> that fusion between the <em><u>positive</u></em> QRS in lead V3 of ECG #3 during sinus rhythm — could fuse with the <em>nearly-all-<u>positive</u></em> QRS in lead V3 during the WCT rhythm in ECG #2 — to produce an all negative “fusion beat” looking like beat #15 does in lead V3 of ECG #2.</li></ul>
+<p>Instead of fusion <em>and/or</em> capture beats — I think it far more likely that <strong><em>precisely-on-time</em></strong> <strong>beats #4</strong> and <strong>15</strong> in <u>ECG #3</u> represent part of the <em>same</em> VT rhythm, in which there is a transient <em>slight</em> variation in the <em>entrance</em> and/or <em>exit</em> site of the VT circuit.</p>
+<ul><li>As per Martin et al <strong>(<a href="https://www.ahajournals.org/doi/10.1161/CIRCEP.118.006569" rel="noopener" target="_blank">Circulation 11:e006569, 2018</a>)</strong> — VT in the presence of underlying structural heart disease (<em>such as coronary disease or cardiomyopathy</em>) is dependent on <strong><em>reentry</em></strong> within <strong><em><u>scar</u></em></strong> <strong>regions</strong>. VT circuits in such patients are typically complex — and <strong><em><u>often</u></em> manifest multiple <em>entrance</em> and <em>exit</em> sites</strong>. This may account for intermittent variation in QRS morphology during runs of VT in such patients.</li></ul>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-22020ECGs2023203-27.1-2022-USE20copy.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-22020ECGs2023203-27.1-2022-USE20copy.jpg" alt="" width="1600" height="1455" loading="lazy" decoding="async"></a><figcaption><strong><u>Figure-2:</u></strong> The <em>initial</em> ECG in the ED — and the <em>follow-up</em> tracing in the ED <em><u>after</u></em> starting Procainamide (<em>See text</em>).</figcaption></figure>
+<p><strong><u><span class="c-do">L</span>esson <span class="c-do">#</span>3:</u> How <em><u>definite</u></em> are Fusion Beats for <em>proving</em> VT?</strong></p>
+<p>I respecfully <em><u>differ</u></em> with Dr. Meyers’ statement that no criterion is absolutely accurate in differentiating WCT rhythms. While true that many exceptions to the rules exist, and that most of the time you will not be 100% certain — <strong>there <em><u>are</u></em> occasions (</strong><em>in my experience</em><strong>) in which you can <em><u>know</u></em> that a rhythm is <em><u>definitely</u></em> VT</strong>.</p>
+<ul><li>As to the debate regarding whether a <strong><em>“Fusion” </em>beat</strong> proves VT or not — my answer is, <em>“It depends — but in the <u>right</u> circumstances, a fusion beat <u>does</u> prove VT”</em>. I’m happy to debate this with others who may disagree with me.</li>
+<li>
+</li>
+<li>In the case referenced above by Dr. Meyers <strong>(</strong><em>from the</em> <strong><a href="https://drsmithsecgblog.com/2011/10/fusion-beat-during-supraventricular.html" rel="noopener" target="_blank">October 3, 2011</a> post</strong> <em>in Dr. Smith’s Blog</em><strong>)</strong> — in which the EP cardiologist shows a <em>different-looking</em> QRS complex occurring in the middle of an SVT rhythm with QRS widening due to RBBB conduction — there is <em><u>no</u></em> atrial activity. As a result — there is <em><u>no</u></em> proof that the <em>different-looking</em> QRS complex is conducting from “above” (ie, <em>that this different-looking beat is a sinus-conducted beat that was able to “get through” at just the right moment in a VT rhythm to fuse with a ventricular impulse</em>). In addition — this <em>different-looking</em> beat in his example is wide! The <em>simultaneously-recorded</em> multi-lead rhythm strip also shows very large Q waves in leads II and III for this different-looking beat that are <em><u>not</u></em> present during the wide tachycardia — which means that IF this <em>different-looking</em> beat was supraventricular, and represented “fusion” with a VT rhythm — that the normal sinus rhythm <em><u>would</u></em> <em><u>have</u></em> <em><u>to</u></em> manifest even larger and wider inferior lead Q waves in order to produce an intermediate morphology. Although possible — this is unlikely. In my opinion — this October 3, 2011 example does <em><u>not</u></em> invalidate the specificity of <em><u>true</u></em> fusion beats.</li>
+<li>
+</li>
+<li><strong><u>BOTTOM LINE:</u></strong> It is well accepted that ventricular beats may occasionally be seen during a reentry SVT rhythm. If such ventricular beats do not penetrate the reentry circuit (<em>which is not uncommon when the reentry circuit is contained entirely within the AV Node, as occurs with AVNRT</em>) — then the reentry SVT rhythm will continue <em><u>despite</u></em> the presence of one or more ventricular beats that “break through”. This is what apparently happened in the rhythm strip shown in the above noted Oct. 3, 2011 post. </li>
+<li>In order to demonstrate that a different-looking beat is a fusion beat that “proves” a ventricular etiology for the WCT rhythm you are interpreting — you need to see underlying <em>on-time</em> sinus P waves, which show a <em>shorter-than-normal</em> PR interval before the beat in question — <u>and</u> — you need to know what the normal sinus-conducted beat looks like — because a <em><u>true</u></em> “fusion beat” will manifest both QRS and ST-T wave morphology that is <em>intermediate</em> between the morphology of sinus-conducted beats and the wide beats you are trying to interpret.</li>
+<li>I explain recognition and clinical use of <strong><em>Fusion</em></strong> <strong>beats</strong> for distinction between VT <em><u>vs</u></em> SVT in detail in <strong><a href="https://ecg-interpretation.blogspot.com/2016/06/ecg-blog-128-vt-fusion-wct-sinus.html" rel="noopener" target="_blank">ECG Blog #128</a></strong>.</li>
+<li>For additional examples of what I would call <strong><em>“fusion beats”</em></strong> that <em><u>truly</u></em> prove that the wide rhythm that follows is VT — See <strong><a href="https://ecg-interpretation.blogspot.com/2016/12/ecg-blog-133-aberrant-conduction-vt.html" rel="noopener" target="_blank">ECG Blog #133</a></strong> — <strong><a href="https://ecg-interpretation.blogspot.com/2016/07/ecg-blog-129-pvc-late-cycle-end.html" rel="noopener" target="_blank">ECG Blog #129</a></strong> — <strong><a href="https://ecg-interpretation.blogspot.com/2021/02/ecg-blog-194-ecg-mp-11-reperfusion-of.html" rel="noopener" target="_blank">ECG Blog #194</a></strong> — and the <strong><a href="https://drsmithsecgblog.com/2020/05/is-it-vt-or-svt-with-aberrancy.html" rel="noopener" target="_blank">May 5, 2020</a> post</strong> in Dr. Smith’s ECG Blog.</li></ul>
+<p>I’ll conclude my comments with <u><strong>Figure-3</strong></u> — in which I show the ECG of the patient in the <strong><a href="https://www.dropbox.com/s/f19rcou6d6tltgn/VT-1%20week-Marriott-%289-10-2012%29-DO_NOT_CHANGE.pdf?dl=0" rel="noopener" target="_blank">Case Study</a></strong> by Symanski &amp; Marriott that I referred to earlier. Although the diagnosis of VT should have been evident from this tracing — this patient remained in the hospital, and was treated with drugs intended for SVT rhythms because <em><u>no</u></em> <em><u>one</u></em> believed it possible to stay alert and stable for 5 days in <em>sustained</em> VT.</p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-32020from20Marriott20copy.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-32020from20Marriott20copy.jpg" alt="" width="1600" height="1161" loading="lazy" decoding="async"></a><figcaption><strong><u>Figure-3:</u></strong> In this <strong><a href="https://www.dropbox.com/s/f19rcou6d6tltgn/VT-1%20week-Marriott-%289-10-2012%29-DO_NOT_CHANGE.pdf?dl=0" rel="noopener" target="_blank">Case Study</a></strong> by Symanski &amp; Marriott — there is ample evidence that this regular WCT rhythm is VT. Note the <strong><em>extreme</em></strong> <strong>axis deviation</strong> in the limb leads (ie, <em>all negative QRS in each of the inferior leads</em>). QRS morphology does <em><u>not</u></em> resemble any known form of conduction block. <em>RED</em> arrows show definite P waves — with it being understandable why the <em>BLUE</em> arrow P waves are “hidden”. Thus, there is <strong>AV dissociation</strong> — and the beat labeled <strong>“C”</strong> is a <strong><em>capture</em></strong> <strong>beat (</strong><em>preceded by a prolonged PR interval</em><strong>)</strong> — and <strong>“F”</strong> is a <strong><em>fusion</em></strong> <strong>beat</strong>.</figcaption></figure>
+<p>================================</p>
+<p><strong><u><span class="c-do">A</span>DDENDUM<span class="c-do">:</span></u></strong> I’ve added below in <strong><u>Figure-4</u></strong> my summary on the <strong><em>Idiopathic</em></strong> <strong>VTs</strong>.</p>
+<p>================================</p>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-520Idiopathic20VT203-27.1-2022-USE.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_Figure-520Idiopathic20VT203-27.1-2022-USE.jpg" alt="" width="1600" height="1273" loading="lazy" decoding="async"></a><figcaption><strong><u>Figure-4:</u></strong> My summary regarding the <strong><em>Idiopathic</em></strong> <strong>VTs (</strong><em>taken from My Comment at the bottom of the page in the <strong><a href="https://drsmithsecgblog.com/2022/02/a-40-something-without-past-history.html" rel="noopener" target="_blank">February 14, 2022</a> post</strong> in Dr. Smith’s Blog</em><strong>)</strong>.</figcaption></figure>
+<figure><a class="o-anh" href="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_an-asymptomatic-man-in-his-50s-with-1909814105.jpg"><img src="2022-04-02-an-asymptomatic-man-in-his-50s-with_anh/2022_04_an-asymptomatic-man-in-his-50s-with-1909814105.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+</div>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
