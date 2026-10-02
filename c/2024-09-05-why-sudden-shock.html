@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05/09/2024 — Vì sao đột ngột sốc sau vài ngày mệt mỏi, khó chịu?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1750 · DR. SMITH’S ECG BLOG</div>
+   <h1>05/09/2024 — Vì sao đột ngột sốc sau vài ngày mệt mỏi, khó chịu?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/why-sudden-shock/" target="_blank" rel="noopener">"Why the sudden shock after a few days of malaise?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 3 hình ảnh và 3 video của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<hr>
+<p>Tác giả: Magnus Nossen — Biên tập: Grauer và Smith</p>
+<p>Bệnh nhân trong ca hôm nay là một phụ nữ ở độ tuổi 70, tiền sử tăng huyết áp (HTN) và tăng lipid máu. Bà đến một bệnh viện tuyến ngoài sau vài ngày mệt mỏi, khó chịu trong người (malaise). Lúc nhập viện, các dấu hiệu sinh tồn bình thường. <strong>Tần số tim khoảng 80 lần/phút</strong>. Troponin T lúc đến viện tăng rất cao, 12,335 ng/L. (<em>Đây là giá trị điển hình của một nhồi máu cơ tim bán cấp diện rộng, giá trị bình thường &lt; 0-14ng/L.</em>)</p>
+<p>Dưới đây là điện tâm đồ lúc đến viện.</p>
+<figure><a class="o-anh" href="2024-09-05-why-sudden-shock_anh/2024_09_8687995C-BDDC-4A29-867E-1434D5D47CF6.jpg"><img src="2024-09-05-why-sudden-shock_anh/2024_09_8687995C-BDDC-4A29-867E-1434D5D47CF6.jpg" alt="" width="1253" height="711" loading="lazy" decoding="async"></a></figure>
+<p>Ban đầu bệnh nhân phủ nhận đau ngực, nhưng khi được hỏi trực tiếp — bà có thừa nhận cảm giác “khó chịu ở ngực” mơ hồ trong những ngày trước đó. Bà được chuyển đến cơ sở của chúng tôi để chụp mạch vành. Khi đến, bà không có biểu hiện suy kiệt (distress). Do suy thận cấp và triệu chứng đã kéo dài nhiều ngày — quyết định chụp mạch vành vào ngày hôm sau.</p>
+<ul><li>Các giá trị Troponin T liên tiếp đang giảm dần, phù hợp với nhồi máu cơ tim bán cấp đã hoàn tất (subacute completed MI). </li>
+<li>Điện tâm đồ lúc nhập viện cho thấy nhịp xoang với tần số tim khoảng 80 lần/phút — và phù hợp với <strong>nhồi máu xuyên thành <em>thành dưới</em>, <em>thành bên</em> </strong>và<strong> <em>thành sau</em> đã hoàn tất ở giai đoạn <em>bán cấp</em></strong>, với sóng Q và ST chênh lên ở các chuyển đạo dưới-bên — và ST chênh xuống ở chuyển đạo V2. </li>
+<li>Bệnh nhân được theo dõi từ xa (telemetry) trong khi chờ chụp mạch vành vào ngày hôm sau.</li></ul>
+<p>Bệnh nhân đột ngột thức giấc trong đêm — nói rằng bà cảm thấy “lạ”. Điện tâm đồ dưới đây được ghi vào lúc này. <em><strong>Bạn nghĩ gì?</strong></em></p>
+<figure><a class="o-anh" href="2024-09-05-why-sudden-shock_anh/2024_09_78B1B8D6-4067-4FC2-B4D4-2A3328781BD7.jpg"><img src="2024-09-05-why-sudden-shock_anh/2024_09_78B1B8D6-4067-4FC2-B4D4-2A3328781BD7.jpg" alt="" width="1280" height="946" loading="lazy" decoding="async"></a></figure>
+<p>Điện tâm đồ này phù hợp với nhồi máu dưới-sau-bên — với ST chênh lên kéo dài ở các chuyển đạo dưới và ST chênh xuống soi gương (reciprocal) ở các chuyển đạo bên cao — ST chênh xuống ở chuyển đạo V2 — và sóng T đảo ngược một phần ở đoạn cuối tại các chuyển đạo dưới và các chuyển đạo trước tim bên. Bản ghi này không khác biệt đáng kể so với điện tâm đồ lúc nhập viện.</p>
+<ul><li><strong>Có lẽ thay đổi đáng chú ý nhất</strong> — là <strong>tần số tim</strong> <strong><em>tăng lên</em></strong>, điện tâm đồ này hiện cho thấy <strong>nhịp nhanh xoang 118 lần/phút! </strong></li>
+<li>Cũng đáng lưu ý là sóng T vẫn còn dương (không đảo ngược). ST chênh lên kéo dài kèm sóng T dương &gt;48 giờ sau nhồi máu cơ tim có liên quan đến <strong>viêm màng ngoài tim khu trú sau nhồi máu</strong> <strong>(</strong>PIRP<strong>).</strong></li></ul>
+<p><strong>Nhịp nhanh xoang</strong> có <em>rất nhiều</em> nguyên nhân tiềm ẩn. Theo kinh nghiệm của tôi, ở bệnh nhân đang nghỉ ngơi và không lo âu — nó thường báo hiệu một bệnh lý nặng. <strong>Điều này đặc biệt đúng với bệnh nhân cao tuổi bị nhịp nhanh xoang.</strong> Bệnh nhân trong ca hôm nay đột ngột nhịp nhanh <strong><em>trong khi</em> đang ngủ</strong>. Tần số tim tăng gần gấp đôi trong vòng một phút. <em>Điều gì có thể giải thích sự thay đổi tần số đột ngột ở bệnh nhân này? Hãy thử xem bạn có nhận ra vấn đề trên mặt cắt cạnh ức của tim dưới đây không.</em></p>
+<figure><video controls preload="metadata" playsinline src="2024-09-05-why-sudden-shock_anh/2026_02_Echo-1-Magnus-Shock-9-5.3-2024-USE.mp4"></video></figure>
+<p><strong>LƯU Ý:</strong> Đoạn video trên được ghi từ «cửa sổ» dưới sườn và cho thấy tim với đủ 4 buồng. Nhĩ phải, thất phải, nhĩ trái và thất trái được quan sát qua gan. <em><strong>Nguyên nhân của nhịp nhanh đột ngột là gì? </strong></em></p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Dưới đây là một ảnh tĩnh trích từ đoạn video trên. Các buồng tim đã được chú thích. Từ “cửa sổ” dưới sườn, tim được quan sát qua gan, do đó nhu mô gan nằm gần đầu dò nhất (<em>phía trên của hình</em>).</p>
+<ul><li>Bên dưới gan là tim với nhĩ phải (RA), thất phải (RV), nhĩ trái (LA) và thất trái (LV) </li>
+<li><strong><em>Mũi tên đỏ </em></strong>chỉ vào một lỗ thông lớn ở vùng đáy của vách liên thất. Đây là <strong>thủng vách liên thất (</strong><em>VSR</em><strong>)</strong>. </li>
+<li>Như đã đề cập, bệnh nhân này có thể bị viêm màng ngoài tim khu trú sau nhồi máu do một nhồi máu cơ tim diện rộng đã hoàn tất. PIRP liên quan chặt chẽ với <strong>vỡ cơ tim. </strong></li>
+<li>Bệnh nhân này đã bị thủng phần đáy của vách liên thất (VSR). <strong><em>Chính VSR là nguyên nhân gây sốc tim!</em></strong></li></ul>
+<figure><a class="o-anh" href="2024-09-05-why-sudden-shock_anh/2026_02_Echo-View-4-Chamber-1-31.1-2026.jpg"><img src="2024-09-05-why-sudden-shock_anh/2026_02_Echo-View-4-Chamber-1-31.1-2026.jpg" alt="" width="1600" height="1023" loading="lazy" decoding="async"></a></figure>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="binh-luan-ngan-ve-pirp-va-song-t">Bình luận ngắn về PIRP và sóng T:</h3>
+<p>Oliva và cs. nhận thấy vỡ cơ tim liên quan chặt chẽ với <strong>viêm màng ngoài tim khu trú sau nhồi máu</strong>. PIRP liên quan với sóng T dương kéo dài. Ông mô tả hai kiểu tiến triển sóng T không điển hình trong PRIP:</p>
+<ul><li><strong>1) </strong>Sóng T dương (<em>hướng lên</em>) kéo dài quá 48 giờ ở bệnh nhân nhồi máu cơ tim cấp.</li>
+<li><strong>2) </strong>Sóng T chuyển sớm từ đảo ngược sang giả bình thường (<em>trong vòng 48-72 giờ</em>).</li></ul>
+<p>Trong ca của chúng tôi, PIRP là lời giải thích có khả năng cho tình trạng sóng T tiếp tục dương. Vì không có các điện tâm đồ liên tiếp — có thể là một trong 2 kiểu trên (<em>chỉ các điện tâm đồ liên tiếp mới phân biệt được</em>).</p>
+<p>Một nguyên nhân khác có thể gây giả bình thường hóa sóng T, đã được nhắc đến nhiều lần trên blog này, là giả bình thường hóa do tắc lại một động mạch vành liên quan vùng nhồi máu đã được tái tưới máu. Điều này <strong>không</strong> phù hợp với bệnh cảnh lâm sàng của ca hôm nay.</p>
+<p>Dưới đây là 2 đoạn video nữa. Các hình ảnh này được ghi từ mặt cắt trục ngắn cạnh ức, cắt ngang qua thất trái và thất phải. <strong>VSR</strong> nằm ở phần dưới và phần đáy của vách liên thất và nhìn thấy rõ. Đoạn video thứ hai dưới đây cho thấy <strong>luồng thông (shunt)</strong> trên Doppler màu.</p>
+<figure><video controls preload="metadata" playsinline src="2024-09-05-why-sudden-shock_anh/2026_02_Echo-2-Magnus-Shock-9-5-2024-USE.mp4"></video></figure>
+<p><span class="c-nhat">= = =</span></p>
+<figure><video controls preload="metadata" playsinline src="2024-09-05-why-sudden-shock_anh/2026_02_Echo-3-Magnus-Shock-9-5-2024-USE.mp4"></video></figure>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="ban-luan">Bàn luận:</h2>
+<p>Bệnh nhân trong ca hôm nay gặp biến chứng cơ học thứ phát sau OMI đã hoàn tất. Troponin lúc đến viện tăng rất cao và sóng T vẫn còn dương. Bà có triệu chứng không điển hình khiến bà trì hoãn việc đi khám.</p>
+<ul><li>Biến chứng cơ học thứ phát sau nhồi máu cơ tim không thường gặp vì đa số bệnh nhân được tái thông mạch máu khá nhanh. Bệnh nhân trong ca hôm nay bị thủng vách liên thất (VSR) lớn ở vùng đáy vách như một biến chứng của OMI không được điều trị. </li>
+<li>Việc nghe thấy một <strong>tiếng thổi toàn tâm thu thô ráp MỚI xuất hiện</strong> đã dẫn đến đánh giá nhanh bằng siêu âm tim, xác nhận nghi ngờ lâm sàng. </li></ul>
+<p>VSR sẽ gây luồng thông trái sang phải đột ngột và nếu đủ lớn có thể dẫn đến suy tim trái cung lượng thấp. Thất phải đóng vai trò như một ống dẫn và không nhất thiết bị giãn cấp. Giảm hậu tải thất trái<br>là thiết yếu để giảm chênh áp qua vách và nhờ đó giảm thể tích luồng thông — làm cho một tỷ lệ lớn hơn dòng máu từ thất trái đi qua van động mạch chủ.</p>
+<p>Với bệnh nhân trong ca hôm nay, truyền <strong>nitroprusside</strong> (<em>thuốc giãn mạch</em>) được bắt đầu để làm giảm <strong>sức cản mạch máu hệ thống</strong> (SVR), và đặt bóng đối xung động mạch chủ (IABP) để giảm thêm hậu tải, nhờ đó cải thiện huyết động. Cuối cùng VSR được phẫu thuật vá. Bệnh nhân cần lọc máu ngắn hạn sau phẫu thuật, nhưng cuối cùng đã hồi phục hoàn toàn.</p>
+<p><strong>Biến chứng</strong> <strong><em>cơ học</em></strong> là những di chứng đáng sợ của nhồi máu cơ tim. Chúng thường biểu hiện dưới dạng <strong>vỡ thành tự do</strong>, <strong>thủng vách liên thất</strong> hoặc <strong>đứt cơ nhú.</strong> Tỷ lệ mắc thực sự của 3 biến chứng cơ học này có thể khác với tỷ lệ được báo cáo do báo cáo thiếu, mã hóa sai, hoặc khác biệt giữa các quần thể nghiên cứu. Ước tính gộp lại, chúng xảy ra với tỷ lệ khoảng 3 trên 1000 bệnh nhân nhồi máu cơ tim cấp, phần lớn các biến cố này xảy ra ở bệnh nhân STEMI. Trong số bệnh nhân STEMI, thủng vách liên thất thường gặp nhất và vỡ thành tự do ít gặp nhất.</p>
+<p><strong>Biến chứng</strong> <strong><em>cơ học</em></strong> xảy ra đột ngột và làm thay đổi huyết động đáng kể — dẫn đến các cơ chế bù trừ thường bao gồm co mạch và nhịp nhanh, cả hai đều là dấu hiệu đặc trưng của sốc tim.</p>
+<p><strong>VSR</strong> dễ xảy ra hơn ở bệnh nhân lớn tuổi, nữ giới, tăng huyết áp, có bệnh thận mạn và không có tiền sử hút thuốc. Nó thường xảy ra trong bối cảnh nhồi máu cơ tim (MI) lần đầu trên nền điều trị tái tưới máu bị chậm trễ hoặc không được thực hiện. Chụp mạch vành thường cho thấy không có tuần hoàn bàng hệ đến vùng nhồi máu.</p>
+<p>Vì thiếu máu cục bộ <strong>trước đó</strong> tạo ra tiền thích nghi cơ tim (myocardial preconditioning) (<em>làm giảm khả năng hoại tử cơ tim xuyên thành và vỡ cơ tim</em>) — bệnh nhân có bằng chứng đái tháo đường, đau thắt ngực mạn tính hoặc nhồi máu cơ tim trước đó ít có khả năng bị vỡ hơn. VSR có thể xuất hiện trong vòng 1-14 ngày sau nhồi máu cơ tim, tuy nhiên tỷ lệ mắc thường có hai đỉnh (<em>hoặc trong vòng 24 giờ — hoặc sau 3-5 ngày sau nhồi máu cơ tim</em>).</p>
+<p>Bệnh nhân thủng vách liên thất chỉ có thể sống sót sau khi được phẫu thuật vá. Do đó, chẩn đoán thủng vách liên thất cần thúc đẩy một buổi thảo luận nhóm tim (heart team) về các lựa chọn. Thảo luận này cần tính đến việc, với một số bệnh nhân, phẫu thuật là vô ích vì tỷ lệ tử vong gần 100%. Bệnh nhân lớn tuổi và những người có chức năng thất phải kém thường thuộc nhóm này. Thời điểm vá thủng vách liên thất còn gây tranh cãi.</p>
+<ul><li><strong>LƯU Ý:</strong> Một ca VSR khác — Xem <strong>bài ngày <a href="https://drsmithsecgblog.com/subacute-anteroseptal-stemi-with/" rel="noopener" target="_blank">18 tháng Bảy năm 2014</a></strong>.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<ol><li>Nhịp nhanh xoang (đặc biệt ở người cao tuổi) thường báo hiệu bệnh lý nghiêm trọng, như trong ca hôm nay.</li>
+<li>Biến chứng cơ học của nhồi máu xuyên thành hiếm gặp và là những di chứng đáng sợ, mang tỷ lệ bệnh tật và tử vong cao. </li>
+<li>Viêm màng ngoài tim khu trú sau nhồi máu (PIRP) có thể được nghi ngờ từ điện tâm đồ, và liên quan đến tăng nguy cơ vỡ cơ tim.</li></ol>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="tai-lieu-tham-khao">Tài liệu tham khảo:</h2>
+<ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/8353916/" rel="noopener" target="_blank">Oliva PB, Hammill SC, Edwards WD. Electrocardiographic diagnosis of postinfarction regional pericarditis</a> (Chẩn đoán điện tâm đồ viêm màng ngoài tim khu trú sau nhồi máu)</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/8354804/" rel="noopener" target="_blank">Oliva PB.  Hammill SC.  Edwards WD.  Cardiac rupture: a clinically predictable complication of acute myocardial infarction</a> (Vỡ tim: một biến chứng có thể tiên đoán trên lâm sàng của nhồi máu cơ tim cấp)</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/8354804/" rel="noopener" target="_blank">Ventricular septal rupture</a> (Thủng vách liên thất)</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p><span class="c-do">======================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-5-9-2024-cap-nhat-cho-wordpress-ngay-1-2-2026">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (5/9/2024 — Cập nhật cho WordPress ngày 1/2/2026):</h2>
+<hr>
+<p>Như tôi đã nhấn mạnh trong <em>Bình luận của tôi</em> ở <strong>bài ngày <a href="https://drsmithsecgblog.com/2022/12/65-year-old-with-syncope-and-normal-ecg.html" rel="noopener" target="_blank">6 tháng Mười Hai năm 2022</a></strong> và <strong>bài ngày <a href="https://drsmithsecgblog.com/2023/08/75-year-old-dialysis-patient-with.html" rel="noopener" target="_blank">19 tháng Tám năm 2023</a> </strong>trên Dr. Smith’s ECG Blog — <em><strong>Không phải mọi bệnh nhân nhồi máu cơ tim cấp đều khai đau ngực</strong></em>. Tôi nghĩ cách biểu hiện của ca hôm nay khiến việc ôn lại dữ liệu gốc về vấn đề này là đáng giá.</p>
+<ul><li>Như BS. Nossen đã trình bày — bệnh nhân hôm nay là một phụ nữ lớn tuổi với tiền sử vài ngày mệt mỏi, khó chịu và “thấy không khỏe”. Việc nhắc đến cảm giác “khó chịu ở ngực” mơ hồ trong những ngày gần đây chỉ được khai thác khi được hỏi lại cụ thể. Dựa vào bệnh sử — các nhân viên y tế đã <em><u>không</u></em> dự đoán điện tâm đồ ban đầu của bà sẽ cho thấy nhồi máu mới đã hoàn tất kèm Troponin tăng rõ rệt.</li></ul>
+<p>Các nghiên cứu Framingham từ nhiều năm trước đã cho chúng ta biết rằng tỷ lệ <strong><em>“nhồi máu cơ tim <u>thầm lặng</u>”</em></strong> cao tới <strong>~30%</strong> trong <em><u>tất cả</u></em> <strong>các ca nhồi máu cơ tim (</strong><em>Kannel &amp; Abbott: N Engl J Med 311(18):1144-1147, 1984 — </em><em>Kannel: Cardiol Clin 4(4):583-591, 1986</em><strong>)</strong>.</p>
+<ul><li>Điểm thú vị của dữ liệu này là ở khoảng <strong><em><u>một nửa</u></em></strong> trong số 30% này <strong>(</strong>tức là <em>~15% tổng số bệnh nhân nhồi máu cơ tim</em><strong>)</strong> — những bệnh nhân được phát hiện có bằng chứng rõ ràng của nhồi máu trên điện tâm đồ theo dõi hằng năm hoàn toàn <em><u>KHÔNG</u></em> có triệu chứng — do đó là <strong>nhồi máu cơ tim “thầm lặng” <em>thực sự</em>.</strong></li>
+<li>Nhưng ở <strong>nửa</strong> <strong><em><u>còn lại</u></em></strong> của 30% này <strong>(</strong>tức là <em>ở ~15% tổng số bệnh nhân nhồi máu cơ tim</em><strong>)</strong> — mặc dù những bệnh nhân được phát hiện nhồi máu trên điện tâm đồ theo dõi này <em><u>không</u></em> đau ngực — họ <em><u>lại</u></em> có <strong><em>“một điều gì đó khác”</em></strong> được cho là liên quan đến nhồi máu cơ tim của họ.</li>
+<li>Triệu chứng <em>“điều gì đó khác” </em>thường gặp nhất là <strong><em>khó</em> thở</strong>. Các <strong>triệu chứng </strong><strong>tương đương </strong><strong><em><u>không</u> phải đau ngực</em></strong> khác bao gồm — đau bụng — triệu chứng “giống cúm” (tức là <em>đau cơ; <strong>“cảm thấy” không khỏe</strong></em>) — mệt mỏi quá mức — ngất — thay đổi trạng thái tâm thần (tức là <em>như có thể gặp ở một bệnh nhân cao tuổi đi lang thang khỏi nhà</em>).</li>
+<li><strong><u>ĐIỀU CỐT LÕI:</u></strong> Đặc biệt quan trọng là các nhân viên y tế cấp cứu phải nhận biết thực thể <em><strong>“nhồi máu cơ tim <u>thầm lặng</u>”</strong></em> — có thể <em><u>hoặc</u></em> hoàn toàn “thầm lặng” — hoặc kèm theo một triệu chứng tương đương <em>không phải đau ngực</em>. Tỷ lệ của cả hai kiểu nhồi máu cơ tim <em>thầm lặng</em> <strong><em><u>phổ biến</u> </em>hơn so với thường được nhận thức</strong>. <em>Không phải</em> mọi bệnh nhân nhồi máu cơ tim cấp (<em>hoặc mới xảy ra</em>) đều đau ngực trong biến cố của họ.</li></ul>
+<p>Áp dụng vào ca <em>hôm nay</em>: Bệnh nhân hôm nay bị thủng vách liên thất vào tối <em>sau khi</em> nhập viện. Các triệu chứng không đặc hiệu đưa bà đến bệnh viện đã bắt đầu nhiều ngày <em>trước khi</em> bà cuối cùng tìm đến hỗ trợ y tế.</p>
+<p>Nhận thức rằng tình trạng mệt mỏi, “thấy không khỏe”, cũng như cảm giác khó chịu ở ngực <em>mơ hồ</em> của bệnh nhân này có thể là biểu hiện của một vấn đề tim mạch — lẽ ra đã có thể giúp bắt đầu điều trị kịp thời hơn, điều có khả năng đã ngăn được biến chứng cơ học nặng nề của vùng nhồi máu rộng mà ban đầu <em>không được nhận ra</em>.</p>
+<p><span class="c-nhat">= = = </span></p>
+<p><span class="c-nhat">= = =</span></p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
