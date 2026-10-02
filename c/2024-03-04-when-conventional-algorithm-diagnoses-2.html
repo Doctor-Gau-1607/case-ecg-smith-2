@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04/03/2024 — Khi thuật toán thông thường chẩn đoán điện tâm đồ là HOÀN TOÀN BÌNH THƯỜNG nhưng thực tế có OMI, ứng dụng AI Queen of Hearts PM Cardio nói gì? (với 10 ca minh họa)</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1671 · DR. SMITH’S ECG BLOG</div>
+   <h1>04/03/2024 — Khi thuật toán thông thường chẩn đoán điện tâm đồ là HOÀN TOÀN BÌNH THƯỜNG nhưng thực tế có OMI, ứng dụng AI Queen of Hearts PM Cardio nói gì? (với 10 ca minh họa)</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/when-conventional-algorithm-diagnoses-2/" target="_blank" rel="noopener">"When the conventional algorithm diagnoses the ECG as COMPLETELY NORMAL, but there is in fact OMI, what does the Queen of Hearts PM Cardio AI app say? (with 10 case examples)"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 26 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Tôi đã nhiều lần viết về việc một điện tâm đồ được thuật toán thông thường đọc là “bình thường” hoàn toàn có thể đang biểu hiện OMI, hoặc thậm chí QT dài hay tăng kali máu.</p>
+<p>Tôi đã thu thập <strong>51 ca OMI</strong> được thuật toán máy tính tự động thông thường chẩn đoán là hoàn toàn bình thường.</p>
+<p>Shifa Karim và Gabe Keller đã giúp thực hiện một dự án đánh giá toàn bộ các điện tâm đồ này bằng Queen of Hearts.</p>
+<p>Một phần kết quả đã có:</p>
+<p><strong>Trong 51 ca OMI có điện tâm đồ “hoàn toàn bình thường” (thậm chí không phải “bất thường ST-T không đặc hiệu”, mà là <u>hoàn toàn bình thường!</u>), <span class="c-do">35 ca được Queen of Hearts chẩn đoán là OMI</span>.</strong></p>
+<p>Tôi muốn trình bày một số ca ở đây.</p>
+<p>Bạn có thể đọc toàn bộ chi tiết trong các đường link nếu muốn.</p>
+<p><strong>Ứng dụng Queen of Hearts PM Cardio hiện đã có mặt tại Liên minh châu Âu (được chứng nhận CE) trên App Store và Google Play.  </strong><strong>Với người Mỹ</strong>, bạn cần chờ FDA.  <strong>Nhưng trong lúc chờ đợi:</strong></p>
+<p><span class="c-do"><strong>BẠN CÓ CƠ HỘI ĐƯỢC TRUY CẬP SỚM VÀO PM Cardio AI BOT!!  (ỨNG DỤNG AI OMI CỦA PM CARDIO)</strong></span></p>
+<p>Nếu bạn muốn bot này giúp bạn chẩn đoán sớm OMI và cứu bệnh nhân cùng cơ tim của họ, bạn có thể đăng ký để nhận phiên bản beta sớm của bot tại đây.  Bot chưa được phát hành, nhưng đây là cách để bạn có tên trong danh sách.</p>
+<p><a href="https://share-eu1.hsforms.com/18cAH0ZK0RoiVG3RjC5dYdwfyfsg" rel="noopener" target="_blank">https://share-eu1.hsforms.com/18cAH0ZK0RoiVG3RjC5dYdwfyfsg</a> (biểu mẫu đăng ký truy cập sớm)</p>
+<p>Hoặc dùng mã QR:</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Telegram20QR20code-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Telegram20QR20code-1.jpg" alt="" width="1237" height="1125" loading="lazy" decoding="async"></a></figure>
+<h2 id="10-ca-benh">10 ca bệnh:</h2>
+<h3 id="ca-1">Ca 1</h3>
+<h2 id="ban-co-muon-bi-lam-phien-de-xem-nhung-dien-tam-do-ma-may-tinh-goi-la-binh-thuong-hoac-khong-dac-hieu-khong-2-ca-cung-luc">Bạn có muốn bị làm phiền để xem những điện tâm đồ mà máy tính gọi là bình thường hoặc không đặc hiệu không? 2 ca cùng lúc!</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20Veritas20but20Queen20gets20it20right-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20Veritas20but20Queen20gets20it20right-1.jpg" alt="" width="1600" height="528" loading="lazy" decoding="async"></a></figure>
+<p>Tắc RCA (OMI), được thuật toán Veritas thông thường gọi là bình thường.</p>
+<p>Có sóng T tối cấp ở các chuyển đạo thành dưới, kèm ST chênh xuống (STD) soi gương và sóng T đảo ngược (TWI) ở aVL.</p>
+<p>Thuật toán: Veritas (trên máy Mortara)</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20Veritas20but20Queen20gets20it20right-Queen-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20Veritas20but20Queen20gets20it20right-Queen-1.jpg" alt="" width="906" height="444" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-2">Ca 2</h3>
+<p><a href="https://drsmithsecgblog.com/2017/11/a-middle-aged-woman-with-chest-pain-and.html" rel="noopener" target="_blank"><strong>A middle-aged woman with chest pain and a “normal” ECG in triage</strong></a> (Một phụ nữ trung niên đau ngực với điện tâm đồ “bình thường” ở khu phân loại)<span class="c-xanh"><strong>.  OMI đã không được nhận ra và bệnh nhân ngừng tim ngay tại khu phân loại. </strong> </span></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Anterior20LAD20OMI20not20seen20by20Marquette201220SL20patient20arrested-original-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Anterior20LAD20OMI20not20seen20by20Marquette201220SL20patient20arrested-original-1.jpg" alt="" width="1600" height="464" loading="lazy" decoding="async"></a></figure>
+<p>Tắc LAD bị thuật toán thông thường gọi là Bình thường</p>
+<p>Có sóng T tối cấp ở V3–V5.  OMI do LAD.</p>
+<p><strong>Thuật toán GE Marquette 12 SL<br></strong></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Anterior20LAD20OMI20not20seen20by20Marquette201220SL20patient20arrested-Queen-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Anterior20LAD20OMI20not20seen20by20Marquette201220SL20patient20arrested-Queen-1.jpg" alt="" width="904" height="430" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-3">Ca 3</h3>
+<h2 id="co-nen-de-bac-si-cap-cuu-bi-lam-phien-boi-nhung-dien-tam-do-duoc-may-tinh-doc-la-binh-thuong-khong">Có nên để bác sĩ cấp cứu bị làm phiền bởi những điện tâm đồ được máy tính đọc là “Bình thường” không?</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20algorithm-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20algorithm-1.jpg" alt="" width="1600" height="503" loading="lazy" decoding="async"></a></figure>
+<p>OMI thành dưới-bên bị thuật toán thông thường chẩn đoán là “Bình thường”</p>
+<p>Có ST chênh lên (STE) ở chuyển đạo III và aVF, kèm ST chênh xuống soi gương ở aVL</p>
+<p>ST chênh lên kín đáo ở V5 và V6.</p>
+<p>Không rõ thuật toán</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20algorithm-Queen20gets20it20right-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Called20normal20by20algorithm-Queen20gets20it20right-1.jpg" alt="" width="922" height="432" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-4">Ca 4</h3>
+<h2 id="cac-thuat-toan-may-tinh-kem-tin-cay-den-muc-nao-trong-chan-doan-stemi">Các thuật toán máy tính kém tin cậy đến mức nào trong chẩn đoán STEMI?</h2>
+<p>Cơn đau đang giảm dần.  Được máy tính chẩn đoán là Bình thường.  Troponin âm tính.   Điện tâm đồ trước viện của bệnh nhân cho thấy đã có STEMI diện rộng và đây là những sóng T tối cấp “đang trên đường đi xuống” khi chúng trở về bình thường.</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Old20OMI20LAD20case20called20normal201220SL-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Old20OMI20LAD20case20called20normal201220SL-1.jpg" alt="" width="1600" height="598" loading="lazy" decoding="async"></a></figure>
+<p>Bản ghi này được gọi là bình thường nhưng có sóng T tối cấp ở V2–V5.</p>
+<p>OMI do LAD.</p>
+<p>Không rõ thuật toán</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Old20OMI20LAD20case20called20normal201220SL-Queen20Dx-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Old20OMI20LAD20case20called20normal201220SL-Queen20Dx-1.jpg" alt="" width="890" height="492" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-5">Ca 5</h3>
+<h2 id="song-t-dong-dynamic-kin-dao-sau-do-la-tac-lad-va-ngung-tim">Sóng T động (dynamic) kín đáo, sau đó là tắc LAD và ngừng tim</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Wellens20called20normal20by20computer20patient20arrested-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Wellens20called20normal20by20computer20patient20arrested-1.jpg" alt="" width="1600" height="593" loading="lazy" decoding="async"></a></figure>
+<p>Đây là sóng Wellens ở V2–V4, biểu hiện một huyết khối LAD đang thông (OMI đã tái tưới máu) tại thời điểm này, nhưng có thể tắc lại bất cứ lúc nào. Máy tính gọi là “bình thường.” Các bác sĩ đã không nhận ra.</p>
+<p><strong>Bệnh nhân quả thật đã tắc lại và ngừng tim nhưng đã được hồi sức thành công.</strong></p>
+<p><strong>Không rõ thuật toán</strong></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Wellens20called20normal20by20computer20patient20arrested-queen20mid20confidence-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Wellens20called20normal20by20computer20patient20arrested-queen20mid20confidence-1.jpg" alt="" width="906" height="482" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<p>Queen đã được dạy phân biệt giữa tắc ĐANG DIỄN RA và ĐÃ TÁI TƯỚI MÁU.  Vì vậy nó biết rằng ca này đã tái tưới máu.</p>
+<p>Nhưng ở Phiên bản 1, kết quả đầu ra chỉ là OMI hay Không phải OMI, kèm mức độ tin cậy.</p>
+<p>(Phiên bản 1 không báo cáo Đang diễn ra hay Đã tái tưới máu)</p>
+<h3 id="ca-6">Ca 6</h3>
+<h2 id="mot-nam-gioi-cao-tuoi-bi-kho-tieu">Một nam giới cao tuổi bị “khó tiêu”</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_TQRSD20called20normal20by20conventional20algorithm-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_TQRSD20called20normal20by20conventional20algorithm-1.jpg" alt="" width="1600" height="560" loading="lazy" decoding="async"></a></figure>
+<p><strong>Đây là hình ảnh chẩn đoán tắc LAD, với biến dạng phần cuối QRS (T-QRS-D) và sóng T tối cấp ở V3.</strong></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_TQRSD20called20normal20by20conventional20algorithm-Queen20gets20it-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_TQRSD20called20normal20by20conventional20algorithm-Queen20gets20it-1.jpg" alt="" width="888" height="422" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-7">Ca 7</h3>
+<h2 id="dau-nguc-giam-sau-khi-dung-maalox-va-lidocaine-dang-nhot-duoc-may-tinh-chan-doan-la-binh-thuong-troponin-am-tinh-benh-nhan-dang-duoc-cho-xuat-vien-voi-chan-doan-trao-nguoc-da-day-thuc-quan-gerd-thi-ngung-tim">Đau ngực giảm sau khi dùng Maalox và lidocaine dạng nhớt. Được máy tính chẩn đoán là Bình thường. Troponin âm tính. Bệnh nhân đang được cho xuất viện với chẩn đoán trào ngược dạ dày-thực quản (GERD) thì ngừng tim.</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Original20called20normal20by20computer20algorithm20LAD20OMI-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Original20called20normal20by20computer20algorithm20LAD20OMI-1.jpg" alt="" width="1600" height="636" loading="lazy" decoding="async"></a></figure>
+<p><strong>Đây là những sóng T tối cấp.</strong></p>
+<p>Không rõ thuật toán</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Original20called20normal20by20computer20algorithm20LAD20OMI-queen-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Original20called20normal20by20computer20algorithm20LAD20OMI-queen-1.jpg" alt="" width="900" height="480" loading="lazy" decoding="async"></a></figure>
+<p><strong>Queen chẩn đoán đúng</strong></p>
+<h3 id="ca-8">Ca 8</h3>
+<h2 id="them-mot-bai-bao-thieu-sot-nua-duoc-cong-bo-ve-dien-tam-do-luc-phan-loai-triage-voi-nhung-ket-luan-can-duoc-xem-xet-ky-luong">Thêm một bài báo thiếu sót nữa được công bố về điện tâm đồ lúc phân loại (triage), với những kết luận cần được xem xét kỹ lưỡng.</h2>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Screenshot202023-12-0920at205.51.2520PM-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Screenshot202023-12-0920at205.51.2520PM-1.jpg" alt="" width="1600" height="671" loading="lazy" decoding="async"></a></figure>
+<p>Tắc LAD đoạn gần với ST chênh lên ở I và aVL, và sóng T tối cấp ở V2–V6.</p>
+<p><strong>Thuật toán: Marquette 12 SL (GE)</strong></p>
+<p><span class="c-do"><strong>Queen chẩn đoán đúng</strong></span></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Screenshot202023-12-0920at205.53.1520PM-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Screenshot202023-12-0920at205.53.1520PM-1.jpg" alt="" width="888" height="406" loading="lazy" decoding="async"></a></figure>
+<h3 id="ca-9-dien-tam-do-truoc-vien-va-tai-khoa-cap-cuu">Ca 9 (điện tâm đồ trước viện và tại khoa cấp cứu).</h3>
+<h2 id="sieu-am-tim-ngay-ca-hoac-nhat-la-voi-ky-thuat-danh-dau-mo-speckle-tracking-co-the-khien-ban-gap-rac-roi-dien-tam-do-da-noi-len-tat-ca-phu-nu-30-tuoi-dau-vung-co-thang-lo-trinh-heart-heart-pathway-0-may-tinh-doc-dien-tam-do-binh-thuong-thuc-te-dien-tam-do-co-gia-tri-chan-doan-tac-lad">Siêu âm tim, ngay cả (hoặc nhất là) với kỹ thuật đánh dấu mô (speckle tracking), có thể khiến bạn gặp rắc rối. Điện tâm đồ đã nói lên tất cả. Phụ nữ 30 tuổi đau vùng cơ thang. Lộ trình HEART (HEART Pathway) = 0. Máy tính đọc điện tâm đồ “Bình thường”. Thực tế: điện tâm đồ có giá trị chẩn đoán tắc LAD.</h2>
+<p>Điện tâm đồ trước viện:</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_time20zero-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_time20zero-1.jpg" alt="" width="1107" height="297" loading="lazy" decoding="async"></a></figure>
+<p>Có sóng T tối cấp ở V3–V5.</p>
+<p><span class="c-do"><strong>Queen chẩn đoán đúng</strong></span></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_time20zero-Queen-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_time20zero-Queen-1.jpg" alt="" width="882" height="404" loading="lazy" decoding="async"></a></figure>
+<p>Điện tâm đồ đầu tiên tại khoa cấp cứu:</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_30-something20yo20with20neck20pain20and20large20T-waves-1.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_30-something20yo20with20neck20pain20and20large20T-waves-1.jpg" alt="" width="1600" height="536" loading="lazy" decoding="async"></a></figure>
+<p>Sóng T tối cấp vẫn tồn tại.</p>
+<p>Lại bị gọi là bình thường!</p>
+<p><strong>Thuật toán: Veritas (trên máy Mortara)</strong></p>
+<p><span class="c-do"><strong>Queen chẩn đoán đúng</strong></span></p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_30-something20yo20with20neck20pain20and20large20T-waves-Queen.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_30-something20yo20with20neck20pain20and20large20T-waves-Queen.jpg" alt="" width="890" height="458" loading="lazy" decoding="async"></a></figure>
+<h3 id="ca-10">Ca 10:</h3>
+<p><a href="https://drsmithsecgblog.com/2022/07/a-middle-aged-male-diagnosed-with.html" rel="noopener" target="_blank">A Middle Aged Male diagnosed with Gastroesophageal Reflux</a> (Một nam giới trung niên được chẩn đoán trào ngược dạ dày-thực quản)</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_when-conventional-algorithm-diagnoses-2-18202433.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_when-conventional-algorithm-diagnoses-2-18202433.jpg" alt="" width="1600" height="590" loading="lazy" decoding="async"></a></figure>
+<p>Có ST chênh lên tối thiểu ở chuyển đạo III kèm một ít sóng T đảo ngược, và ST chênh xuống soi gương ở aVL, cũng tối thiểu nhưng rõ ràng là có thật.  Cũng có ST chênh xuống ở V2–V4.  Đây là OMI thành dưới-sau.</p>
+<p>Lại bị gọi là bình thường!</p>
+<p><strong>Thuật toán: Veritas (trên máy Mortara)</strong></p>
+<p>Queen chẩn đoán đúng</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_when-conventional-algorithm-diagnoses-2-1230466506.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_when-conventional-algorithm-diagnoses-2-1230466506.jpg" alt="" width="892" height="498" loading="lazy" decoding="async"></a></figure>
+<h2 id="tai-ung-dung-queen-of-hearts-pm-cardio-hoac-phien-ban-queen-tren-telegram">Tải ứng dụng Queen of Hearts PM Cardio hoặc phiên bản Queen trên Telegram:</h2>
+<h3 id="ung-dung">Ứng dụng</h3>
+<p>Nếu bạn sống ở EU, Queen of Hearts được tích hợp vào toàn bộ ứng dụng PM Cardio và đã được chứng nhận CE.  Ứng dụng đầy đủ có toàn bộ các chẩn đoán điện tâm đồ.  Bạn sẽ có 5 lượt dùng miễn phí, sau đó cần trả phí  [Nếu bạn sống ngoài EU, bạn vẫn có thể dùng ứng dụng này nếu khi đăng ký bạn khai rằng mình sống ở EU.]</p>
+<p><a href="https://apps.apple.com/gb/app/pmcardio-ecg-analysis/id1640037895" rel="noopener" target="_blank">Ứng dụng PM Cardio trên iOS (Apple iPhone) </a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.powerfulmedical.pmcardio&amp;hl=en_US&amp;gl=US&amp;pli=1" rel="noopener" target="_blank">Ứng dụng PM Cardio trên Google Play (Android)</a></p>
+<p><a href="https://www.youtube.com/watch?v=BtniwQCxGO0" rel="noopener" target="_blank">Xem video hướng dẫn đầy đủ cách dùng ứng dụng tại đây.</a></p>
+<h3 id="telegram">Telegram</h3>
+<p><strong>Nếu bạn sống ở Mỹ</strong>, ứng dụng chưa được FDA phê duyệt và bạn cần điền biểu mẫu này để được truy cập Queen, vốn được đặt trên Telegram (nhưng không có các tính năng khác).  Bạn có thể dùng không giới hạn số lần.</p>
+<p><a href="https://share-eu1.hsforms.com/18cAH0ZK0RoiVG3RjC5dYdwfyfsg" rel="noopener" target="_blank">https://share-eu1.hsforms.com/18cAH0ZK0RoiVG3RjC5dYdwfyfsg</a> (biểu mẫu đăng ký truy cập Queen trên Telegram)</p>
+<p>Hoặc dùng mã QR để nhận phiên bản Telegram:</p>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Telegram20QR20code-2.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Telegram20QR20code-2.jpg" alt="" width="1237" height="1125" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_0-Figure-6-REDLINE-UseinBlogs-4.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_0-Figure-6-REDLINE-UseinBlogs-4.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">==================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-4-3-2024">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (4/3/2024):</h2>
+<p><span class="c-do">==================================</span></p>
+<p>Trong bài Blog hôm nay — Dr. Smith hoàn toàn có lý khi than phiền về sự thiếu chính xác của các chương trình đọc điện tâm đồ thông thường trong việc nhận diện OMI cấp.</p>
+<ul><li>Như chúng tôi đã ghi nhận rất nhiều lần trên Blog của Dr. Smith suốt hơn một thập kỷ qua — <strong><em>quá nhiều</em> bác sĩ lâm sàng (</strong><em>kể cả quá nhiều bác sĩ tim mạch</em><strong>) — vẫn “mắc kẹt” trong mô hình STEMI (STEMI Paradigm)</strong>, đồng thời phớt lờ những dữ liệu ngày càng nhiều từ các nghiên cứu <em>được xác nhận bằng thông tim</em> cho thấy <strong><em>ít nhất</em> 30% các OMI <em>cấp</em> (</strong><em>nhồi máu cơ tim do tắc — <u>O</u>cclusion <u>M</u>yocardial <u>I</u>nfarction</em><strong>) bị bỏ sót nếu chỉ dựa vào tiêu chuẩn <em>dựa trên milimét</em></strong> của mô hình STEMI <em>đã lỗi thời</em>.</li></ul>
+<p>Vì vậy — <u><em>chẳng</em></u> có gì đáng ngạc nhiên khi <strong>các chương trình đọc điện tâm đồ thông thường <em>không đủ khả năng</em> nhận diện OMI cấp</strong>.</p>
+<ul><li>Dù đã nói như trên — <strong><em>lỗi <u>không</u> nằm ở máy tính</em></strong> — vì các chương trình máy tính chỉ làm đúng những gì chúng được lập trình để làm.</li>
+<li></li>
+<li><strong>Các chương trình đọc điện tâm đồ thông thường (</strong>tức là <em>hầu như <u>tất cả</u> các chương trình đọc bằng máy tính <u>trước</u> ứng dụng QOH AI Bot</em><strong>) </strong>— <strong>đã được lập trình theo tiêu chuẩn STEMI</strong> — <em><u>không</u></em> xét đến bối cảnh lâm sàng <strong>(</strong>tức là <em>đối chiếu sự hiện diện và mức độ nặng tương đối của triệu chứng với <u>từng</u> điện tâm đồ trong các điện tâm đồ liên tiếp được ghi</em><strong>)</strong> — và <em><u>không</u></em> xét đến các dấu hiệu điện tâm đồ bổ sung có tương quan với OMI mà chúng tôi thường xuyên nhấn mạnh trên ECG Blog này <strong>(</strong><em>Xem </em><strong><u>Hình 1</u>)</strong>.</li>
+<li></li>
+<li>Vì vậy — Chúng ta <u>không</u> nên kỳ vọng các chương trình đọc điện tâm đồ thông thường đạt được dù chỉ một mức độ chính xác hợp lý trong việc nhận diện OMI cấp. Và vì vậy — <strong><em>Chúng ta <u>không</u> nên dùng các chương trình đọc điện tâm đồ thông thường cho mục đích này</em>.</strong></li>
+<li></li>
+<li><u>Cuối cùng</u> — <strong>Những bác sĩ lâm sàng (</strong><em>kể cả bác sĩ tim mạch</em><strong>) mà vào năm 2024 vẫn còn “mắc kẹt” trong mô hình STEMI (</strong><em>và vẫn tiếp tục phớt lờ các dấu hiệu điện tâm đồ khác đã được chứng minh nhận diện OMI cấp đáng tin cậy hơn, như đã nêu trong</em> <u>Hình 1</u><strong>) </strong>— <strong>những bác sĩ như vậy sẽ <em><u>tiếp tục</u></em> trì hoãn (</strong><em>nếu không muốn nói là bỏ sót hoàn toàn</em><strong>) nhu cầu thông tim kịp thời cho những OMI cấp có thể (</strong><em>và lẽ ra phải</em><strong>) được hưởng lợi từ tái thông mạch kịp thời</strong>.</li></ul>
+<p>===========================</p>
+<p>Các ví dụ lâm sàng về những OMI bị các chương trình đọc điện tâm đồ thông thường bỏ sót mà Dr. Smith đưa ra trong phần bàn luận hôm nay — <strong><em><u>khẳng định</u></em> rằng chúng ta cần <em><u>bỏ qua</u></em> các thuật toán thông thường này</strong>.</p>
+<ul><li>Việc đọc điện tâm đồ lâm sàng tối ưu để nhận diện OMI cấp có thể đạt được bằng cách chú ý đến các nguyên tắc được điểm lại trong <strong><u>Webinar</u></strong> 90 phút của các bác sĩ Smith, Meyers và Herman <strong>(</strong><em>trong </em><strong>bài ngày <a href="https://drsmithsecgblog.com/2023/12/webinar-beyond-stemi-diagnosing-acute.html" rel="noopener" target="_blank">5 tháng Mười Hai năm 2023</a></strong> <em>trên Dr. Smith’s ECG Blog</em><strong>)</strong> — nhiều nguyên tắc trong số đó được tóm tắt trong <u>Hình 1</u> — và tất cả đều thường xuyên được bàn luận trong các ca bệnh trình bày trên ECG Blog này.</li>
+<li></li>
+<li><strong>Mô hình PMcardio OMI AI </strong><strong>QOH (</strong><em><u>Q</u>ueen <u>O</u>f <u>H</u>earts</em><strong>)</strong> chứng minh rằng lỗi của các chương trình đọc điện tâm đồ thông thường <em><u>không</u></em> phải là lỗi của máy tính. Ngược lại — vì QOH đã được lập trình dưới sự hướng dẫn của các bác sĩ Smith và Meyers <strong>(</strong><em>với một cơ sở dữ liệu không ngừng mở rộng gồm hơn 18.000 bản ghi được xác nhận bằng kết quả thông tim</em><strong>)</strong> — <strong>QOH đã cho thấy độ chính xác <em><u>vượt trội</u></em> trong nhận diện OMI cấp so với việc dùng tiêu chuẩn STEMI chuẩn</strong> <strong>(</strong><em>Herman, Meyers, Smith và cs. — </em><strong><a href="https://academic.oup.com/ehjdh/advance-article/doi/10.1093/ehjdh/ztad074/7453297?utm_medium=email&amp;_hsmi=79746848&amp;_hsenc=p2ANqtz-9GVemae1PjpWmd00ke3NbuVeWw0DAO6bzr8wVF_j_iHxN1NJr9YPhvpG2VWboZjHIPyxWiibaYy9WTdZchrWZpcj2Oxw&amp;utm_content=79746848&amp;utm_source=hs_email" rel="noopener" target="_blank">Eur Heart J Digital Health — tháng Mười Một năm 2023</a>)</strong>.</li>
+<li></li>
+<li><strong><u><em>SUY NGHĨ CỦA TÔI:</em></u></strong> Việc đọc điện tâm đồ lâm sàng tối ưu có lẽ sẽ đạt được <em>TỐT NHẤT</em> bằng sự <strong><em><u>kết hợp</u></em></strong> giữa chuyên môn của các bác sĩ lâm sàng giàu kinh nghiệm <u>với</u> độ chính xác vốn đã ấn tượng và không ngừng được cải thiện của QOH. <strong>Có lẽ sẽ luôn cần một mức độ giám sát nhất định của bác sĩ lâm sàng để <em>bảo đảm</em> QOH hoạt động tối ưu</strong> — nhưng ý kiến bổ sung mà QOH đưa ra rõ ràng có thể hỗ trợ rất nhiều cho bác sĩ lâm sàng như một công cụ giảng dạy, và <strong><em>giúp tăng sự tự tin </em><u>và</u><em> độ chính xác của bác sĩ lâm sàng</em></strong> trong việc nhanh chóng xác định bệnh nhân nào cần thông tim kịp thời.</li></ul>
+<figure><a class="o-anh" href="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Figure-120-20ECG20Findings20to20Look20For2012-9.1-2023.jpg"><img src="2024-03-04-when-conventional-algorithm-diagnoses-2_anh/2024_03_Figure-120-20ECG20Findings20to20Look20For2012-9.1-2023.jpg" alt="" width="1600" height="1287" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> Các dấu hiệu điện tâm đồ cần tìm <strong>khi bệnh nhân của bạn</strong> có triệu chứng tim <em>mới khởi phát</em> <strong><em><u>không</u></em> biểu hiện ST chênh lên <em>đạt tiêu chuẩn STEMI</em></strong> trên điện tâm đồ.<br>Về Hình minh họa giải thích thêm của tôi cho <strong>T-QRS-D</strong> (<em>gạch đầu dòng thứ 2</em>) — Xem <em><u>Bình luận</u> <u>của tôi</u></em> ở <u>cuối</u> trang trong <strong>bài ngày <a href="https://drsmithsecgblog.com/2019/11/a-50-something-with-left-shoulder-pain.html" rel="noopener" target="_blank">14 tháng Mười Một năm 2019</a></strong> của Dr. Smith.</figcaption></figure>
+<p>=========================</p>
+<h3 id="luu-y-cua-tac-gia-editorial-note-ve-cac-ket-qua-doc-bang-may-tinh">LƯU Ý CỦA TÁC GIẢ (Editorial NOTE) về các kết quả đọc bằng máy tính:</h3>
+<p>Là người đã theo dõi sự phát triển của các chương trình đọc điện tâm đồ thông thường trong những thập kỷ gần đây — tôi đã chia sẻ suy nghĩ của mình trong một số bài trước trên Dr. Smith’s ECG Blog về những gì các <strong>thuật toán đọc điện tâm đồ <em>thông thường</em></strong> này <em>có thể</em> <u>và</u> <em>không thể</em> làm. Ai quan tâm — Hãy xem <strong><em>Bình luận của tôi</em></strong> ở cuối trang trong các bài sau:</p>
+<ul><li><strong>Bài ngày <a href="https://drsmithsecgblog.com/2023/03/a-50-something-with-chest-pain-what-to.html" rel="noopener" target="_blank">31 tháng Ba năm 2023</a></strong> —</li>
+<li><strong>Bài ngày <a href="https://drsmithsecgblog.com/2022/02/this-ecg-was-interpreted-as-completely.html" rel="noopener" target="_blank">4 tháng Hai năm 2022</a></strong> —</li>
+<li><strong>Bài ngày <a href="https://drsmithsecgblog.com/2023/05/a-man-in-his-early-40s-with-chest-pain.html" rel="noopener" target="_blank">23 tháng Năm năm 2023</a></strong> —</li></ul>
+<h3 id="dieu-cot-loi">ĐIỀU CỐT LÕI:</h3>
+<p>Tôi thấy những điều sau đây là đúng <em><u>bất kể</u></em> bạn đang có sẵn một chương trình đọc điện tâm đồ thông thường <u>hay</u> QOH:</p>
+<ul><li><u>Đừng bao giờ</u> nhìn vào kết quả máy tính cho đến <u>sau khi</u> bạn đã buộc bản thân tự đọc điện tâm đồ của bệnh nhân cùng với các thông tin lâm sàng sẵn có. </li>
+<li><em>Chỉ KHI ĐÓ — </em>Mới nhìn vào kết quả máy tính. <em>Bạn có đồng ý không?</em></li>
+<li>Hãy nhận thức rằng NẾU chương trình bạn có dựa trên một thuật toán điện tâm đồ thông thường — thì đây <u>không</u> phải là những chương trình đáng tin cậy để nhận diện OMI cấp <strong>(</strong>tức là <em>Có quá nhiều dương tính giả <u>và</u> âm tính giả!</em><strong>)</strong>.</li>
+<li></li>
+<li>NẾU bạn <em><u>có</u></em> QOH — <strong>Bạn có thể <u>yên tâm</u> NẾU nhận định lâm sàng của bạn trùng với nhận định của QOH</strong>.</li>
+<li>Ngược lại, NẾU cách đọc của bạn khác với kết quả QOH đưa ra — <em>hãy QUAY LẠI từ đầu, </em>và nhận thức<em> </em>rằng<em> <u>trừ khi</u> </em>bạn có thể đưa ra một lý do xác đáng giải thích vì sao QOH có thể sai <strong>(</strong>tức là <em>nhiễu, việc bạn có sẵn các bản ghi liên tiếp hoặc bản ghi trước đó</em><strong>)</strong> — thì <strong><em>ứng dụng QOH AI thường là chính xác</em></strong>.</li>
+<li>Hãy nhớ rằng mô hình QOH PMcardio OMI AI sẽ tiếp tục tốt hơn khi được lập trình thêm hàng nghìn điện tâm đồ <strong>(</strong><em>tất cả đều có dữ liệu được xác nhận bằng thông tim</em><strong>)</strong> — và khi QOH có khả năng, như nó sẽ có theo thời gian, — tích hợp các bản ghi trước đó và các bản ghi liên tiếp, cũng như thông tin bệnh sử vào kết quả đọc của mình.</li></ul>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
