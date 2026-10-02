@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>15/04/2022 — Một người đàn ông 60 mấy tuổi bị đau ngực. Bác sĩ tim mạch từ chối đưa vào phòng thông tim. STEMI hiển nhiên, thậm chí đạt cả tiêu chuẩn. Vậy mà chẩn đoán cuối cùng lại là “NSTEMI”. Chuyện này xảy ra quá thường xuyên.</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1404 · DR. SMITH’S ECG BLOG</div>
+   <h1>15/04/2022 — Một người đàn ông 60 mấy tuổi bị đau ngực. Bác sĩ tim mạch từ chối đưa vào phòng thông tim. STEMI hiển nhiên, thậm chí đạt cả tiêu chuẩn. Vậy mà chẩn đoán cuối cùng lại là “NSTEMI”. Chuyện này xảy ra quá thường xuyên.</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/a-man-in-his-60s-with-chest-pain-whom/" target="_blank" rel="noopener">"A man in his 60s with chest pain. Cardiologist refuses to take to the lab. Obvious STEMI, even with criteria. Yet final diagnosis “NSTEMI”. This happens far too often."</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 10 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Gửi bởi một bác sĩ ẩn danh, Meyers biên tập</p>
+<p>Một người đàn ông 60 mấy tuổi, tiền sử xơ cứng rải rác (multiple sclerosis, MS) và tăng huyết áp, được<br>đội cấp cứu ngoài viện (EMS) đưa từ nhà đến vì đau ngực <strong>khởi phát đột ngột ngay trước khi đến viện</strong>. Ông tự đánh giá mức đau 9/10, mô tả là cảm giác đè ép, lan về phía cánh tay trái<br>kèm khó thở, vã mồ hôi và có một lần nôn. Ông không có tiền sử bệnh động mạch vành (CAD) hay bệnh tim nào khác.<br>Cơn đau giảm xuống 6/10 sau khi EMS cho ông 3 nhát xịt<br>nitroglycerin dưới lưỡi và 324 mg aspirin.</p>
+<p>Các điện tâm đồ<br>trước viện:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_emd.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_emd.jpg" alt="" width="1600" height="1162" loading="lazy" decoding="async"></a><figcaption>Bạn nghĩ gì?</figcaption></figure>
+<p>Cả hai điện tâm đồ đều chẩn đoán OMI LAD cấp cho tới khi chứng minh được điều ngược lại, với ST chênh lên (STE) ở V1-3 và I/aVL, sóng T tối cấp ở V1-V4 và I/aVL, tăng tiến sóng R kém, và các dấu hiệu soi gương ở các chuyển đạo dưới. Có lẽ các điện tâm đồ này không đạt tiêu chuẩn STEMI, nhưng dù vậy chẩn đoán vẫn hiển nhiên.</p>
+<p><strong>Smith</strong>: Ngoài ra, phức bộ thứ 1 và thứ 3 ở V1-V3 là các PVC dạng RBBB, và chúng thậm chí còn có giá trị chẩn đoán hơn cả các nhát được dẫn truyền, với STE đồng hướng ở V1 và STE rất lớn ở V2.</p>
+<p>Báo động STEMI trước viện đã được kích hoạt.</p>
+<p>Điện tâm đồ<br>tại giường ngay khi bệnh nhân đến (đang đau ngực):</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed1-1.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed1-1.jpg" alt="" width="1600" height="750" loading="lazy" decoding="async"></a><figcaption>Dù chất lượng kém, các chuyển đạo V1 và V2 đã tiến triển tới mức đạt rõ ràng tiêu chuẩn STEMI.</figcaption></figure>
+<p>Bác sĩ tim mạch<br>có mặt tại giường khi bệnh nhân đến và <u>đã hủy “báo động STEMI (Code STEMI)</u>”, bất chấp những lo ngại của bác sĩ cấp cứu.</p>
+<p>Troponin<br>ban đầu (xét nghiệm là Troponin I với khoảng tham chiếu 0-0.045 ng/mL):<br><strong>&lt;0.015 ng/mL.</strong></p>
+<p>Theo báo cáo, siêu âm tim tại giường cho thấy rối loạn vận động thành (WMA) vùng trước và mỏm (không có video).</p>
+<p>Trong một giờ tiếp theo sau khi hủy báo động, bệnh nhân được dùng nhiều liều fentanyl mà cơn đau ngực không cải thiện. Tiếp đó được cho hydromorphone, nhưng cơn đau vẫn còn.</p>
+<p>Bác sĩ tim mạch lại được gọi lần nữa vì lo ngại OMI STEMI dương tính (STEMI(+) OMI) đang diễn ra.</p>
+<p>“Bác sĩ tim mạch khẳng định chắc chắn đây không phải STEMI mà có thể liên quan đến bệnh MS nền của bệnh nhân. Khuyến cáo tiếp tục morphine và tránh nitro do huyết áp hiện đang thấp, theo dõi diễn biến troponin.”</p>
+<p>Điện tâm đồ lúc 1 giờ sau khi đến viện:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed2201507.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed2201507.jpg" alt="" width="715" height="350" loading="lazy" decoding="async"></a></figure>
+<p>Điện tâm đồ lúc 1.5 giờ sau khi đến viện:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed3201509.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed3201509.jpg" alt="" width="618" height="344" loading="lazy" decoding="async"></a><figcaption>Chúng ta có thể dùng điện tâm đồ này để dạy sinh viên y khoa trong bài giảng đầu tiên về những trường hợp tắc mạch vành cấp STEMI(+) hiển nhiên nhất.</figcaption></figure>
+<p><strong>Troponin I lần hai: tăng 0.453 lúc 1.5 giờ sau khi đến viện.</strong></p>
+<p>“Đã nhắn gọi lại bác sĩ tim mạch sau nhiều<br>lần trao đổi trước đó, họ không muốn đưa bệnh nhân vào phòng thông tim vì<br>không cho rằng đây là STEMI, khuyến cáo điều trị như NSTEMI với các liệu pháp chúng tôi đã<br>bắt đầu.”</p>
+<p>Ghi chú hội chẩn của bác sĩ tim mạch:</p>
+<p>“Khi bệnh nhân<br>đến phòng cấp cứu, điện tâm đồ đã được xem xét. Không phù hợp với STEMI và báo động<br>STEMI đã được hủy. Bệnh nhân tiếp tục kêu khó chịu ở ngực, có vẻ<br>không điển hình, và đang nôn.</p>
+<p>Nhận xét điện tâm đồ: nhịp xoang (SR) kèm<br>thay đổi ST không đặc hiệu (NS-ST)</p>
+<p>Điểm TIMI<br>cho đau thắt ngực không ổn định (UA) = 1.</p>
+<p>Một<br>chẩn đoán phân biệt rất có khả năng là <u>“cái ôm” của xơ cứng rải rác (MS Hug),</u> và<br>chẩn đoán đó sẽ nhiều khả năng trong bối cảnh bệnh nhân đã được loại trừ ACS.”</p>
+<p>Sau nhiều lần cố thuyết phục<br>bác sĩ tim mạch đưa bệnh nhân vào phòng thông tim và nhiều cuộc trao đổi với các đồng nghiệp<br>cấp cứu trong khoa, ban điều hành khoa cấp cứu, giám sát trực bệnh viện, lãnh đạo khoa<br>tim mạch, bệnh nhân được nhập viện với chẩn đoán NSTEMI, truyền heparin liên tục (gtt) và vẫn<br>đang đau ngực. Được chụp CT mạch máu (CTA) trên đường lên giường khoa phòng theo yêu cầu của bác sĩ tim mạch<br>để đánh giá bóc tách – CTA không có gì bất thường.</p>
+<p>Điện tâm đồ lúc 4 giờ sau khi đến viện:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed4201753.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed4201753.jpg" alt="" width="684" height="333" loading="lazy" decoding="async"></a><figcaption>Cải thiện, nhiều khả năng đã tái tưới máu trong khoảng thời gian này.</figcaption></figure>
+<p>Điện tâm đồ lúc 5 giờ sau khi đến viện (bệnh nhân đang run):</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed5201850.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed5201850.jpg" alt="" width="688" height="333" loading="lazy" decoding="async"></a><figcaption>Tắc lại rõ ràng.</figcaption></figure>
+<p><strong>Sau khi nhập viện: troponin I lần ba mãi đến 2250 mới được lấy, kết quả 77 ng/mL. </strong></p>
+<p>Điện tâm đồ lúc 7 giờ sau khi đến viện:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed62021128.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed62021128.jpg" alt="" width="696" height="331" loading="lazy" decoding="async"></a><figcaption>Tái tưới máu trong khoảng thời gian này.</figcaption></figure>
+<p>Dù các điện tâm đồ cho thấy khả năng tái tưới máu từng lúc, khoa hồi sức tích cực nội khoa (ICU) đã được mời hội chẩn vì đau ngực dai dẳng liên tục, cần truyền nitro tĩnh mạch.</p>
+<p>Dĩ nhiên nhóm ICU lại liên hệ với bác sĩ tim mạch trực một lần nữa. Lần này bác sĩ tim mạch nói rằng ông không cho rằng có thể thông tim vào lúc này do “co rút chi dưới vì MS, khiến bệnh nhân không thể nằm thẳng trên bàn thông tim.” Theo báo cáo, bác sĩ tim mạch khuyên ICU thử valium và/hoặc baclofen qua đêm để xem bệnh nhân có thể chịu được tư thế trên bàn thông tim tốt hơn vào buổi sáng hay không.</p>
+<p>Điện tâm đồ vài giờ sau:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed7202242.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed7202242.jpg" alt="" width="706" height="334" loading="lazy" decoding="async"></a></figure>
+<p><strong>Troponin I lần bốn trong đêm đầu tiên<br>nhập viện: 131 ng/mL. (nhồi máu cơ tim rất lớn)</strong></p>
+<p>Không đo thêm troponin, không rõ giá trị đỉnh.</p>
+<p>Điện tâm đồ sáng hôm sau:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed820060020next20morning.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed820060020next20morning.jpg" alt="" width="649" height="308" loading="lazy" decoding="async"></a></figure>
+<p>Sóng QS ở V2 cho thấy nhồi máu đã hoàn tất</p>
+<p>Chụp mạch vành cho “NSTEMI” được thực hiện vào sáng hôm sau lúc 9:30 sáng. Có vẻ như lúc đó bệnh nhân chịu đựng thủ thuật không gặp khó khăn gì.</p>
+<p><strong>Tắc hoàn toàn do huyết khối động mạch liên thất trước</strong> ngay tại chỗ chia nhánh chéo thứ nhất. Đã PCI với kết quả chụp mạch tốt. Phía sau chỗ đó, động mạch thông suốt suốt dọc xuống tới mỏm. Tắc 100% với dòng chảy TIMI 0 trước can thiệp, TIMI 3 sau can thiệp.</p>
+<p>Ngoài ra, hẹp 90% LCX đoạn giữa, cũng đã được đặt stent.</p>
+<p>Điện tâm đồ sau PCI:</p>
+<figure><a class="o-anh" href="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed9201111320post20cath.jpg"><img src="2022-04-15-a-man-in-his-60s-with-chest-pain-whom_anh/2022_04_ed9201111320post20cath.jpg" alt="" width="694" height="331" loading="lazy" decoding="async"></a></figure>
+<p>Bệnh nhân sống sót qua đợt nằm viện. Nhiều khả năng sẽ không có được kết cục lâu dài.</p>
+<p>Bác sĩ cấp cứu liên quan đã đưa ca bệnh lên ban quản lý để xem xét. Theo báo cáo, các bác sĩ tim mạch khác trong nhóm đã xem lại ca bệnh và cho rằng không cần thực hiện hành động nào. Từ góc nhìn của bác sĩ cấp cứu, không có hành động nào nhận thấy được đã được thực hiện.</p>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<p>Xin đừng viết thư cho tôi để nói rằng ca này là bất thường, hay rằng hẳn phải có những yếu tố khác mà chúng ta không được biết, giải thích cho việc không hành động. Tôi ghen tị với bạn và môi trường hành nghề của bạn nếu bạn thật sự tin rằng nó bất thường. Một ngày nào đó có lẽ nó sẽ là bất thường, nhưng chưa phải khi chúng ta vẫn còn sống dưới mô hình STEMI.</p>
+<p>Nhiều người trên Twitter sẽ nói đại loại là “có lẽ bạn nên đưa chuyện này vào quy trình cải tiến chất lượng (QI) của bệnh viện thay vì đăng lên mạng xã hội.” Việc đó đã được làm trong ca này, và như thường lệ theo kinh nghiệm của tôi, không có gì đáng kể xảy ra. Tôi cảm thấy việc đưa những ca như thế này ra cho thế giới thấy là cực kỳ quan trọng. Chúng ta còn có thể làm gì khác? Trả lời: thúc đẩy và nghiên cứu sự chuyển đổi mô hình sang OMI.</p>
+<p>Tiêu chuẩn STEMI bỏ sót một số lượng đáng kể các trường hợp tắc mạch vành cấp, nhưng bệnh nhân này là ví dụ về một trong những bệnh nhân OMI rất hiển nhiên, nhanh chóng tiến triển thành OMI STEMI dương tính (STEMI(+) OMI). Lưu ý rằng chúng ta có thể chẩn đoán OMI của ông sớm hơn nhờ đọc điện tâm đồ ở trình độ chuyên gia.</p>
+<p>Trong đời thực, những ca sai sót y khoa như ca này dễ dàng bị “ém nhẹm” chỉ bằng cách tiếp tục gọi hồi cứu bệnh nhân này là “NSTEMI.” Việc các điện tâm đồ thực sự đạt tiêu chuẩn STEMI hay không, như ở trên, chẳng quan trọng. Bác sĩ tim mạch và hồ sơ bệnh án chỉ đơn giản nói “không, đây không phải STEMI,” và trong mô hình STEMI thì đó là lời phán quyết cuối cùng, đó chính là định nghĩa thực tế của kết cục. Đây là điều xảy ra khi mô hình nhồi máu cơ tim cấp được định nghĩa dựa trên một dấu hiệu điện tâm đồ thay vì dựa trên sinh lý bệnh hay kết cục thực sự. Điều hiển nhiên đang xảy ra với bệnh nhân, vốn đã được chứng minh bằng chụp mạch vành và troponin, chẳng quan trọng; tất cả những gì quan trọng là bác sĩ tim mạch tuyên bố điện tâm đồ là STEMI hay NSTEMI. Như chúng ta thấy trong ca này, việc thẩm định và đối chiếu hồi cứu không hề diễn ra. Chẩn đoán cuối cùng không thay đổi. Không ai quan tâm bác sĩ cấp cứu hay bác sĩ nội khoa chẩn đoán gì.</p>
+<p>Dù việc gạt bỏ quyết định của bác sĩ tim mạch có khó khăn đến đâu, bệnh nhân này lẽ ra đã được hưởng lợi từ thuốc tiêu sợi huyết, hoặc từ việc chuyển đến một cơ sở hay một bác sĩ can thiệp thực sự quan tâm đến xử trí cấp cứu tắc mạch vành cấp. Nói thì dễ, nhưng làm thì khó hơn khi nhiều bác sĩ tim mạch và người giám sát bảo bạn đừng làm ngay trong thời điểm đó.</p>
+<p>“Cái ôm” (hug) của xơ cứng rải rác là một hiện tượng thú vị, trong đó tổn thương tủy ngực được cho là gây cảm giác co thắt hoặc đè ép như bị bó dải băng quanh ngực và/hoặc bụng. Nó có thể giống ACS. <a href="https://www.jacc.org/doi/full/10.1016/S0735-1097%2822%2903953-5" rel="noopener" target="_blank">Xem bài báo này để biết thêm thông tin.</a></p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
