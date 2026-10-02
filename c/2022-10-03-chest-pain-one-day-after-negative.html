@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03/10/2022 — Đau ngực một ngày sau nghiệm pháp gắng sức âm tính</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1462 · DR. SMITH’S ECG BLOG</div>
+   <h1>03/10/2022 — Đau ngực một ngày sau nghiệm pháp gắng sức âm tính</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/chest-pain-one-day-after-negative/" target="_blank" rel="noopener">"Chest pain one day after a negative stress test"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 10 hình ảnh và 4 video của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Bài viết của Dominic Nicacio MD, được Pendell Meyers và Steve Smith biên tập</p>
+<p>Một người đàn ông ngoài 50 tuổi có bệnh động mạch vành (CAD) đã biết và từng đặt stent, được đội cấp cứu ngoài viện (EMS) đưa đến khoa cấp cứu (ED) một ngày sau khi xuất viện từ một đợt nhập viện vì đau ngực với nghiệm pháp gắng sức âm tính. Ông bị đau ngực tái phát vào đêm sau khi xuất viện và đã gọi EMS. EMS ghi nhận ông vã mồ hôi rõ rệt. Ông được dùng nitroglycerin ngậm dưới lưỡi và aspirin liều đầy đủ. EMS gọi qua bộ đàm và báo rằng bệnh nhân đang đau ngực với những dấu hiệu đáng lo ngại ở các chuyển đạo trước của điện tâm đồ. EMS đã truyền điện tâm đồ cho các bác sĩ khoa cấp cứu.</p>
+<p>Nhưng khi nhận được điện tâm đồ này từ EMS, chúng tôi không hề biết gì về bệnh sử nêu trên, ngoài việc đau ngực cấp và vã mồ hôi.</p>
+<p>Điện tâm đồ EMS gửi cho các bác sĩ khoa cấp cứu lúc 1752:</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_transmittedekg.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_transmittedekg.jpg" alt="" width="1550" height="608" loading="lazy" decoding="async"></a><figcaption>Bạn nghĩ gì?</figcaption></figure>
+<p>Diễn giải:<br>–          Nhịp xoang bình thường (NSR)<br>–          LAFB ở mức ranh giới, tăng tiến sóng R ở chuyển đạo trước tim bình thường</p>
+<p>– ST chênh lên nhẹ ở aVL, ST chênh lên 1 mm ở V1, ST chênh lên 2-2.5 mm ở V2-V4</p>
+<p>-đường nền dao động khiến khó nói có ST chênh xuống ở III và aVF hay không</p>
+<p>– Sóng T rất cao, không đối xứng ở V2-V5, không có diện tích dưới đường cong quá mức so với chiều cao của chúng; chẩn đoán phân biệt cho các sóng T này là: biến thể bình thường, sóng T tối cấp, hoặc có thể do tăng kali máu</p>
+<p>–          Khoảng QT trong giới hạn bình thường (WNL)</p>
+<p>Chẩn đoán phân biệt là OMI thành trước, biến thể bình thường hoặc tăng kali máu.</p>
+<p>Ghi chú của Meyers: Thông thường, đặc điểm định danh của sóng T tối cấp là chúng béo và rộng bất thường, như thể được bơm phồng bằng không khí từ bên dưới, làm tăng diện tích dưới đường cong của sóng ST-T. Tôi thường dạy rằng sóng T tối cấp trông như đang được bơm phồng bằng không khí, còn sóng T do tăng kali máu trông như một chiếc lều được dựng lên bằng một cây cột. Tôi cũng dạy rằng sóng T tối cấp giống tòa nhà Quốc hội Hoa Kỳ (US Capitol), còn sóng T do tăng kali máu trông như tháp Eiffel. Sóng T tối cấp thường khá cao, nhưng không phải lúc nào cũng vậy. Khi tôi xem điện tâm đồ này mà không có bất kỳ bối cảnh nào khác, ban đầu tôi đã có một thoáng không hoàn toàn chắc chắn về OMI, một phần vì tôi cho rằng các sóng T này không béo và rộng như phần lớn sóng T tối cấp. Vì vậy tôi đã tìm điện tâm đồ cũ của bệnh nhân.</p>
+<h3 id="ap-dung-cong-thuc">Áp dụng công thức:</h3>
+<p>STE60V3 = 3.0 mm</p>
+<p>QTc (máy tính) = 419 ms</p>
+<p>Sóng R ở V4 = 15 mm</p>
+<p>Biên độ QRS ở V2 = 19.5 mm</p>
+<p><strong>Kết quả = 18.01 (chỉ vừa dưới ngưỡng đặc hiệu cao 18.2) </strong></p>
+<p>Như với mọi quy tắc nhị phân: “Điểm càng gần 18.2 (ví dụ giữa 17.7 và 18.7) thì càng dễ là âm tính giả hoặc dương tính giả”</p>
+<p>Vì vậy kết quả 18.01 này không giúp yên tâm.</p>
+<p>Tôi ngạc nhiên khi thấy điện tâm đồ gần nhất của ông là từ hôm qua (đây là lúc chúng tôi phát hiện ông vừa mới xuất viện):</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp202.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp202.jpg" alt="" width="1600" height="870" loading="lazy" decoding="async"></a><figcaption>ST chênh lên chỉ vừa đủ 0.5 mm ở V2-V4, sóng T bình thường.</figcaption></figure>
+<p>So với điện tâm đồ “cũ” này (1 ngày trước), điện tâm đồ của EMS ở trên rõ ràng có giá trị chẩn đoán OMI LAD cấp.</p>
+<p>Dựa vào đó, chúng tôi đã kích hoạt phòng thông tim (cath lab) trước khi bệnh nhân đến.</p>
+<p>Khi đến khoa cấp cứu, ông vã mồ hôi và trông khó chịu, và được đẩy ngay vào một phòng ở khu bệnh nặng của khoa cấp cứu.</p>
+<p>Bộ dấu hiệu sinh tồn đầu tiên: HA 153/109 mm Hg, tần số tim 67 lần/phút, nhịp thở 18 lần/phút, O2 96% khi thở khí phòng</p>
+<p>Khám thực thể:<br>Toàn thân: Vã mồ hôi, trông khó chịu<br>Tim mạch: Tần số và nhịp đều, mạch quay và mạch mu chân (DP) 2+, thời gian đổ đầy mao mạch nhanh<br>Hô hấp: Nghe phổi trong ở cả hai phế trường phía trước, công hô hấp bình thường<br>Bụng: Mềm, không đau<br>Thần kinh: Tỉnh táo và định hướng tốt, nhưng ít nói và nhắm mắt trừ khi được nhắc</p>
+<p>Khi đến nơi, EMS cho chúng tôi xem tất cả các điện tâm đồ họ ghi trong vòng 30 phút:</p>
+<p>Lúc 1747:</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1747.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1747.jpg" alt="" width="1600" height="611" loading="lazy" decoding="async"></a><figcaption>Rất khó! Nếu không so sánh với điện tâm đồ cũ, tôi sẽ không chắc chắn ngay rằng đây là OMI LAD giai đoạn sớm.</figcaption></figure>
+<p>1752 (bản họ đã truyền đi, đã trình bày ở trên)</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1752.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1752.jpg" alt="" width="1600" height="593" loading="lazy" decoding="async"></a><figcaption>Diễn giải ở trên. Một lần nữa, so với điện tâm đồ cũ hôm qua, hoàn toàn có giá trị chẩn đoán OMI LAD.</figcaption></figure>
+<p>1809</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1809.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1809.jpg" alt="" width="1600" height="611" loading="lazy" decoding="async"></a><figcaption>Rất giống điện tâm đồ lúc 1747 ở trên, nghĩa là đã tái tưới máu trong khoảng thời gian từ 1752.</figcaption></figure>
+<p>1815</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1815.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_1815.jpg" alt="" width="1600" height="613" loading="lazy" decoding="async"></a><figcaption>OMI STEMI dương tính (STEMI(+) OMI) rõ ràng, đã tắc lại kể từ 1809. Lưu ý các nhát RBBB với ST chênh lên đồng hướng ở V1-V3.</figcaption></figure>
+<p>Bác sĩ can thiệp hơi khựng lại khi chúng tôi kể về nghiệm pháp gắng sức âm tính hôm qua, nhưng dĩ nhiên vẫn đồng ý đưa bệnh nhân vào phòng thông tim ngay.</p>
+<h3 id="trong-luc-cho-phong-thong-tim-san-sang-chung-toi-da-ghi-mot-so-hinh-anh-sieu-am">Trong lúc chờ phòng thông tim sẵn sàng, chúng tôi đã ghi một số hình ảnh siêu âm:</h3>
+<figure><div class="khung-video"><iframe src="https://player.vimeo.com/video/755725714?h=a12413864d&amp;autoplay=1&amp;loop=1" loading="lazy" allowfullscreen allow="fullscreen; encrypted-media; picture-in-picture"></iframe></div></figure>
+<figure><div class="khung-video"><iframe src="https://player.vimeo.com/video/755727105?h=b3e0f986a3&amp;autoplay=1&amp;loop=1" loading="lazy" allowfullscreen allow="fullscreen; encrypted-media; picture-in-picture"></iframe></div></figure>
+<figure><div class="khung-video"><iframe src="https://player.vimeo.com/video/755728893?h=b5ca6bae85&amp;autoplay=1&amp;loop=1" loading="lazy" allowfullscreen allow="fullscreen; encrypted-media; picture-in-picture"></iframe></div></figure>
+<figure><div class="khung-video"><iframe src="https://player.vimeo.com/video/755731153?h=64ac4db98b&amp;autoplay=1&amp;loop=1" loading="lazy" allowfullscreen allow="fullscreen; encrypted-media; picture-in-picture"></iframe></div></figure>
+<p>Diễn giải:</p>
+<p>–          Chức năng tâm thu thất trái và thất phải trông bình thường<br>–          Không có dấu hiệu tăng gánh tim phải cấp<br>–          Không có tràn dịch màng ngoài tim<br>–          Không thấy rõ vạt bóc tách trên mặt cắt trục dọc cạnh ức (PSL)<br>–          IVC xẹp được<br>–          Có thể có rối loạn vận động thành (WMA) vùng trước-bên trên mặt cắt trục ngắn cạnh ức (PSS) hạn chế</p>
+<p>Trong lúc bệnh nhân ở phòng thông tim, tôi tò mò xem lại đợt nhập viện vì đau ngực hôm qua, để xem liệu chuyện này có thể được dự đoán hay phòng ngừa hay không:</p>
+<p>==============================================</p>
+<h3 id="lan-kham-truoc-mot-ngay-truoc">Lần khám trước (một ngày trước):</h3>
+<p>Bệnh nhân đến khám vì đau nhói ngực trái kéo dài 20 phút khi đang đi bộ ở nơi làm việc, đã gọi EMS ngay và đến khoa cấp cứu trong vòng chưa tới 1 giờ sau cơn đau, cơn đau đã hết khi được đánh giá tại khoa cấp cứu. Ông cho biết các triệu chứng này giống hệt lần nhồi máu cơ tim trước (lần đó ông được đặt stent LAD).</p>
+<p>Đây là điện tâm đồ của ông lúc đến viện:</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp201.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp201.jpg" alt="" width="1600" height="812" loading="lazy" decoding="async"></a><figcaption>Tôi thấy một chút ST chênh xuống ở V6, II, III và aVF. Ngoài ra, tôi không thấy đặc điểm thuyết phục nào khác của thiếu máu cục bộ. Không có điện tâm đồ nào lưu trong hồ sơ trước bản này, không có gì để so sánh.</figcaption></figure>
+<p>Troponin I độ nhạy cao ban đầu là 6 ng/L (giới hạn phát hiện là dưới 6, và giới hạn trên tham chiếu (URL) ở nam giới là 20 ng/L)</p>
+<p>Troponin lần hai là 9 ng/L.</p>
+<p>Troponin lần ba là 16 ng/L. KHÔNG CÓ THÊM XÉT NGHIỆM TROPONIN NÀO ĐƯỢC CHỈ ĐỊNH!!!!!!</p>
+<p>Ông được nhập khoa nội</p>
+<p>Hội chẩn tim mạch: “Cơn đau ngực khi gắng sức với các đặc điểm điển hình và không điển hình. Điện tâm đồ không cho thấy thay đổi thiếu máu cục bộ cấp. Ông đã được loại trừ nhồi máu cơ tim bằng các giá trị troponin độ nhạy cao liên tiếp….Ông có tiền sử đặt stent phủ thuốc LAD đoạn gần….Ông sẽ được lên lịch làm nghiệm pháp gắng sức bằng thuốc giãn mạch đánh giá tưới máu cơ tim vào buổi sáng để đánh giá thiếu máu cục bộ cơ tim và chức năng tâm thu thất trái. Nếu ông đau ngực tái phát hoặc có thiếu máu cục bộ đáng kể trên nghiệm pháp gắng sức đánh giá tưới máu cơ tim, ông sẽ được chuyển đi thông tim trái.”</p>
+<p>“Đã thực hiện nghiệm pháp gắng sức bằng adenosine đánh giá tưới máu cơ tim, cho thấy tưới máu cơ tim bình thường, không có thiếu máu cục bộ hay nhồi máu cũ. SPECT đồng bộ điện tâm đồ (gated SPECT) cho thấy chức năng tâm thu thất trái bình thường, không có rối loạn vận động thành, LVEF tính được là 59%. Không ghi nhận khó chịu ở ngực hay thay đổi điện tâm đồ có giá trị chẩn đoán trong lúc làm nghiệm pháp. Bệnh nhân có thể xuất viện về nhà và tái khám ngoại trú tại phòng khám của chúng tôi sau 2 đến 3 tuần.”</p>
+<p><em>Ghi chú của Meyers: “được loại trừ nhồi máu cơ tim ư?” Bạn không thể cứ thế ngừng đo troponin đang tăng rồi tuyên bố rằng không có nhồi máu cơ tim cấp (AMI). Một bệnh nhân có triệu chứng hội chứng vành cấp (ACS) rõ ràng và troponin đang tăng (không phải đau thắt ngực ổn định, gợi ý một mảng xơ vữa bị nứt vỡ) không nên bị đưa đi làm nghiệm pháp gắng sức. Điều này nguy hiểm và sẽ không bao giờ được cố ý làm nếu người điều trị nghi ngờ ACS típ 1 cấp do nứt vỡ mảng xơ vữa, với nguy cơ tắc lại hoặc thiếu máu cục bộ nặng lên đáng kể trong lúc gắng sức. May mắn cho bệnh nhân là ông không gặp biến cố bất lợi nào trong lúc làm nghiệm pháp gắng sức.</em></p>
+<p>Một điện tâm đồ khác được ghi vào ngày xuất viện:</p>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp202-1.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_prior20hosp202-1.jpg" alt="" width="1600" height="870" loading="lazy" decoding="async"></a><figcaption>Tương tự điện tâm đồ lúc mới đến viện ở trên. ST chênh xuống ở III và aVF là bất thường, nhưng tôi không thấy rõ OMI vùng bên cao gây ra các thay đổi soi gương. Liệu đó có thể là hình ảnh Cờ Nam Phi (South African Flag) kín đáo nhất không? Nhưng theo mọi thông tin, bệnh nhân hoàn toàn không đau thêm, kể cả trong lúc gắng sức. Và cũng không có tái tưới máu (hình thái Wellens), có lẽ vì thiếu máu cục bộ quá ngắn.</figcaption></figure>
+<p>==============================================</p>
+<p><strong><u>Diễn biến lâm sàng:<br></u></strong><br>Ông được phát hiện tái hẹp trong stent LAD đoạn gần 99% do huyết khối cấp, kèm hẹp 90% RCA đoạn gần không phải thủ phạm, hẹp 40% đoạn xa thân chung (LM), và ngoài ra là bệnh động mạch vành lan tỏa mức độ nhẹ. Ông được làm PCI LAD đoạn gần và RCA, đạt dòng chảy TIMI-3 sau can thiệp. Siêu âm tim chính thức sau thông tim trái (LHC) cho thấy LVEF 58% với giảm động cơ tim vùng dưới-bên đoạn đáy-giữa, cũng như cơ tim vùng dưới và dưới-vách đoạn đáy (tôi thấy đây là một vùng rối loạn vận động thành không ngờ tới khi xét điện tâm đồ và hình ảnh chụp mạch vành). Ông được bắt đầu liệu pháp kháng tiểu cầu kép, diễn tiến tốt sau thủ thuật, và xuất viện vào ngày hôm sau.</p>
+<p>Troponin trong lần đến viện này của chúng tôi:</p>
+<p>Troponin ban đầu tại khoa cấp cứu: 12 ng/L (!!! vì thời gian từ lúc khởi phát triệu chứng đến lúc lấy máu quá ngắn)</p>
+<p>282</p>
+<p>500</p>
+<p>2608</p>
+<p>không đo thêm (đây là một vấn đề đáng kể trong nghiên cứu hồi cứu của chúng tôi, vì chúng tôi không thể định lượng troponin đỉnh của bệnh nhân này).</p>
+<p><strong><u>Các điểm bàn luận về ca bệnh:<br></u></strong><br>Điện tâm đồ của bệnh nhân do EMS truyền cho các bác sĩ khoa cấp cứu cho thấy những sóng T dễ bị nhầm với sóng T nhọn của tăng kali máu. Đôi khi sóng T tối cấp có dáng mảnh hơn, cao hơn như thế này, và trong những trường hợp đó có thể khó phân biệt chúng. ST chênh lên mới xuất hiện ở các chuyển đạo trước giúp hiểu rằng đây là sóng T tối cấp. Ngoài ra, các dấu hiệu khác của tăng kali máu đều không có: không có sóng P dẹt hay QRS giãn rộng, nhịp chậm, blốc AV mới hay chậm dẫn truyền trong thất không đặc hiệu (NSIVCD), hình thái QRS kỳ dị, hay hình ảnh dạng Brugada. Hơn nữa, bối cảnh lâm sàng trong ca này rõ ràng là ACS, và nếu vẫn còn nghi vấn tăng kali máu thì có thể làm khí máu tĩnh mạch (VBG) tại chỗ để có nhanh nồng độ K+.</p>
+<p>So sánh với các điện tâm đồ cũ là một thông tin cực kỳ quan trọng giúp bạn phân biệt OMI với ST chênh lên biến thể bình thường. Các điện tâm đồ liên tiếp cũng quan trọng không kém, thậm chí hơn.</p>
+<p>Khi so sánh điện tâm đồ hiện tại với một điện tâm đồ cũ, điều quan trọng là phải hiểu bối cảnh lâm sàng tại thời điểm ghi điện tâm đồ cũ đó, vì nó có thể không phải là một “điện tâm đồ nền” thực sự</p>
+<p>Troponin đang tăng mà chưa vượt giới hạn trên tham chiếu không có nghĩa là đã loại trừ nhồi máu cơ tim cấp!</p>
+<p>Dữ liệu của Dr. Smith với một xét nghiệm troponin độ nhạy cao khác cho thấy nhồi máu cơ tim không được loại trừ với độ nhạy 100% trừ khi mọi giá trị đều dưới URL ở <strong>giờ thứ 9</strong>.  Nếu 2 troponin đầu tiên có delta rất nhỏ (thay đổi ＜ 2-3 ng/L tùy xét nghiệm hs-cTnI), điều đó cho biết troponin đỉnh sẽ không tiếp tục tăng. Nhưng nếu delta của các troponin đầu tiên＞2 (≥ 3), điều đó hàm ý troponin đỉnh có thể tiếp tục tăng cho đến khi vượt URL.  Hơn nữa, <u>bất kỳ</u> thay đổi lớn hơn như vậy dưới URL đều là thay đổi <u>thật</u> (tức là không do biến thiên sinh học hay độ không chính xác của phòng xét nghiệm), và cần được giải thích.  Vì vậy, nếu troponin ở giờ thứ 9 vẫn dưới URL (<strong><u>và</u> điện tâm đồ không có giá trị chẩn đoán như trong ca này!</strong>), thì việc thăm dò thêm bằng nghiệm pháp gắng sức là hợp lý (nhưng chụp CT mạch vành tốt hơn nhiều).</p>
+<p>Ngay cả troponin độ nhạy cao cũng thường nằm trong giới hạn bình thường trong vài giờ đầu của triệu chứng. Ở cả hai lần đến viện, ngay cả khi LAD đang tắc, troponin ban đầu trong cả hai lần đều nằm trong giới hạn bình thường.</p>
+<p>Đừng làm nghiệm pháp gắng sức cho những bệnh nhân có thể đang bị ACS típ 1 cấp do nứt vỡ mảng xơ vữa, với nguy cơ tắc lại hoặc thiếu máu cục bộ nặng thêm trong lúc gắng sức.</p>
+<p><strong>Dữ liệu về nghiệm pháp gắng sức</strong> hiển nhiên không áp dụng cho những bệnh nhân đang trong cơn hội chứng vành cấp đang diễn ra, vì điều này chưa bao giờ được nghiên cứu và cũng không nên nghiên cứu. <strong>Một khi đã loại trừ nhồi máu cơ tim cấp, nghiệm pháp gắng sức âm tính có thể xác định những bệnh nhân có tỷ lệ biến cố ACS thấp hơn trong tương lai. TUY NHIÊN, khi những bệnh nhân này sau đó quay lại khoa cấp cứu với một cơn đau ngực cấp mới, thì nghiệm pháp gắng sức âm tính trước đó không có giá trị bảo vệ nào trong việc xác định cơn đau ngực mới có phải ACS hay không (xem tài liệu tham khảo bên dưới).</strong> Cạm bẫy là người điều trị có thể tin rằng nghiệm pháp gắng sức âm tính trước đó có giá trị tiên đoán âm đối với ACS trong đợt đau ngực mới.</p>
+<p>Để bàn thêm về “nghiệm pháp gắng sức âm tính gần đây”, đây là một đoạn trích xuất sắc từ một bài viết rất liên quan cách đây vài năm, do Salim Rezaie viết cho Dr. Smith’s ECG Blog:</p>
+<h2 id="chest-pain-negative-stress-tests-pocus-ecg-equations-a-case-from-salim-rezaie-r-e-b-e-l-em-dau-nguc-nghiem-phap-gang-suc-am-tinh-pocus-va-cac-phuong-trinh-dien-tam-do-mot-ca-cua-salim-rezaie">Chest Pain, “Negative” Stress Tests, POCUS, &amp; ECG Equations — A Case from Salim Rezaie (R.E.B.E.L. EM) (Đau ngực, nghiệm pháp gắng sức “âm tính”, POCUS và các phương trình điện tâm đồ — một ca của Salim Rezaie)</h2>
+<h3 id="diem-giang-day-1-su-vo-dung-cua-nghiem-phap-gang-suc-am-tinh">“Điểm giảng dạy #1: Sự vô dụng của nghiệm pháp gắng sức “âm tính”</h3>
+<p>Nhiều nhân viên y tế cấp cứu đã từng chăm sóc những bệnh nhân bị hội chứng vành cấp thật sự, hoặc thậm chí ngừng tim nguyên phát, dù gần đây vừa có một nghiệm pháp gắng sức “âm tính”.  Bản thân tôi cũng đã gặp.  Quá tin vào nghiệm pháp gắng sức “âm tính” có thể là một lý do thường gặp gây chẩn đoán sai hoặc chậm trễ trong chăm sóc bệnh nhân.  Điều quan trọng cần nhớ là bệnh động mạch vành có thể phát sinh từ những tổn thương xơ vữa chỉ hẹp nhẹ nhưng có mảng xơ vữa không ổn định, các mảng này nứt vỡ và không được phát hiện bằng nghiệm pháp gắng sức thông thường. Có một quan niệm sai lầm rất lớn về nghiệm pháp gắng sức “âm tính” trong ngành y tế và trong công chúng. Độ nhạy và độ đặc hiệu của nghiệm pháp gắng sức thường được báo cáo trong khoảng 65 – 90%, tùy theo nghiên cứu bạn đọc.  Dưới đây là hai nghiên cứu nhấn mạnh chính xác điều này:</p>
+<p><strong>Nghiên cứu #1 [1]: </strong>Đây là một nghiên cứu hồi cứu hồ sơ bệnh án trên 164 bệnh nhân có nghiệm pháp gắng sức “âm tính” (122 bệnh nhân) hoặc nghiệm pháp gắng sức không xác định nhưng “bình thường” (42 bệnh nhân) trong 3 năm trước đó.  34 bệnh nhân (20.7%) trong toàn bộ nhóm được xác định có bệnh động mạch vành đáng kể trong 30 ngày tiếp theo. Bệnh động mạch vành đáng kể được định nghĩa là nhồi máu cơ tim xác định bằng dấu ấn tim dương tính, nghiệm pháp gắng sức dương tính sau đó (bất kỳ loại nào), thông tim cần can thiệp, CABG, hoặc tử vong do ngừng tim nội khoa.  <strong>Đây là phần đáng lo ngại… 8/34 (23.5%) có nghiệm pháp gắng sức gần nhất trong vòng 1 tháng trước khi nhập viện, 7/34 (20.6%) có nghiệm pháp gắng sức trong khoảng 1 – 3 tháng, </strong>và 11/34 (32.4%) có nghiệm pháp gắng sức trong khoảng 6 tháng – 1 năm.  <strong>Trong toàn bộ nhóm 164 bệnh nhân, 13 bệnh nhân (7.9%) bị AMI.</strong></p>
+<p><strong>Nghiên cứu #2 [2]: </strong>Đây là một đánh giá tiến cứu trên 186 bệnh nhân được chuyển chụp động mạch vành vì nghi đau thắt ngực ổn định.  Tất cả bệnh nhân đều có điện tâm đồ lúc nghỉ bình thường, không ai từng được tái thông mạch vành hay mắc đái tháo đường. <strong>50% phụ nữ và 25% nam giới có khuyết tưới máu hồi phục trên chẩn đoán hình ảnh gắng sức bằng đồng vị phóng xạ lại có kết quả điện tâm đồ gắng sức hoàn toàn bình thường.</strong>  Điện tâm đồ gắng sức rất kém nhạy.</p>
+<p><strong>Điều cốt lõi của Điểm giảng dạy #1: </strong>Nghiệm pháp gắng sức được dùng để phát hiện chỗ hẹp khít gây cản trở dòng máu mạch vành, tuy nhiên trong bối cảnh nhồi máu cơ tim cấp, cơ chế bệnh sinh nền là nứt vỡ mảng xơ vữa và hình thành huyết khối.  Các tổn thương mạch vành có thể chưa đủ nặng để được phát hiện trên nghiệm pháp gắng sức.  Vì vậy, không nên dùng một nghiệm pháp gắng sức “âm tính” trước đó để quyết định hướng xử trí bệnh nhân của bạn. Nếu bạn nghĩ bệnh nhân đang bị ACS, hãy xử trí họ cho phù hợp bất kể nghiệm pháp gắng sức “âm tính” trước đó.”</p>
+<h3 id="tai-lieu-tham-khao">Tài liệu tham khảo:</h3>
+<ol start="1"><li>Walker J và cs. coronary disease in Emergency Department Chest Pain Patients with Recent Negative Stress Testing. Tạp chí West J Emerg Med, 2010. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2967694/" rel="noopener" target="_blank"><span class="c-xanh">PMID: 21079714</span></a></li>
+<li>Hoilund-Carlsen PF và cs. Usefulness of the Exercise Electrocardiogram in Diagnosing Ischemic or Coronary Heart Disease in Patients with Chest Pain. Tạp chí Am J Cardiol, 2005. <a href="https://www.ncbi.nlm.nih.gov/pubmed/15619400" rel="noopener" target="_blank"><span class="c-xanh">PMID: 15619400</span></a></li>
+<li>Marwick TH và cs. Techniques for Comprehensive Two Dimensional Echocardiographic Assessment of left Ventricular Systolic Function. Tạp chí Heart, 2003. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1876300/" rel="noopener" target="_blank"><span class="c-xanh">PMID: 14594869</span></a></li>
+<li>Smith SW và cs. Electrocardiographic Differentiation of Early Repolarization From Subtle Anterior ST-Segment elevation Myocardial Infarction. Tạp chí Ann Emerg Med, 2012. <a href="https://www.ncbi.nlm.nih.gov/pubmed/22520989" rel="noopener" target="_blank"><span class="c-xanh">PMID: 22520989</span></a></li></ol>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_0-Figure-6-REDLINE-UseinBlogscopy-7.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_0-Figure-6-REDLINE-UseinBlogscopy-7.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-3-10-2020">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (3/10/2020):</h2>
+<p><span class="c-do">===================================</span></p>
+<p>Một ca bệnh tuyệt vời và toàn diện của các bác sĩ Nacacio, Meyers và Smith — nhấn mạnh những điểm sau.</p>
+<ul><li>Ngay cả <strong>troponin</strong> <strong><em>độ nhạy cao</em></strong> cũng thường vẫn nằm trong giới hạn <em><u>bình thường</u></em> trong vài giờ đầu sau khởi phát triệu chứng (<em>như trường hợp của bệnh nhân hôm nay trong <u>cả hai</u> lần đến viện</em>).</li>
+<li>Một sự <em><u>gia tăng</u></em> <strong>hs-troponin</strong> — dù vẫn còn <em>“<u>nằm trong</u>“</em> giới hạn trên tham chiếu — <em><u>không</u></em> phải là một dấu hiệu “bình thường”. Ở một bệnh nhân nghi ACS — xu hướng hs-troponin tăng dần <em><u>bắt buộc</u></em> phải tiếp tục đánh giá. <em>Đáng tiếc là điều này đã <u>không</u> được thực hiện trong ca hôm nay</em>.</li>
+<li><strong>Nghiệm pháp</strong> <strong><em>gắng sức</em></strong> <em><u>chống chỉ định</u></em> khi đang nghi ACS. Nếu động mạch “thủ phạm” đã tái tưới máu <em>tự phát</em> — thì nghiệm pháp gắng sức có thể cho <strong>kết quả</strong> <strong><em>âm tính giả</em></strong>. Nếu mạch “thủ phạm” vẫn còn tắc — thì nghiệm pháp gắng sức có thể gây ra một vùng nhồi máu <em><u>lớn hơn</u></em> nhiều. </li></ul>
+<p><span class="c-do">============================</span></p>
+<h3 id="con-nhip-tim-thi-sao">Còn nhịp tim thì sao?</h3>
+<p>Mặc dù <em>không</em> thiết yếu cho chẩn đoán và xử trí ca hôm nay — <strong><em>tôi thấy nhịp trong bản ghi thứ 4 của EMS <u>rất thú vị</u></em></strong>. Tôi tập trung bình luận của mình vào việc bàn luận sâu về bản ghi này — vì <strong><em>những điểm MẤU CHỐT <u>có</u> liên quan</em></strong> đến chẩn đoán và xử trí những ca khác mà độc giả của Blog của Dr. Smith <u><em>sẽ</em></u> gặp!</p>
+<ul><li><strong><u>LƯU Ý:</u></strong> Phần dưới đây bao gồm một số <strong>khái niệm <u><em>nâng cao</em></u></strong> về đọc nhịp! <em><strong>BẠN có sẵn sàng cho thử thách này không?</strong></em></li></ul>
+<p><strong>============================</strong></p>
+<p><strong><u>Lưu ý kỹ thuật:</u></strong> Có tổng cộng 8 điện tâm đồ được trình bày trong phần bàn luận ở trên của các bác sĩ Nicacio, Meyers và Smith. Để cho rõ ràng — tôi đã đánh số các điện tâm đồ này theo thứ tự chúng xuất hiện ở trên:</p>
+<ul><li>Tôi tập trung bình luận vào điện tâm đồ #1 và #6 — mà tôi đã đặt cạnh nhau và ghi chú trong <strong><u>Hình 1</u></strong>.</li>
+<li></li>
+<li><strong><u>Điện tâm đồ #1</u></strong> — là điện tâm đồ thứ 1 được trình bày ở trên trong ca hôm nay. Đây là điện tâm đồ trước viện thứ 2, do đội EMS ghi lúc 17:52.</li>
+<li>Điện tâm đồ #1 là <u>cùng một</u> bản ghi với điện tâm đồ #4. Tôi chọn trình bày <u>điện tâm đồ #1</u> — vì độ phân giải của điện tâm đồ này tốt hơn bản đen trắng của cùng bản ghi.</li>
+<li></li>
+<li><strong><u>Điện tâm đồ #6</u></strong> — là điện tâm đồ trước viện thứ 4, do đội EMS ghi lúc 18:09 (<em>tức 17 phút sau điện tâm đồ #1</em>). <strong><em>Đây là bản ghi <u>rất</u> khó mà tôi tập trung chú ý vào</em></strong>.</li></ul>
+<p>====================================</p>
+<h3 id="thu-thach">THỬ THÁCH:</h3>
+<p><strong><em>Điều gì đang xảy ra với nhịp trong điện tâm đồ #6?</em></strong> Câu trả lời đầy đủ cho câu hỏi này bao gồm nhiều phần — mỗi phần đều quan trọng theo cách riêng của nó:</p>
+<ul><li><strong><u>GỢI Ý:</u></strong> Lý do tôi thêm điện tâm đồ #1 vào <u>Hình 1</u> — là vì điện tâm đồ #1 rất cần thiết để hiểu được điều gì đang xảy ra với điện tâm đồ #6.</li>
+<li>Có 14 nhát trong dải nhịp chuyển đạo II dài của <u>điện tâm đồ #</u>6. <strong><em>Có bao nhiêu nhát được thể hiện trên điện tâm đồ 12 chuyển đạo?</em></strong></li>
+<li><em><u>Ưu điểm</u></em> của loại hệ thống ghi điện tâm đồ này là gì? <em>Hệ thống này có thể có những <u>nhược điểm</u> nào?</em></li>
+<li><strong><em>TẠI SAO hình dạng QRS thay đổi</em> trong <u>điện tâm đồ #6</u>?</strong></li>
+<li><strong><br></strong></li>
+<li>Tự bản thân nó — <em><u>điện tâm đồ #6</u> có chẩn đoán được OMI LAD cấp không? </em>NẾU có — <em>NHỮNG nhát nào</em> xác định chẩn đoán này rõ nhất?<em> </em></li></ul>
+<figure><a class="o-anh" href="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_Figure-120ECGs-162010-21.32-2022-USE.jpg"><img src="2022-10-03-chest-pain-one-day-after-negative_anh/2022_10_Figure-120ECGs-162010-21.32-2022-USE.jpg" alt="" width="1600" height="1477" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> <strong>Điện tâm đồ thứ 1</strong> và <strong>thứ 6</strong> trong ca hôm nay <strong>(</strong><em>tương ứng với điện tâm đồ thứ 1 và thứ 4 do đội EMS ghi trước viện</em><strong>)</strong>.</figcaption></figure>
+<h3 id="suy-nghi-cua-toi-ve-nhip-trong-dien-tam-do-1">SUY NGHĨ CỦA TÔI về nhịp trong điện tâm đồ #1:</h3>
+<p>Khi gặp một bản ghi có cả điện tâm đồ 12 chuyển đạo lẫn dải nhịp chuyển đạo dài — tôi thích bắt đầu với dải nhịp chuyển đạo dài — ít nhất là để có một <em>ấn tượng ban đầu nhanh </em>về nhịp.</p>
+<ul><li><strong>Nhịp</strong> <strong><em><u>nền</u></em></strong> trong dải nhịp chuyển đạo II dài của <u>điện tâm đồ #1</u> là <strong>nhịp xoang</strong> — vì sóng P <em>dương</em> với khoảng PR <em>hằng định</em> đi trước <em>tất cả trừ 2</em> nhát trên bản ghi (tức là <em><u>không</u> có sóng P nào đi trước nhát #1 và 4</em>).</li>
+<li><strong>Hình dạng QRS</strong> của 2 nhát <em>không phải xoang</em> này (<em>nhát #1 và 4</em>) <strong>khác nhau! </strong><em>Câu hỏi là tại sao?</em></li></ul>
+<h3 id="nhung-diem-chinh">Những điểm CHÍNH:</h3>
+<p>Để đánh giá nguyên nhân của các nhát <em>không phải xoang</em> — việc có thể xem hình dạng QRS ở các chuyển đạo <u>khác</u> <em>ghi đồng thời</em> là vô cùng quý giá. Điều này <em>DỄ</em> thực hiện với <em><u>hầu hết</u></em> các hệ thống theo dõi mà tôi quen thuộc — vì các dải nhịp chuyển đạo dài thường được ghi <em>đồng thời</em> với điện tâm đồ 12 chuyển đạo ở phía trên. <strong><em>Nhưng đây <u>không</u> phải là điều đang xảy ra trong điện tâm đồ #1 !!!</em></strong></p>
+<ul><li>Lưu ý rằng nhát #4 rõ ràng <em><u>không</u></em> đồng thời với bản ghi 12 chuyển đạo phía trên nó — vì <em><u>không</u></em> thấy phức bộ QRS nào nằm thẳng đứng ngay phía trên nhát #4 ở các chuyển đạo aVR, aVL và aVF! <strong><em>Điều này có nghĩa là dải nhịp chuyển đạo dài <u>không</u> được ghi cùng lúc với bản ghi 12 chuyển đạo phía trên nó!</em></strong></li>
+<li>Hóa ra loại hệ thống ghi điện tâm đồ được dùng trong <u>điện tâm đồ #1</u> <strong>(</strong><em>và trong <u>từng</u> bản ghi trong số 4 bản ghi trước viện được đăng ở trên trong ca hôm nay!</em><strong>) thể hiện</strong> <strong><em>3 nhát cuối cùng</em></strong> của dải nhịp chuyển đạo dài <strong>(</strong> = <em>nhát #12, 13 và 14 trong điện tâm đồ #1</em><strong>)</strong> <strong>ở mỗi nhóm trong 4 nhóm chuyển đạo</strong>. Với loại hệ thống này — <em><u>chỉ</u></em> có 3 nhát được thấy trên điện tâm đồ 12 chuyển đạo!</li>
+<li></li>
+<li>Như tôi đã nêu ở trên — có 12 nhát trong dải nhịp chuyển đạo dài của <u>điện tâm đồ #1</u>, nên chúng ta <u><em>có</em></u> đủ cơ hội để thực sự “cảm nhận” được tính đều đặn của nhịp. Nhưng chúng ta <em><u>không</u></em> thể xem các chuyển đạo <em>ghi đồng thời</em> cho 9 trong số 12 nhát này. <strong><em><u>Nhược điểm</u></em></strong> hiển nhiên của loại hệ thống ghi điện tâm đồ này — là chúng ta <em><u>không</u></em> biết nhát #1 trông như thế nào ở các chuyển đạo I,II,III — cũng như nhát #4 trông như thế nào ở các chuyển đạo aVR,aVL,aVF.</li></ul>
+<p><strong><u>XIN NHẤN MẠNH</u> —</strong> Về mặt lâm sàng, điều này <em><u>không</u></em> quan trọng đối với <u>điện tâm đồ #1</u> — vì nhịp chung là nhịp xoang, và chỉ có 2 nhát không phải xoang.</p>
+<ul><li>Tôi diễn giải nhát #1 và #4 trong dải nhịp chuyển đạo II dài của <u>điện tâm đồ #1</u> là <strong>PJC (</strong><em>ngoại tâm thu bộ nối — <u>P</u>remature <u>J</u>unctional <u>C</u>ontractions</em><strong>)</strong> — vì chúng <em><u>không</u></em> có sóng P đi trước, và QRS của nhát #1 và 4 hẹp (<em>dù hình dạng có phần khác với các nhát dẫn truyền từ xoang — có lẽ do một mức độ dẫn truyền lệch hướng</em>).</li>
+<li></li>
+<li><strong><u>Bình luận <em>của tác giả</em>:</u></strong> Trong số hàng nghìn điện tâm đồ, theo đúng nghĩa đen, mà tôi đã đọc trên các diễn đàn điện tâm đồ quốc tế qua nhiều năm — tôi <em><u>không</u></em> thường gặp loại hệ thống theo dõi này. <strong><em>Tôi ghét hệ thống này</em></strong>. Tôi thấy nó hoàn toàn gây rối — vì thường <em><u>hoàn toàn không</u></em> rõ nhát nào (<em>nếu có</em>) trên dải nhịp tương ứng với nhát nào trên điện tâm đồ 12 chuyển đạo. Nói đơn giản — hệ thống này <em><u>triệt tiêu</u></em> sự trợ giúp vô giá mà việc ghi <em>đồng thời</em> mọi nhát trên dải nhịp có thể mang lại để xác định nguyên nhân của một rối loạn nhịp.</li>
+<li></li>
+<li><strong><em>Vậy TẠI SAO lại phải làm to chuyện về hệ thống ghi này?</em></strong> Câu trả lời cho câu hỏi này nằm ở việc diễn giải <strong><u>điện tâm đồ #6</u></strong>, được trình bày trong Hình 1.</li></ul>
+<h3 id="ve-nhip-trong-dien-tam-do-6">Về nhịp trong điện tâm đồ #6:</h3>
+<p>Bắt đầu với dải nhịp chuyển đạo II dài trong <strong><u>điện tâm đồ #6</u></strong> — ta có thể thấy rõ là <em>cứ cách một nhát</em> lại có một nhát đến sớm!</p>
+<ul><li>Một lần nữa — rõ ràng dải nhịp chuyển đạo II dài trong điện tâm đồ #6 <em><u>không</u></em> phải là bản ghi <em>“đồng thời”</em>. <strong>Vì có ít nhất 3 hình dạng QRS <em>khác nhau</em> trong dải chuyển đạo II dài này (</strong><em>một số có QRS giãn rộng</em><strong>) — ban đầu tôi <em><u>hoàn toàn không</u></em> biết những nhát này là gì</strong>. Để diễn giải <u>điện tâm đồ #6</u> — <strong><em>điều <u>thực sự</u> quan trọng là nhận biết loại hệ thống ghi điện tâm đồ đang được sử dụng!</em></strong></li>
+<li></li>
+<li>Một lần nữa — chỉ có 3 nhát cuối cùng của dải nhịp chuyển đạo dài ( = <em>nhát #12,13,14 của điện tâm đồ #6</em>) — là được thể hiện đồng thời trên điện tâm đồ 12 chuyển đạo. Chính 3 nhát cuối này thực ra được thấy ở <em><u>mỗi</u></em> chuyển đạo trong 12 chuyển đạo! Nghĩa là — trong khi dải nhịp chuyển đạo II dài của <u>điện tâm đồ #6</u> có 14 nhát — thì <em><u>chỉ</u></em> 3 nhát trong số đó (<em>#12,13,14</em>) được thấy trên bản ghi 12 chuyển đạo.</li></ul>
+<h3 id="ap-dung-thong-tin-nay-vao-dien-tam-do-6">Áp dụng thông tin này vào điện tâm đồ #6:</h3>
+<p>Nhát đến sớm giãn rộng có hình dạng đặc trưng nhất là phức bộ QRS thứ 2 ở chuyển đạo V1 của <u>điện tâm đồ #6</u>. <strong>Phức bộ rsR’</strong> này, với sóng r đầu nhỏ — tiếp theo là sóng S đi xuống dưới đường nền — kết thúc bằng sóng lệch R’ mảnh và cao hơn dạng <em>“tai thỏ phải”</em> là <em><u>hoàn toàn</u></em> đặc trưng cho <strong>dẫn truyền</strong> <em><u><strong>trên thất</strong></u></em> kèm <strong><u>RBBB</u>!</strong></p>
+<ul><li><u>Xin nhấn mạnh</u> — phức bộ QRS thứ 2 ở chuyển đạo V1 này — tương ứng với <strong>nhát #13 </strong>trên dải nhịp chuyển đạo II dài! </li>
+<li>QRS chủ yếu âm của nhát #13 trên dải nhịp chuyển đạo II dài — phù hợp với <strong>dẫn truyền</strong> <strong><u>LAHB</u></strong>. Việc <u><em>có</em></u> dẫn truyền LAHB — được khẳng định, vì phức bộ QRS thứ 2 ở cả chuyển đạo II và III — cùng phức bộ QRS thứ 2 ở chuyển đạo aVF <em><u>đều</u></em> có hình dạng LAHB.</li>
+<li>Bằng chứng bổ sung cho thấy <em><u>có</u></em> hình ảnh <strong>dẫn truyền</strong> <strong><u>RBBB</u></strong> trên thất trong <u>điện tâm đồ #6</u> — đến từ nhận xét rằng phức bộ QRS thứ 2 ở <strong>chuyển đạo V6 (</strong><em>tương ứng với nhát #13 trên dải nhịp chuyển đạo II dài</em><strong>)</strong> — có sóng S tận rộng, đặc trưng của RBBB.</li></ul>
+<h3 id="tong-hop-lai-tat-ca">Tổng hợp lại tất cả:</h3>
+<p>Việc biết nhịp nền trong điện tâm đồ #1 là nhịp xoang kèm một số PJC — giúp chúng ta rất nhiều trong việc suy luận điều có lẽ đang xảy ra trong điện tâm đồ #6.</p>
+<ul><li><strong><u>LƯU Ý:</u></strong> Diễn giải nhịp trong <u>điện tâm đồ #6</u> đặc biệt khó về mặt <em><u>kỹ thuật</u></em> — vì có <em>RẤT NHIỀU</em> nhiễu đường nền — và vì bản ghi hơi bị nghiêng nên bị <u>biến dạng</u> (<em>khiến các khoảng R-R và khoảng ghép <u>không</u> nhất quán</em>).</li>
+<li></li>
+<li>Dù vậy — nhịp chung trong dải chuyển đạo II dài của <u>điện tâm đồ #6</u> biểu hiện <strong><u>nhịp đôi</u></strong> <strong>(</strong>tức là <em>cứ cách một nhát lại có một nhát đến sớm hơn dự kiến</em><strong>)</strong>. Vì chúng ta đã chứng minh nhát #4 trong <u>điện tâm đồ #1</u> là một PJC — <strong><em>nhiều khả năng nhất là các nhát xen kẽ trong điện tâm đồ #6 cũng là PJC</em></strong>. </li>
+<li></li>
+<li><strong><u>ĐIỀU CỐT LÕI:</u></strong> Nhịp trong <u>điện tâm đồ #6</u> nhiều khả năng nhất là <strong>nhịp đôi</strong> <strong><em>bộ nối</em></strong> — trong đó <em>cứ cách một nhát</em> lại có một nhát biểu hiện sự phối hợp nào đó của <strong>RBBB</strong> <em>có/không kèm</em> <strong>dẫn truyền lệch hướng kiểu LAHB (</strong><em>giải thích cho độ rộng và hình dạng thay đổi của các nhát #1,3,5,7,9,11 và 13 trên dải nhịp chuyển đạo II dài</em><strong>)</strong>.</li>
+<li></li>
+<li><strong><u><em>Liên quan</em> đến ca <em>hôm nay</em>:</u></strong> Vì tất cả các nhát đến sớm đều là nhát trên thất (tức là <em>PJC</em>) — chúng ta có thể đánh giá hình dạng ST-T của các nhát này một cách <em><u>tin cậy</u></em>. <strong>ST chênh lên</strong> <strong><em>rõ rệt</em></strong> ở phức bộ QRS thứ 2 trong <strong>các chuyển đạo V2 đến V5 </strong><strong>(</strong><em>kèm <strong>T-QRS-D</strong> = biến dạng phần cuối QRS ở V2,V3,V4</em><strong>)</strong> — <strong>là <em><u>chẩn đoán</u></em> chắc chắn OMI LAD cấp</strong>.</li></ul>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
