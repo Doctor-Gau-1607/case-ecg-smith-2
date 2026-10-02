@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>26/05/2023 — Bệnh nhân độ tuổi 20 quá liều verapamil rất lớn và sốc tim</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1550 · DR. SMITH’S ECG BLOG</div>
+   <h1>26/05/2023 — Bệnh nhân độ tuổi 20 quá liều verapamil rất lớn và sốc tim</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/20-something-with-huge-verapamil-2/" target="_blank" rel="noopener">"20-something with huge verapamil overdose and cardiogenic shock"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 14 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Một bệnh nhân ở độ tuổi 20 nhập viện trong tình trạng sốc tim sau khi uống quá liều verapamil rất lớn.</p>
+<p>Bệnh nhân đã được khám tại một cơ sở y tế bên ngoài và được dùng 6 g calci gluconat, KCl và truyền tĩnh mạch liên tục norepinephrine.</p>
+<p>K ban đầu là 3,0 mEq/L và calci ion hóa là 5,5 mg/dL (xin lỗi các đồng nghiệp châu Âu vì đơn vị đo kỳ lạ)</p>
+<p>Đây là điện tâm đồ đầu tiên tại khoa cấp cứu (ED):</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20on20arrival-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20on20arrival-1.jpg" alt="" width="1600" height="740" loading="lazy" decoding="async"></a></figure>
+<p>Có nhịp bộ nối với sóng P ngược dòng (xem chỗ lõm trên sóng T ở chuyển đạo II dọc phía dưới; bạn có thể dóng chỗ đó lên tất cả các chuyển đạo khác và thấy sóng P ngược dòng).</p>
+<p>Ngoài ra còn có blốc nhánh trái (LBBB). Có ST chênh lên rất lớn, ngược hướng quá mức xét theo tỷ lệ.  Có hình ảnh trông như sóng T tối cấp ở V4.</p>
+<p>Điện tâm đồ này đáp ứng tiêu chuẩn Sgarbossa cải biên theo Smith, <strong>nhưng bối cảnh lâm sàng không phù hợp để chẩn đoán OMI!!</strong></p>
+<p><strong>Nhân tiện, <u>bot Queen of Hearts của PMcardio cho rằng đây Không phải OMI với độ tin cậy cao</u>.  Và bà ấy không hề biết đây là ca quá liều thuốc; bà ấy nghĩ đây là một bệnh nhân đau ngực!!</strong></p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_IMG-0983-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_IMG-0983-1.jpg" alt="" width="884" height="758" loading="lazy" decoding="async"></a></figure>
+<h3 id="ca-benh-tiep-dien">Ca bệnh tiếp diễn:</h3>
+<p>Bệnh nhân được ổn định bằng thêm calci, thuốc vận mạch và insulin liều cao.  3 giờ sau, điện tâm đồ này được ghi khi K là 2,8 mEq/L và calci toàn phần là 14,7 mg/dL:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at20320hours-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at20320hours-1.jpg" alt="" width="1600" height="830" loading="lazy" decoding="async"></a></figure>
+<p>ST chênh lên rất lớn vẫn còn tồn tại.</p>
+<p>Bệnh nhân được nhập đơn vị hồi sức tích cực (ICU) và không ổn định, trong tình trạng sốc, suốt đêm.  Điện tâm đồ này được ghi lúc 8 giờ:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at20820hours20-20shock-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at20820hours20-20shock-1.jpg" alt="" width="1600" height="721" loading="lazy" decoding="async"></a></figure>
+<p>Lúc này ST chênh lên gần như đã hết</p>
+<p>Một điện tâm đồ khác được ghi lúc 19 giờ:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at201920hours-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at201920hours-1.jpg" alt="" width="1600" height="826" loading="lazy" decoding="async"></a></figure>
+<p>ST chênh lên đã quay trở lại!!  Chuyện gì đang xảy ra ở đây?</p>
+<h3 id="ca-benh-tiep-dien-2">Ca bệnh tiếp diễn</h3>
+<p>Bệnh nhân bị liệt mạch (vasoplegia) và được điều trị, ngoài insulin liều cao, bằng nhiều thuốc tăng co bóp cơ tim và thuốc vận mạch, thậm chí cả xanh methylen cho tình trạng liệt mạch.</p>
+<p>Đây là một ca rất phức tạp và các chi tiết thì quá nhiều đối với một bài ECG Blog, nhưng chỉ cần nói rằng, ngay sau đó, bệnh nhân bị ngừng tim vô tâm thu và đã được hồi sức thành công.  Bệnh nhân được đặt ECMO.</p>
+<p>Troponin I đỉnh lúc 24 giờ là 480 ng/L.</p>
+<p><strong>Đánh giá: </strong>Mặc dù trên điện tâm đồ có vẻ như tổn thương rất lớn, ở đây không có OMI và chỉ có tổn thương cơ tim ở mức nhẹ.</p>
+<h3 id="cac-dien-tam-do-tiep-theo-khi-dang-chay-ecmo">Các điện tâm đồ tiếp theo khi đang chạy ECMO:</h3>
+<p>Điện tâm đồ lúc 36 giờ:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at203620hours20accelerated20jct20rhythm20with20ST-T-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at203620hours20accelerated20jct20rhythm20with20ST-T-1.jpg" alt="" width="1600" height="723" loading="lazy" decoding="async"></a></figure>
+<p>Nhịp bộ nối với QRS hơi rộng và ST-T kỳ dị</p>
+<p>Lúc 48 giờ:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at204820hours20acc20jct20rhythm20without20ST-T-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20at204820hours20acc20jct20rhythm20without20ST-T-1.jpg" alt="" width="1600" height="696" loading="lazy" decoding="async"></a></figure>
+<p>Nhịp bộ nối với ST-T bình thường hơn</p>
+<p>Vào ngày thứ 4, trên siêu âm tim cơ tim đã co bóp bình thường hơn, và bệnh nhân đang được cai ECMO, với khám thần kinh bình thường.  Đây là điện tâm đồ vào ngày thứ 4:</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20day204-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Verapamil20OD20day204-1.jpg" alt="" width="1600" height="731" loading="lazy" decoding="async"></a></figure>
+<p>Nhịp bộ nối, ngoài ra chỉ bất thường rất ít.</p>
+<p><strong>Bệnh nhân được chuyển sang khoa tâm thần khi ra viện, chức năng thần kinh nguyên vẹn.</strong></p>
+<h3 id="binh-luan-ve-insulin-lieu-cao-va-qua-lieu-thuoc-chen-kenh-calci">Bình luận về insulin liều cao và quá liều thuốc chẹn kênh calci</h3>
+<p>Tôi không có lời giải thích nào cho các bất thường ST-T ở đây.  Quá liều verapamil rất phức tạp và CỰC KỲ nguy hiểm.  Nó chủ yếu gây ức chế tim, và <a href="https://www.sciencedirect.com/science/article/abs/pii/S0735675718301220" rel="noopener" target="_blank">điều trị tình trạng này là insulin liều cao phối hợp với các thuốc tăng co bóp cơ tim khác</a>.  Mặc dù tác dụng chính là giảm tần số tim (anti-chronotropic) và giảm co bóp cơ tim (anti-inotropic), ở liều rất cao verapamil mất bớt tính đặc hiệu và còn có tác dụng gây liệt mạch (giãn mạch, làm giảm sức cản mạch hệ thống) tương tự các thuốc chẹn kênh calci nhóm dihydropyridin (như amlodipin), vốn chủ yếu gây giãn mạch và liệt mạch.  Do đó, vì tác dụng có lợi chính của insulin liều cao (HDI) trong quá liều thuốc chẹn kênh calci là đóng vai trò một thuốc tăng co bóp cơ tim, nên nó không hiệu quả lắm đối với quá liều dihydropyridin.  Làm vấn đề càng phức tạp hơn, bản thân HDI cũng có tác dụng giãn mạch!</p>
+<h3 id="nhung-diem-can-hoc">Những điểm cần học:</h3>
+<p>1. Điện tâm đồ luôn phải được diễn giải trong bối cảnh lâm sàng.  Nếu bối cảnh không phù hợp với tắc mạch vành cấp, thì các dấu hiệu trên điện tâm đồ có lẽ không phản ánh tắc mạch vành cấp.</p>
+<p>2. Bệnh nhân bệnh nặng do bất kỳ nguyên nhân nào cũng có thể có điện tâm đồ rất bất thường</p>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_0-Figure-6-REDLINE-UseinBlogs-7.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_0-Figure-6-REDLINE-UseinBlogs-7.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">==================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-26-5-2023">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (26/5/2023):</h2>
+<p><span class="c-do">==================================</span></p>
+<p>Ca hôm nay có nhiều câu hỏi hơn là câu trả lời. Dù vậy — tôi tin rằng vẫn còn một số điểm giảng dạy quan trọng cần nêu ra.</p>
+<ul><li>Bệnh nhân hôm nay là một nam thanh niên nhập viện trong tình trạng sốc tim sau khi <strong>quá liều <u>verapamil</u> <em>rất lớn</em></strong>. Xử trí <strong><u>ngộ độc</u> <em>thuốc chẹn kênh calci</em></strong> rất phức tạp — với trụy tim mạch, rối loạn dẫn truyền và nhiều loại rối loạn nhịp chậm (<em>bao gồm cả cơn ngừng tim vô tâm thu mà bệnh nhân hôm nay đã trải qua</em>) nằm trong số các vấn đề thường gặp. Chi tiết về xử trí vượt ra ngoài phạm vi của bài ECG Blog này — độc giả quan tâm có thể tham khảo các bài tổng quan của Atemnkeng và cs. <strong>(<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8425808/" rel="noopener" target="_blank">J Med Cases 12[9]:373-376, 2021</a>)</strong> và của Chakraborty &amp; Hamilton <strong>(<a href="https://www.ncbi.nlm.nih.gov/books/NBK537147/" rel="noopener" target="_blank">StatPearls, 2023</a>)</strong>.</li>
+<li>Mặc dù có những <strong>thay đổi sóng ST-T</strong> <strong><em>bắt mắt</em></strong> xuất hiện rồi biến mất nhiều lần — vẫn <em><u>không</u></em> có tắc mạch vành cấp. Chúng tôi vẫn bối rối về nguyên nhân của những thay đổi điện tâm đồ đáng chú ý (<em>và kỳ dị</em>) này qua các bản ghi liên tiếp — với bài học <em>MẤU CHỐT</em> là <em>“Điều trị vấn đề nguyên phát”</em> <strong>(</strong><em>tức là cần can thiệp hướng chủ yếu vào việc hỗ trợ tim mạch trước tình trạng quá liều verapamil rất lớn</em><strong>)</strong>. Thật đáng kinh ngạc, bệnh nhân này đã ổn định và hồi phục với chức năng thần kinh nguyên vẹn.</li>
+<li></li>
+<li><u>Cuối cùng</u> — tôi thấy các bản ghi liên tiếp trong ca hôm nay thú vị và minh họa cho toàn bộ phổ rối loạn nhịp và rối loạn dẫn truyền có thể gặp trong ngộ độc thuốc chẹn kênh calci do quá liều verapamil hoặc diltiazem. <strong>Tôi chỉ tập trung bình luận vào một vài khái niệm <em>tinh tế</em> trong nhận diện rối loạn nhịp</strong> — hoàn toàn ý thức rằng bản thân các rối loạn nhịp cụ thể trong ngộ độc thuốc chẹn kênh calci <u>không</u> cần điều trị riêng, ngoài việc hỗ trợ tim mạch. Như đã xảy ra trong ca hôm nay — <strong>các rối loạn nhịp và rối loạn dẫn truyền phần lớn đã hết khi bệnh nhân hồi phục và tác dụng của ngộ độc verapamil qua đi (</strong><em>ngoại trừ nhịp bộ nối ổn định huyết động, dù hơi gia tốc, với QRS hẹp trên điện tâm đồ cuối cùng lúc ra viện</em><strong>)</strong>. </li></ul>
+<p>==============================================</p>
+<h3 id="ban-co-nhan-ra-roi-loan-nhip-tren-dien-tam-do-thu-2-cua-ca-hom-nay">— BẠN có nhận ra Rối loạn Nhịp trên Điện tâm đồ thứ 2 của ca hôm nay?</h3>
+<h3 id="thu-thach">THỬ THÁCH:</h3>
+<p><em>Hãy NHÌN lại</em> 2 bản ghi đầu tiên trong ca hôm nay. Để rõ ràng, trong <u>Hình 1</u> — tôi đã sao lại và đặt 2 điện tâm đồ đầu tiên này cạnh nhau.</p>
+<ul><li>Bạn thấy những tác dụng nào của <strong>ngộ độc</strong> <strong><em>verapamil</em></strong> trên 2 bản ghi này?</li>
+<li></li>
+<li><strong><em>Nhịp là gì</em></strong> trên <u>điện tâm đồ #2</u>?</li></ul>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-12020ECGs-12205-24.21-2023-USE-1.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-12020ECGs-12205-24.21-2023-USE-1.jpg" alt="" width="1600" height="1737" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> 2 bản ghi đầu tiên trong ca hôm nay.</figcaption></figure>
+<h3 id="suy-nghi-cua-toi-ve-thu-thach">SUY NGHĨ CỦA TÔI về THỬ THÁCH:</h3>
+<p>Như BS. Smith đã nêu ở trên — nhịp trên <u>điện tâm đồ #1</u> có vẻ là <strong><em>nhịp thoát</em> <em><u>bộ nối</u></em> đều</strong> với tần số <strong>~50/phút (</strong>tức là, <em>với khoảng R-R đều, có độ dài gần như đúng bằng 6 ô lớn</em><strong>)</strong>.</p>
+<ul><li>Không có sóng P xoang bình thường. Phức bộ QRS rộng — với hình dạng QRS phù hợp với <strong>LBBB</strong>. Mặc dù khó xác định chỉ dựa vào điện tâm đồ ban đầu này — sau khi xem xét <u>điện tâm đồ #2</u>, tôi không nghĩ là có sóng P ngược dòng.</li></ul>
+<h3 id="ban-co-thay-song-p-tren-dien-tam-do-2-khong">BẠN có thấy sóng P trên điện tâm đồ #2 không?</h3>
+<ul><li>Nếu có — <em>Các sóng P này có đều không?</em> </li></ul>
+<h3 id="tra-loi-co-song-p-tren-dien-tam-do-2-khong">TRẢ LỜI: Có sóng P trên điện tâm đồ #2 không?</h3>
+<ul><li>Tôi đã minh họa câu trả lời cho câu hỏi này trong <u>Hình 2</u>.</li></ul>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-22020ECGs-1220P20waves205-24.21-2023-USE.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-22020ECGs-1220P20waves205-24.21-2023-USE.jpg" alt="" width="1600" height="1746" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 2:</u></strong> Tôi đã thêm các mũi tên <em>ĐỎ</em> vào <u>điện tâm đồ #2</u> để minh họa sự hiện diện của <strong>sóng P xoang <em>đều</em></strong> trên dải nhịp chuyển đạo II dài. <strong>Tần số</strong> <strong><em>nhĩ</em></strong> của các sóng P này trên <u>điện tâm đồ #2</u> là <strong>~75/phút (</strong><em>vì khoảng P-P duy trì gần bằng 4 ô lớn suốt dải nhịp chuyển đạo dài</em><strong>)</strong>.<br><strong><u>LƯU Ý:</u> </strong>Lý do tôi không nghĩ có sóng P ngược dòng trên <u>điện tâm đồ #1</u> — là vì phần cuối QRS và sóng ST-T trên điện tâm đồ #1 trông giống với phần cuối QRS và sóng ST-T của các nhát #3 và 6 trên điện tâm đồ #2, và điều đó sẽ không xảy ra nếu có sóng P ngược dòng ẩn ở đó (tức là, <em>sóng P ngược dòng ẩn sẽ làm xáo trộn tính đều của các sóng P có mũi tên ĐỎ</em>).</figcaption></figure>
+<h3 id="cau-hoi">CÂU HỎI:</h3>
+<ul><li>Các sóng P có <em>mũi tên ĐỎ</em> trong <u>Hình 2</u> có liên quan đến các phức bộ QRS kế cận không?</li></ul>
+<h3 id="tra-loi">TRẢ LỜI:</h3>
+<p>Trong <u>Hình 3</u> — tôi đã <em>mã hóa màu</em> các sóng P trên dải nhịp chuyển đạo II dài của <u>điện tâm đồ #2</u>.</p>
+<ul><li>Tất cả các sóng P cùng màu trong <u>Hình 3</u> có điểm gì chung?</li></ul>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-32020Lead20II20of20ECG-2205-24.21-2023-USE.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-32020Lead20II20of20ECG-2205-24.21-2023-USE.jpg" alt="" width="1600" height="305" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 3:</u></strong> Tôi đã <em>mã hóa màu</em> các sóng P trên dải nhịp chuyển đạo II dài của <u>điện tâm đồ #2</u>.</figcaption></figure>
+<h3 id="cac-song-p-duoc-ma-hoa-mau-nhu-the-nao">Các sóng P được mã hóa màu như thế nào?</h3>
+<p>Cách dễ nhất để xác lập các mối liên quan mà tôi nêu dưới đây là dùng <strong>compa đo (calipers)</strong>.</p>
+<ul><li>Như đã nêu — <strong>sóng <u>P</u></strong> trong <u>Hình 3</u> khá đều với tần số <strong>~75/phút (</strong><em>khoảng P-P vẫn gần bằng 4 ô lớn trong suốt dải nhịp này</em><strong>)</strong>.</li>
+<li><strong>Phức bộ <u>Q</u>RS</strong> trong <u>Hình 3</u> vẫn rộng, với hình dạng <strong>LBBB</strong> (<em>như chúng ta đã thấy trước đó ở điện tâm đồ 12 chuyển đạo trình bày trong Hình 2</em>).</li>
+<li>Nhịp thất trong <u>Hình 3</u> <strong>đều (<u>R</u>egular)</strong> một cách đáng ngạc nhiên, với khoảng R-R = 6.5 ô lớn. Điều này tương ứng với <strong>tần số (<u>R</u>ate) </strong>thất <strong>~46/phút</strong> trên dải nhịp chuyển đạo II dài của điện tâm đồ #2, tức là chậm hơn một chút so với tần số thất của điện tâm đồ #1.</li>
+<li></li>
+<li><u>Điểm <em>MẤU CHỐT</em>:</u> Mỗi sóng P <em>được đánh dấu bằng mũi tên màu </em>trong <u>Hình 3</u> — dường như đều <strong><em>có liên quan (<u>R</u>elated)</em></strong> với phức bộ QRS kế cận, hoặc qua một <strong>khoảng PR</strong> <strong><em>hằng định</em></strong> so với QRS đi sau — <u>hoặc</u> — qua một <strong>khoảng RP’</strong> <strong><em>hằng định</em></strong> so với QRS đi trước. Ví dụ — khoảng PR của 3 sóng P <em>mũi tên ĐỎ</em> bị kéo dài, và có vẻ có cùng thời gian ( <em>= 0.38 giây</em>).</li></ul>
+<p>ĐIỀU CỐT LÕI: Khác với 6 bản ghi liên tiếp còn lại trong ca hôm nay — <u>có</u> các sóng P xoang khá đều trong <u>điện tâm đồ #2</u>. Việc dường như có các <strong>khoảng PR <em>lặp lại</em></strong> thì <em><u>khó</u></em> là do ngẫu nhiên — mà thay vào đó gợi ý rằng ít nhất đã có <em>một phần</em> xung động xoang được dẫn truyền vào thời điểm ghi điện tâm đồ #2.</p>
+<ul><li>Điều này phù hợp với <strong>biểu hiện trên điện tâm đồ</strong> của <strong>ngộ độc</strong> <strong><em><u>verapamil</u></em></strong> — vốn được biết là gây ra <strong><em>rối loạn</em></strong> <strong>dẫn truyền (</strong><em>như LBBB thấy ở các bản ghi trước đó trong ca hôm nay</em><strong>)</strong> — <u>và</u> — bất kỳ loại nào trong số <strong>các rối loạn nhịp chậm</strong> <strong><em>khác nhau</em></strong> đã thấy trên các điện tâm đồ liên tiếp hôm nay <strong>(</strong>tức là, <em>nhịp chậm, nhịp thoát bộ nối, blốc AV — và cơn ngừng tim vô tâm thu mà bệnh nhân hôm nay đã được hồi sức thành công</em><strong>)</strong>.</li></ul>
+<h3 id="minh-hoa-bang-gian-do-bac-thang">Minh họa bằng giản đồ bậc thang:</h3>
+<p>Cơ chế blốc AV trong <u>điện tâm đồ #2</u> rất phức tạp. Tôi nghi ngờ có <strong>Wenckebach <em>hai tầng </em></strong> ở đường ra khỏi nút AV — như được thể hiện qua giản đồ bậc thang (laddergram) mà tôi đề xuất và đã vẽ trong <u>Hình 3</u> <strong>(</strong><em>Để tìm hiểu thêm về cơ chế blốc AV hai tầng — </em><strong><a href="https://ecg-interpretation.blogspot.com/2022/11/ecg-blog-347-why-non-conducted-p-waves.html" rel="noopener" target="_blank">BẤM VÀO ĐÂY</a>)</strong>.</p>
+<ul><li><strong><u>Thừa nhận:</u></strong> Tôi <em><u>không</u></em> thể chắc chắn về cơ chế tôi đã vẽ trong Hình 3. Tôi thậm chí còn không biết điện giải đồ huyết thanh vào thời điểm ghi bản ghi này (tức là, <em>Nếu có</em> <em>tăng kali máu — rối loạn điện giải này nổi tiếng là gây ra những dạng blốc AV rất bất thường</em>). Ngoài ra — lý tưởng là tôi muốn có một khoảng thời gian theo dõi dài hơn để thực sự bảo đảm tính xác thực của những gì có vẻ là các khoảng PR và RP’ <em>lặp lại</em> mà cách đánh dấu màu của tôi gợi ý.</li>
+<li></li>
+<li><strong><u>NHỮNG ĐIỂM <em>CẦN HỌC</em>:</u></strong> Cơ chế cụ thể mà tôi đã vẽ ra thì <u>kém</u> quan trọng hơn nhiều — so với lời nhắc rằng rất <em>DỄ</em> bỏ sót hoạt động nhĩ và các dạng rối loạn dẫn truyền AV tinh tế. Cách để phòng tránh điều này — là phải có hệ thống và <u>luôn luôn</u> dành <strong>3–5 giây</strong> cần thiết <strong>để <em>“con mắt được rèn luyện”</em> của bạn </strong>bắt đầu đọc <em>mọi</em> bản ghi bạn gặp — bằng cách nhìn vào <strong>dải nhịp chuyển đạo <em>dài</em></strong> đi kèm bản ghi 12 chuyển đạo — để đánh giá tính đều, sự hiện diện (<em>hoặc vắng mặt</em>) của hoạt động nhĩ — và nếu có sóng P, thì chúng có (<em>hay không</em>) liên quan với các phức bộ QRS kế cận.</li>
+<li>Cơ chế tôi đề xuất trong giản đồ bậc thang ở <u>Hình 4</u> rất phức tạp. Nhưng <u>không</u> cần dựng được cơ chế này mới nhận ra khả năng có một dạng <strong>blốc độ 2</strong> nào đó, bởi vì:<strong> i<span class="c-do">)</span></strong> <u>Có</u> nhịp xoang nền (tức là, <em>các sóng P mũi tên khá đều</em>); <u>và</u>, <strong>ii<span class="c-do">)</span> </strong>Dường như có các khoảng PR lặp lại, đặc biệt khi có blốc AV độ 1 ở các nhát được dẫn truyền (<em>sóng P mũi tên ĐỎ</em>) — điều này thường gợi ý <strong>dẫn truyền</strong> <strong><em>kiểu Wenckebach dưới một dạng nào đó</em></strong> — dù là qua đường dẫn truyền kép trong nút AV (<em>do khoảng PR dẫn truyền tăng rõ rệt giữa các nhát</em>) hay qua dẫn truyền Wenckebach hai tầng ở đường ra khỏi nút AV (<em>theo giản đồ bậc thang tôi đề xuất</em>).</li>
+<li></li>
+<li><u>XIN NHẤN MẠNH:</u> Cơ chế của nhịp trong điện tâm đồ #2 <em><u>không</u></em> quan trọng đối với việc xử trí ca hôm nay. Thay vào đó — mấu chốt là điều trị hỗ trợ, với điều trị nhắm vào vấn đề nguyên phát ( = <em>ngộ độc verapamil</em>). Dù vậy — <em><u>có</u></em> những lúc mà <strong>Điểm</strong> <strong><em>cần học</em></strong> hôm nay về việc thường xuyên dùng cách tiếp cận hệ thống khi đọc nhịp <u>sẽ</u> tạo ra khác biệt lớn về mặt lâm sàng! <strong>(</strong>tức là, <em>Xem Bình luận của tôi trong </em><strong>bài <a href="https://drsmithsecgblog.com/2023/04/rbbb-and-lafb-is-it-trifascicular-block.html" rel="noopener" target="_blank">ngày 6 tháng Tư năm 2023</a></strong> <em>trên Dr. Smith’s ECG Blog — trong đó AFib và Wenckebach AV đã nhiều lần bị nhiều nhân viên y tế đọc sai trong suốt nhiều tháng, với những hệ quả hiển nhiên đối với việc ra quyết định điều trị tối ưu</em><strong>)</strong>.</li></ul>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-42020ECG-220Ladder205-24.21-2023-USE.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_Figure-42020ECG-220Ladder205-24.21-2023-USE.jpg" alt="" width="1600" height="688" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 4:</u></strong> Giản đồ bậc thang tôi đề xuất cho nhịp trong <u>điện tâm đồ #2</u>.</figcaption></figure>
+<figure><a class="o-anh" href="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_0-Figure-6-REDLINE-UseinBlogs-7.jpg"><img src="2023-05-26-20-something-with-huge-verapamil-2_anh/2023_05_0-Figure-6-REDLINE-UseinBlogs-7.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<h2 id="phan-bo-sung-cua-ken-grauer-md-27-5-2023">PHẦN BỔ SUNG của Ken Grauer, MD (27/5/2023):</h2>
+<p>Tôi rất vui khi nhận được email từ <strong>Dr. H.S. Cho (</strong><em>ở Seoul, Hàn Quốc</em><strong>)</strong> — về cơ chế của nhịp trên dải nhịp chuyển đạo II dài của điện tâm đồ #2.</p>
+<ul><li>Mối băn khoăn của Dr. Cho có hai điểm: <strong>i<span class="c-do">)</span> </strong>Các khoảng mà tôi đánh dấu màu <em>không</em> thật sự bằng nhau; <u>và</u>, <strong>ii<span class="c-do">)</span> </strong>Khoảng R-R trong bản ghi này hằng định — trong khi thông thường khi có dẫn truyền Wenckebach, khoảng R-R sẽ cho thấy “nhịp theo nhóm” với một kiểu thay đổi các khoảng, trong đó manh mối <em>TỐT NHẤT</em> cho thấy một nhát ĐANG được dẫn truyền là khi xuất hiện một khoảng R-R “ngắn hơn dự kiến”.</li>
+<li>Mặc dù ban đầu tôi đã tin chắc vào cơ chế tôi đề xuất trong giản đồ bậc thang ở Hình 4 — nhưng ở lần “xem lại” không biết thứ bao nhiêu của bản ghi này (<em><u>trước khi</u> tôi đăng bình luận của mình</em>) — tôi cũng đã có những băn khoăn <em>y hệt</em> mà Dr. Cho đã nêu ra rất tinh tường. Chính vì lý do này mà tôi đã tỉ mỉ <em><u>điều chỉnh</u></em> cách diễn đạt trong bình luận của mình. Bạn sẽ thấy rằng tôi đã viết một mục <strong><em>“<u>Thừa nhận</u>“</em></strong> trong bình luận ban đầu, trong đó nói — <em>“Tôi không thể chắc chắn về cơ chế tôi đã vẽ trong Hình 3</em>.”</li></ul>
+<p><u>ĐIỀU CỐT LÕI:</u> Tôi <em>ĐỒNG Ý</em> với Dr. Cho. <em>Giản đồ bậc thang tôi đề xuất có thể không đúng.</em></p>
+<ul><li>Chênh lệch về số đo các khoảng mà tôi tính được thì <em>nhỏ hơn</em> số đo của Dr. Cho. Tôi nghĩ lý do có thể là những khác biệt rất nhỏ về hình dạng của các sóng P biên độ thấp, và về độ dốc khởi đầu của QRS — đó là lý do tôi đã viết trong mục <strong><u>Thừa nhận</u></strong> của mình, <em>“lý tưởng là tôi muốn có một khoảng thời gian theo dõi dài hơn để thực sự bảo đảm tính xác thực của những gì có vẻ là các khoảng PR và RP’ lặp lại mà cách đánh dấu màu của tôi gợi ý.”</em></li>
+<li>Việc phân biệt giữa blốc AV độ 2 và blốc AV độ 3 đôi khi khá khó — đặc biệt khi tỷ lệ giữa khoảng P-P và khoảng R-R khiến nó mô phỏng rất sát một khoảng thời gian lặp lại.</li>
+<li>Sẽ <u>không</u> phải lúc nào cũng có thể chắc chắn 100% về căn nguyên của một rối loạn nhịp chỉ từ một “ảnh chụp nhanh” duy nhất mà ta có được từ một dải nhịp 10 giây. Điều này chắc chắn đúng trong ca hôm nay — trong đó tác động của ngộ độc verapamil liều cực lớn đã gây xáo trộn sự hình thành xung động tim và các đặc tính của hệ thống dẫn truyền, rõ ràng là “không tuân theo các quy luật thông thường”.</li>
+<li>Dù vậy, trong khi tôi vẫn giữ khả năng có Wenckebach hai tầng — thì khoảng R-R hằng định <u>lại</u> <em>phù hợp hơn</em> với cách đọc của Dr. Cho là blốc AV hoàn toàn.</li></ul>
+<p><strong><u><em>Xin một lần nữa</em> NHẤN MẠNH:</u></strong> Tôi hoan nghênh những băn khoăn của Dr. Cho! Thảo luận về những khía cạnh thú vị của việc đọc rối loạn nhịp luôn bổ ích và mang tính giáo dục cho cả hai bên. Nhưng như trong <strong><u>Những điểm</u></strong> <strong><em><u>cần học</u></em></strong> của ca hôm nay — các chi tiết cụ thể của nhịp hấp dẫn trong điện tâm đồ #2 đã <em><u>không</u></em> làm thay đổi việc xử trí bệnh nhân ngộ độc verapamil liều cực lớn này. Đúng như dự kiến, rối loạn nhịp và tình trạng QRS giãn rộng đã hết khi tác dụng của verapamil mất đi (<em>ngoại trừ nhịp bộ nối hơi gia tốc vào thời điểm bệnh nhân ra viện</em>).</p>
+<ul><li>Không phải lúc nào việc nhận ra đúng nhịp cũng <em><u>cần</u></em> cho điều trị tối ưu.</li>
+<li>Dù vậy, với tư cách một người giảng dạy điện tâm đồ lâm sàng — tôi cảm thấy việc thấu hiểu các khái niệm đã bàn trong ca hôm nay về nhịp trong điện tâm đồ #2 <em><u>sẽ</u> <u>hữu ích</u></em> cho việc xử trí rối loạn nhịp tối ưu trong <em>một số</em> trường hợp (<em>như bài ngày 6 tháng Tư năm 2023 mà tôi đã dẫn link ở trên</em>) — trong đó việc chú ý đọc chính xác rối loạn nhịp ĐÃ đóng vai trò then chốt đối với xử trí tối ưu.</li></ul>
+<p>Một lần nữa XIN CẢM ƠN Dr. Cho vì những nhận xét của anh!</p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>

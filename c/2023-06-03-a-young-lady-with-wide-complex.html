@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03/06/2023 — Một phụ nữ trẻ bị nhịp nhanh QRS rộng. Lần đầu tiên tôi thực sự tự mình đưa ra chẩn đoán này từ đầu (de novo) ngoài đời thực tại khoa cấp cứu!</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1554 · DR. SMITH’S ECG BLOG</div>
+   <h1>03/06/2023 — Một phụ nữ trẻ bị nhịp nhanh QRS rộng. Lần đầu tiên tôi thực sự tự mình đưa ra chẩn đoán này từ đầu (de novo) ngoài đời thực tại khoa cấp cứu!</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/a-young-lady-with-wide-complex/" target="_blank" rel="noopener">"A young lady with wide complex tachycardia. My first time actually making this diagnosis de novo in real life in the ED!"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 8 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<hr>
+<p>Tác giả: Pendell Meyers</p>
+<p>Một phụ nữ ở độ tuổi 30, tiền sử bệnh lý hầu như không có gì, đến khám chỉ nói đơn giản rằng cô “cảm thấy không khỏe.” Các triệu chứng của cô khởi phát đột ngột khoảng 48 giờ trước nhưng ngày càng nặng thêm, gồm khó chịu vùng thượng vị, buồn nôn, ho, khó thở và choáng váng khi gắng sức. Cô phủ nhận đau ngực và phủ nhận có cảm giác hồi hộp đánh trống ngực, kể cả trong lúc ghi điện tâm đồ lúc phân loại (triage):</p>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_ed1-4.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_ed1-4.jpg" alt="" width="1600" height="548" loading="lazy" decoding="async"></a></figure>
+<p><em>— Bạn nghĩ gì? —</em></p>
+<p><span class="c-nhat">= = =</span></p>
+<ul><li>Dù các dấu hiệu sinh tồn khác đều bình thường, cô vẫn được phân loại hợp lý vào khu hồi sức tích cực của khoa cấp cứu (ED).</li>
+<li>Cô tỉnh táo, nhanh nhẹn, tưới máu tốt, ý thức bình thường và khám thực thể nhìn chung không có gì đáng chú ý, ngoại trừ nhịp tim nhanh đều, có thể có ran ở cả hai đáy phổi, và ấn hạ sườn phải (RUQ) hơi đau. </li>
+<li>Siêu âm tại giường của tôi chất lượng chưa đủ tốt, nhưng cho thấy EF chung có phần giảm, tĩnh mạch chủ dưới (IVC) căng, không thay đổi theo hô hấp, không có tràn dịch màng ngoài tim, và đường B lan tỏa hai bên.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="ban-nghi-gi-ve-dien-tam-do-cua-co-ay">Bạn nghĩ gì về điện tâm đồ của cô ấy?</h3>
+<p>Rõ ràng đây là một nhịp nhanh QRS rộng (dù thời gian QRS không vượt quá 120msec bao nhiêu). Có một ít nhiễu do cử động rải rác, nên bước xác định tiếp theo — nhịp đều hay không đều hoàn toàn — hơi phức tạp một chút, nhưng tôi tin rằng nhiễu do cử động là lý do duy nhất khiến nhịp này trông không đều. Tại giường, khi nhìn monitor trong những khoảng không có nhiễu do cử động, nhịp này có vẻ đều hoàn toàn và đơn dạng.</p>
+<ul><li>Vì vậy, tôi tin rằng đây là một <strong>nhịp nhanh <em>QRS rộng</em>, đơn dạng, <em>đều</em></strong>. Do đó chẩn đoán phân biệt gồm VT kinh điển, VT vô căn, và nhịp nhanh xoang (ST)/SVT/cuồng nhĩ kèm dẫn truyền lệch hướng. </li></ul>
+<p>Nhìn chung, phần lớn các nhịp thuộc nhóm này rốt cuộc sẽ là VT (kinh điển). Tuổi càng cao, càng nhiều bệnh đồng mắc, có tiền sử bệnh tim, thời gian QRS càng dài và bệnh nhân càng nặng, thì khả năng VT trong nhóm chẩn đoán phân biệt này càng tăng thêm.</p>
+<p>Nhưng đây là một phụ nữ trẻ không có tiền sử bệnh, dường như đã ở trong VT ít nhất 48 giờ, các dấu hiệu sinh tồn khác bình thường và không có biểu hiện nguy kịch, với phức bộ QRS không quá rộng,</p>
+<p>— VÀ —</p>
+<ul><li>Hình dạng phức bộ QRS là dạng LBBB + trục hướng xuống dưới. Hình dạng QRS đặc thù này có thể phù hợp với nhịp nhanh thất đường ra thất phải (RVOT VT), vốn liên quan đến loạn sản thất phải nền. </li>
+<li>Hoặc vẫn có thể đơn giản chỉ là VT kinh điển. </li>
+<li>Hoặc vẫn có thể là nhịp nhanh xoang/SVT/cuồng nhĩ kèm dẫn truyền lệch hướng.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p>Thông thường, cách xử trí hay dùng nhất của tôi với một nhịp nhiều khả năng là VT sẽ là an thần và sốc điện chuyển nhịp chủ động, hoặc amiodarone/procainamide.</p>
+<p>Nhưng tôi đã nhớ ra / nhận ra hình ảnh này từ <a href="https://drsmithsecgblog.com/2018/09/idiopathic-ventricular-tachycardias-for.html" rel="noopener" target="_blank">bài tổng quan về VT vô căn này</a> mà tôi viết nhiều năm trước. Tôi tự hỏi liệu đây có thể là RVOT VT hay không.</p>
+<ul><li>RVOT VT được ghi nhận đôi khi đáp ứng với adenosine. Đây là một người trẻ và rất ổn định. Adenosine không gây hại trong VT kinh điển.</li>
+<li>Vì vậy chúng tôi đã tiêm tĩnh mạch nhanh 12 mg adenosine.</li></ul>
+<p>Không có gì xảy ra, không có “chỗ ngắt” nào trong nhịp, không có tác dụng, tần số tim không thay đổi, không gì cả.</p>
+<ul><li>Vì vậy chúng tôi tiến hành an thần bằng etomidate và sốc điện chuyển nhịp đồng bộ, chuyển nhịp thành công ngay lần đầu. </li></ul>
+<p>Đây là điện tâm đồ 12 chuyển đạo của cô sau sốc điện chuyển nhịp:</p>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_post20conversion.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_post20conversion.jpg" alt="" width="1600" height="702" loading="lazy" decoding="async"></a></figure>
+<p><em>— Bạn nghĩ gì về bản ghi này? —</em></p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Tôi tự nhủ: Không thể nào! Phải chăng đây là ngày lần đầu tiên tôi thực sự phát hiện sóng epsilon như một chẩn đoán mới? Nó hiếm đến mức tôi vẫn còn chưa chắc chắn.</p>
+<p>Có nhịp xoang với phần đầu phức bộ QRS bình thường, nhưng có một sóng trông rất bất thường ở cuối phức bộ QRS, thấy ở hầu như tất cả các chuyển đạo. Nó trông đặc biệt bất thường ở chuyển đạo V2 và V3, nơi rõ ràng đây không phải một sóng J thông thường hay blốc nhánh phải không hoàn toàn.</p>
+<p>Khi dạy các hình ảnh điện tâm đồ quan trọng trong ngất cho các bác sĩ nội trú của mình, trước đây tôi luôn phải tìm các báo cáo ca và bài tổng quan để cho họ xem những sóng epsilon hiếm gặp. Chúng hiếm và khó gặp trong thực hành thường ngày tại khoa cấp cứu.</p>
+<p>Cô tỉnh lại sau an thần mà không có biến cố gì và có vẻ thấy đỡ hơn một chút. Xét nghiệm đáng chú ý có tăng nhẹ men gan (transaminase) không kèm tăng bilirubin máu, BNP tăng (1,226 mg/dL) và troponin tăng (73 ng/L), tất cả đều có vẻ có thể quy hợp lý cho khả năng đã có 48 giờ nhịp nhanh thất, bệnh gan sung huyết, v.v. X-quang ngực xác nhận phù phổi hai bên và tràn dịch lượng ít hai bên.</p>
+<ul><li>Tôi cho cô nhập khoa tim mạch với những mối lo ngại này, và chúng tôi thống nhất rằng <strong>MRI tim</strong> có thể giúp xác nhận khả năng ARVC.</li></ul>
+<p>Một mẫu nhỏ <strong><em>hình MRI được trình bày bên dưới</em></strong>, và kết quả đọc chính thức gồm:</p>
+<ul><li><strong>LVEF 44%</strong>, kích thước buồng thất trái bình thường. Chức năng tâm thu thất trái suy giảm theo vùng, kèm mỏng thành và vô động ở thành dưới đoạn giữa, vách dưới đoạn giữa và thành dưới-bên đoạn giữa. Thành trước đoạn đáy và vách đoạn đáy giảm động. </li>
+<li><strong>RVEF 34%</strong>, thất phải giãn nhẹ. Chức năng tâm thu thất phải giảm nặng toàn bộ. Có loạn động khu trú vùng đường ra thất phải (RVOT). Có hở van ba lá mức độ nhẹ-vừa.</li>
+<li><strong>Ngấm thuốc muộn gadolinium:</strong> Sẹo đa ổ ở vách (kể cả vách phía thất phải), thành trước đoạn đáy và sẹo xuyên thành vùng dưới đoạn giữa – một kiểu tăng ngấm thuốc không do bệnh động mạch vành.</li></ul>
+<p>Nhìn chung, các dấu hiệu trên MRI tim (CMR) phù hợp với <strong>bệnh cơ tim gây loạn nhịp</strong>. Có hai tiêu chuẩn chính trên CMR theo Nhóm chuyên trách (Task Force) cho ARVC:</p>
+<ul><li><strong>1)</strong> RVEF &lt;40% kèm rối loạn vận động thành khu trú của thất phải. </li>
+<li><strong>2)</strong> Giãn buồng thất phải với RVEDVI&gt;100 ml/m2.</li></ul>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed206.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed206.jpg" alt="" width="512" height="407" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed207.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed207.jpg" alt="" width="512" height="447" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed208.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_unnamed208.jpg" alt="" width="512" height="467" loading="lazy" decoding="async"></a></figure>
+<p>Cô được chẩn đoán chính thức là <strong>ARVC</strong>. Cô được cấy máy khử rung tim tự động (AICD). Cô được khuyên hạn chế nghiêm ngặt việc vận động gắng sức và được đề nghị làm xét nghiệm di truyền.</p>
+<ul><li>Không có thông tin theo dõi dài hạn.</li></ul>
+<h2 id="xem-cac-ca-tuong-tu-hoac-lien-quan-tai-day">Xem các ca tương tự hoặc liên quan tại đây:</h2>
+<ul><li><a href="https://drsmithsecgblog.com/2013/02/regular-wide-complex-tachycardia-what.html" rel="noopener" target="_blank">Regular Wide Complex Tachycardia. What is the Diagnosis?</a> (Nhịp nhanh QRS rộng đều. Chẩn đoán là gì?)</li>
+<li><a href="https://drsmithsecgblog.com/2021/09/syncope-in-young-man.html" rel="noopener" target="_blank">Syncope in a young man</a> (Ngất ở một nam giới trẻ)</li>
+<li><a href="https://drsmithsecgblog.com/2011/08/young-man-with-syncope-while-riding.html" rel="noopener" target="_blank">Young man with syncope while riding a bike [Arrhythmogenic Right Ventricular Dysplasia (ARVD)]</a> (Nam giới trẻ bị ngất khi đang đạp xe [loạn sản thất phải gây loạn nhịp (ARVD)])</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="xem-bai-tong-quan-cua-toi-ve-cac-vt-vo-can-tai-day">Xem bài tổng quan của tôi về các VT vô căn tại đây:</h3>
+<ul><li><a href="https://drsmithsecgblog.com/2018/09/idiopathic-ventricular-tachycardias-for.html" rel="noopener" target="_blank">Idiopathic Ventricular Tachycardias for the EM Physician</a> (Các nhịp nhanh thất vô căn dành cho bác sĩ cấp cứu)</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="xem-bai-tong-quan-ngan-cua-chung-toi-ve-arvd-tai-day">Xem bài tổng quan ngắn của chúng tôi về ARVD tại đây:</h3>
+<ul><li><a href="https://drsmithsecgblog.com/2011/08/young-man-with-syncope-while-riding.html" rel="noopener" target="_blank">Young man with syncope while riding a bike [Arrhythmogenic Right Ventricular Dysplasia (ARVD)]</a> (Nam giới trẻ bị ngất khi đang đạp xe [loạn sản thất phải gây loạn nhịp (ARVD)])
+<ul>
+<li><strong>ARVD, còn gọi là bệnh cơ tim thất phải gây loạn nhịp</strong>, được ước tính có tỷ lệ hiện mắc 1 trên 5000 người trưởng thành và là nguyên nhân của khoảng 11% các ca đột tử ở người trẻ tuổi, và 22% trong một nghiên cứu trên vận động viên ở miền bắc nước Ý. Chẩn đoán không dễ (xem bên dưới).</li>
+</ul>
+</li>
+<li><a href="https://www.nejm.org/doi/full/10.1056/NEJMra1509267" rel="noopener" target="_blank">Đây là một bài tổng quan năm 2017 về ARVD trên tạp chí New England Journal</a></li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><strong><u>Có một công bố năm 2010 của Nhóm chuyên trách (Task Force) về chẩn đoán ARVD:</u></strong> Chẩn đoán bệnh cơ tim/loạn sản thất phải gây loạn nhịp: đề xuất sửa đổi các tiêu chuẩn của Nhóm chuyên trách (Diagnosis of arrhythmogenic right ventricular cardiomyopathy/dysplasia: proposed modification of the task force criteria).</p>
+<p><strong>Toàn văn miễn phí:</strong></p>
+<ul><li><a href="https://www.ahajournals.org/doi/pdf/10.1161/CIRCULATIONAHA.108.840827" rel="noopener" target="_blank">https://www.ahajournals.org/doi/pdf/10.1161/CIRCULATIONAHA.108.840827</a> (bản PDF toàn văn trên tạp chí Circulation) </li></ul>
+<p>Có 6 nhóm tiêu chuẩn:</p>
+<ul><li>1) Hình ảnh học</li>
+<li>2) Giải phẫu bệnh</li>
+<li>3) Tái cực trên điện tâm đồ</li>
+<li>4) Khử cực trên điện tâm đồ</li>
+<li>5) Rối loạn nhịp</li>
+<li>6) Tiền sử gia đình.  </li></ul>
+<h3 id="nhung-diem-noi-bat-ve-dien-tam-do-va-benh-su-cua-cong-bo-nay-la-nghi-ngo-arvd-khi-co">Những điểm nổi bật về điện tâm đồ và bệnh sử của công bố này là (nghi ngờ ARVD khi có):</h3>
+<ul><li>1) Ngất nguy cơ cao không có nguyên nhân nào khác; tiền sử gia đình</li>
+<li>2) Bất thường khử cực (tiêu chuẩn chính):
+<ul>
+<li>a) <strong><u>Sóng Epsilon</u></strong></li>
+<li>b) Kéo dài khu trú (trên 110 ms) của phức bộ QRS ở các chuyển đạo trước tim bên phải (V1-V3)</li>
+</ul>
+</li>
+<li>3) Bất thường tái cực ở bệnh nhân từ 14 tuổi trở lên (vì bệnh nhân nhỏ tuổi hơn thường có sóng T thiếu niên)
+<ul>
+<li>a) Phụ: sóng T đảo ngược ở các chuyển đạo trước tim bên phải V1-V2 </li>
+<li>b) Chính: sóng T đảo ngược ở các chuyển đạo trước tim bên phải V1-V3 hoặc xa hơn (tiêu chuẩn chính) </li>
+</ul>
+</li>
+<li>4) Rối loạn nhịp
+<ul>
+<li>a) Tiêu chuẩn chính:
+<ul>
+<li>i) VT có hình dạng LBBB với trục hướng lên trên (QRS âm hoặc không xác định ở các chuyển đạo II, III, aVF và dương ở chuyển đạo aVL) (tiêu chuẩn chính)</li>
+</ul>
+</li>
+<li>b) Tiêu chuẩn phụ:
+<ul>
+<li>i) VT có hình dạng LBBB với trục hướng xuống dưới (QRS dương ở các chuyển đạo II, III, aVF và âm ở chuyển đạo aVL) (tiêu chuẩn phụ)</li>
+<li>ii) Hơn 500 PVC mỗi giờ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>5) Cuối cùng, đây là một bệnh tiến triển và bệnh nhân chưa có bất thường trên điện tâm đồ có thể xuất hiện các bất thường này theo thời gian.</li></ul>
+<p>Đây là một ví dụ về <strong>sóng epsilon</strong> (hình C). Và một <strong>ví dụ</strong> khác. Dưới đây là một số ví dụ tuyệt vời từ <a href="http://translate.google.com/translate?js=n&amp;prev=_t&amp;hl=en&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=fr&amp;tl=en&amp;u=http%3A%2F%2Fwww.e-cardiogram.com%2Fecg-lexique_theme.php%3Fid_th%3D8%26id_lex%3D82" rel="noopener" target="_blank">bài viết về loạn sản thất phải</a> (được dịch bằng Google Translate!) trên <a href="http://translate.google.com/translate?js=n&amp;prev=_t&amp;hl=en&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=fr&amp;tl=en&amp;u=http%3A%2F%2Fwww.e-cardiogram.com%2F" rel="noopener" target="_blank">trang web tiếng Pháp tuyệt vời của Pierre Taboulet</a>: #1, #2, #3</p>
+<p>Đây là một ví dụ tuyệt vời trên Wave Maven.</p>
+<p>Đây là phần giải thích về <a href="http://epfellow.posterous.com/epsilon-waves-and-current-dipoles" rel="noopener" target="_blank">tầm quan trọng của chuyển đạo V1 và V2</a>.</p>
+<p>Đây là một ví dụ hay khác.</p>
+<h3 id="mot-so-tai-lieu-tham-khao-rat-tot-ve-arvd">Một số tài liệu tham khảo rất tốt về ARVD:</h3>
+<p>Đây là một báo cáo ca bệnh có nhiều thông tin hữu ích, từ năm 2019, nhưng bạn chỉ đọc được nếu có đăng ký tạp chí American J Cardiol:</p>
+<ul><li>Holshouser JW và Littmann L. <a href="https://www.ncbi.nlm.nih.gov/pubmed/31902477" rel="noopener" target="_blank">Usefulness of the Electrocardiogram in Establishing the Diagnosis and Prognosis of Arrhythmogenic Right Ventricular Cardiomyopathy</a> (Giá trị của điện tâm đồ trong xác lập chẩn đoán và tiên lượng bệnh cơ tim thất phải gây loạn nhịp)</li></ul>
+<h3 id="cac-tai-lieu-tham-khao-khac-trich-tu-bai-bao-tren">Các tài liệu tham khảo khác, trích từ bài báo trên:</h3>
+<ul><li><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0001" rel="noopener" target="_blank">1</a> FI Marcus<strong>Epsilon waves aid in the prognosis and risk stratification of patients with ARVC/D</strong> (Sóng epsilon hỗ trợ tiên lượng và phân tầng nguy cơ bệnh nhân ARVC/D) — J Cardiovasc Electrophysiol, 26 (2015), tr. 1211-1212</li>
+<li><a href="https://doi.org/10.1111/jce.12775" rel="noopener" target="_blank">CrossRef</a><a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-84945491498&amp;partnerID=10&amp;rel=R3.0.0" rel="noopener" target="_blank">Xem bản ghi trên Scopus</a><a href="https://scholar.google.com/scholar?q=Epsilon%20waves%20aid%20in%20the%20prognosis%20and%20risk%20stratification%20of%20patients%20with%20ARVCD" rel="noopener" target="_blank">Google Scholar</a><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0002" rel="noopener" target="_blank">2</a>
+<ul>
+<li>FI Marcus, W Zareba<strong>The electrocardiogram in right ventricular cardiomyopathy/dysplasia. How can the electrocardiogram assist in understanding the pathologic and functional changes of the heart in this disease?</strong> (Điện tâm đồ trong bệnh cơ tim/loạn sản thất phải. Điện tâm đồ có thể giúp hiểu những thay đổi bệnh lý và chức năng của tim trong bệnh này như thế nào?)</li>
+</ul>
+</li>
+<li>J Electrocardiol, 42 (2009), tr. 136.e1-136.e5</li>
+<li><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0003" rel="noopener" target="_blank">3</a> RNW Hauer, MGPJ Cox, JA Groeneweg<strong>Impact of new electrocardiographic criteria in arrhythmogenic cardiomyopathy</strong> (Tác động của các tiêu chuẩn điện tâm đồ mới trong bệnh cơ tim gây loạn nhịp) Front Physiol, 3 (2012), tr. 352, eCollection 2012</li>
+<li><a href="https://scholar.google.com/scholar_lookup?title=Impact%20of%20new%20electrocardiographic%20criteria%20in%20arrhythmogenic%20cardiomyopathy&amp;publication_year=2012&amp;author=RNW%20Hauer&amp;author=MGPJ%20Cox&amp;author=JA%20Groeneweg" rel="noopener" target="_blank">Google Scholar</a></li>
+<li><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0004" rel="noopener" target="_blank">4</a> FI Marcus, WJ McKenna, D Sherrill, C Basso, B Bauce, DA Bluemke, H Calkins, D Corrado, MG Cox, JP Daubert, G Fontaine, K Gear, R Hauer, A Nava, MH Picard, N Protonotarios, JE Saffitz, DM Sanborn, JS Steinberg, H Tandri, G Thiene, JA Towbin, A Tsatsopoulou, T Wichter, W Zareba<strong>Diagnosis of arrhythmogenic right ventricular cardiomyopathy/dysplasia: proposed modification of the task force criteria</strong> (Chẩn đoán bệnh cơ tim/loạn sản thất phải gây loạn nhịp: đề xuất sửa đổi các tiêu chuẩn của Nhóm chuyên trách) Circulation, 121 (2010), tr. 1533-1541</li>
+<li><a href="https://www.scopus.com/inward/record.url?eid=2-s2.0-75249096712&amp;partnerID=10&amp;rel=R3.0.0" rel="noopener" target="_blank">Xem bản ghi trên Scopus</a><a href="https://scholar.google.com/scholar?q=Diagnosis%20of%20arrhythmogenic%20right%20ventricular%20cardiomyopathydysplasia:%20proposed%20modification%20of%20the%20task%20force%20criteria" rel="noopener" target="_blank">Google Scholar</a></li>
+<li><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0005" rel="noopener" target="_blank">5</a> WC Roberts, N Kondapalli, SA Hall<strong>Usefulness of total 12-lead QRS voltage for the diagnosis of arrhythmogenic right ventricular cardiomyopathy in patients with heart failure severe enough to warrant orthotopic heart transplantation and morphologic illustration of its cardiac diversity</strong> (Giá trị của tổng điện thế QRS trên toàn bộ các chuyển đạo thường quy trong chẩn đoán bệnh cơ tim thất phải gây loạn nhịp ở bệnh nhân suy tim nặng đến mức cần ghép tim tại chỗ, và minh họa hình thái về tính đa dạng tim của bệnh) Am J Cardiol, 122 (2018), tr. 1051-1061</li>
+<li><a href="https://www-sciencedirect-com.ezp1.lib.umn.edu/science/article/pii/S0002914919313505?via%3Dihub#bbib0006" rel="noopener" target="_blank">6</a> JE Madias, R Bazaz, H Agarwal, M Win, L Medepalli<strong>Anasarca-mediated attenuation of the amplitude of electrocardiogram complexes: a description of a heretofore unrecognized phenomenon</strong> (Giảm biên độ các phức bộ điện tâm đồ do phù toàn thân: mô tả một hiện tượng trước nay chưa được nhận biết) J Am Coll Cardiol, 38 (2011), tr. 756-764</li>
+<li><a href="https://scholar.google.com/scholar_lookup?title=Anasarca-mediated%20attenuation%20of%20the%20amplitude%20of%20electrocardiogram%20complexes%3A%20a%20description%20of%20a%20heretofore%20unrecognized%20phenomenon&amp;publication_year=2011&amp;author=JE%20Madias&amp;author=R%20Bazaz&amp;author=H%20Agarwal&amp;author=M%20Win&amp;author=L%20Medepalli" rel="noopener" target="_blank">Google Scholar</a></li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p>=====================================</p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-3-6-2023-cap-nhat-cho-wordpress-ngay-7-7-2026">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (3/6/2023 — cập nhật cho WordPress ngày 7/7/2026):</h2>
+<p>Ca bệnh hôm nay thật đáng mừng — ở chỗ nó minh họa một hiện tượng ít gặp mà BS. Meyers đã phát hiện ra, với ý nghĩa có thể cứu sống bệnh nhân. Cũng như BS. Meyers — trước đây tôi <em><u>chưa</u></em> từng thấy <strong>sóng</strong> <strong><em>epsilon</em></strong> như một chẩn đoán mới! Tôi tập trung bình luận vào một số khía cạnh khác của <strong>ARVC/D (</strong><em>bệnh cơ tim–loạn sản thất phải gây loạn nhịp — <u>A</u>rrhythmogenic <u>R</u>ight <u>V</u>entricular <u>C</u>ardiomyopathy-<u>D</u>ysplasia</em><strong>) </strong>với hy vọng bổ sung thêm cho phần bàn luận xuất sắc của BS. Meyers.</p>
+<p>Để rõ ràng, trong <strong><u>Hình 1</u></strong> — tôi đã đưa lại 2 điện tâm đồ của ca hôm nay.</p>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<p><strong><u>Hình 1:</u></strong> 2 điện tâm đồ của ca hôm nay. Các đường dọc màu <em>XANH LAM</em> đánh dấu thời điểm của <strong>sóng</strong> <strong><em>epsilon</em></strong> ở tất cả các chuyển đạo <strong>(</strong><em>so với mũi tên XANH LAM đánh dấu sóng epsilon ở chuyển đạo V3</em><strong>)</strong>.</p>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-12020ECGs-12206-2.21-2023-USE.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-12020ECGs-12206-2.21-2023-USE.jpg" alt="" width="1600" height="1421" loading="lazy" decoding="async"></a></figure>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="benh-su-trong-ca-hom-nay">Bệnh sử trong ca hôm nay:</h3>
+<p>Bệnh nhân hôm nay là một <strong>người trẻ trước đó <em>khỏe mạnh</em> (</strong>tức là <em>một phụ nữ ở độ tuổi 30</em><strong>)</strong> — dường như đây là <strong>lần thứ 1 cô đến</strong> cơ sở y tế vì một cơn rối loạn nhịp liên quan đến bệnh lý của mình.</p>
+<ul><li><strong><u>Lưu ý:</u></strong> Bệnh nhân này ổn định huyết động và <em>không</em> hồi hộp đánh trống ngực vào thời điểm ghi điện tâm đồ #1. Vì các triệu chứng “cảm thấy không khỏe” của chị đã bắt đầu từ 48 giờ trước — nhiều khả năng chị đã ở trong rối loạn nhịp này một khoảng thời gian đáng kể trước khi đến khoa cấp cứu <strong>(</strong><em>và có lẽ trước đó chị đã có những cơn rối loạn nhịp tự hết mà chưa bao giờ đi khám</em><strong>)</strong>. </li>
+<li><strong><u>Do đó:</u></strong> Ca này mang lại cho tôi nhiều hiểu biết sâu sắc, vì nó minh họa rằng: <strong>i<span class="c-do">)</span></strong> Bệnh nhân ARVC có thể gần như không có triệu chứng trong một thời gian dài; — và, <strong>ii<span class="c-do">)</span></strong> Dù không thường gặp — chúng ta có thể gặp những bệnh nhân ở độ tuổi 30 (<em>hoặc có thể lớn tuổi hơn</em>) đến khám lần thứ 1 vì ARVC.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="dien-tam-do-ban-dau">Điện tâm đồ ban đầu:</h3>
+<p>Bệnh nhân hôm nay đến viện trong tình trạng ổn định huyết động với một nhịp <strong>WCT (</strong> = <em><u>W</u>ide-<u>C</u>omplex <u>T</u>achycardia</em> — nhịp nhanh QRS rộng<strong>)</strong> <strong><em>đều</em></strong> tần số <strong>~180/phút</strong>, <em>không</em> có dấu hiệu rõ ràng của hoạt động nhĩ. Như BS. Meyers đã nêu — <strong><em><u>chẩn đoán</u></em></strong> <strong>phân biệt</strong> bao gồm: <strong>i<span class="c-do">)</span> </strong>VT ở bệnh nhân có bệnh mạch vành hoặc bệnh tim cấu trúc khác; <strong>ii<span class="c-do">)</span> </strong>VT <em>vô căn</em> — trong đó không có bệnh tim cấu trúc nền; — và, <strong>iii<span class="c-do">)</span> </strong>SVT kèm blốc nhánh <em>có sẵn từ trước</em> hoặc dẫn truyền <em>lệch hướng</em>.</p>
+<ul><li>Trong các nhịp SVT — tần số ~180/phút khiến cả <strong>nhịp nhanh xoang</strong> lẫn <strong>cuồng nhĩ (AFlutter)</strong> đều ít có khả năng (<em>dù không phải là không thể</em>). Không thường gặp nhịp nhanh xoang trên 160-170/phút ở bệnh nhân nằm ngửa (<em>không gắng sức</em>) — còn dẫn truyền 2:1 trong AFlutter sẽ tương ứng với tần số 360/phút, nhanh hơn khoảng tần số nhĩ thường gặp của AFlutter.</li>
+<li>Nhìn chung — <strong>tôi cho rằng nhịp SVT ít có khả năng trong ca hôm nay.</strong> Mặc dù hình dạng QRS của điện tâm đồ #1 thoạt nhìn giống dẫn truyền LBBB — vẫn có những đặc điểm <em><u>không điển hình</u></em>. Bao gồm: <strong>i<span class="c-do">)</span></strong> Trục lệch phải trên mặt phẳng trán <strong>(</strong>tức là <em>QRS âm ưu thế ở chuyển đạo I</em><strong>)</strong>; — và, <strong>ii<span class="c-do">)</span></strong> Vùng chuyển tiếp sớm hơn dự kiến so với LBBB <strong>(</strong>tức là <em>với một phức bộ đẳng điện rất nhỏ ở chuyển đạo V3 và QRS đã dương ưu thế ngay từ chuyển đạo V4 — trong khi với dẫn truyền LBBB điển hình, vùng chuyển tiếp phải chậm ít nhất tới chuyển đạo V5</em><strong>)</strong>.</li>
+<li>Đặc biệt ở một người trẻ trưởng thành trước đó khỏe mạnh — hình dạng QRS không điển hình cho một rối loạn dẫn truyền đã biết <strong>(</strong>tức là <em>LBBB, RBBB, LAHB, LPHB</em><strong>)</strong> — làm tăng đáng kể khả năng một WCT đều hóa ra là VT.</li>
+<li><strong>LƯU Ý #1:</strong> Ban đầu tôi nghĩ có thể có phân ly nhĩ thất trên điện tâm đồ #1 — nếu đúng thì điều đó sẽ chứng minh nhịp này là VT. Tuy vậy — sau khi xem xét kỹ (<em>thoải mái trong phòng làm việc ở nhà</em>) — tôi đi đến kết luận rằng compa đo của tôi đơn giản là <em>không</em> “dò bước” ra được bất kỳ hoạt động nhĩ nhất quán nào <strong>(</strong><em>Tôi hoàn toàn thừa nhận việc cố nhận ra phân ly nhĩ thất bên giường một bệnh nhân đang diễn tiến xấu nhanh khó khăn hơn biết bao!</em><strong>)</strong>.</li>
+<li><strong><u>LƯU Ý #2:</u></strong> Dù <strong>AVRT</strong> <strong><em>ngược chiều</em></strong> ở bệnh nhân WPW <em><u>không</u></em> thể bị loại trừ chỉ dựa trên một điện tâm đồ duy nhất này — hơn 95% các nhịp WCT đều không phải trên thất sẽ hóa ra là VT. Về mặt lâm sàng, việc phân biệt AVRT ngược chiều với VT thường <em><u>không</u></em> thiết yếu tại khoa cấp cứu — vì xử trí ban đầu thích hợp thường giống nhau <strong>(</strong>tức là <em>cả hai nhịp đều sẽ đáp ứng với sốc điện chuyển nhịp</em><strong>)</strong>.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p>Điều này để lại cho chúng ta khả năng cao rằng điện tâm đồ #1 là <strong><em>một</em></strong> <strong>dạng</strong> nào đó của <strong>VT</strong>.</p>
+<ul><li>Mặc dù trong dân số chung — VT <em><u>có</u></em> kèm bệnh tim cấu trúc nền là dạng VT chiếm ưu thế (<em>chiếm tới 90% các ca VT</em>) — <strong>VT</strong> <strong><em>vô căn</em></strong> trở nên thường gặp hơn đáng kể ở người trẻ trưởng thành không có bệnh tim đã biết <strong>(</strong><em>Xin xem PHẦN BỔ SUNG của tôi bên dưới nếu bạn muốn tìm hiểu thêm về các VT vô căn</em><strong>)</strong>.</li>
+<li>Như BS. Meyers đã nêu — hình dạng QRS của điện tâm đồ #1 với <strong>trục</strong> <strong><em>lệch phải</em></strong> trên mặt phẳng trán — kèm <strong>đặc điểm</strong> <strong>LBBB</strong> ở các chuyển đạo ngực sẽ phù hợp, ở bệnh nhân trẻ trưởng thành này, với <strong>RVOT VT (</strong><em><u>R</u>ight <u>V</u>entricular <u>O</u>utflow <u>T</u>rack VT</em> — VT đường ra thất phải<strong>)</strong>, là dạng VT vô căn thường gặp nhất.</li>
+<li>Như trong <em>PHẦN BỔ SUNG</em> của tôi bên dưới — <strong>điều trị</strong> <strong><em>ban đầu</em></strong> bằng <strong>Adenosine (</strong><em>như BS. Meyers đã dùng</em><strong>) là hoàn toàn thích hợp</strong> ở bệnh nhân ổn định huyết động này — vì RVOT VT có thể là một dạng VT <strong><em>có <u>đáp ứng</u> với adenosine</em></strong>. Khi điều này không hiệu quả — sốc điện chuyển nhịp đồng bộ rõ ràng là điều trị được lựa chọn. </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="ban-co-the-phan-biet-rvot-vt-voi-vt-do-arvc-khong">Bạn có thể phân biệt RVOT VT với VT do ARVC không?</h3>
+<p>Theo những gì tôi xem xét về chủ đề này — việc phân biệt RVOT VT <em>với</em> VT ở bệnh nhân ARVC <strong><em><u>không</u></em> thể thực hiện một cách đáng tin cậy</strong> chỉ dựa trên một điện tâm đồ duy nhất ghi trong lúc có nhịp WCT đều.</p>
+<ul><li>Hoffmayer và cs. đã nghiên cứu câu hỏi này (<strong><a href="https://www.sciencedirect.com/science/article/pii/S0735109711019498?via%3Dihub" rel="noopener" target="_blank">JACC 58(8):831-838, 2011</a></strong>) — và trong khi các tác giả này kết luận rằng một số đặc điểm điện tâm đồ thực sự giúp nhận định khả năng RVOT VT <em>so với</em> ARVC đối với bản ghi WCT đều có hình dạng LBBB/trục hướng xuống dưới — <strong><em>tôi lại đi đến kết luận ngược lại</em></strong> sau khi xem xét nghiên cứu của họ.</li>
+<li>Vấn đề khi dùng tiêu chí thời gian QRS &gt;120 msec. ở chuyển đạo I và vùng chuyển tiếp ở chuyển đạo ngực chậm tới ít nhất chuyển đạo V5 hoặc V6 — được làm nổi bật qua ca của chúng tôi, trong đó bệnh nhân hôm nay được phát hiện có ARVC <em>mặc dù</em> thời gian QRS ở chuyển đạo I không đánh giá được và vùng chuyển tiếp sớm hơn.</li>
+<li>Tôi có nghĩ rằng tiêu chí <strong>phân mảnh (</strong>tức là <em>khía quá mức ở một hoặc nhiều phức bộ QRS</em><strong>)</strong> có thể hữu ích — vì những người trẻ trưởng thành vốn khỏe mạnh bị RVOT VT dường như <em>ít</em> có khả năng biểu hiện phân mảnh (<em>vốn thường chỉ ra có “sẹo” nền</em>). Nhưng độ nhạy và độ đặc hiệu của mọi tiêu chí các tác giả đưa ra đều chưa hoàn hảo — với sự chồng lấp tiêu chí giữa bệnh nhân RVOT VT và VT do ARVC.</li>
+<li><strong><u>T.B. (P.S.):</u></strong> Dù có nhiễu trên điện tâm đồ #1 — rõ ràng có <strong><em>phân mảnh</em></strong> ở một số chuyển đạo (<em>thấy rõ nhất ở V3,V4</em>). Tuy vậy — ở một người trẻ trưởng thành trước đó khỏe mạnh — <strong><em>RVOT VT thường gặp hơn rất nhiều</em></strong> so với gặp một ca ARVC mới — đến mức tôi <em><u>không hề</u></em> nghĩ rằng bệnh nhân hôm nay hóa ra lại có chẩn đoán đó!</li>
+<li><strong><u>T.B.T.B. (P.P.S.):</u></strong> Về mặt lâm sàng — <em><u>không</u> cần phải mất công cố xác định xem một bản ghi WCT đều có nhiều khả năng là RVOT VT <u>hay</u> VT do ARVC hơn</em>. Đó là vì việc ra quyết định xử trí ban đầu về cơ bản là như nhau. BS. Meyers đã thử Adenosine tĩnh mạch — nhưng không hiệu quả. Sau đó anh đã an thần cho bệnh nhân và sốc điện chuyển nhịp thành công, đưa về nhịp xoang. Nghi ngờ ARVC được gợi ý mạnh bởi bản ghi 12 chuyển đạo sau chuyển nhịp — nhưng ngay cả khi bản ghi 12 chuyển đạo sau chuyển nhịp không có gì đặc biệt, <strong>MRI tim</strong> vẫn được khuyến cáo cho hầu như <em>bất kỳ</em> bệnh nhân RVOT VT nào để loại trừ các bệnh lý tim nền nặng có thể bắt chước nó như ARVC hoặc sarcoidosis tim <strong>(</strong><em>Macias và cs. </em>— <strong><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5135196/" rel="noopener" target="_blank">JAFIB 7(4):106-111,2015</a>)</strong>. MRI tim sẽ cho bạn biết có hay không có ARVC.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="vai-suy-nghi-cuoi-cung-ve-song-epsilon">Vài suy nghĩ cuối cùng về sóng Epsilon:</h3>
+<p>Như tôi đã hoàn toàn thừa nhận ở trên — trước đây tôi chỉ tiếp xúc với sóng epsilon ở những ca đã được chẩn đoán từ trước. <em><strong>Vì sao lại khó đến vậy</strong> <strong>để phát hiện sóng epsilon</strong> trên điện tâm đồ 12 chuyển đạo tiêu chuẩn?</em></p>
+<ul><li>Có <em>nhiều</em> lý do … </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="ly-do-1-dung-sai-cai-dat-bo-loc">Lý do #1: Dùng sai cài đặt bộ lọc …</h3>
+<p>Quá thường xuyên — <em>các cài đặt bộ lọc bị bỏ qua</em>. Các cài đặt khác nhau thường được dùng cho chế độ theo dõi, khi trọng tâm là xác định nhịp, so với chế độ chẩn đoán, khi trọng tâm là đọc các dạng sóng 12 chuyển đạo. Lọc nhiều hơn thường được dùng ở <strong>chế độ</strong> <strong><em>theo dõi (monitor)</em></strong>, với cài đặt thường gặp là từ 0.5 Hz đến 40 Hz. Làm vậy có lợi là giảm thiểu nhiễu và trôi đường nền vốn có thể ảnh hưởng đến việc đọc nhịp. Ngược lại — một <strong><em>dải thông</em></strong> <strong>rộng hơn (</strong><em>thường từ 0.05 Hz đến <strong>150 H</strong></em><strong>z)</strong> <strong>được khuyến cáo cho chế độ chẩn đoán</strong>, khi việc phân tích đoạn ST chính xác hơn là thiết yếu.</p>
+<ul><li>Tôi lấy Hình 2 từ hình minh họa của García-Niebla và cs. (<strong><a href="https://www.revespcardiol.org/en-epsilon-wave-in-12-lead-electrocardiogram-articulo-S1885585715004144" rel="noopener" target="_blank">Rev Esp Cardiol 69(4):438, 2016</a></strong>) — để cho thấy việc chọn tần số cắt 40 Hz (<em>thường được chọn trong thực hành lâm sàng nhằm “cải thiện” hình thức bản ghi</em>) có thể làm biến mất những chi tiết tinh tế trên điện tâm đồ như sóng epsilon, vốn chỉ thấy rõ tối ưu trên Hình 2 ở cài đặt tần số cắt bộ lọc thông cao 150 Hz (<em>các mũi tên XANH</em>).</li></ul>
+<hr>
+<p><strong><u>Hình 2:</u></strong> Minh họa ảnh hưởng của cài đặt bộ lọc lên khả năng nhìn thấy sóng epsilon trên điện tâm đồ 12 chuyển đạo tiêu chuẩn.</p>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-220-20Epsilon20Wave-Effect20of20Frequency206-3.22-2023-USE.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-220-20Epsilon20Wave-Effect20of20Frequency206-3.22-2023-USE.jpg" alt="" width="1600" height="1103" loading="lazy" decoding="async"></a></figure>
+<hr>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="ly-do-2-dung-sai-he-thong-chuyen-dao">Lý do #2: Dùng sai hệ thống chuyển đạo …</h3>
+<p>Tôi rất khuyến nghị phần viết của BS. Buttner và BS. Cadogan trên <strong><em>Life-In-The-Fast-Lane</em></strong> về <strong>chuyển đạo <em><u>Fontaine</u></em> — <a href="https://litfl.com/fontaine-lead/" rel="noopener" target="_blank">https://litfl.com/fontaine-lead/</a> —</strong> vì bài tổng quan súc tích này nêu những điều cần biết để tối ưu hóa cơ hội nhận ra <strong>sóng</strong> <strong><em><u>epsilon</u></em></strong> ở bệnh nhân ARVC trên điện tâm đồ. Dưới đây tôi nêu bật một vài điểm <em>MẤU CHỐT</em> từ bài tổng quan này của LITFL:</p>
+<ul><li>Nhận diện <strong>sóng</strong> <strong><em><u>epsilon</u></em></strong> là dấu hiệu điện tâm đồ đặc hiệu nhất của ARVC. Những dao động nhỏ này có thể thấy như một “chấm nhỏ” (blip) hoặc một “gợn” (wiggle) ở cuối, hoặc ngay sau phức bộ QRS. Chúng thấy rõ nhất ở các chuyển đạo V1,V2 — và kém rõ hơn một chút ở V3,V4.</li>
+<li>LITFL dẫn con số 23% cho tần suất nhìn thấy sóng epsilon trên điện tâm đồ tiêu chuẩn. Cài đặt bộ lọc dùng kèm con số này không được đề cập — vì vậy với xu hướng quá thường xuyên chọn cài đặt thông cao 40 Hz (<em>thay vì cài đặt tối ưu 150 Hz</em>) — có thể dự đoán khả năng tìm thấy sóng epsilon còn thấp hơn nữa trên những điện tâm đồ được gửi đến chúng ta để tìm sóng epsilon.</li>
+<li>Ngược lại — việc dùng cách đặt đặc biệt các điện cực của máy điện tâm đồ tiêu chuẩn, gọi là <strong>cách đặt chuyển đạo <em><u>Fontaine</u></em></strong> — cho phép phát hiện sóng epsilon ở tới 75% bệnh nhân! Thay vì chép lại <strong>hướng dẫn</strong> <strong><em>dễ dùng</em></strong> trên <strong>trang LITFL</strong> — tôi xin giới thiệu bạn đọc quan tâm trực tiếp đến trang của họ — <strong><a href="https://litfl.com/fontaine-lead/" rel="noopener" target="_blank">https://litfl.com/fontaine-lead/</a></strong> —</li>
+<li>Cuối cùng — Có <strong><em>nhiều</em></strong> <strong><u>hình dạng</u> sóng epsilon có thể gặp!</strong> Bao gồm: <strong>i<span class="c-do">)</span></strong> Sóng “gợn” (wiggle); <strong>ii<span class="c-do">)</span></strong> Các gai nhỏ <em><u>hướng lên</u></em>; <strong>iii<span class="c-do">)</span></strong> Các gai nhỏ <em><u>hướng xuống</u></em>; và/hoặc, <strong>iv<span class="c-do">)</span></strong> Các sóng điện thế trơn ở cuối QRS (<em>làm QRS ở chuyển đạo V1 kéo dài, vượt thời gian QRS ở chuyển đạo V3 ≥25 msec.</em>).</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="chung-ta-thay-rat-nhieu-song-epsilon-trong-ca-hom-nay">Chúng ta thấy RẤT NHIỀU sóng Epsilon trong ca hôm nay!</h3>
+<p>Hãy quay lại một chút với Hình 1 ở trên — trong đó điện tâm đồ #2 <strong>(</strong> = <em>bản ghi sau sốc điện chuyển nhịp</em><strong>)</strong> là ví dụ thuyết phục nhất về ARVC mà tôi từng thấy.</p>
+<ul><li>Có <strong>sóng T đảo ngược ở các chuyển đạo <em>phía trước</em> (</strong><em>ở đây là các chuyển đạo V1 đến V4</em><strong>)</strong> mặc dù không có hình ảnh RBBB rõ ràng. <strong>ĐIỂM THEN CHỐT (PEARL):</strong> Bệnh nhân của bạn <em><u>ít có khả năng</u></em> bị ARVC nếu bạn không thấy sóng T đảo ngược ở các chuyển đạo phía trước!</li>
+<li>Dù có nhiễu — vẫn có phân mảnh QRS.</li>
+<li>Tôi nghĩ <strong>sóng</strong> <strong><em><u>epsilon</u></em></strong> ở <strong>chuyển đạo V3</strong> là dễ nhận ra nhất <strong>(</strong><em>mũi tên XANH ở chuyển đạo V3 của điện tâm đồ #2</em><strong>)</strong>. Để làm rõ thời điểm của các dao động thấy ở các chuyển đạo khác — tôi đã vẽ một đường thẳng đứng <em>XANH ĐẬM</em> đi qua dao động dương của sóng epsilon dễ nhận ra nhất này ở chuyển đạo V3. Đường này cho chúng ta biết cần tìm sóng epsilon ở đâu trên dải nhịp chuyển đạo II dài <em>ghi đồng thời</em>.</li>
+<li>Sóng epsilon trũng xuống thành một dao động âm sau khi QRS kéo dài nhẹ ở các chuyển đạo V1, V2.</li>
+<li>Các đường thẳng đứng <em>XANH NHẠT</em> mà tôi kéo lên từ dải nhịp chuyển đạo II dài xác định những gì có vẻ là các dao động dương nhỏ hơn của sóng epsilon ngay sau QRS ở nhiều chuyển đạo khác!</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<hr>
+<h3 id="phan-bo-sung">PHẦN BỔ SUNG:</h3>
+<ul><li>Trong <strong><u>Hình 3</u></strong> — tôi tóm tắt các đặc điểm chính của <strong>VT</strong> <strong><em>vô căn</em></strong>.</li>
+<li>Để xem lại một ca <strong>RVOT VT</strong> — Xin xem <em>Bình luận của tôi</em> ở cuối trang trong <strong>bài đăng <a href="https://drsmithsecgblog.com/2022/02/a-40-something-without-past-history.html" rel="noopener" target="_blank">ngày 14 tháng Hai năm 2022</a></strong> trên Dr. Smith’s ECG Blog.</li>
+<li><em>Xin xem Bình luận của tôi</em> trong <strong>bài đăng <a href="https://drsmithsecgblog.com/2022/05/a-30-something-with-palpitations-and.html" rel="noopener" target="_blank">ngày 14 tháng Năm năm 2022</a></strong> về một <strong>WCT</strong> <strong><em>đều</em></strong> hóa ra là <strong>AVRT</strong> <strong><em>ngược chiều</em></strong>.</li></ul>
+<figure><a class="o-anh" href="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-320Idiopathic20VT206-2.21-2023-USE.jpg"><img src="2023-06-03-a-young-lady-with-wide-complex_anh/2023_06_Figure-320Idiopathic20VT206-2.21-2023-USE.jpg" alt="" width="1600" height="1266" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = = </span></p>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = =</span></p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
