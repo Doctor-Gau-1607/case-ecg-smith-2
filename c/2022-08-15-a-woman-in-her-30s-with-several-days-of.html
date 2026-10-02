@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>15/08/2022 — Một phụ nữ độ tuổi 30 đau ngực nhiều ngày và một đợt rối loạn ý thức</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1446 · DR. SMITH’S ECG BLOG</div>
+   <h1>15/08/2022 — Một phụ nữ độ tuổi 30 đau ngực nhiều ngày và một đợt rối loạn ý thức</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/a-woman-in-her-30s-with-several-days-of/" target="_blank" rel="noopener">"A woman in her 30s with several days of chest pain and an episode of altered mental status."</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 13 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Tác giả: Pendell Meyers, được duyệt bởi Smith, Grauer, McLaren</p>
+<p>Một phụ nữ đầu tuổi 30 có tiền sử đái tháo đường bị đau ngực khởi phát từ từ, không lan, kéo dài 2-3 ngày, kèm buồn nôn, mệt mỏi và khó thở. Sau đó cô có một đợt “thay đổi ý thức đột ngột, trở nên ngủ gà hơn và đáp ứng kém hơn” tại nhà, ngay trước mặt gia đình. Gia đình gọi đội cấp cứu ngoài viện (EMS); họ thấy bệnh nhân tỉnh và tiếp xúc tốt, than đau ngực nặng hơn so với vài ngày trước.</p>
+<p>Trên đường đến khoa cấp cứu (ED), họ ghi điện tâm đồ này và truyền đi, hỏi liệu có nên kích hoạt phòng thông tim (cath lab) hay không:</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_ems.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_ems.jpg" alt="" width="1600" height="601" loading="lazy" decoding="async"></a><figcaption>Bạn nghĩ sao?</figcaption></figure>
+<p>Nhịp xoang, tần số ngay dưới 100 lần/phút. QRS có điện thế lớn hướng sang trái, phù hợp với LVH hơn là chỉ điện thế cao ở người trẻ khỏe mạnh. Có ST chênh lên (STE) lớn ở V1-V3, cũng như ở aVL. Có ST chênh xuống (STD) ở V5-6, II, III và aVF. Sóng T ở V1-V4 có thể là tối cấp (hyperacute), còn chưa chắc, nhưng QRS cũng rất cao và ấn tượng. Chúng tôi có rất ít ca LVH với điện thế lớn đồng thời có sóng T tối cấp ở thành trước, nhưng điều đáng lo là đây có thể là một trong số đó. Một điện tâm đồ nền sẽ giúp ích rất nhiều (có ở bên dưới).</p>
+<p>Công thức phân biệt OMI LAD kín đáo với ST chênh lên biến thể bình thường (subtle LAD OMI vs. normal variant STE formula) không áp dụng được do có STD soi gương ở thành dưới và STD ở thành bên, và vì công thức này không được huấn luyện trên bệnh nhân LVH.</p>
+<p>Nếu bạn áp dụng nhầm công thức, kết quả sẽ trấn an một cách sai lầm do điện thế QRS lớn trong ca này:</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_formula.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_formula.jpg" alt="" width="680" height="357" loading="lazy" decoding="async"></a></figure>
+<p>Có sẵn một điện tâm đồ nền trước đó (dù tôi nghi rằng nó không có trong tay khi EMS hỏi để ra quyết định trước viện dựa trên điện tâm đồ ở trên):</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_baseline20420years20ago.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_baseline20420years20ago.jpg" alt="" width="1600" height="807" loading="lazy" decoding="async"></a><figcaption>Điện tâm đồ nền (giả định là nền, không có thông tin lâm sàng) từ năm ngoái.
+
+Có điện tâm đồ nền (chỉ LVH kèm một ít ST chênh lên biến thể bình thường) thì rõ ràng dễ thấy điện tâm đồ ban đầu ở trên là OMI LAD.
+Đây là điện tâm đồ của cô ngay khi đến khoa cấp cứu:</figcaption></figure>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_ed120pre20cath.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_ed120pre20cath.jpg" alt="" width="1600" height="792" loading="lazy" decoding="async"></a><figcaption>OMI STEMI dương tính (STEMI(+) OMI) rõ ràng.</figcaption></figure>
+<p>Theo báo cáo, siêu âm tim tại khoa cấp cứu cho thấy rối loạn vận động thành trước và EF giảm nặng.</p>
+<p>“Do bệnh nhân thay đổi tình trạng ý thức, đã chỉ định chụp CT mạch máu (CTA) ngực để loại trừ bóc tách.”</p>
+<p><em>Ghi chú của Meyers: Tôi nghĩ chụp CT mạch máu để tìm bóc tách là không cần thiết trong ca này, cũng như trong hầu hết mọi ca OMI. Như Jesse McLaren đã chỉ ra cho tôi, STEMI hoặc OMI thứ phát do bóc tách rất hiếm (<a href="https://pubmed.ncbi.nlm.nih.gov/28511806/" rel="noopener" target="_blank">https://pubmed.ncbi.nlm.nih.gov/28511806/</a>), vì vậy đi tìm nó khi không có lý do thuyết phục (ví dụ dấu hiệu thần kinh khu trú hoặc mất mạch) sẽ chỉ làm chậm tái tưới máu (<a href="https://pubmed.ncbi.nlm.nih.gov/22534052/" rel="noopener" target="_blank">https://pubmed.ncbi.nlm.nih.gov/22534052/</a>).</em></p>
+<p>“Khi đang ở máy chụp CT, bệnh nhân mất mạch và dường như ngừng tim do VT đa dạng, sau đó tái lập tuần hoàn tự nhiên (ROSC) ngay sau một lần khử rung.”</p>
+<p>Troponin I độ nhạy cao ban đầu trả về 34 ng/L.</p>
+<p>CT không thấy bóc tách.</p>
+<p>Bệnh nhân được đưa đi thông tim, phát hiện tắc hoàn toàn do huyết khối ở LAD đoạn gần (xem hình bên dưới).</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_cath201.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_cath201.jpg" alt="" width="1295" height="997" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_cath2.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_cath2.jpg" alt="" width="1292" height="1032" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc1.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc1.jpg" alt="" width="1292" height="870" loading="lazy" decoding="async"></a></figure>
+<p>Điện tâm đồ vài giờ sau PCI:</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc2.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc2.jpg" alt="" width="1600" height="778" loading="lazy" decoding="async"></a></figure>
+<p>Điện tâm đồ ngày hôm sau:</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc3.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_pc3.jpg" alt="" width="1600" height="780" loading="lazy" decoding="async"></a></figure>
+<p>Troponin đạt đỉnh 23,591 ng/L.</p>
+<p>MRI tim thực hiện 5 ngày sau đó:</p>
+<p>EF 35%. Giảm động nặng toàn bộ vách liên thất, thành trước và các phân đoạn xa/mỏm. Không có huyết khối thất trái.</p>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<p>LVH có thể khiến việc diễn giải OMI khó khăn hơn. Hiếm khi thấy điện thế LVH cao ở cùng các chuyển đạo có OMI. Nhưng ca này là một ví dụ tuyệt vời.</p>
+<p>Troponin đầu tiên ở mức tối thiểu khi lợi ích của tái tưới máu là tối đa.</p>
+<p>So sánh với điện tâm đồ nền và các điện tâm đồ liên tiếp có thể biến một ca khó diễn giải thành dễ.</p>
+<p>Ngất đột ngột hoặc “co giật” ở bệnh nhân nặng nên được coi là ngừng tim cho đến khi chứng minh được điều ngược lại.</p>
+<p>Người trẻ và phụ nữ vẫn bị OMI, và cũng như các nhóm dân số khác, họ có thể bị nhận diện chậm trễ.</p>
+<p>OMI luôn tiến triển trên điện tâm đồ, nếu bạn có các điện tâm đồ để thấy điều đó.</p>
+<div class="note"><p><strong>Phụ nữ trẻ thực sự vẫn bị tắc mạch vành do huyết khối!!</strong></p></div>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_0-Figure-6-REDLINE-UseinBlogscopy.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_0-Figure-6-REDLINE-UseinBlogscopy.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-15-8-2022">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (15/8/2022):</h2>
+<p><span class="c-do">===================================</span></p>
+<p>Tôi đã xem bản ghi ban đầu trong ca hôm nay ( = <strong><u>điện tâm đồ #1</u></strong>) — chỉ biết rằng bệnh nhân là một phụ nữ ở độ tuổi 30 đang trên đường đến khoa cấp cứu. Tôi cho rằng hẳn cô ấy đang đau ngực — nhưng không biết bệnh sử đáng lo ngại đến mức nào (<em>hay không đáng lo</em>) đối với một biến cố tim mới. Tôi tập trung bình luận vào <strong>bản ghi</strong> <strong><em>ban đầu</em></strong> này — mà để cho rõ, tôi đã in lại bên dưới trong <strong><u>Hình 1</u></strong>. Suy nghĩ của tôi về điện tâm đồ ban đầu này như sau:</p>
+<ul><li>Nhịp là nhịp <strong>xoang</strong>, tần số ~90-95 lần/phút. Các khoảng (<em>PR, QRS, QTc</em>) và trục mặt phẳng trán bình thường (<em>khoảng +20 độ</em>).</li>
+<li><strong>Biên độ QRS</strong> <strong>tăng</strong> <strong><em>rất nhiều</em></strong> — đặc biệt ở các chuyển đạo ngực, nơi các phức bộ “chồng lấn giữa các chuyển đạo” (lead overlap) đáng kể.</li></ul>
+<h3 id="ve-thay-doi-q-r-s-t">Về Thay đổi Q–R–S–T:</h3>
+<ul><li>Có <strong>sóng <u>Q</u></strong> <strong><em>nhỏ</em></strong> và <strong><em>hẹp</em></strong> ở các chuyển đạo bên (<em>I,aVL,V5,V6</em>) — gần như chắc chắn là sóng q vách bình thường.</li>
+<li><strong>Tăng tiến sóng <u>R</u></strong> bình thường (<em>vùng chuyển tiếp xảy ra đúng chỗ, giữa V2 và V3</em>).</li></ul>
+<p>Câu hỏi <em>MẤU CHỐT</em> là liệu <strong>hình dạng sóng <u>S</u>T-<u>T</u></strong> ở <u>điện tâm đồ #1</u> có (<em>hay không</em>) gợi ý một biến cố tim cấp.</p>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-12020ECG-1208-10.32-2022-USE20copy.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-12020ECG-1208-10.32-2022-USE20copy.jpg" alt="" width="1600" height="580" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> Điện tâm đồ ban đầu trong ca hôm nay.</figcaption></figure>
+<h3 id="co-nen-kich-hoat-phong-thong-tim-khong">Có nên kích hoạt phòng thông tim không?</h3>
+<p>Như BS. Meyers đã nhấn mạnh — việc đánh giá điện tâm đồ ban đầu trong ca hôm nay bị phức tạp bởi sự hiện diện của <strong>LVH</strong>. Đơn giản là <em>không</em> thường gặp hình ảnh biên độ QRS tăng rõ rệt đi kèm với sóng T tối cấp ở các chuyển đạo trước.</p>
+<ul><li>BS. Meyers cũng nhấn mạnh rằng đôi khi — <strong><em>tìm được một bản ghi nền của bệnh nhân để so sánh </em></strong><strong><em>có thể</em></strong><strong><em> mang tính chẩn đoán</em></strong>. Bệnh nhân hôm nay là một trường hợp như vậy — vì chỉ cần so sánh nhanh với điện tâm đồ trước đó là <em>KHÔNG</em> còn nghi ngờ gì rằng sóng ST-T nhọn ở các chuyển đạo ngực trong <u>điện tâm đồ #1</u> là một dấu hiệu mới (<em>và do đó là cấp tính</em>). Đáng tiếc, điện tâm đồ nền <em>không</em> phải lúc nào cũng có sẵn vào thời điểm cần cho quyết định phân loại ban đầu về việc có kích hoạt phòng thông tim hay không. <strong><em>Vậy nên xử trí THẾ NÀO?</em></strong></li></ul>
+<p>Tôi xin chỉ ra những điều sau.</p>
+<ul><li><strong><em>Có rất nhiều tiêu chuẩn điện tâm đồ để chẩn đoán LVH</em></strong>. Tôi liệt kê những tiêu chuẩn tôi ưa dùng trong <strong>Hình 2</strong> — và bàn chi tiết cách tiếp cận của tôi đối với chẩn đoán LVH trên điện tâm đồ tại <a href="http://ecg-interpretation.blogspot.com/2013/08/ecg-interpretation-review-73-lvh.html" rel="noopener" target="_blank"><span class="c-do"><strong>ĐƯỜNG LINK NÀY</strong></span></a><strong>.</strong></li>
+<li>Lưu ý việc bổ sung <strong><em>tuổi</em></strong> của bệnh nhân vào các tiêu chuẩn tôi đề xuất trong <u>Hình 2</u>. Lý do đưa tuổi vào — là người trưởng thành trẻ tuổi thường biểu hiện biên độ QRS tăng trên điện tâm đồ mà <em>không</em> có LVH thực sự của buồng tim. Dù <em><u>không</u></em> có một “điểm phân chia tuổi tối đa” rời rạc nào được thống nhất rộng rãi — theo kinh nghiệm qua nhiều thập kỷ, tôi thấy mốc <strong>~35 tuổi</strong> vận dụng tốt trên lâm sàng.</li>
+<li></li>
+<li>Con số <strong>“35”</strong> này giúp dễ nhớ — bởi vì, trong số 50+ tiêu chuẩn LVH trong y văn — <strong>tiêu chuẩn nhạy <u>và</u> đặc hiệu nhất, vượt trội hẳn theo kinh nghiệm của tôi, cũng liên quan đến con số “<u>35</u>” (</strong>tức là, <em>Tổng của S sâu nhất ở V1 hoặc V2</em> <strong>+</strong> <em>R cao nhất ở V5 hoặc V6</em> <strong>≥35 mm</strong> <em>thỏa tiêu chuẩn điện thế cho LVH ở người trưởng thành</em> <strong>≥35 tuổi)</strong>.</li>
+<li></li>
+<li><strong><em>Đánh giá LVH ở trẻ em là vấn đề nan giải</em></strong> — vì khó xác định tiêu chuẩn điện thế chẩn đoán đáng tin cậy cho từng nhóm tuổi (<em>càng phức tạp thêm bởi các vấn đề kỹ thuật trong việc bảo đảm đặt điện cực ngực chính xác ở những bệnh nhân khung người nhỏ này</em>). Vì vậy — tôi thường xuyên tra bảng để đánh giá biên độ tối đa dự kiến cho từng nhóm tuổi cụ thể.</li>
+<li></li>
+<li><strong>Để <em>“đơn giản hóa cuộc sống”</em> khi đánh giá LVH ở người trưởng thành <em>trẻ tuổi</em> (</strong>tức là, <em>bệnh nhân ở cuối tuổi thiếu niên, tuổi 20 và đầu tuổi 30</em><strong>)</strong> — qua nhiều năm tôi nhận thấy <strong><em><u>đảo ngược</u> con số </em>“<u>35</u>”</strong> cho ta một tiêu chuẩn “ước lượng” nhanh để xét xem điện tâm đồ của một người trưởng thành <strong><em>trẻ tuổi</em></strong> <strong>(</strong>tức là, <em>dưới 35 tuổi</em><strong>)</strong> có đủ điện thế <strong><em>để đạt tiêu chuẩn</em></strong> <strong>“LVH” (</strong>tức là, <em>Tổng của S sâu nhất ở V1 hoặc V2</em> <strong>+</strong> <em>R cao nhất ở V5 hoặc V6</em> <strong>≥<u>53</u> mm)</strong> hay không.</li></ul>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-5LVHCriteria-Blog7325285-28.21-20202529-USE.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-5LVHCriteria-Blog7325285-28.21-20202529-USE.jpg" alt="" width="1223" height="1433" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 2:</u></strong> Các tiêu chuẩn tôi ưa dùng để <strong><em>chẩn đoán</em> trên điện tâm đồ </strong>đối với <strong>LVH. (<u>LƯU Ý</u>:</strong> <em>Tôi trích Hình này từ phần Bình luận của tôi ở cuối trang trong</em> <strong>bài ngày <a href="https://drsmithsecgblog.com/2020/06/syncope-and-st-elevation.html" rel="noopener" target="_blank">20 tháng Sáu năm 2020</a></strong> <em>trên Dr. Smith’s ECG Blog</em><strong>)</strong>.</figcaption></figure>
+<h3 id="hinh-1-co-du-dien-the-cho-lvh-khong">Hình 1 có đủ điện thế cho LVH không?</h3>
+<p>Bệnh nhân trong ca hôm nay là một <strong><em>phụ nữ ở độ tuổi 30</em></strong> — do đó nhiều khả năng biểu hiện biên độ QRS tăng mà <em>không</em> nhất thiết do LVH. Trước khó khăn do hiện tượng <em>“chồng lấn biên độ”</em> gây nhầm lẫn ở các chuyển đạo ngực trong <u>Hình 1</u> — tôi làm rõ giới hạn của các sóng lệch QRS bằng cách tô màu các phức bộ trong <strong>Hình 3</strong>.</p>
+<ul><li>Lưu ý rằng ngay cả khi tính đến việc bệnh nhân hôm nay là người trưởng thành <em>trẻ tuổi</em> — ngưỡng tiêu chuẩn <strong>53 mm </strong><em><u>vẫn</u></em> đạt được, gợi ý có <strong>điện thế</strong> <strong><em>thực sự</em></strong> của <strong>LVH</strong> ở bệnh nhân thuộc nhóm tuổi trẻ này.</li>
+<li>
+</li>
+<li><strong><u>Hãy nhớ:</u></strong> Điện tâm đồ là một công cụ <em><u>không hoàn hảo</u></em> để đánh giá LVH. Nếu cần biết kích thước thực của buồng tim — thì <strong>siêu âm tim (</strong><em>vốn cũng cung cấp thông tin về chức năng tim</em><strong>)</strong> vượt trội hơn hẳn điện tâm đồ trong đánh giá lớn các buồng tim. Dù vậy — <em>“khả năng trước khi đọc điện tâm đồ”</em> đối với LVH rõ ràng <em><u>tăng lên</u></em> ở bệnh nhân <em>hôm nay</em> do bị <strong>đái tháo đường</strong> lâu năm.</li></ul>
+<figure><a class="o-anh" href="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-32020ECG-1208-10.33-2022-USE.jpg"><img src="2022-08-15-a-woman-in-her-30s-with-several-days-of_anh/2022_08_Figure-32020ECG-1208-10.33-2022-USE.jpg" alt="" width="1600" height="580" loading="lazy" decoding="async"></a><figcaption><strong>Hình 3:</strong> Tôi đã tô màu phức bộ QRS ở 5 chuyển đạo ngực — để minh họa kích thước thực của phức bộ QRS ở mỗi chuyển đạo này. <strong>Sóng S</strong> <em>sâu nhất</em> ở <strong>chuyển đạo V2 (</strong> = <em>27 mm, tô màu ĐỎ</em><strong>) +</strong> <strong>sóng R</strong> cao nhất ở<strong> chuyển đạo V5 (</strong> = <em>27 mm, tô màu XANH LÁ</em><strong>) <em><u>vượt quá</u></em> 53 mm</strong>. Lưu ý rằng sóng S ở <strong>chuyển đạo V1</strong> cũng sâu bất thường ( = <em>26 mm</em>) — và sóng R ở <strong>chuyển đạo V4</strong> không rõ biên độ, vì bị cắt bởi mép trên của giấy điện tâm đồ (<em>Xem phần chữ</em>).</figcaption></figure>
+<h3 id="nhin-lan-cuoi-dien-tam-do-o-hinh-1">Nhìn lần cuối điện tâm đồ ở Hình 1:</h3>
+<p>Tôi hoàn toàn thừa nhận rằng khi xem điện tâm đồ <em>ban đầu</em> ở <u>Hình 1</u>, tôi <em><u>không</u></em> hề chắc chắn liệu bệnh nhân này có (<em>hay không</em>) đang có một biến cố cấp. Những điểm <em><u><strong>chống lại</strong></u></em> một biến cố cấp là:</p>
+<ul><li>Bệnh nhân có <strong>LVH</strong> trên điện tâm đồ — và như chúng tôi đã đề cập, <em><u>không thường gặp</u></em> sóng T <em>tối cấp</em> ở các chuyển đạo trước đi kèm LVH rõ rệt. Trong số các loại biến thể tái cực lành tính có hiện tượng sóng T nhọn, thường cao đến bất ngờ ở các chuyển đạo trước có sóng S sâu.</li>
+<li>Có <strong>tăng tiến sóng R</strong> <strong><em>rất tốt</em></strong> — với sóng R cực cao ở chuyển đạo V3 (<em>biên độ sóng R thường giảm khi có OMI thành trước</em>).</li>
+<li><strong>QTc</strong> nhiều nhất chỉ kéo dài tối thiểu (<em>trong khi nhồi máu cấp thường gây QTc kéo dài đáng kể</em>).</li></ul>
+<p>Mặt khác — những điểm <strong><em><u>nghiêng</u></em> <u>về</u></strong> một biến cố cấp, <em><u>cho đến khi</u></em> chứng minh được điều ngược lại, là:</p>
+<ul><li>Mặc dù bệnh nhân trong ca hôm nay là người trưởng thành trẻ tuổi — người phụ nữ ở độ tuổi 30 này bị đái tháo đường (<em>có lẽ đã một thời gian</em>) — do đó cô ấy rõ ràng <em><u>có</u></em> <strong>nguy cơ</strong> <strong><em>cao hơn</em></strong> bị <strong>nhồi máu</strong> <strong><em>cơ tim</em></strong> ở độ tuổi sớm hơn.</li>
+<li>Ngay cả khi tính đến LVH — sóng T ở các chuyển đạo ngực trước vẫn cao hơn mức thường gặp. Điều này đặc biệt đúng ở <strong>chuyển đạo V3</strong> — nơi sóng T cao 15 mm gần cao bằng sóng R ở chuyển đạo này. <strong><em>“Hình dạng”</em></strong> của “tăng gánh” thất trái khi thấy ở các chuyển đạo trước thường là hình soi gương ngược lại của dạng ST chênh xuống dốc xuống chậm–dốc lên nhanh hơn, vốn thường thấy ở V5,V6 khi có LVH. Thấy một sóng T cao, nhọn, đáy hẹp do LVH như ở chuyển đạo V3 là điều bất thường.</li>
+<li>Các <strong>chuyển đạo V2</strong> và <strong>V4</strong> <strong><em>lân cận</em></strong> cũng có vẻ cao và nhọn hơn mức thường thấy với LVH hoặc với các biến thể khử cực.</li>
+<li>Cuối cùng, dù đoạn ST-T bình thường có thể âm ở <strong>chuyển đạo III</strong> khi QRS chủ yếu âm — thường <em><u>không</u></em> có điểm J chênh xuống như thấy ở <u>Hình 3</u> (<em>mũi tên ĐỎ ở chuyển đạo III</em>).</li></ul>
+<p><strong><u>ĐIỀU CỐT LÕI:</u></strong> Người phụ nữ trẻ ở độ tuổi 30 này bị đái tháo đường — và đến viện với bệnh sử “đau ngực ngày càng nặng”. Dù từ điện tâm đồ ban đầu tôi không chắc liệu có một quá trình cấp tính đang diễn ra hay không — bệnh sử đáng lo ngại <u>và</u> các đặc điểm điện tâm đồ đáng ngờ nêu trên <em><u>kết hợp lại</u></em> rõ ràng đủ để chụp mạch vành chẩn đoán nhằm làm rõ giải phẫu.</p>
+<ul><li><strong><u>Xin nhấn mạnh:</u></strong> Một khi đã có điện tâm đồ trước đó để so sánh — <em><u>không</u></em> còn nghi ngờ gì nữa rằng các dấu hiệu điện tâm đồ nêu trên là cấp tính!</li></ul>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
