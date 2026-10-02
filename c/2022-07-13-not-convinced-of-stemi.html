@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>13/07/2022 — Xem điều gì xảy ra khi bác sĩ hội chẩn “chưa bị thuyết phục rằng đây là STEMI”</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1435 · DR. SMITH’S ECG BLOG</div>
+   <h1>13/07/2022 — Xem điều gì xảy ra khi bác sĩ hội chẩn “chưa bị thuyết phục rằng đây là STEMI”</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/not-convinced-of-stemi/" target="_blank" rel="noopener">"See what happens when the consultant is “Not convinced of STEMI”"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 7 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Ca do Arjun V gửi, Pendell Meyers viết, Smith biên tập</p>
+<p>Một người đàn ông ở đầu độ tuổi 40, có tiền sử tăng huyết áp (HTN) và béo phì, bị ngừng tim đột ngột ngoài bệnh viện. Đội cấp cứu ngoài viện (EMS) đến nơi và thấy bệnh nhân đang rung thất (VF). Bệnh nhân được khử rung thành công, nhưng có thêm vài cơn ngừng tim do VF trên đường đến khoa cấp cứu.</p>
+<p>Dưới đây là một vài ví dụ về nhịp tim trước viện của bệnh nhân:</p>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_ems20cropped.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_ems20cropped.jpg" alt="" width="1600" height="1033" loading="lazy" decoding="async"></a></figure>
+<p>Tại khoa cấp cứu (ED), đạt được tái lập tuần hoàn tự nhiên (ROSC) bền vững. Bệnh nhân được đặt nội khí quản, chỉ khám được rất ít về thần kinh.</p>
+<p>Bệnh nhân được ghi vài điện tâm đồ tại ED ngay sau ROSC:</p>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_actual20post20rosc201.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_actual20post20rosc201.jpg" alt="" width="1600" height="650" loading="lazy" decoding="async"></a></figure>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_post20rosc201.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_post20rosc201.jpg" alt="" width="1600" height="629" loading="lazy" decoding="async"></a></figure>
+<p>Các điện tâm đồ cho thấy nhiều khả năng là <strong>AFib với hình thái RBBB</strong>.  Có <strong>trục lệch phải rất rõ</strong>, nhiều khả năng biểu hiện <strong>blốc phân nhánh trái sau (left posterior fascicular block)</strong>.  <strong>RBBB + LPFB</strong> là một dấu hiệu đáng ngại trong ngừng tim, có lẽ không tệ bằng blốc phân nhánh trước, nhưng rất nguy hiểm, và là một dấu hiệu mạnh của OMI do LAD.</p>
+<p>Có <strong>STE đồng hướng ở V2-V4</strong>, sau đó là <strong>STE ngược hướng quá mức ở V5 và V6 </strong>(RBBB đơn thuần KHÔNG hề có STE ở V5, V6, mặc dù có sóng S rộng bình thường).</p>
+<p>Có STE và sóng T tối cấp ở I và aVL, kèm STD soi gương (reciprocal) ở các chuyển đạo dưới.</p>
+<p><strong>Các điện tâm đồ này có giá trị chẩn đoán OMI trước bên (tắc LAD đoạn gần)</strong>, và RBBB nên được coi là một dấu hiệu mới và đáng sợ, cũng chỉ hướng đến OMI do LAD.</p>
+<p>Bác sĩ tim mạch “chưa bị thuyết phục rằng đây là STEMI”, vì vậy đã có khoảng một giờ chậm trễ tính từ các điện tâm đồ có giá trị chẩn đoán này cho đến khi thông tim.</p>
+<p>Thông tim cho thấy tắc LAD cấp, hoàn toàn:</p>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_cath.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_cath.jpg" alt="" width="1600" height="1489" loading="lazy" decoding="async"></a></figure>
+<p>Đáng tiếc là bệnh nhân đã tử vong trên bàn phòng thông tim (cath lab).</p>
+<p>Chúng ta đã biết rằng tính nhất quán giữa những người đọc khi đo ST chênh lên ở bệnh nhân đau ngực là rất kém:</p>
+<p>McCabe và cs. Physician accuracy in interpreting potential ST-segment elevation myocardial<br>infarction electrocardiograms (Độ chính xác của bác sĩ khi đọc các điện tâm đồ nghi nhồi máu cơ tim ST chênh lên). Journal of the American Heart Association 2013;2:e000268.</p>
+<p>Carley và cs. What’s the point of ST elevation? (ST chênh lên thì có ý nghĩa gì?) Emerg Med J. 2002;19:126-128.</p>
+<p>Tandberg và cs. Observer variation in measured ST-segment elevation (Sự khác biệt giữa những người quan sát khi đo ST chênh lên). Ann Emerg Med. 1999 Oct;34(4 Pt 1);448-52.</p>
+<p>Đối với ngừng tim</p>
+<p>Điện tâm đồ sau ngừng tim thường còn khó đọc hơn nữa, và nghiên cứu này (Smith là một trong các tác giả và người đọc điện tâm đồ) cho thấy độ tin cậy giữa những người đọc chỉ ở mức khiêm tốn, ngay cả giữa các chuyên gia điện tâm đồ giàu kinh nghiệm:</p>
+<h2 id="interobserver-variability-among-experienced-electrocardiogram-readers-to-diagnose-acute-thrombotic-coronary-occlusion-in-patients-with-out-of-hospital-cardiac-arrest-impact-of-metabolic-milieu-and-angiographic-culprit-do-bien-thien-giua-nhung-nguoi-doc-dien-tam-do-giau-kinh-nghiem-trong-chan-doan-tac-mach-vanh-cap-do-huyet-khoi-o-benh-nhan-ngung-tim-ngoai-benh-vien-anh-huong-cua-moi-truong-chuyen-hoa-va-ton-thuong-thu-pham-tren-chup-mach">Interobserver variability among experienced electrocardiogram readers to diagnose acute thrombotic coronary occlusion in patients with out of hospital cardiac arrest: Impact of metabolic milieu and angiographic culprit (Độ biến thiên giữa những người đọc điện tâm đồ giàu kinh nghiệm trong chẩn đoán tắc mạch vành cấp do huyết khối ở bệnh nhân ngừng tim ngoài bệnh viện: Ảnh hưởng của môi trường chuyển hóa và tổn thương thủ phạm trên chụp mạch)</h2>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_0-Figure-6-REDLINE-UseinBlogscopy2-1.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_0-Figure-6-REDLINE-UseinBlogscopy2-1.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-13-7-2022">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (13/7/2022):</h2>
+<p><span class="c-do">===================================</span></p>
+<p>Một ca bệnh đáng tiếc: bệnh nhân này được hồi sức sau <strong>OHCA (</strong><em>ngừng tim ngoài bệnh viện – <u>O</u>ut-of-<u>H</u>ospital <u>C</u>ardiac <u>A</u>rrest</em><strong>)</strong> — nhưng đã tử vong trong lúc thông tim. <strong>Rung thất (VFib)</strong> đã được đội EMS ghi nhận. Cần nhiều lần sốc điện — nhưng cuối cùng đạt được một nhịp <em>trên thất</em>, với <strong>ROSC (</strong><em>tái lập tuần hoàn tự nhiên – <u>R</u>eturn <u>O</u>f <u>S</u>pontaneous <u>C</u>irculation</em><strong>)</strong> <strong><em>bền vững</em></strong> tại ED. Như Tiến sĩ Meyers đã nêu — đã có sự <em>chậm trễ</em> đáng kể cho đến khi thông tim được thực hiện.</p>
+<ul><li>Tôi tập trung bình luận vào hai bản ghi 12 chuyển đạo được ghi tại ED trước khi quyết định tiến hành thông tim. Để rõ ràng — tôi đã đặt lại các bản ghi này bên dưới trong <u><strong>Hình 1</strong></u> và <strong><u>Hình 2</u></strong>.</li></ul>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_Figure-12020ECG-2207-6.34-2022-USE20.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_Figure-12020ECG-2207-6.34-2022-USE20.jpg" alt="" width="1600" height="789" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1</u></strong>: Điện tâm đồ 12 chuyển đạo <em>ban đầu</em> ghi tại ED sau ROSC. Tôi đã thêm các đường thẳng đứng màu <em>ĐỎ</em> đánh dấu điểm kết thúc QRS ở các chuyển đạo ngực. <strong>(</strong><em>Để dễ quan sát hơn — tôi đã số hóa điện tâm đồ gốc bằng</em> <strong><a href="https://www.powerfulmedical.com/" rel="noopener" target="_blank">PMcardio</a>)</strong>.</figcaption></figure>
+<h3 id="suy-nghi-cua-toi-ve-dien-tam-do-12-chuyen-dao-ban-dau">SUY NGHĨ CỦA TÔI về điện tâm đồ 12 chuyển đạo ban đầu:</h3>
+<p>Nhịp ở dải chuyển đạo II dài của <strong><u>điện tâm đồ #2</u></strong> <em>không đều</em> hoàn toàn và <em><u>không có</u></em> sóng P. Đây là <strong><u>AFib</u></strong> với <strong>đáp ứng thất <em>được kiểm soát</em></strong>.</p>
+<ul><li>Tôi thấy bản ghi này khó đọc — vì phần cuối của phức bộ QRS <em>hòa lẫn</em> vào đoạn ST ở nhiều chuyển đạo. Dù vậy — <strong>QRS</strong> <strong><em>rõ ràng</em></strong> là <strong>rộng</strong>. Hình thái QRS phù hợp với <strong><u>RBBB</u> (</strong><em>blốc nhánh phải – <u>R</u>ight <u>B</u>undle <u>B</u>ranch <u>B</u>lock</em>) vì: <strong>i</strong><strong><span class="c-do">)</span></strong> QRS chủ yếu dương ở <strong>chuyển đạo V1</strong>; <u>và</u>, <strong>ii<span class="c-do">)</span></strong> Có sóng S tận rộng ở cả <strong>chuyển đạo I</strong> và <strong>V6</strong>.</li>
+<li></li>
+<li>Có <strong><em>các sóng Q lớn</em></strong> và <strong>rộng</strong> ở <strong>các chuyển đạo V1</strong>, <strong>V2</strong>, <strong>V3</strong> — và ở ít nhất một trong 3 phức bộ QRS ở <strong>chuyển đạo V4 (</strong><em>Dường như có một sóng r ban đầu rất nhỏ ở phức bộ thứ 2 và thứ 3 trong chuyển đạo này</em><strong>)</strong>. Khi có RBBB — đây là các <strong>sóng Q</strong> <strong><em>nhồi máu</em></strong>.</li>
+<li></li>
+<li><em>Có một <strong>trục QRS mặt phẳng trán bất thường!</strong></em><strong> </strong>Đó là vì phức bộ QRS ở chuyển đạo I chủ yếu âm <em>(nếu không nói là âm hoàn toàn</em>). Hình thái QRS ở các chuyển đạo chi <em><u>không</u></em> phù hợp với LAHB lẫn LPHB. QRS ở chuyển đạo aVL cũng chủ yếu âm (<em>nếu không nói là âm hoàn toàn</em>). Tôi nghi ngờ việc mất các lực dương ở các chuyển đạo <em>bên cao </em>này là hậu quả của <strong>tổn thương <em>cơ tim</em> lan rộng (</strong><em>có hoặc không kèm suy giảm dẫn truyền ở một hoặc cả hai phân nhánh</em><strong>)</strong>.</li>
+<li></li>
+<li>Có <strong>điện thế <em><u>thấp</u></em> lan tỏa</strong> trong <u>điện tâm đồ #2</u> <strong>(</strong>tức là <em>Không có chuyển đạo chi nào vượt quá 5 mm — và không có chuyển đạo ngực nào vượt quá 10 mm</em><strong>)</strong>. Như tôi đã nhấn mạnh trước đây — trong một số bối cảnh lâm sàng, <strong>điện thế</strong> <strong><em>thấp</em></strong> có thể là dấu hiệu của <strong><em>“choáng”</em></strong> <strong>cơ tim</strong> (myocardial stunning), có thể do nhồi máu lan rộng, và cũng như trong ca hôm nay — do ngừng tim <strong>(</strong><em>Xem Bình luận của tôi ở cuối trang trong các</em> <strong>bài ngày <a href="https://drsmithsecgblog.com/2020/11/extreme-shock-and-cardiac-arrest-in.html" rel="noopener" target="_blank">12 tháng Mười Một năm 2020</a> </strong><em>và</em><strong> <a href="https://drsmithsecgblog.com/2020/01/ventricular-fibrillation-rosc-after.html" rel="noopener" target="_blank">24 tháng Một năm 2020</a></strong> <em>trên Blog của Tiến sĩ Smith</em><strong>)</strong>. </li></ul>
+<h3 id="song-osborn-osborn-waves">Sóng Osborn (Osborn Waves):</h3>
+<p>Tôi tin rằng có sóng Osborn trong <u>điện tâm đồ #2</u>. Sóng Osborn được mô tả là một sóng lệch có dạng vòm hoặc bướu, xuất hiện tại điểm mà phần cuối phức bộ QRS nối với phần đầu đoạn ST. Đây là <strong>điểm J (</strong>tức là <em>điểm nối – <strong><u>J</u></strong>oins – phần cuối QR<strong><u>S</u></strong> với phần đầu đoạn <strong><u>S</u></strong>T</em><strong>)</strong> — vì vậy sóng Osborn là các “sóng J” <em>bị phóng đại</em> <u>hay</u> sóng điểm J. Chúng còn được gọi là dấu hiệu <em>“bướu lạc đà”</em> (camel-hump).</p>
+<ul><li>Được mô tả lần đầu năm 1953 (<em>bởi Tiến sĩ John Osborn</em>) — các <strong>sóng</strong> <strong><em>Osborn</em></strong> này thường gặp nhất khi có <strong><u>hạ thân nhiệt</u> (</strong><em>thường không thấy cho đến khi nhiệt độ trung tâm dưới 90°F</em><strong>)</strong> mức độ đáng kể.</li>
+<li>Điều quan trọng là cần nhận ra rằng các tình trạng <em><u>khác</u></em> cũng có thể đi kèm sóng lệch nổi bật ở điểm J này. <strong>Sóng</strong> <strong><em>Osborn</em></strong> đã được báo cáo trong tăng calci máu, tổn thương não, xuất huyết dưới nhện, hội chứng Brugada, <strong>ngừng</strong> <strong><em>tim</em></strong> do <strong>VFib</strong> — <u>và</u> — <strong>thiếu máu cục bộ <em>cấp</em> nặng</strong> dẫn đến <strong>nhồi máu cơ tim <em>cấp</em> (</strong><em>Xem Bình luận của tôi trong</em> <strong>bài ngày <a href="https://drsmithsecgblog.com/2019/11/persistent-ventricular-fibrillation-ed.html" rel="noopener" target="_blank">22 tháng Mười Một năm 2019</a></strong> <em>trên Blog của Tiến sĩ Smith</em><strong>)</strong>.</li>
+<li>Rituparna và cs. (<strong><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1989774/" rel="noopener" target="_blank">Pacing Clin Electrophysiology 30[6] 817-819, 2007</a></strong>) — cũng như Chauhan và Brahma (<strong><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4705575/" rel="noopener" target="_blank">Int. J. Crit. Illn. Inj. Sci 5[4] 268-270, 2015</a></strong>) — đều nhấn mạnh một <strong><em>mối liên quan</em></strong> nhiều khả năng có giữa sự xuất hiện cấp tính của <strong>sóng J</strong> <strong><em>do thiếu máu cục bộ</em></strong> — và <strong><em>nguy cơ cao </em></strong>xuất hiện <strong>rối loạn nhịp <em>thất</em> ác tính</strong>.</li></ul>
+<p>Trong <u>Hình 1</u> — tôi đã kẻ một đường thời gian thẳng đứng màu <em>ĐỎ</em>, dựa vào vị trí rõ ràng là <em><u>điểm kết thúc</u></em> của phức bộ QRS ở <strong>chuyển đạo V1</strong>. Tôi đã kéo dài lên trên và xuống dưới một đường thời gian thẳng đứng màu <em>ĐỎ</em> khác, dựa vào vị trí rõ ràng là <em><u>điểm kết thúc</u></em> của phức bộ QRS ở <strong>các chuyển đạo V5</strong> và <strong>V6</strong>.</p>
+<ul><li>Các mũi tên <em>ĐỎ</em> ở <strong>các chuyển đạo V2</strong>, <strong>V3</strong> và <strong>V4</strong> làm nổi bật chỗ khía rõ tại điểm nối (<strong><u>J</u></strong>unction) giữa phần cuối phức bộ QRS — và phần đầu đoạn ST (<em>bắt đầu ngay bên phải các đường ĐỎ thẳng đứng</em>) = <strong>các điểm <u>J</u> (</strong><em>hoặc trong ca hôm nay, theo tôi là các </em><strong><u>sóng J</u> <em>do thiếu máu cục bộ</em> </strong><em>ở bệnh nhân ngừng tim do nhồi máu cấp này</em><strong>)</strong> <em>nổi rõ</em>.</li></ul>
+<h3 id="tiep-tuc-danh-gia-song-st-t-trong-dien-tam-do-2">Tiếp tục đánh giá sóng ST-T trong điện tâm đồ #2:</h3>
+<p>Như tôi đã nêu — tôi thấy việc đánh giá <u>điện tâm đồ #2</u> đặc biệt khó, vì ở nhiều chuyển đạo không phân biệt được rõ giữa phần cuối QRS và sóng ST-T.</p>
+<ul><li>Bệnh nhân trong ca hôm nay đến viện vì OHCA, với các cơn VFib tái phát cần sốc điện cho đến khi cuối cùng ổn định được tại ED. Ngoài nhịp lúc nhập viện là <strong>AFib</strong> — điện tâm đồ 12 chuyển đạo <em>ban đầu</em> cho thấy <strong>RBBB</strong> và <strong>sóng Q <em>nhồi máu</em> lớn</strong> <em>không chỉ</em> ở các chuyển đạo V1 đến V4 — mà có lẽ còn ở các chuyển đạo bên cao. Ít nhất — các <strong>sóng ST-T</strong> tròn (<em>không rõ hình dạng</em>) ở <strong>các chuyển đạo I</strong> và <strong>aVL</strong> trông <strong><u>tối cấp</u> (</strong><em>nếu không muốn nói là có ST chênh lên rõ rệt, ít nhất ở chuyển đạo aVL</em><strong>)</strong>.</li>
+<li></li>
+<li><strong>ST chênh xuống</strong> <strong><em>soi gương</em></strong> thấy ở <strong>các chuyển đạo</strong> <strong><em>dưới</em> (</strong><em>đặc biệt ở các chuyển đạo III và aVF</em><strong>)</strong>.</li>
+<li>Sóng ST-T chênh xuống ở <strong>chuyển đạo V1</strong> <u>là</u> điều được dự đoán, do có RBBB. Nhưng việc <em>không có</em> sóng ST-T chênh xuống rõ ở <strong>các chuyển đạo V2</strong> và <strong>V3</strong> là <em><u>không</u></em> bình thường — vì khi có RBBB, thường cũng thấy một mức ST-T chênh xuống nào đó ở các chuyển đạo trước này.</li>
+<li>Dù tinh tế — sóng ST-T có dạng vòm (coving), và trông ít nhất là hơi chênh lên ở các chuyển đạo ngực bên <strong>V4</strong>,<strong>V5</strong>,<strong>V6</strong>.</li>
+<li></li>
+<li><strong><u>NHẬN ĐỊNH CỦA TÔI:</u></strong> Đã có một vùng nhồi máu lan rộng, nhiều khả năng là hậu quả của <strong>OMI do LAD</strong> <strong><em>đoạn gần</em></strong> cấp — gây ra ngừng tim.</li></ul>
+<h3 id="ca-benh-tiep-dien">CA BỆNH TIẾP DIỄN:</h3>
+<p>Một lúc sau (tức là <em>chưa đến 1 giờ sau điện tâm đồ #2</em>) — một <strong>điện tâm đồ</strong> <strong><em>ghi lại</em></strong> được thực hiện tại ED. Bệnh nhân đã được đặt nội khí quản — và dường như đã ổn định sau ROSC.</p>
+<ul><li>Tôi đã đặt hai bản ghi 12 chuyển đạo này cạnh nhau trong <strong><u>Hình 2</u></strong>. <em>BẠN sẽ đọc như thế nào</em> <strong><u>điện tâm đồ #3</u></strong> — khi đối chiếu với điện tâm đồ 12 chuyển đạo <em>ban đầu</em>?</li></ul>
+<figure><a class="o-anh" href="2022-07-13-not-convinced-of-stemi_anh/2022_07_Figure-22020ECGs-23207-6.21-2022-USE.jpg"><img src="2022-07-13-not-convinced-of-stemi_anh/2022_07_Figure-22020ECGs-23207-6.21-2022-USE.jpg" alt="" width="1600" height="1584" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 2</u></strong>: So sánh 2 điện tâm đồ ghi tại ED sau ROSC. <strong>(</strong><em>Để dễ quan sát hơn — tôi đã số hóa điện tâm đồ gốc bằng</em> <strong><a href="https://www.powerfulmedical.com/" rel="noopener" target="_blank">PMcardio</a>)</strong>.</figcaption></figure>
+<h3 id="suy-nghi-cua-toi-ve-dien-tam-do-ghi-lai">SUY NGHĨ CỦA TÔI về điện tâm đồ ghi lại:</h3>
+<p>Nhịp trong <strong><u>điện tâm đồ #3</u></strong> vẫn là <strong>AFib</strong>. <strong>RBBB</strong> vẫn tồn tại — các sóng Q nhồi máu ở chuyển đạo ngực cũng vậy. Trong số những thay đổi giữa 2 bản ghi trong <u>Hình 2</u> có:</p>
+<ul><li>Đã có <strong>giảm</strong> <strong><em>thêm</em></strong> <strong>biên độ QRS</strong> ở cả chuyển đạo chi lẫn chuyển đạo ngực. Trong bối cảnh lâm sàng này — <em>đây là một dấu hiệu có thể đáng ngại</em>.</li>
+<li>Hình thái QRS ở các chuyển đạo chi trong <u>điện tâm đồ #3</u> giờ trông phù hợp hơn với <strong>LPHB (</strong>tức là <em>chủ yếu âm ở chuyển đạo I — và chủ yếu dương ở các chuyển đạo dưới</em><strong>)</strong>. Điều này gợi ý <strong>blốc</strong> <strong><em>hai phân nhánh</em> (</strong><em>RBBB/LPHB</em><strong>)</strong>.</li>
+<li>Dù hiểu rằng khó đánh giá thay đổi sóng ST-T khi điện thế rất nhỏ và các phức bộ QRST biến đổi đáng kể từ 1 nhát sang nhát kế tiếp — tôi cho rằng rõ ràng có <strong>ST chênh lên</strong> <strong><em>tăng thêm</em></strong> ở <strong>các chuyển đạo</strong> <strong><em>ngực</em> (</strong><em>đặc biệt ở V4,V5,V6</em><strong>)</strong>.</li></ul>
+<h3 id="cau-hoi-cuoi-cung-benh-nhan-ohca-nao-can-thong-tim">CÂU HỎI cuối cùng: Bệnh nhân OHCA nào cần thông tim?</h3>
+<p>Vai trò của thông tim sau <strong>OHCA (</strong><em>ngừng tim ngoài bệnh viện – <u>O</u>ut-of-<u>H</u>ospital <u>C</u>ardiac <u>A</u>rrest</em><strong>)</strong> vẫn còn được tranh luận. <em>Những người sống sót sau OHCA nào nên được thông tim sớm?</em> Trong số các điểm <em>MẤU CHỐT</em> được khuyến nghị bởi <strong>Tuyên bố khoa học AHA năm 2019 (</strong><em>Yannopoulos và cs. </em>— <strong><a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000000630" rel="noopener" target="_blank">Circulation 139:e530-e552, 2019</a>)</strong> có các điểm sau:</p>
+<ul><li>Bệnh nhân <strong>OHCA do các nhịp <em><u>sốc được</u></em> (</strong>tức là <em>VFib, VT vô mạch</em><strong>)</strong> — có xác suất cao mắc CAD (<em>bệnh động mạch vành – <u>C</u>oronary <u>A</u>rtery <u>D</u>isease</em>) là nguyên nhân khởi phát.</li>
+<li>Tỷ lệ hiện mắc CAD ở những bệnh nhân này đạt <strong>~70-85%</strong> — <u>NẾU</u> có <strong>ST chênh lên</strong> trên điện tâm đồ <em>sau hồi sức</em>. Thông tim sớm nhằm tái tưới máu có tác động thuận lợi lên tỷ lệ sống đến khi ra viện.</li>
+<li>Tỷ lệ hiện mắc CAD ở bệnh nhân <strong><em><u>không có</u></em> ST chênh lên</strong> trên điện tâm đồ sau hồi sức — vẫn là <strong>~25-50%</strong>. Do đó — những bệnh nhân này (<em>xét như một nhóm</em>) cũng được lợi từ thông tim sớm.</li>
+<li></li>
+<li><strong><u>Suy nghĩ <em>cuối cùng</em>:</u> </strong>Ở bệnh nhân OHCA này — <em>điện tâm đồ 12 chuyển đạo ban đầu trong ca hôm nay đã ủng hộ thông tim sớm</em>. Chỉ định đó dường như càng được <em>củng cố</em> bởi điện tâm đồ ghi lại trong <u>Hình 2</u>.</li></ul>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
