@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>13/01/2024 — Hạ huyết áp tư thế đứng khởi phát sau thủ thuật xâm lấn?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1648 · DR. SMITH’S ECG BLOG</div>
+   <h1>13/01/2024 — Hạ huyết áp tư thế đứng khởi phát sau thủ thuật xâm lấn?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/orthostatic-hypotension-onset-after/" target="_blank" rel="noopener">"Orthostatic hypotension onset after invasive procedure?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 8 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<p>Tác giả: <a href="https://twitter.com/willyhfrick" rel="noopener" target="_blank">Willy Frick</a></p>
+<p>Một người đàn ông ngoài 70 tuổi, tiền sử suy tim phân suất tống máu giảm (HFrEF) và hội chứng suy nút xoang đã được đặt máy tạo nhịp hai buồng, được nhập viện theo dõi qua đêm sau thủ thuật kẹp van hai lá (mitral valve clip) thực hiện ngoại trú. Biên bản thủ thuật ghi nhận đặt kẹp không biến chứng. Sáng hôm sau, người ta ghi được điện tâm đồ dưới đây.</p>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-179037271.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-179037271.jpg" alt="" width="1281" height="604" loading="lazy" decoding="async"></a></figure>
+<p>Bạn nghĩ gì?</p>
+<p>Bản ghi cho thấy nhịp xoang kèm PVC và bất thường ST&amp;T không đặc hiệu. Nhưng có một điều quan trọng hơn cần nhận ra, đó là các gai tạo nhịp. Chúng không hợp lý. Một số gai nằm giữa hoặc sau sóng P, thậm chí có một gai rơi vào cuối QRS! Dưới đây là dải nhịp V5 được phóng to, với các gai tạo nhịp được đánh số.</p>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-2141090273.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-2141090273.jpg" alt="" width="1600" height="135" loading="lazy" decoding="async"></a></figure>
+<p>Chẳng hạn, so sánh các gai 2, 3, 4 và 5, ta thấy rất rõ ràng chúng đều xuất hiện ở những thời điểm khác nhau trong chu chuyển tim. Gai 2 xuất hiện ở cuối sóng P, gai 3 và 4 xuất hiện gần đỉnh sóng P, còn gai 5 xuất hiện ngay trước khởi đầu QRS. <strong>Đây là bằng chứng không thể nhầm lẫn về rối loạn chức năng máy tạo nhịp. </strong>Khi nói đến rối loạn chức năng, chúng ta thường xếp vào hai nhóm (dù còn những trục trặc khác có thể xảy ra với máy tạo nhịp).</p>
+<p>“Mất nhận cảm” (failure to sense) xảy ra khi máy tạo nhịp không nhận biết đúng hoạt động tự nhiên của tim, dẫn đến thừa gai tạo nhịp. Hãy hình dung máy tạo nhịp được cài tần số tối thiểu là 60. Nếu máy không nhận cảm được nhịp tự nhiên (có thể do dây điện cực bị gãy hoặc di lệch), máy sẽ cố tạo nhịp ở tần số 60 nhịp/phút, điều này có thể gây ra những gai tạo nhịp không cần thiết, làm gián đoạn hoạt động bình thường của tim. Để so sánh, hãy hình dung một bộ cảm biến bị hỏng ở chỗ giao cắt đường sắt, không phát hiện được đoàn tàu đang lao tới, và vì vậy để barie mở, cho phép xe cộ chạy băng qua đường ray, lao vào đoàn tàu đang tới.</p>
+<p>“Mất bắt nhịp” (failure to capture) xảy ra khi máy tạo nhịp phát ra xung nhưng xung đó không thực sự khử cực được cơ tim. Điều này có thể gây ra những khoảng ngưng không có nhịp tự nhiên <em>và</em> cũng không có nhịp tạo nhịp. Ở đây, hãy hình dung bạn đặt đồng hồ báo thức buổi sáng nhưng vặn âm lượng nhỏ hết mức. Chuông báo thức vẫn reo, nhưng bạn vẫn ngủ say không hay biết!</p>
+<h3 id="day-dien-cuc-nhi">Dây điện cực nhĩ</h3>
+<p>Bản ghi này cho thấy rõ mất nhận cảm ở dây điện cực nhĩ. Các gai 2, 3, 4, 5, 7, 8 và 9 đều xuất hiện trong hoặc ngay sau sóng P, điều lẽ ra không bao giờ được xảy ra. Dây điện cực lẽ ra phải phát hiện được sóng P tự nhiên và ức chế tạo nhịp. <em>Có thể </em>có mất bắt nhịp, nhưng không thể chắc chắn vì mọi gai tạo nhịp đều xuất hiện vào lúc tâm nhĩ hoặc đang khử cực, hoặc vẫn còn trơ do lần khử cực trước đó.</p>
+<h3 id="day-dien-cuc-that">Dây điện cực thất</h3>
+<p>Bản ghi này cũng <em>có thể </em>cho thấy mất nhận cảm ở dây điện cực thất. Gai 6 xuất hiện ở cuối QRS. Dây điện cực thất lẽ ra phải nhận cảm được phức bộ QRS tự nhiên và ức chế tạo nhịp, nhưng nó đã không làm vậy, và do đó đã tạo nhịp không thích hợp. (Với những người đam mê điện sinh lý, điều này thực ra có thể là do <a href="https://www.medtronicacademy.com/features/ventricular-safety-pacing-vsp-feature" rel="noopener" target="_blank">tạo nhịp an toàn thất (Ventricular Safety Pacing)</a>, vấn đề nằm ngoài phạm vi bài này.) Gai 10 thực ra cho thấy một phức bộ hỗn hợp giữa nhát tự nhiên và nhát tạo nhịp (thấy rõ nhất ở chuyển đạo V4 và V6), chứng tỏ dây điện cực này vẫn còn khả năng tạo nhịp.</p>
+<p>Phát hiện rối loạn chức năng máy tạo nhịp mới xuất hiện sau một thủ thuật xâm lấn lẽ ra phải dẫn đến việc khảo sát ngay lập tức, nhưng nó đã không được để ý. Kết quả đọc lại (overread) cuối cùng của bác sĩ tim mạch là “Nhịp xoang với thỉnh thoảng có phức bộ tạo nhịp hai buồng AV và thỉnh thoảng có phức bộ ngoại tâm thu thất”, không có bình luận nào về rối loạn chức năng máy tạo nhịp.</p>
+<h2 id="ca-benh-tiep-dien">Ca bệnh tiếp diễn…</h2>
+<p>Bệnh nhân được xuất viện vào buổi sáng hôm sau thủ thuật. Tối hôm đó khi về đến nhà, ông bị ngã bất ngờ lúc bước ra khỏi xe, huyết áp được ghi nhận là 88/53. Bệnh nhân và vợ nghĩ rằng điều này là do việc ngừng midodrine và fludrocortisone trong thời gian nằm viện làm thủ thuật. Ngày hôm sau ông lại bị một lần ngã không rõ nguyên nhân. Ông liên hệ phòng khám tim mạch, nói rằng mình cảm thấy “rất mệt, không còn chút sức lực nào” kể từ khi đặt kẹp.</p>
+<p>Vài ngày sau đó, ông nhập viện vì một lý do không liên quan là nhiễm trùng ổ bụng. Vào ngày nhập viện, ông được chụp CT. Nhiễu cứng hóa chùm tia (beam hardening artifact) làm hạn chế khả năng đánh giá vị trí dây điện cực trên chính phim CT, nhưng ảnh định vị (scout image) được trình bày dưới đây:</p>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-1420989945.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-1420989945.jpg" alt="" width="531" height="461" loading="lazy" decoding="async"></a></figure>
+<p>Bạn nghĩ gì về máy tạo nhịp?</p>
+<p>Hình ảnh này có vẻ cho thấy dây điện cực nhĩ đã di lệch vào tâm thất. Nếu còn nghi ngờ, hãy so sánh với một phim X-quang ngực cũ. Các mũi tên đỏ dưới đây chỉ vị trí dây điện cực nhĩ.</p>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-183091202.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-183091202.jpg" alt="" width="1600" height="648" loading="lazy" decoding="async"></a></figure>
+<p>Rõ ràng dây điện cực nhĩ đã bị bật ra khỏi vị trí. Trên phim X-quang cũ ở bên trái, dây điện cực có vẻ kết thúc bên trong tâm nhĩ. Trên hình mới ở bên phải, dây không còn uốn ngược lên trong tâm nhĩ nữa mà tiếp tục đi xa hơn vào van ba lá hoặc tâm thất. Bác sĩ chẩn đoán hình ảnh không bình luận gì về điều này. Điện tâm đồ ghi lại tại khoa cấp cứu được trình bày dưới đây.</p>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-817004929.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_orthostatic-hypotension-onset-after-817004929.jpg" alt="" width="1600" height="698" loading="lazy" decoding="async"></a></figure>
+<p>Bản ghi này cho thấy nhịp xoang tần số 87. Thỉnh thoảng có gai tạo nhịp, nhưng chúng không gây ra bất kỳ sự khử cực nào. Chúng không thể gây khử cực nhĩ (vì chúng xuất hiện sau sóng P), và cũng không thể gây khử cực thất vì mọi phức bộ QRS đều giống hệt nhau.</p>
+<p>Kết quả đọc lại của bác sĩ tim mạch là “Nhịp tạo nhịp thất theo nhận cảm nhĩ. Có một số chỗ mất nhận cảm sóng P, xem chuyển đạo V1 V2 V3.” Kết quả đọc điện tâm đồ còn ghi “Đề nghị kiểm tra máy tạo nhịp để đánh giá nhận cảm nhĩ.”</p>
+<h2 id="ca-benh-tiep-dien-2">Ca bệnh tiếp diễn…</h2>
+<p>Vài ngày sau khi nhập viện, trong lúc tập vật lý trị liệu, bệnh nhân bị tiền ngất. Ghi chép của kỹ thuật viên vật lý trị liệu mô tả nhịp tim của bệnh nhân trên monitor không đều, “dao động từ cực kỳ nhanh đến khoảng 30” và khi bắt mạch thì “không đều, có khoảng ngưng”. Khoa tim mạch được mời hội chẩn, và ghi chép hội chẩn viết “không có rối loạn nhịp trên theo dõi từ xa (telemetry) hay khi kiểm tra máy tạo nhịp”. Khuyến cáo cuối cùng của khoa tim mạch là tăng liều fludrocortisone và midodrine.</p>
+<p>Vài ngày sau, midodrine và fludrocortisone bị ngừng do tăng huyết áp và bệnh nhân được xuất viện. Một tuần sau khi xuất viện, bệnh nhân lại bị ngã, huyết áp được ghi nhận là 73/62. Bệnh nhân được dặn dùng lại midodrine và fludrocortisone.</p>
+<p>Trong vài tuần tiếp theo, bệnh nhân tiếp tục than choáng váng vài lần mỗi tuần. Ông được tái khám định kỳ sau kẹp van hai lá khoảng 1 tháng sau thủ thuật, và ghi chép lần khám đó cho thấy đã nhận ra dây điện cực nhĩ bị bật khỏi vị trí trên phim CT của lần nằm viện vài tuần trước.</p>
+<p>Máy tạo nhịp của ông được chuyển sang VVI 50. Chế độ này có nghĩa là máy tạo nhịp vô hiệu hóa hoàn toàn dây điện cực nhĩ và chỉ dùng dây điện cực thất. Nếu tần số thất giảm dưới 50, bệnh nhân sẽ được tạo nhịp dự phòng ở thất với tần số 50. Nếu tần số thất tự nhiên vượt quá 50, máy sẽ không tạo nhịp. Sau đó, ông không còn bị choáng váng hay ngã nữa. Cuối cùng, dây điện cực nhĩ đã được chỉnh sửa lại.</p>
+<h2 id="tom-lai">Tóm lại:</h2>
+<p>Bệnh nhân đã trải qua một thủ thuật xâm lấn (kẹp van hai lá) đòi hỏi phải đi qua nhĩ phải và vách liên nhĩ. Có vẻ như trong thủ thuật này, dây điện cực nhĩ của ông đã vô tình bị bật ra khỏi vị trí. Ngày hôm sau, ông có bằng chứng rõ ràng trên điện tâm đồ về rối loạn chức năng máy tạo nhịp nhưng không được nhận ra. <strong>Ông bị nhịp chậm có triệu chứng và các lần ngã trong hơn một tháng</strong>, và đã được một bác sĩ tim mạch khác khám riêng vì tiền ngất, nhưng vấn đề vẫn không được nhận ra mặc dù vẫn liên tục có bằng chứng trên điện tâm đồ về rối loạn chức năng máy tạo nhịp, cùng hình ảnh học chứng minh dây điện cực bị bật khỏi vị trí.</p>
+<p>Vì các cơn có triệu chứng của ông không được ghi lại trên điện tâm đồ nên chúng ta chỉ có thể đoán máy tạo nhịp đã hoạt động thế nào vào những lúc đó. Do ông mang thiết bị hai buồng, tần số thất của ông lẽ ra không giảm dưới giới hạn tần số thấp nhất (thường là 50 hoặc 60). Tuy nhiên, rối loạn chức năng dây điện cực nhĩ có thể đã dẫn đến mất đồng bộ nhĩ-thất (AV dyssynchrony), tình trạng mà ông đặc biệt dung nạp kém do bệnh nền HFrEF. Điều này được củng cố bởi ghi chép của kỹ thuật viên vật lý trị liệu, mô tả mạch bắt được không đều, có khoảng ngưng và nhịp chậm rõ rệt.</p>
+<p>Ông có thể đã bị nhĩ và thất co bóp đồng thời, gây ra sóng A đại bác (cannon A waves), hậu quả là giảm cung lượng tim. Khi chuyển sang chế độ VVI, khả năng nhĩ và thất co bóp đồng thời sẽ thấp hơn nhiều. Triệu chứng của ông bắt đầu vào ngày sau khi dây điện cực nhĩ bị bật khỏi vị trí, và hết khi dây điện cực nhĩ bị vô hiệu hóa.</p>
+<h2 id="nhung-diem-can-hoc">Những điểm cần học:</h2>
+<ul><li>Hãy xem xét các gai tạo nhịp trên điện tâm đồ để kiểm chứng rằng chúng hợp lý. Máy điện tâm đồ đặc biệt kém trong phân tích nhịp phức tạp và rối loạn chức năng máy tạo nhịp.</li></ul>
+<ul><li>Ở bệnh nhân có máy tạo nhịp, phim X-quang ngực chứa <em>rất nhiều</em> thông tin (cấu hình dây điện cực, loại thiết bị là máy tạo nhịp vĩnh viễn (PPM) hay ICD, vị trí và tình trạng bật khỏi vị trí)</li></ul>
+<ul><li>Hạ huyết áp tư thế đứng là nguyên nhân thường gặp của ngất, nhưng không phải là nguyên nhân <em>duy nhất </em>gây ngất, và cần loại trừ đầy đủ các nguyên nhân khác.</li></ul>
+<ul><li>“Mất nhận cảm” có thể dẫn đến tạo nhịp quá mức.</li></ul>
+<ul><li>“Mất bắt nhịp” có thể dẫn đến những khoảng ngưng không thích hợp mà không có tạo nhịp.</li></ul>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_0-Figure-6-REDLINE-UseinBlogs-8.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_0-Figure-6-REDLINE-UseinBlogs-8.jpg" alt="" width="613" height="24" loading="lazy" decoding="async"></a></figure>
+<p><span class="c-do">===================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-13-1-2024">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (13/1/2024):</h2>
+<p><span class="c-do">===================================</span></p>
+<p><em>Đã bao giờ BẠN tự hỏi</em> khi nhìn một điện tâm đồ — <strong><em>“Bệnh nhân này có Máy tạo nhịp không?”</em></strong></p>
+<ul><li>Chúng ta <em><u>không</u></em> phải lúc nào cũng được cung cấp thông tin về việc bệnh nhân có điện tâm đồ mà ta đang xem <em>có</em> máy tạo nhịp hay không. Đôi khi, nhìn vào điện tâm đồ được đưa, ta thấy ngay rằng có gai máy tạo nhịp với nhận cảm và bắt nhịp thích hợp. Nhưng những lúc khác — <em><strong>Đã bao giờ BẠN tự hỏi?</strong></em></li>
+<li>Chúng ta <em><u>không</u></em> phải lúc nào cũng may mắn nhận được một <strong>bản ghi</strong> <strong><em>chất lượng cao</em></strong> <strong>(</strong><em>như trong ca hôm nay</em>). Và điện tâm đồ được đưa cho ta thường <u>không</u> về cơ bản sạch nhiễu (<em>như điện tâm đồ <u>đúng là</u> sạch nhiễu trong ca hôm nay</em><strong>)</strong>.</li>
+<li>Chúng ta thường <u>không</u> có <strong>điện tâm đồ</strong> <strong><em>nền</em></strong> để so sánh.</li>
+<li>Và, <strong>cài đặt <em><u>bộ lọc</u></em> tối ưu </strong>để phát hiện gai máy tạo nhịp thường <u>không</u> được chọn <strong>(</strong><em>và việc ghi chú cài đặt bộ lọc nào đã được dùng thường <u>không</u> có trong ảnh điện tâm đồ được gửi qua internet</em><strong>)</strong>.</li></ul>
+<h3 id="ve-ban-ghi-hom-nay">Về bản ghi hôm nay:</h3>
+<p>Để rõ ràng, ở <u>Hình 1</u> — tôi đã sao lại và đánh dấu <strong>điện tâm đồ <u>ban đầu</u></strong> trong ca hôm nay. Khi lần đầu nhìn thấy bản ghi này — phải thừa nhận là tôi <u>không</u> biết chắc chuyện gì đang xảy ra.</p>
+<ul><li>Việc được cho biết bệnh nhân này <em><u>có</u></em> máy tạo nhịp — đã giúp ích rất nhiều trong việc thuyết phục tôi rằng (<em>đúng như Dr. Frick nhận định</em>) — có <strong>nhiều gai tạo nhịp <em><u>nhĩ</u></em> </strong>xuất hiện ở <em><u>mọi</u></em> thời điểm trong chu chuyển tim, <u>không</u> có liên quan rõ ràng với thời điểm của các phức bộ QRS dẫn truyền từ xoang.</li>
+<li><strong><u>Điểm <em>MẤU CHỐT</em>:</u></strong> Biên độ của nhiều gai tạo nhịp nhĩ này rất nhỏ — và có thể <em>dễ dàng</em> bị bỏ sót nếu việc theo dõi điện tâm đồ chỉ giới hạn ở một dải nhịp <em>một chuyển đạo</em>, ví dụ như của <strong>chuyển đạo V1!</strong> <strong>(</strong><em>Lưu ý từ các mũi tên hai đầu màu VÀNG và ĐỎ xuất hiện đồng thời trong </em><u>Hình 1</u><em> — rằng <u>hoàn toàn không</u> có dấu hiệu nào cho thấy các gai tạo nhịp nhĩ thấy ở chuyển đạo V5 tạo ra một gai ở chuyển đạo V1</em><strong>)</strong>.</li>
+<li>Ngay cả ở <strong>chuyển đạo II (</strong><em>cùng với chuyển đạo V1, thường được xem là các chuyển đạo tốt nhất để quan sát hoạt động nhĩ</em><strong>)</strong> — <em>mũi tên hai đầu màu VÀNG</em> ở chuyển đạo V5, vốn xác định rõ một gai tạo nhịp nhĩ ngay sau QRS của nhát #8 — lại <u>không</u> cho thấy dấu hiệu nào của gai tạo nhịp nhĩ trên dải nhịp chuyển đạo II dài được <em>ghi đồng thời</em>. </li>
+<li>Dải nhịp chuyển đạo II dài trong ca hôm nay <u>có</u> cho thấy dấu hiệu tạo nhịp nhĩ ở những chỗ khác — nhưng chẳng phải biên độ của các gai tạo nhịp nhĩ này trên chuyển đạo II dài rất nhỏ sao? <strong><em>BẠN có thực sự nghĩ</em> mình sẽ nhận ra được những gai tạo nhịp nhĩ <em>nhỏ xíu</em> này NẾU:</strong> <strong>i<span class="c-do">)</span></strong> Bạn <u>không</u> được cho biết bệnh nhân có máy tạo nhịp? — <strong>ii<span class="c-do">)</span> </strong>Bạn <u>không</u> có bản ghi nền? — <u>và</u> — <strong>iii<span class="c-do">)</span> </strong>Điện tâm đồ bạn nhận được là ảnh chụp bằng điện thoại thông minh từ một bệnh nhân có cử động và/hoặc nhiễu đường nền ở một mức độ nhất định?</li></ul>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_Figure-12020ECG-1201-9.22-2024-USE.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_Figure-12020ECG-1201-9.22-2024-USE.jpg" alt="" width="1600" height="852" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 1:</u></strong> Tôi đã đánh dấu <strong>điện tâm đồ</strong> <strong><em><u>ban đầu</u></em></strong> trong ca hôm nay.</figcaption></figure>
+<p>==============================</p>
+<h3 id="con-cai-dat-bo-loc-thi-sao">Còn CÀI ĐẶT BỘ LỌC thì sao?</h3>
+<p>Chúng tôi thỉnh thoảng đề cập đến các khái niệm cơ bản về ảnh hưởng mà <strong>cài đặt</strong> <strong><em><u>bộ lọc</u></em></strong> có thể gây ra trên điện tâm đồ trong một số tình huống lâm sàng nhất định. Tôi đã ôn lại các khái niệm liên quan đến ca hôm nay trong <em>Bình luận của tôi</em> ở cuối trang của <strong>bài đăng <a href="https://drsmithsecgblog.com/2019/03/how-accurate-are-monitor-leads-for-st.html" rel="noopener" target="_blank">ngày 4 tháng Ba năm 2019</a></strong> trên Dr. Smith’s ECG Blog — mà tôi trích dẫn dưới đây:</p>
+<ul><li>Các cài đặt <em>khác nhau </em>thường được dùng khi ghi điện tâm đồ, tùy theo việc chú trọng vào <strong>xác định </strong><strong><em>nhịp</em></strong> <u>hay</u> <strong>chẩn đoán (</strong><em>trong đó chẩn đoán tập trung vào việc đọc các dạng sóng của 12 chuyển đạo</em><strong>)</strong>.</li>
+<li><strong>Mức lọc </strong><strong><em>mạnh hơn </em></strong>thường được dùng ở <strong>c</strong><strong>hế độ </strong><strong><em>t</em></strong><strong><em>heo dõi</em></strong>, với thiết lập tần số thường dùng là <em>trong khoảng</em> <strong>0.5 Hz </strong>đến <strong>40 Hz (</strong><em>Hz = Hertz</em><strong>)</strong>. Cách làm này có ưu điểm là <em>giảm thiểu </em>nhiễu và trôi đường nền vốn có thể ảnh hưởng đến việc đọc nhịp.</li>
+<li></li>
+<li><strong><u>Điểm <em>MẤU CHỐT</em>:</u></strong> Vì <strong>gai</strong> <strong><em>tạo nhịp</em></strong> có xu hướng là <strong>tín hiệu tần số</strong> <strong><em><u>cao</u></em></strong> — chúng thường bị lọc bỏ một cách hiệu quả bởi thiết lập chế độ theo dõi 0.5 đến 40 Hz. Khi dùng thiết lập bộ lọc này — gai tạo nhịp có thể đơn giản là <em><u>không</u></em> thấy được trên điện tâm đồ <strong>(</strong>tức là, <em>trong những trường hợp như vậy, tạo nhịp thất có thể dễ bị chẩn đoán nhầm thành LBBB hoặc AIVR </em>— <strong><a href="https://johnsonfrancis.org/professional/ecg-filter-settings-and-detection-of-pacemaker-spikes/" rel="noopener" target="_blank">Johnson Francis, 2017</a>)</strong>.</li>
+<li></li>
+<li>Trái với chế độ <em>theo dõi </em>— <strong>dải thông </strong><strong><em>rộng hơn </em></strong>(<em>thường từ </em><strong>0.05 Hz </strong><em>đến </em><strong>150 Hz) </strong>được khuyến cáo cho <strong>c</strong><strong>hế độ </strong><strong><em>c</em></strong><strong><em>hẩn đoán</em></strong>, trong đó chú trọng vào việc phân tích đoạn ST với độ chính xác tối ưu.</li></ul>
+<p>Ví dụ — hãy hình dung bạn đang xem một điện tâm đồ 12 chuyển đạo có ghi “40 Hz” là thiết lập tần số ở phía dưới bản ghi. Giá trị <strong>40 Hz</strong> này thể hiện <strong>cài đặt bộ lọc <em>thông </em></strong><em><strong>THẤP</strong></em> (tức là, <em>cho phép các tín hiệu có tần số THẤP HƠN giá trị này đi qua</em><em></em><strong>) </strong>— mà không đề cập đến giới hạn bộ lọc thông CAO. Nếu <strong>cài đặt bộ lọc <em>thông </em></strong><em><strong>CAO</strong></em> (tức là, <em>cho phép các tín hiệu có tần số CAO HƠN giá trị này đi qua</em><strong>) </strong>là mức thường dùng khi theo dõi <strong>(</strong>tức là, <em><strong>0.5</strong> thay vì 0.05 Hz</em><strong>)</strong> — thì thiết lập bộ lọc 0.5 đến 40 Hz này có thể góp phần làm biến dạng sóng ST-T <em>và/hoặc</em> tạo hình ảnh giả ST chênh lên, trong khi thực tế không có. Những thay đổi <em>khác </em>ở các chi tiết tinh tế về hình dạng sóng Q, phức bộ QRS và sóng ST-T cũng có thể phát sinh do dùng dải lọc quá hẹp này.</p>
+<ul><li><strong>T</strong><strong>hiết lập tần số </strong><strong><em>đ</em></strong><strong><em>ược khuyến cáo</em></strong> chung cho việc đọc điện tâm đồ ở người lớn trong <strong>C</strong><strong>hế độ </strong><strong><em>C</em></strong><strong><em>hẩn đoán</em> </strong><strong>Đ</strong><strong>iện tâm đồ </strong><strong>1</strong><strong>2 </strong><strong>C</strong><strong>huyển đạo </strong>là <strong>0</strong><strong>.</strong><strong>05</strong><em> đến </em><strong>150 </strong><strong>H</strong><strong>z</strong>. Có thể dùng giới hạn tần số trên còn cao hơn nữa ở trẻ nhũ nhi hoặc trẻ nhỏ. Nếu nhiễu cơ nặng, có thể cần thỏa hiệp bằng một dải thiết lập <em>hẹp hơn </em>là 0.05 đến 100 Hz (<em>hoặc 0.05 đến 40 Hz</em>) — nhưng nên thử dải <em>được khuyến cáo </em>0.05 đến 150 Hz trước. </li>
+<li><strong><u>Đ</u></strong><strong><u>iểm</u> </strong><strong><em><u>M</u></em></strong><strong><em><u>ẤU CHỐT</u> </em></strong><strong><u>:</u> </strong>Nếu cần thỏa hiệp trong cài đặt bộ lọc, thì ít nhất cũng cần <em>nhận thức được </em>rằng độ trung thực khi phân tích đoạn ST có thể kém tối ưu. <strong><em>Điều này giải thích vì sao <u>không</u> nên dùng các dải nhịp của chuyển đạo theo dõi để phân tích đoạn ST. </em></strong>Ta có thể được cảnh báo về khả năng (<em>hoặc thậm chí nhiều khả năng</em>) có ST chênh lên hoặc chênh xuống dựa trên những thay đổi thấy trên dải nhịp — nhưng khi điều đó quan trọng về mặt lâm sàng — <strong><em>điều này phải <u>luôn luôn</u> được xác nhận trên bản ghi 12 chuyển đạo</em></strong>.</li></ul>
+<p>====================</p>
+<p>Để so sánh <strong>(</strong><em>vẫn từ </em><em>bài đăng</em> <strong><a href="https://drsmithsecgblog.com/2019/03/how-accurate-are-monitor-leads-for-st.html" rel="noopener" target="_blank">ngày 4 tháng Ba năm 2019</a>)</strong> — tôi đã đặt dải theo dõi 2 chuyển đạo của bệnh nhân trong ca đó — cùng với điện tâm đồ 12 chuyển đạo <em>được ghi đồng thời </em>(<strong><u>Hình 2</u></strong>). Đáng tiếc là các thông số theo dõi cụ thể (<em>bao gồm cả </em><em>thiết lập tần số bộ lọc</em>) đã bị cắt khỏi bản ghi 12 chuyển đạo.</p>
+<ul><li>Nhằm mục đích minh họa — tôi đã tự ý thêm vào <strong>dải tần số bộ lọc <em>tối ưu </em></strong>cho <strong>điện tâm đồ 12 chuyển đạo (</strong>tức là, <em>0.05 đến 150 Hz</em><strong>) </strong>— <strong>tốc độ <em>giấy </em>chuẩn </strong>ở Hoa Kỳ <strong>(</strong>tức là, <em>25 mm/giây</em><strong>) </strong>— và <strong>hiệu chuẩn điện thế chuẩn (</strong>tức là, <em>10 mm/mV</em><strong>)</strong>.</li>
+<li>
+</li>
+<li>Hãy lưu ý <strong><em><u>sự thay đổi</u></em> cài đặt bộ lọc</strong> <strong>(</strong><em>có lẽ từ 0.05-40 Hz ở các chuyển đạo theo dõi PHÍA TRÊN trong </em><u>Hình 2</u><em> — sang 0.05-150 Hz ở điện tâm đồ 12 chuyển đạo ghi đồng thời</em><strong>) — đã làm thay đổi đáng kể mức ST chênh lên ở các chuyển đạo trước ngực! </strong>Cách <em><u>duy nhất</u></em> để xác định ST chênh lên hoặc chênh xuống trên một chuyển đạo theo dõi có thật hay không — là <em>ngay lập tức </em>ghi một <strong>điện tâm đồ 12 chuyển đạo</strong>.</li>
+<li>
+</li>
+<li><strong><u>Điểm <em>MẤU CHỐT</em>:</u></strong> Hãy xem xét <strong><em><u>nhiễu</u></em></strong> đặc biệt nổi bật ở <strong>chuyển đạo V2</strong> của <u>Hình 2</u> — nhưng cũng hiện diện với biên độ thấp hơn ở hầu như <u>tất cả</u> các chuyển đạo chi. <em>BẠN có thể nhìn thấy các gai tạo nhịp nhĩ biên độ thấp không </em>nếu nhiễu tương tự hiện diện ở tất cả các chuyển đạo trên bản ghi?</li></ul>
+<figure><a class="o-anh" href="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_Figure-1bothECGs25283-4.22-20192529.jpg"><img src="2024-01-13-orthostatic-hypotension-onset-after_anh/2024_01_Figure-1bothECGs25283-4.22-20192529.jpg" alt="" width="1525" height="1225" loading="lazy" decoding="async"></a><figcaption><strong><u>Hình 2:</u> </strong>Những gì máy theo dõi cho thấy (<em>PHÍA TRÊN</em>) — và những gì điện tâm đồ 12 chuyển đạo <em>ghi đồng thời </em>trên bệnh nhân này cho thấy (<em>Xem phần bài viết</em>).</figcaption></figure>
+<p>====================</p>
+<p><strong><u>G</u></strong><strong><u>ỢI Ý</u><u>:</u> </strong>Nếu trước đây bạn chưa để ý đến cài đặt bộ lọc — <em><strong>Hãy bắt đầu tìm chúng!</strong> </em>Thông thường chúng được ghi bên dưới điện tâm đồ (<em>tương tự như cách chúng xuất hiện ở bản ghi 12 chuyển đạo trong </em><u>Hình 2</u>).</p>
+<ul><li><strong>T<u>hú nhận</u><u>:</u> </strong>Tôi hoàn toàn thừa nhận rằng tôi đã trải qua <em>nhiều </em>năm trong sự nghiệp của một “người đam mê điện tâm đồ” rồi mới thực sự bắt đầu chú ý đến các cài đặt này. Điều này <u><em>thực sự</em></u> quan trọng — vì việc dùng một cài đặt bộ lọc khác có thể là lý do khiến độ lệch đoạn ST (<em>chênh lên hoặc chênh xuống</em>) tạo ra <em>ấn tượng sai lầm </em>về sự khác biệt trong mức ST chênh lên hoặc chênh xuống giữa các điện tâm đồ liên tiếp ghi trên cùng một bệnh nhân! </li>
+<li></li>
+<li><u><strong>Trong CA <em>hôm nay</em>:</strong></u> Một cài đặt bộ lọc thông thấp thấp hơn đáng kể so với 150 Hz có thể khiến <em><u>hoàn toàn không</u></em> thấy được gai tạo nhịp trên điện tâm đồ.</li>
+<li><strong><u>T.B. (P.S.):</u></strong> Để xem một ví dụ khác về việc chọn cài đặt bộ lọc tối ưu —<strong> </strong><em>Xem phần Bình luận của tôi </em>ở cuối trang của <strong>bài đăng <a href="https://drsmithsecgblog.com/2023/06/a-young-lady-with-wide-complex.html" rel="noopener" target="_blank">ngày 3 tháng Sáu năm 2023</a> </strong>trên Dr. Smith’s ECG Blog — trong đó tôi minh họa ảnh hưởng của cài đặt bộ lọc đối với việc phát hiện sóng epsilon ở một bệnh nhân bị <strong>ARVC/D (</strong><em>bệnh cơ tim-loạn sản thất phải gây loạn nhịp (<u>A</u>rrhythmogenic <u>R</u>ight <u>V</u>entricular <u>C</u>ardiomyopathy-<u>D</u>ysplasia)</em><strong>)</strong>.  </li></ul>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
