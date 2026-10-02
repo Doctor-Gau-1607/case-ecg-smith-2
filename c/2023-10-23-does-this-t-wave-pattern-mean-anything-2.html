@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="vi" data-nen="sang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>23/10/2023 — Hình ảnh sóng T này có ý nghĩa gì không?</title>
+<style>
+:root{
+ --nen:#f2f4f6; --giay:#ffffff; --chu:#172033; --nhat:#5b6675; --vien:#e3e7ec;
+ --do:#b30000; --xanh:#004b87; --diu:#f6f8fa; --danh:#fff3cd;
+}
+:root[data-nen="toi"]{
+ --nen:#12151b; --giay:#1b2029; --chu:#e6eaf0; --nhat:#9aa5b4; --vien:#2c333f;
+ --do:#ff8a8a; --xanh:#7fb6e6; --diu:#232a35; --danh:#5a4a12;
+}
+*{box-sizing:border-box}
+html{font-size:var(--co,16px)}
+body{margin:0;background:var(--nen);color:var(--chu);
+ font-family:"Noto Sans","Segoe UI",Roboto,Arial,sans-serif;
+ font-size:1rem;line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:var(--xanh)}
+.bo-cuc{display:grid;grid-template-columns:320px minmax(0,1fr);gap:22px;
+ max-width:1500px;margin:0 auto;padding:22px}
+/* ---- cột mục lục ---- */
+.muc-luc{position:sticky;top:22px;align-self:start;height:calc(100vh - 44px);
+ background:var(--giay);border-radius:16px;padding:16px 10px;display:flex;
+ flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ml-dau{display:flex;justify-content:space-between;align-items:center;
+ padding:2px 10px 10px;font-size:.78rem;font-weight:800;letter-spacing:.09em;
+ color:var(--do);border-bottom:1px solid var(--vien)}
+#phanTram{color:var(--nhat)}
+/* Thu gọn / mở lại cột mục lục. Trang nhớ lựa chọn, vì người đọc guideline
+   mở lại nhiều lần và không muốn mỗi lần lại phải thu tay. */
+.ml-dau .nut-thu{margin-left:8px;border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:1px 8px;cursor:pointer;font:inherit;
+ font-size:.9rem;line-height:1.4}
+@media(min-width:981px){
+ :root[data-ml="thu"] .bo-cuc{grid-template-columns:minmax(0,1fr)}
+ :root[data-ml="thu"] .muc-luc{display:none}
+ :root[data-ml="thu"] .hien-ml{display:block}
+}
+.o-tim{padding:10px 8px 6px}
+.o-tim input{width:100%;padding:8px 10px;border:1px solid var(--vien);
+ border-radius:9px;background:var(--diu);color:var(--chu);font:inherit;font-size:.85rem}
+.tim-dieu-khien{display:flex;gap:6px;align-items:center;margin-top:6px;
+ font-size:.76rem;color:var(--nhat)}
+.tim-dieu-khien button{border:1px solid var(--vien);background:var(--giay);
+ color:var(--chu);border-radius:7px;padding:2px 9px;cursor:pointer;font:inherit}
+.ml-cuon{overflow-y:auto;flex:1;margin-top:4px}
+#dsMuc{list-style:none;margin:0;padding:0}
+#dsMuc a{display:block;padding:7px 12px;border-radius:9px;text-decoration:none;
+ color:var(--chu);font-size:.87rem;line-height:1.4}
+#dsMuc a:hover{background:var(--diu)}
+#dsMuc a.dang-doc{background:var(--diu);color:var(--do);font-weight:700;
+ box-shadow:inset 3px 0 0 var(--do)}
+#dsMuc .cap-1>a{font-weight:700}
+#dsMuc .cap-2>a{padding-left:26px;font-size:.85rem}
+#dsMuc .cap-3>a{padding-left:40px;font-size:.82rem;color:var(--nhat)}
+#dsMuc .cap-4>a,#dsMuc .cap-5>a{padding-left:54px;font-size:.8rem;color:var(--nhat)}
+/* ---- thân bài ---- */
+.dau-bai,.to-giay{background:var(--giay);border-radius:16px;
+ box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.dau-bai{padding:28px 34px;margin-bottom:22px}
+.nhan{font-size:.76rem;font-weight:800;letter-spacing:.16em;color:var(--nhat)}
+.dau-bai h1{margin:.25em 0 .35em;font-size:2rem;line-height:1.25;color:var(--do)}
+.dich-gia{color:var(--nhat);font-size:.92rem;margin:0}
+.dich-gia b{color:var(--xanh)}
+.to-giay{padding:34px 40px 60px}
+.to-giay h2{color:var(--do);font-size:1.65rem;margin:1.7em 0 .5em;
+ padding-bottom:4px;border-bottom:2px solid var(--vien)}
+.to-giay h2:first-child{margin-top:0}
+.to-giay h3{color:var(--xanh);font-size:1.3rem;margin:1.5em 0 .4em}
+.to-giay h4{font-size:1.08rem;margin:1.3em 0 .3em}
+.to-giay h5,.to-giay h6{font-size:1rem;margin:1.2em 0 .3em;color:var(--nhat)}
+.to-giay p{margin:0 0 .85em;text-align:justify}
+.to-giay p.cham{padding-left:1.35em;text-indent:-1.1em;text-align:left}
+figure{margin:1.4em 0;text-align:center}
+figure img{max-width:100%;height:auto;border:1px solid var(--vien);border-radius:10px}
+/* ---- bảng ---- */
+.tham-chieu{color:var(--xanh);font-weight:600;text-decoration:none;
+ border-bottom:1px dotted currentColor}
+.tham-chieu:hover{border-bottom-style:solid}
+.chu-thich-float{font-weight:600;margin:0 0 .4em}
+.khung-bang{overflow-x:auto;margin:1.4em 0;border-radius:10px;
+ border:1px solid var(--vien)}
+.khung-bang table{border-collapse:collapse;width:100%;font-size:.88rem;
+ table-layout:fixed}
+.to-giay p,.to-giay li,.to-giay dd{overflow-wrap:break-word}
+.to-giay sup{overflow-wrap:anywhere}
+.khung-bang td{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;
+ line-height:1.5;word-wrap:break-word}
+.khung-bang td.sat{padding-left:0;padding-right:0}
+.khung-bang td.giua{text-align:center;vertical-align:middle}
+.khung-bang td.ky-hieu{font-weight:800;white-space:nowrap}
+.khung-bang td.nen-toi,.khung-bang td.nen-toi *{color:#fff}
+.khung-bang td.nen-sang,.khung-bang td.nen-sang *{color:#12151b}
+.khung-bang td span{display:block}
+.khung-bang td span.cham{padding-left:1.1em;text-indent:-1em}
+mark.danh{background:var(--danh);color:inherit;border-radius:3px}
+/* Ô có màu ép màu chữ cho cả con cháu, kể cả <mark> của phần tìm trong bài — chữ
+   trắng trên nền vàng nhạt là tìm thấy mà không nhìn thấy. Trả chữ về màu trang. */
+.khung-bang td.nen-toi mark.danh,.khung-bang td.nen-sang mark.danh,
+.khung-bang td.nen-toi mark.danh *,.khung-bang td.nen-sang mark.danh *{color:var(--chu)}
+mark.danh.dang{outline:2px solid var(--do)}
+/* ---- nút nổi ---- */
+.thanh-nut{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:9}
+.thanh-nut button{width:42px;height:42px;border-radius:50%;cursor:pointer;
+ border:1px solid var(--vien);background:var(--giay);color:var(--chu);
+ font-size:1rem;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.hien-ml{display:none}
+/* ---- màn hình hẹp ---- */
+@media(max-width:980px){
+ .bo-cuc{grid-template-columns:minmax(0,1fr);padding:12px}
+ .muc-luc{position:fixed;inset:0 auto 0 0;width:88%;max-width:340px;z-index:20;
+  border-radius:0;height:100vh;transform:translateX(-102%);transition:transform .2s}
+ .muc-luc.mo{transform:none}
+ .hien-ml{display:block}
+ .to-giay{padding:22px 18px 44px}
+ /* Màn hình điện thoại: giữ bề rộng tối thiểu cho bảng rồi cho cuộn ngang,
+    thay vì bóp cột hẹp tới mức "Trung bình" xuống dòng thành "Tr un g bì nh". */
+ .khung-bang table{min-width:620px}
+ .dau-bai{padding:20px}
+ .dau-bai h1{font-size:1.5rem}
+}
+/* ---- in ra giấy ---- */
+@media print{
+ /* Nền tối được nhớ trong localStorage: bật một lần là mọi lần in sau đều dính.
+    Giấy luôn trắng, nên trả bảng màu về bản sáng trước khi in — nếu không, chữ
+    #e6eaf0 in lên giấy trắng là mất hẳn. */
+ :root,:root[data-nen="toi"]{--nen:#fff;--giay:#fff;--chu:#172033;--nhat:#4a5462;
+  --vien:#c9ced5;--do:#b30000;--xanh:#004b87;--diu:#f6f8fa;--danh:#fff3cd}
+ body{background:#fff;font-size:11.5pt}
+ .muc-luc,.thanh-nut{display:none!important}
+ .bo-cuc{display:block;max-width:none;padding:0}
+ .dau-bai,.to-giay{box-shadow:none;border-radius:0;padding:0}
+ .to-giay h2,.to-giay h3{break-after:avoid}
+ .khung-bang,figure{break-inside:avoid}
+ .khung-bang td{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+.c-xanh{color:var(--xanh)} .c-do{color:var(--do)} .c-luc{color:var(--luc)} .c-nhat{color:var(--nhat)}
+:root{--luc:#1d7a3a} :root[data-nen="toi"]{--luc:#7fd49a}
+.ban-quyen{display:inline-block;margin:.4em 0 1.2em!important;padding:6px 14px;border-radius:9px;
+ background:var(--diu);border:1px solid var(--vien);color:var(--nhat);font-size:.88rem}
+.note{background:var(--diu);border-left:4px solid var(--xanh);border-radius:0 10px 10px 0;padding:10px 16px;margin:1.1em 0}
+.note p:last-child{margin-bottom:0}
+.canh-bao{background:#fff4d6;border:1px solid #e8c97a;color:#4a3a10;border-radius:10px;padding:12px 16px;margin:0 0 18px;font-size:.93em}
+:root[data-nen="toi"] .canh-bao{background:#3a2f12;border-color:#6b5a1a;color:#f0e2bd}
+.to-giay blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--vien);background:var(--diu);border-radius:0 10px 10px 0}
+.to-giay ul,.to-giay ol{padding-left:1.5em;margin:0 0 .9em}
+.to-giay li{margin:.2em 0}
+.to-giay hr{border:0;border-top:1px solid var(--vien);margin:1.6em 0}
+.khung-bang th{border:1px solid var(--vien);padding:9px 11px;vertical-align:top;background:var(--diu);text-align:left;line-height:1.5}
+.khung-bang td[style*="background"],.khung-bang th[style*="background"]{color:#12151b}
+.tk p,.tk li{font-size:.9em;color:var(--nhat);text-align:left}
+figcaption,.chu-thich-anh{font-size:.88rem;color:var(--nhat);margin-top:.45em;text-align:center;line-height:1.55}
+figcaption b{color:var(--chu)}
+figure.anh-dau img{width:100%;max-height:420px;object-fit:cover}
+figure video{width:100%;max-height:78vh;background:#000;border-radius:10px;display:block}
+.khung-video{position:relative;padding-top:56.25%;margin:0;border-radius:10px;overflow:hidden;background:#000}
+.khung-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:relative;width:100%;aspect-ratio:16/9;background:#000;cursor:pointer;display:block;border-radius:10px;overflow:hidden}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;border:0!important;border-radius:0!important;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.yt .play svg{width:58px;height:58px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.badge{position:absolute;left:8px;top:8px;background:rgba(0,0,0,.72);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:20px;pointer-events:none}
+.ytlink{display:inline-block;margin-left:8px;font-size:.92em;color:var(--xanh);text-decoration:none;border:1px solid var(--vien);border-radius:20px;padding:1px 10px;white-space:nowrap}
+.bo-anh{display:grid;gap:8px;margin:1em 0 1.4em;align-items:start}
+.bo-anh.cot-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.bo-anh.cot-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bo-anh.cot-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bo-anh.cot-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bo-anh.cot-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bo-anh.cot-6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.o-anh{display:block;border-radius:8px;overflow:hidden;background:#000;
+ border:1px solid var(--vien);cursor:zoom-in;line-height:0}
+.o-anh img{display:block;width:100%;height:auto}
+figure .o-anh{display:inline-block;background:none;border:0}
+figure .o-anh img{border:1px solid var(--vien);border-radius:10px}
+@media(max-width:980px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:560px){
+ .bo-anh.cot-3,.bo-anh.cot-4,.bo-anh.cot-5,.bo-anh.cot-6{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+.xem-anh{position:fixed;inset:0;z-index:50;background:rgba(8,10,14,.94);display:none;
+ flex-direction:column;align-items:center;justify-content:center;padding:14px}
+.xem-anh.mo{display:flex}
+.xem-anh img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;border-radius:6px;background:#000}
+.xem-anh .xa-chu{color:#dfe5ec;font-size:.85rem;max-width:1100px;margin-top:10px;text-align:center;
+ line-height:1.5;max-height:5.2em;overflow:auto}
+.xem-anh .xa-dem{position:absolute;top:14px;left:18px;color:#c4ccd6;font-size:.85rem}
+.xem-anh button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;
+ width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+.xem-anh button:hover{background:rgba(255,255,255,.25)}
+.xem-anh .xa-dong{top:12px;right:14px}
+.xem-anh .xa-truoc{left:14px;top:50%;transform:translateY(-50%)}
+.xem-anh .xa-sau{right:14px;top:50%;transform:translateY(-50%)}
+@media print{
+ .xem-anh,.canh-bao,.ytlink{display:none!important}
+ .bo-anh{break-inside:avoid}
+ .o-anh{background:none}
+}
+</style>
+</head>
+<body>
+<div class="bo-cuc">
+ <aside class="muc-luc" id="mucLuc">
+  <div class="ml-dau"><span>NỘI DUNG</span><span id="phanTram">0%</span><button
+    id="nutThu" class="nut-thu" type="button" title="Thu gọn mục lục">«</button></div>
+  <div class="o-tim">
+   <input id="oTim" type="search" placeholder="Tìm trong tài liệu…" autocomplete="off">
+   <div class="tim-dieu-khien">
+    <button id="timTruoc" type="button">↑</button>
+    <button id="timSau" type="button">↓</button>
+    <span id="demTim"></span>
+   </div>
+  </div>
+  <div class="ml-cuon"><ul id="dsMuc"></ul></div>
+ </aside>
+ <main>
+  <section class="dau-bai">
+   <div class="nhan">CASE ECG #1612 · DR. SMITH’S ECG BLOG</div>
+   <h1>23/10/2023 — Hình ảnh sóng T này có ý nghĩa gì không?</h1>
+   <p class="dich-gia"><a href="https://doctor-gau-1607.github.io/case-ecg-smith/">← Mục lục Case ECG</a></p><p class="dich-gia">Bản dịch tiếng Việt của bài <a href="https://drsmithsecgblog.com/does-this-t-wave-pattern-mean-anything-2/" target="_blank" rel="noopener">"Does this T wave pattern mean anything?"</a> – Dr. Smith’s ECG Blog. Giữ nguyên toàn bộ 5 hình ảnh của bản gốc.</p>
+  </section>
+  <section class="to-giay" id="toGiay">
+<hr>
+<p>Bài viết của Michael Doyle DO và Timothy Palmieri MD.</p>
+<p><strong>(</strong><em>Biên tập bởi Bracey, Meyers, Grauer và Smith</em><strong>)</strong></p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Một bệnh nhân nữ khoảng 50 tuổi, có tiền sử một rối loạn nhân cách không rõ loại và rối loạn sử dụng rượu, được đội cấp cứu ngoài viện (EMS) đưa đến sau ngừng tim đã tái lập tuần hoàn tự nhiên (ROSC). Nhịp được mô tả là một nhịp QRS rộng, không đều. Theo báo cáo của EMS, tại hiện trường có tìm thấy các lọ thuốc đã mở nắp ở gần đó, gồm quetiapine, fluoxetine, hydroxyzine và gabapentin. Bệnh nhân được hồi sức thành công sau nhiều vòng hồi sinh tim phổi nâng cao (ACLS), bao gồm khử rung và amiodarone.</p>
+<ul><li>Khi đến khoa cấp cứu (ED), bệnh nhân đã được đặt nội khí quản, dấu hiệu sinh tồn bình thường. Điện tâm đồ ban đầu được ghi:</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><strong>Điện tâm đồ ban đầu:</strong></p>
+<figure><a class="o-anh" href="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-120ORIG-1.jpg"><img src="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-120ORIG-1.jpg" alt="" width="1600" height="916" loading="lazy" decoding="async"></a></figure>
+<p>Nhịp nhanh xoang kèm khoảng QT kéo dài (QTc 534 ms theo công thức Bazett). Không có thay đổi ST do thiếu máu cục bộ.</p>
+<p><code><span class="c-nhat">= = =</span></code></p>
+<p>Bệnh nhân được cho magnesi theo kinh nghiệm. Nồng độ kali huyết thanh ban đầu là 3.5 mEq/L, tuy nhiên mẫu bị tan máu nên giá trị thật có thể thấp hơn kết quả báo cáo. Nồng độ calci ion hóa và magnesi huyết thanh nằm trong giới hạn bình thường.</p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Một điện tâm đồ được ghi lại 2 giờ sau khi bệnh nhân đến viện:</p>
+<figure><a class="o-anh" href="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-220ORIG.jpg"><img src="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-220ORIG.jpg" alt="" width="1600" height="913" loading="lazy" decoding="async"></a></figure>
+<p>QTc kéo dài tới 722 ms, nay kèm hình ảnh sóng T luân phiên (T wave alternans).</p>
+<p><span class="c-nhat">= = =</span></p>
+<figure><a class="o-anh" href="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-320ORIG-1.jpg"><img src="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-320ORIG-1.jpg" alt="" width="1600" height="926" loading="lazy" decoding="async"></a></figure>
+<p>Tôi nhắn tin gửi bản ghi này cho <strong>Smith</strong> và ông trả lời:</p>
+<ul><li><strong>“Sóng T luân phiên và QT dài. Báo trước xoắn đỉnh (Torsades de Pointes).”</strong></li></ul>
+<p>Bệnh nhân được cho thêm magnesi, bắt đầu truyền liên tục magnesi, với mục tiêu bù điện giải đến mức bình thường cao. Bệnh nhân được nhập đơn vị hồi sức tích cực (ICU), nơi các điện tâm đồ tiếp theo được ghi:</p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Điện tâm đồ lúc 12 giờ:</p>
+<figure><a class="o-anh" href="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-420ORIG-1.jpg"><img src="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-420ORIG-1.jpg" alt="" width="1600" height="917" loading="lazy" decoding="async"></a></figure>
+<p>QTc kéo dài, sóng T luân phiên đã hết.</p>
+<p><span class="c-nhat">= = =</span></p>
+<p>Điện tâm đồ lúc 24 giờ:</p>
+<figure><a class="o-anh" href="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-520ORIG.jpg"><img src="2023-10-23-does-this-t-wave-pattern-mean-anything-2_anh/2023_10_Alex-520ORIG.jpg" alt="" width="1600" height="841" loading="lazy" decoding="async"></a></figure>
+<p>Nhịp nhanh xoang với khoảng QTc đã trở về bình thường.</p>
+<h2 id="ket-luan-ca-benh">Kết luận ca bệnh:</h2>
+<p>Bệnh nhân trải qua thời gian nằm ICU không có biến cố và được rút nội khí quản để tiếp tục điều trị tại khoa tâm thần nội trú.</p>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="nhung-diem-giang-day">Những điểm giảng dạy:</h2>
+<ul><li>Sóng T luân phiên được đặc trưng bởi sự thay đổi hình dạng sóng T trong bối cảnh ổ tạo nhịp và hình dạng QRS không đổi. TWA (<em>sóng T luân phiên – T Wave Alternans</em>) có thể là hậu quả của tính không đồng nhất trong tái cực thất, vốn tạo thuận lợi cho nhịp nhanh thất đa dạng (chẳng hạn TdP). </li>
+<li>Sóng T luân phiên là dấu hiệu báo trước tình trạng mất ổn định về điện của tim và TdP.</li>
+<li>Các thuốc gây kéo dài QT và rối loạn điện giải là hai nguyên nhân thường gặp gây QT kéo dài và sóng T luân phiên.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h2 id="tai-lieu-tham-khao">Tài liệu tham khảo:</h2>
+<ul><li><strong>1) </strong>Liu J, Hou H, Xu H, Chen Y, Su X. Prolonged ST segment and T-wave alternans with torsade de pointes secondary to hypocalcemia due to hypoparathyroidism: A case report. Ann Noninvasive Electrocardiol. 2022 Jul;27(4):e12939. doi: 10.1111/anec.12939. Xuất bản điện tử ngày 11 tháng Hai năm 2022. PMID: 35146844; PMCID: PMC9296802.</li>
+<li><strong>2) </strong>Molon G, Costa A, Bertolini L, Zenari L, Arcaro G, Barbieri E, Targher G. Relationship between abnormal microvolt T-wave alternans and poor glycemic control in type 2 diabetic patients. Pacing Clin Electrophysiol. 2007 Oct;30(10):1267-72. doi: 10.1111/j.1540-8159.2007.00849.x. PMID: 17897130.</li>
+<li><strong>3) </strong>Narayan SM. T-wave alternans and the susceptibility to ventricular arrhythmias. J Am Coll Cardiol. 2006 Jan 17;47(2):269-81. doi: 10.1016/j.jacc.2005.08.066. Xuất bản điện tử ngày 4 tháng Một năm 2006. PMID: 16412847.</li>
+<li><strong>4) </strong>Moore PK, Raffel KE, Whitman IR. Macroscopic T-Wave Alternans: A Red Flag for Code Blue. JAMA Intern Med. 2017 Oct 1;177(10):1520-1522. doi: 10.1001/jamainternmed.2017.3191.</li>
+<li><strong>5) </strong>van Opstal JM, Schoenmakers M, Verduyn SC, de Groot SH, Leunissen JD, van Der Hulst FF, Molenschot MM, Wellens HJ, Vos MA. Chronic amiodarone evokes no torsade de pointes arrhythmias despite QT lengthening in an animal model of acquired long-QT syndrome. Circulation. 2001 Nov 27;104(22):2722-7. doi: 10.1161/hc4701.099579. PMID: 11723026.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-do">==================================</span></p>
+<h2 id="binh-luan-cua-toi-boi-ken-grauer-md-23-10-2023-cap-nhat-cho-wordpress-ngay-1-9-2026">BÌNH LUẬN CỦA TÔI, bởi KEN GRAUER, MD (23/10/2023 — cập nhật cho WordPress ngày 1/9/2026):</h2>
+<hr>
+<p>Các dạng <strong>luân phiên</strong> <strong><em>điện thế</em></strong> (electrical alternans) thường bị hiểu sai, <em>nếu không muốn nói là hoàn toàn bị bỏ qua</em>. Với mong muốn giúp người đọc trân trọng hơn những gợi ý lâm sàng mà hiện tượng thú vị này có thể mang lại — chúng tôi luôn làm nổi bật sự xuất hiện của nó trong các bài viết trên blog.</p>
+<ul><li>Về mặt lâm sàng — điện thế luân phiên <strong><em>thường</em> gặp nhất</strong> trong cấp cứu khi đi kèm các <strong>nhịp nhanh</strong> <strong><em><u>trên thất</u></em></strong> <strong>(</strong><em>đặc biệt là các nhịp SVT vào lại như AVRT và AVNRT</em><strong>)</strong>.</li>
+<li>Điện thế luân phiên thường được <em>“tìm kiếm” </em>nhất — khi nghĩ tới <strong>tràn dịch</strong> <strong><em>màng ngoài tim</em></strong> <strong>(</strong><em>mặc dù <strong>hiện tượng “tim đong đưa” (swinging heart)</strong> tạo ra dấu hiệu điện tâm đồ này trong bệnh cảnh đó hiếm khi thấy ở các tràn dịch lượng nhỏ hơn</em><strong>)</strong>.</li>
+<li>Bài viết hôm nay của các bác sĩ Doyle, Palmieri và Bracey đặc biệt đáng chú ý — vì nó trình bày ví dụ về <em>sóng T luân phiên</em> <em>ĐẸP NHẤT</em> mà tôi từng thấy.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="luan-phien-dien-the-la-gi">Luân phiên điện thế là gì?</h3>
+<p>Lần gần nhất tôi điểm lại hiện tượng <strong>luân phiên</strong> <strong><em>điện thế</em></strong> là trong phần <em>Bình luận của tôi</em> ở cuối trang của <strong>bài đăng <a href="https://drsmithsecgblog.com/2022/11/a-woman-in-her-20s-with-syncope.html" rel="noopener" target="_blank">ngày 28 tháng Mười Một năm 2022</a></strong> trên Dr. Smith’s ECG Blog. Dưới đây tôi trích lại những dữ kiện <em>MẤU CHỐT</em> cần nắm về hiện tượng này. Bao gồm:</p>
+<ul><li>Điện thế luân phiên là một thuật ngữ chung bao gồm nhiều cơ chế sinh lý bệnh <em>khác nhau</em>. Hiện tượng này <em><u>không</u></em> chỉ giới hạn ở chèn ép tim — mà còn liên quan đến một danh sách ngày càng mở rộng các bệnh cảnh lâm sàng. </li>
+<li>Cần phân biệt giữa luân phiên <em>điện thế</em> và luân phiên <em>cơ học</em>. Bản thân thuật ngữ <strong><em>“luân phiên” (alternans)</em></strong> — chỉ đơn thuần cho biết có một <strong>dao động</strong> <strong><em>theo pha</em></strong> của một <strong>tín hiệu tim</strong> <strong><em>nào đó</em></strong> từ nhát này sang nhát kế tiếp trong chu chuyển tim. Dao động này có thể nằm ở cường độ mạch <strong>(</strong><em>hoặc huyết áp đo được</em><strong>)</strong> — hoặc ở một hay nhiều dạng sóng trên bản ghi điện tâm đồ.</li></ul>
+<p><strong><u>LƯU Ý:</u></strong> Có thể hữu ích nếu trước tiên định nghĩa các hiện tượng luân phiên <em>khác</em> đôi khi dễ bị nhầm với các biểu hiện khác nhau trên điện tâm đồ <strong>(</strong><em>nhất là vì các dạng hiện tượng luân phiên khác này cũng có thể gặp trong chèn ép tim</em><strong>)</strong>.</p>
+<ul><li><strong>Mạch</strong> <strong><em>luân phiên</em></strong> (pulsus alternans) — là một dạng luân phiên <em>cơ học</em>. Nhịp tim <em>đều</em> — nhưng cung lượng tim thay đổi theo từng nhát. Hiện tượng này gặp trong rối loạn chức năng tâm thu nặng. Cần phân biệt mạch luân phiên với <strong>mạch</strong> <strong><em>nhịp đôi</em></strong> (bigeminal pulse) — trong đó một nhát <em>yếu hơn</em> theo sau nhát mạnh hơn với khoảng thời gian <em>ngắn hơn</em> <strong>(</strong><em>như khi nhát luân phiên là một PVC, vốn dĩ dễ hiểu là tạo ra cung lượng tim thấp hơn</em><strong>)</strong>.</li>
+<li>Cũng cần phân biệt mạch luân phiên với <strong>mạch</strong> <strong><em>nghịch thường</em></strong> (pulsus paradoxus) — trong đó biên độ mạch giảm sờ thấy được <strong>(</strong><em>hoặc huyết áp đo được giảm &gt;10 mm</em><strong>)</strong> khi hít vào nhẹ nhàng. Tuy mạch <em>luân phiên</em> và mạch <em>nghịch thường</em> đều có thể gặp trong chèn ép tim — chúng là những hiện tượng <em>khác</em> với các dạng luân phiên <em>điện thế</em>. </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="luan-phien-dien-the-dinh-nghia-dac-diem-co-che">Luân phiên điện thế: Định nghĩa/Đặc điểm/Cơ chế</h3>
+<p>Điện thế luân phiên — là sự biến đổi <em>theo từng nhát</em> ở một hay nhiều phần của bản ghi điện tâm đồ. Hiện tượng có thể xảy ra <em>cách một nhát</em> — hoặc theo một tỷ lệ lặp lại khác <strong>(</strong><em>3:1; 4:1; v.v.</em><strong>)</strong>. Biên độ hoặc hướng của sóng P, phức bộ QRS, đoạn ST <em>và/hoặc</em> sóng T đều có thể bị ảnh hưởng <strong>(</strong><em>tuy nhiên sóng P luân phiên thì hiếm gặp</em><strong>)</strong>. Cũng có thể thấy thời khoảng luân phiên <strong>(</strong><em>của khoảng PR, QRS hoặc QT</em><strong>)</strong>.</p>
+<ul><li><strong>Luân phiên</strong> <strong><em>điện thế</em></strong> — lần đầu được Herring quan sát trong phòng thí nghiệm năm 1909. Một năm sau, Sir Thomas Lewis báo cáo hiện tượng này trên lâm sàng, ông mô tả nó xảy ra <em>“hoặc khi cơ tim bình thường nhưng tần số tim rất nhanh</em> hoặc <em>khi có bệnh tim nặng và tần số bình thường”</em>. Mô tả năm 1910 này của Lewis cho đến nay vẫn rất hữu ích để nhắc chúng ta về 2 tình huống lâm sàng chính mà điện thế luân phiên hay gặp nhất: <strong>i<span class="c-do">)</span></strong> Nhịp nhanh <em><u>vào lại</u></em> trên thất; — và <strong>ii<span class="c-do">)</span></strong> Chèn ép tim.</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="co-che">Cơ chế:</h3>
+<p>Có <strong>3 Loại <em>Cơ bản</em></strong> của hiện tượng <strong>Luân phiên</strong> <strong><em>điện thế</em></strong> — mỗi loại liên quan đến một cơ chế sinh lý bệnh khác nhau: <strong>i<span class="c-do">)</span></strong> Luân phiên tái cực; — <strong>ii<span class="c-do">)</span></strong> Luân phiên dẫn truyền và tính trơ; — và <strong>iii<span class="c-do">)</span></strong> Luân phiên do chuyển động bất thường của tim. Một cơ chế tế bào chung có thể là nền tảng của từng quá trình này, liên quan đến sự giải phóng hoặc tái hấp thu calci bất thường trong lưới cơ tương.</p>
+<ul><li><strong>Luân phiên</strong> <strong><em>tái cực</em></strong> (repolarization alternans) <strong>—</strong> là sự thay đổi <em>từ nhát này sang nhát khác</em> của <strong>đoạn ST</strong> <em>và/hoặc</em> <strong>sóng T</strong>. Sự luân phiên về hình dạng đoạn ST <strong>(</strong><em>hoặc về mức độ ST chênh lên hay chênh xuống</em><strong>)</strong> — thường liên quan đến thiếu máu cục bộ. Ngược lại — <strong>sự luân phiên sóng T (</strong><em>chính là điều chúng ta thấy trong ca hôm nay!</em><strong>)</strong> — thường gắn với thay đổi tần số tim hoặc thời khoảng QT hơn <strong>(</strong><em>đặc biệt <strong>khi QT kéo dài</strong></em><strong>)</strong>. Ở bệnh nhân có QT dài — <strong>sóng T luân phiên có thể báo trước xoắn đỉnh (Torsades de Pointes) <em>sắp xảy ra</em></strong>. 
+<ul>
+<li>Cả luân phiên đoạn ST và luân phiên sóng T đều đã được biết là có thể xuất hiện trước các rối loạn nhịp thất ác tính. Vì vậy, dạng điện thế luân phiên này có thể mang ý nghĩa tiên lượng xấu quan trọng khi gặp trong một số tình huống nhất định. </li>
+<li>Dù vậy — <em>nhiều</em> bệnh cảnh lâm sàng đã được ghi nhận có liên quan với <strong>luân phiên</strong> <strong><em>tái cực</em></strong>, nên <em><u>không</u></em> phải lúc nào cũng kéo theo ý nghĩa tiên lượng xấu. Trong số các bệnh cảnh này có hội chứng QT dài bẩm sinh — rối loạn điện giải nặng <strong>(</strong><em>hạ calci máu; hạ kali máu; hạ magnesi máu</em><strong>)</strong> — bệnh cơ tim do rượu hoặc bệnh cơ tim phì đại — thuyên tắc phổi cấp — xuất huyết dưới nhện — ngừng tim và giai đoạn sau hồi sức — và nhiều dạng thiếu máu cục bộ <strong>(</strong><em>tự phát hoặc gây ra bởi nghiệm pháp gắng sức trên thảm lăn hay một kích thích khác</em><strong>)</strong>.</li>
+</ul>
+</li>
+<li> </li>
+<li><strong><u>Luân phiên <em>dẫn truyền </em>và<em> tính trơ</em></u></strong> <strong>—</strong> là sự thay đổi trong lan truyền xung động dọc theo <em>một</em> phần nào đó của hệ thống dẫn truyền. Điều này có thể do dao động của tần số tim hoặc của hoạt động hệ thần kinh, hoặc do điều trị bằng thuốc. Biểu hiện trên điện tâm đồ của dạng luân phiên này có thể gồm <strong>hình dạng</strong> <strong><em>luân phiên</em></strong> của <strong>sóng P</strong>, của <strong>phức bộ QRS</strong>, hoặc sự khác biệt luân phiên về <strong>thời khoảng P-R </strong>hoặc<strong> R-R</strong>. Đặc biệt — QRS luân phiên trong các nhịp SVT QRS <em>hẹp</em> có liên quan với <strong>nhịp nhanh <em>vào lại</em></strong>. 
+<ul>
+<li>LƯU Ý: Mặc dù việc phát hiện <strong>QRS luân phiên</strong> trong một SVT <em>đều</em> thường gợi ý dẫn truyền <em>ngược dòng</em> qua một AP <strong>(</strong><em>đường phụ (<u>A</u>ccessory <u>P</u>athway)</em><strong>)</strong> — hiện tượng này cũng đã được thấy ở bệnh nhân PSVT/AVNRT đơn thuần, với đường vào lại chỉ giới hạn hoàn toàn trong nút AV. Vì vậy — <strong>việc phát hiện QRS luân phiên trong một SVT <em>đều</em> <em><u>không</u></em> chứng minh sự tồn tại của đường phụ.</strong> Luân phiên <em>dẫn truyền</em> và <em>tính trơ</em> có thể gặp trong nhịp nhanh vào lại <em>liên quan đến WPW</em> cũng như nhịp nhanh vào lại <em>phụ thuộc nút AV </em>— rung nhĩ — thuyên tắc phổi cấp — đụng dập cơ tim — và rối loạn chức năng thất trái nặng. </li>
+<li>LƯU Ý: Đôi khi — <em>có thể</em> gặp luân phiên trong <strong>VT</strong> <em><strong>đơn dạng</strong></em> (Maury và Metzger).</li>
+</ul>
+</li>
+<li> </li>
+<li><strong><u>Luân phiên do <em>chuyển động tim</em></u></strong> <strong>—</strong> là hậu quả của chuyển động của tim chứ không phải của sự luân phiên về điện. Bệnh cảnh lâm sàng quan trọng nhất liên quan với <strong>luân phiên</strong> <strong><em>do chuyển động</em></strong> là <strong>tràn dịch <em><u>màng ngoài tim</u></em> lượng lớn</strong> — dù luân phiên do chuyển động cũng đã được ghi nhận ở một số ca bệnh cơ tim phì đại. Điều quan trọng cần hiểu là <em><u>không</u></em> phải mọi trường hợp tràn dịch màng ngoài tim đều gây ra điện thế luân phiên. Dù vậy — sự xuất hiện <strong>điện thế luân phiên <em><u>toàn bộ</u></em></strong> <strong>(</strong><em>của sóng P, phức bộ QRS <u>và</u> sóng T</em><strong>)</strong> — nhiều khả năng là dấu hiệu báo trước <strong><u>chèn ép tim</u></strong> <strong><em>sắp xảy ra</em></strong>. 
+<ul>
+<li>Đáng tiếc — độ nhạy của điện thế luân phiên <em>toàn bộ</em> trong dự đoán chèn ép tim là kém <strong>(</strong>tức là, <em>phần lớn bệnh nhân bị chèn ép tim <u>không</u> có biểu hiện điện thế luân phiên trước đó</em><strong>)</strong>. Vì vậy, mặc dù việc thấy điện thế luân phiên toàn bộ ở bệnh nhân tràn dịch màng ngoài tim lượng lớn có thể hữu ích — <strong><em>Việc không thấy điện thế luân phiên </em></strong><em><strong>hoàn toàn <u>không</u></strong></em><strong><em> loại trừ khả năng chèn ép tim sắp xảy ra</em></strong>. </li>
+<li>Các nghiên cứu siêu âm tim ở bệnh nhân chèn ép tim đã được xác định cho thấy điện thế luân phiên đồng bộ với, và là hậu quả trực tiếp của, chuyển động <em>đong đưa như quả lắc</em> của tim bên trong túi màng ngoài tim giãn rộng, <em>chứa đầy dịch</em> của bệnh nhân tràn dịch màng ngoài tim lượng lớn <strong>(</strong><em>hiện tượng <strong>“tim đong đưa” (swinging heart) </strong></em><strong>)</strong>.</li>
+</ul>
+</li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<h3 id="dien-the-luan-phien-nhung-diem-lam-sang-mau-chot">Điện thế luân phiên: Những điểm lâm sàng MẤU CHỐT</h3>
+<p>Tóm lại, điện thế luân phiên <em>không</em> thường gặp — nhưng nó <em><u>có</u></em> xảy ra. Bạn <em><u>sẽ</u></em> gặp nó <strong>(</strong><em>như chúng ta đã gặp trong ca hôm nay</em><strong>)</strong>.</p>
+<ul><li>Trong thực hành — Có vẻ như <strong><em>điện thế</em></strong> <strong>luân phiên</strong> thường gặp nhất khi đi kèm <strong>các nhịp SVT <em>đều</em> (</strong><em>Xem ví dụ trong phần Bình luận của tôi ở cuối trang, trong </em><strong>bài <a href="https://drsmithsecgblog.com/2020/09/young-man-with-heart-rate-of-257-what.html" rel="noopener" target="_blank">ngày 7 tháng Chín năm 2020</a></strong><em> trên Dr. Smith’s ECG Blog</em><strong>)</strong>. Việc thấy nó trong bối cảnh này gợi ý <strong>(</strong><em>nhưng không chứng minh</em><strong>)</strong> sự tồn tại của một AP <strong>(</strong><em>đường phụ (<u>A</u>ccessory <u>P</u>athway)</em><strong>)</strong>. Bất kể cơ chế của SVT <em>đều</em> là AVNRT hay AVRT — nhiều khả năng có sự tham gia của cơ chế <strong><em><u>vào lại</u></em></strong>. Kết luận này có thể hữu ích khi cân nhắc các biện pháp thăm dò và điều trị tiềm năng.</li>
+<li>Ở bệnh nhân viêm màng ngoài tim — HOẶC — có bóng tim to trên X-quang ngực — HOẶC — chỉ đơn giản là khó thở không giải thích được <strong>(</strong><em>như trong </em><strong>bài <a href="https://drsmithsecgblog.com/2022/11/a-woman-in-her-20s-with-syncope.html" rel="noopener" target="_blank">ngày 28 tháng Mười Một năm 2022</a>)</strong> — việc nhận ra điện thế luân phiên nên gợi ý khả năng có <strong>tràn dịch</strong> <strong><em>màng ngoài tim</em></strong> đáng kể, có thể kèm chèn ép tim. </li>
+<li>Ca <strong><em>sóng T luân phiên (T Wave Alternans)</em></strong> hôm nay của các bác sĩ Doyle, Palmieri và Bracey đặc biệt có giá trị lâm sàng — vì nó cảnh báo người điều trị về nguy cơ <em>xoắn đỉnh</em> <em><u>tăng</u></em> đáng kể nếu không nhanh chóng điều chỉnh rối loạn điện giải cũng như bổ sung magnesi.</li>
+<li>Cuối cùng — Mặc dù điện thế luân phiên là một <strong>dấu hiệu điện tâm đồ</strong> <strong><em>không đặc hiệu</em></strong> — việc nhận ra hiện tượng này có thể nhắc bác sĩ lâm sàng tìm thiếu máu cục bộ cơ tim, rối loạn chức năng thất trái <em>và/hoặc</em> (các) yếu tố thúc đẩy tiềm năng khác có thể đã bị bỏ sót trong đánh giá ban đầu. <strong><u>ĐIỀU CỐT LÕI:</u></strong> Nếu bạn thấy điện thế luân phiên — <strong><em>Hãy tìm một </em></strong><em><strong>bệnh cảnh nền</strong></em><strong><em> trên lâm sàng</em></strong> có thể là nguyên nhân gây ra dấu hiệu điện tâm đồ này.  </li></ul>
+<p><span class="c-nhat">= = =</span></p>
+<p><span class="c-nhat">= = =</span></p>
+  </section>
+ </main>
+</div>
+<div class="thanh-nut">
+ <button id="nutMl" class="hien-ml" type="button" title="Mục lục">≡</button>
+ <button id="nutGiam" type="button" title="Chữ nhỏ hơn">A-</button>
+ <button id="nutTang" type="button" title="Chữ lớn hơn">A+</button>
+ <button id="nutNen" type="button" title="Nền sáng/tối">◐</button>
+</div>
+<div class="xem-anh" id="xemAnh" role="dialog" aria-label="Xem ảnh">
+ <span class="xa-dem"></span>
+ <button class="xa-dong" type="button" title="Đóng (Esc)">✕</button>
+ <button class="xa-truoc" type="button" title="Ảnh trước (←)">‹</button>
+ <img alt="">
+ <button class="xa-sau" type="button" title="Ảnh sau (→)">›</button>
+ <div class="xa-chu"></div>
+</div>
+<script>
+(function(){
+ var goc=document.documentElement, ds=document.getElementById('dsMuc'),
+     giay=document.getElementById('toGiay'), pt=document.getElementById('phanTram'),
+     ml=document.getElementById('mucLuc');
+ var dau=[].slice.call(giay.querySelectorAll('h2,h3,h4,h5,h6'));
+
+ // mục lục
+ dau.forEach(function(h){
+  var li=document.createElement('li');
+  li.className='cap-'+(+h.tagName[1]-1);
+  var a=document.createElement('a');
+  a.href='#'+h.id; a.textContent=h.textContent;
+  a.addEventListener('click',function(){ ml.classList.remove('mo'); });
+  li.appendChild(a); ds.appendChild(li);
+ });
+ var neo=[].slice.call(ds.querySelectorAll('a'));
+
+ function capNhat(){
+  var i=0;
+  for(var k=0;k<dau.length;k++){ if(dau[k].getBoundingClientRect().top<140) i=k; }
+  neo.forEach(function(a,k){ a.classList.toggle('dang-doc',k===i); });
+  var a=neo[i];
+  if(a){ var cuon=a.closest('.ml-cuon');
+   if(cuon){ var h=a.getBoundingClientRect(), c=cuon.getBoundingClientRect();
+    if(h.top<c.top||h.bottom>c.bottom) cuon.scrollTop+=h.top-c.top-c.height/3; } }
+  var het=document.documentElement.scrollHeight-innerHeight;
+  pt.textContent=(het>0?Math.min(100,Math.round(scrollY/het*100)):100)+'%';
+ }
+ addEventListener('scroll',capNhat,{passive:true});
+ addEventListener('resize',capNhat); capNhat();
+
+ // cỡ chữ + nền tối, nhớ lựa chọn
+ function docNho(k,md){ try{ return localStorage.getItem(k)||md; }catch(e){ return md; } }
+ function ghiNho(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+ var co=parseInt(docNho('gl-co','16'),10);
+ function apCo(){ goc.style.setProperty('--co',co+'px'); ghiNho('gl-co',co); capNhat(); }
+ apCo();
+ goc.setAttribute('data-nen',docNho('gl-nen','sang'));
+ document.getElementById('nutTang').onclick=function(){ co=Math.min(24,co+1); apCo(); };
+ document.getElementById('nutGiam').onclick=function(){ co=Math.max(12,co-1); apCo(); };
+ document.getElementById('nutNen').onclick=function(){
+  var v=goc.getAttribute('data-nen')==='toi'?'sang':'toi';
+  goc.setAttribute('data-nen',v); ghiNho('gl-nen',v);
+ };
+ // thu gọn / mở lại cột mục lục (nhớ lựa chọn)
+ goc.setAttribute('data-ml',docNho('gl-ml',''));
+ function datMl(v){ goc.setAttribute('data-ml',v); ghiNho('gl-ml',v); capNhat(); }
+ document.getElementById('nutThu').onclick=function(){ datMl('thu'); };
+ document.getElementById('nutMl').onclick=function(){
+  // màn hình rộng: nút ≡ mở lại cột đã thu; màn hình hẹp: kéo cột ra/vào
+  if(innerWidth>980 && goc.getAttribute('data-ml')==='thu'){ datMl(''); return; }
+  ml.classList.toggle('mo');
+ };
+
+ // tìm trong bài
+ var o=document.getElementById('oTim'), dem=document.getElementById('demTim'), hit=[], vt=-1;
+ function xoaDanh(){
+  hit=[]; vt=-1;
+  var m=giay.querySelectorAll('mark.danh');
+  for(var i=0;i<m.length;i++){ var p=m[i].parentNode;
+   p.replaceChild(document.createTextNode(m[i].textContent),m[i]); p.normalize(); }
+ }
+ function danhDau(q){
+  xoaDanh();
+  if(q.length<2){ dem.textContent=''; return; }
+  var tw=document.createTreeWalker(giay,NodeFilter.SHOW_TEXT,null), nut=[], n;
+  while((n=tw.nextNode())) if(n.nodeValue.trim()) nut.push(n);
+  var kq=q.toLowerCase();
+  nut.forEach(function(n){
+   var s=n.nodeValue, l=s.toLowerCase(), i=l.indexOf(kq);
+   if(i<0) return;
+   var cha=n.parentNode, sau=n, dich=0;
+   while(i>=0){
+    var giua=sau.splitText(i-dich); dich=i+q.length;
+    sau=giua.splitText(q.length);
+    var mk=document.createElement('mark'); mk.className='danh';
+    cha.replaceChild(mk,giua); mk.appendChild(giua); hit.push(mk);
+    i=l.indexOf(kq,dich);
+   }
+  });
+  dem.textContent=hit.length?('1/'+hit.length):'0';
+  if(hit.length){ vt=0; toi(0); }
+ }
+ function toi(i){
+  if(!hit.length) return;
+  hit.forEach(function(m){ m.classList.remove('dang'); });
+  vt=(i+hit.length)%hit.length;
+  hit[vt].classList.add('dang');
+  hit[vt].scrollIntoView({block:'center',behavior:'smooth'});
+  dem.textContent=(vt+1)+'/'+hit.length;
+ }
+ var cho;
+ o.addEventListener('input',function(){ clearTimeout(cho);
+  cho=setTimeout(function(){ danhDau(o.value.trim()); },250); });
+ o.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault();
+  toi(vt+(e.shiftKey?-1:1)); } });
+ document.getElementById('timTruoc').onclick=function(){ toi(vt-1); };
+ document.getElementById('timSau').onclick=function(){ toi(vt+1); };
+ addEventListener('beforeprint',xoaDanh);
+})();
+// xem ảnh phóng to: bấm ảnh để mở, ←/→ chuyển ảnh trong cùng bộ, Esc để đóng
+(function(){
+ var hop=document.getElementById('xemAnh'), anh=hop.querySelector('img'),
+     chu=hop.querySelector('.xa-chu'), dem=hop.querySelector('.xa-dem'), bo=[], vt=0;
+ function hien(i){
+  vt=(i+bo.length)%bo.length; var a=bo[vt], im=a.querySelector('img');
+  anh.src=a.getAttribute('href'); anh.alt=im.alt; chu.textContent=im.alt;
+  chu.style.display=im.alt?'':'none';
+  dem.textContent=bo.length>1?(vt+1)+' / '+bo.length:'';
+  hop.querySelector('.xa-truoc').style.display=hop.querySelector('.xa-sau').style.display=bo.length>1?'':'none';
+ }
+ function dong(){ hop.classList.remove('mo'); anh.removeAttribute('src'); document.body.style.overflow=''; }
+ document.getElementById('toGiay').addEventListener('click',function(e){
+  var a=e.target.closest('a.o-anh'); if(!a) return;
+  e.preventDefault();
+  var cha=a.closest('.bo-anh');
+  bo=cha?[].slice.call(cha.querySelectorAll('a.o-anh')):[a];
+  hien(bo.indexOf(a)); hop.classList.add('mo'); document.body.style.overflow='hidden';
+ });
+ hop.querySelector('.xa-dong').onclick=dong;
+ hop.querySelector('.xa-truoc').onclick=function(e){ e.stopPropagation(); hien(vt-1); };
+ hop.querySelector('.xa-sau').onclick=function(e){ e.stopPropagation(); hien(vt+1); };
+ hop.addEventListener('click',function(e){ if(e.target===hop) dong(); });
+ addEventListener('keydown',function(e){
+  if(!hop.classList.contains('mo')) return;
+  if(e.key==='Escape') dong();
+  else if(e.key==='ArrowLeft') hien(vt-1);
+  else if(e.key==='ArrowRight') hien(vt+1);
+ });
+ var x0=null;
+ hop.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+ hop.addEventListener('touchend',function(e){ if(x0===null) return;
+  var dx=e.changedTouches[0].clientX-x0; x0=null;
+  if(Math.abs(dx)>50) hien(vt+(dx<0?1:-1)); });
+})();
+// video YouTube: chỉ tải khi bấm. YouTube trả "Lỗi 153" khi trang không gửi được referrer
+// (mở từ ổ đĩa file:// hoặc khung sandbox) — khi đó mở thẳng tab YouTube.
+(function(){
+ var giay=document.getElementById('toGiay'), ds=giay.querySelectorAll('.yt');
+ if(!ds.length) return;
+ var canEmbed=/^https?:$/.test(location.protocol) &&
+   (typeof window.origin==='undefined' || (window.origin && window.origin!=='null'));
+ var PLAY='<span class="play"><svg viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.7a8.6 8.6 0 0 0-6 6A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z"/><path fill="#fff" d="M27 34l18-10-18-10z"/></svg></span>';
+ [].forEach.call(ds,function(b){
+  var id=b.getAttribute('data-id'), n=b.getAttribute('data-n')||'Video', watch='https://www.youtube.com/watch?v='+id;
+  b.innerHTML='<img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg" alt="'+n+'">'+PLAY+'<span class="badge">▶ '+n+'</span>';
+  b.setAttribute('role','button'); b.setAttribute('tabindex','0');
+  var fig=b.closest('figure'), cap=fig&&fig.querySelector('figcaption');
+  if(!cap&&fig){ cap=document.createElement('figcaption'); fig.appendChild(cap); }
+  if(cap){ var a=document.createElement('a'); a.className='ytlink'; a.href=watch; a.target='_blank';
+   a.rel='noopener'; a.textContent='Mở trên YouTube ↗'; cap.appendChild(a); }
+  function load(){
+   if(!canEmbed){ window.open(watch,'_blank','noopener'); return; }
+   b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&autoplay=1" '+
+    'referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer;autoplay;clipboard-write;'+
+    'encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="'+n+'"></iframe>';
+   b.style.cursor='default';
+  }
+  b.addEventListener('click',load);
+  b.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
+ });
+ if(!canEmbed){
+  var w=document.createElement('div'); w.className='canh-bao';
+  w.innerHTML='<b>Lưu ý:</b> trang đang mở trực tiếp từ ổ đĩa (hoặc trong khung xem trước) nên YouTube chặn phát nhúng '+
+   '(<i>Lỗi 153</i>). Bấm vào video sẽ mở tab YouTube. Đăng trang lên web (https) thì video phát ngay trong trang.';
+  giay.insertBefore(w, giay.firstChild);
+ }
+})();
+</script>
+</body>
+</html>
